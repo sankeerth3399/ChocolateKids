@@ -21,7 +21,6 @@ import {
   Puzzle,
   ChevronDown,
   HelpCircle,
-  Camera,
   Info,
   Send,
   FileText,
@@ -40,8 +39,7 @@ import {
   franchiseInvestmentAreas, 
   franchiseSteps, 
   franchiseFAQs,
-  branches,
-  galleryImages
+  branches
 } from "../data";
 
 export default function FranchisePage() {
@@ -87,45 +85,6 @@ export default function FranchisePage() {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  const showcaseCategories = [
-    {
-      title: "Classrooms & Learning Zones",
-      src: "/images/cow-shelter-group-hd.png",
-      tag: "Classrooms",
-      desc: "Bright, airy spaces equipped with child-safe rounded furniture, natural lighting, and tactile Montessori manipulatives.",
-    },
-    {
-      title: "Sensory & Color Theme Days",
-      src: "/images/blue-colour-day-group.jpg",
-      tag: "Activities",
-      desc: "Immersive events like Blue Day that spark curiosity, color identification, and joyful social interactions.",
-    },
-    {
-      title: "Cultural & Festive Celebrations",
-      src: "/images/krishna-janmashtami-traditional.jpg",
-      tag: "Celebrations",
-      desc: "Rich annual traditions and stage events that build cultural pride, confidence, and active parent engagement.",
-    },
-    {
-      title: "Experiential Educational Visits",
-      src: "/images/cow-shelter-banner-group.jpg",
-      tag: "Outdoor Experiences",
-      desc: "Field excursions to goshala and community hubs that nurture empathy, real-world connection, and observation.",
-    },
-    {
-      title: "Tactile Natural Clay Sculpting",
-      src: "/images/ganesh-chaturthi-clay-sculpting.jpg",
-      tag: "Creative Learning",
-      desc: "Hands-on sculpting that strengthens fine-motor dexterity, focus, hand-eye coordination, and creative joy.",
-    },
-    {
-      title: "Music, Rhythm & Stage Poise",
-      src: "/images/blue-colour-day-pompoms.jpg",
-      tag: "School Life",
-      desc: "Choreographed pom-pom routines and action rhymes that help young children express themselves with natural poise.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
@@ -403,62 +362,6 @@ export default function FranchisePage() {
         </section>
 
         {/* ==================================================
-            SECTION 12: VISUAL STORY ("IMAGINE BUILDING YOUR OWN CHOCOLATE KIDS")
-           ================================================== */}
-        <section className="py-20 bg-white border-b border-stone-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-3">
-                <Camera className="w-3.5 h-3.5 text-amber-800" />
-                <span>Visual Story</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-                Imagine Building Your Own Chocolate Kids
-              </h2>
-              <p className="mt-3 text-base text-stone-600 leading-relaxed font-normal">
-                Picture the vibrant learning environment, joyful children, engaged teachers, and supportive families you will bring together in your city.
-              </p>
-            </div>
-
-            {/* Visual Story Showcase Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {showcaseCategories.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group"
-                >
-                  <div className="relative h-60 overflow-hidden bg-amber-50">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
-                        {item.tag}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="font-heading font-bold text-base sm:text-lg text-stone-900 mb-1.5 group-hover:text-amber-700 transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-stone-600 leading-relaxed font-normal">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
-
-        {/* ==================================================
             SECTION 13: WHAT WE CAN SUPPORT (JOURNEY-STYLE LAYOUT)
            ================================================== */}
         <section className="py-20 bg-gradient-to-b from-stone-900 via-amber-950 to-stone-950 text-white relative overflow-hidden">
@@ -708,64 +611,6 @@ export default function FranchisePage() {
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        {/* ==================================================
-            SECTION 18 & 19: FRANCHISE VISUAL SHOWCASE & TRUST
-           ================================================== */}
-        <section className="py-20 bg-stone-50/70 border-b border-amber-100/70">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
-                <Camera className="w-3.5 h-3.5 text-amber-800" />
-                <span>Real Campus Moments</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 tracking-tight">
-                Experience the Chocolate Kids Environment
-              </h2>
-              <p className="mt-2 text-stone-600 text-sm sm:text-base">
-                Authentic photographs from our Dammaiguda and Kapra campuses highlighting student happiness, dedicated teachers, and joyful learning routines.
-              </p>
-            </div>
-
-            {/* Gallery Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-              {galleryImages.slice(0, 8).map((photo) => (
-                <div key={photo.id} className="h-52 rounded-2xl overflow-hidden bg-white shadow-xs group">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Genuine Trust Information Banner */}
-            <div className="p-8 rounded-3xl bg-amber-50/80 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
-                  Active Operations
-                </span>
-                <h3 className="font-heading font-bold text-xl text-stone-900">
-                  Established Campuses Serving Hyderabad Families
-                </h3>
-                <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl">
-                  Visit our running branches in Dammaiguda (Branch 1) and Kapra (Branch 2) to witness our play-based curriculum and parent satisfaction firsthand.
-                </p>
-              </div>
-
-              <Link
-                to="/branches"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-amber-950 bg-white border border-amber-300 shadow-2xs hover:bg-amber-100 transition-colors shrink-0"
-              >
-                <span>View Our Branches</span>
-                <ArrowRight className="w-4 h-4 text-amber-800" />
-              </Link>
-            </div>
-
           </div>
         </section>
 
