@@ -1,10 +1,14 @@
 import { ArrowRight, Compass, Sparkles, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolInfo } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function AdmissionsCTA() {
   return (
     <section className="py-20 sm:py-24 bg-gradient-to-br from-amber-700 via-amber-600 to-orange-600 text-white relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="right" size="lg" opacity={0.06} rotate={-10} />
+
       {/* Decorative Illustrated Clouds & Soft Blobs */}
       <div
         className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none"

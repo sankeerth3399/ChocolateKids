@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Palette, Music, BookOpen, Sun, Heart, Smile, ArrowRight, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Activities() {
   const [selectedActivity, setSelectedActivity] = useState(0);
@@ -81,6 +82,9 @@ export default function Activities() {
 
   return (
     <section id="activities" className="py-20 sm:py-24 bg-[#FAF6EE] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="bottom-right" size="lg" opacity={0.045} rotate={-10} />
+
       {/* Decorative Scrapbook Paper Texture Highlights */}
       <div 
         className="absolute top-1/2 -left-24 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none -z-0"

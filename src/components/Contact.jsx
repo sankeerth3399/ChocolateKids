@@ -1,10 +1,14 @@
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight, Clock, Navigation } from "lucide-react";
 import { schoolInfo, branches } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="bottom-right" size="lg" opacity={0.04} rotate={-8} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

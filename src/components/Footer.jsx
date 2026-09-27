@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, MessageCircle, Heart, ArrowRight, ExternalLink } from "lucide-react";
 import { schoolInfo, branches } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Footer() {
   const handleNavClick = (e, href) => {
@@ -30,8 +31,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-stone-900 text-stone-300 pt-16 pb-12 border-t-4 border-amber-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-stone-900 text-stone-300 pt-16 pb-12 border-t-4 border-amber-500 relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="bottom-right" size="lg" opacity={0.035} rotate={-10} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Footer 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800">

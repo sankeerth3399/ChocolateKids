@@ -1,5 +1,6 @@
 import { Layout, Smile, Palette, BookOpen, ShieldCheck, Car, Sparkles } from "lucide-react";
 import { facilitiesData } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Facilities() {
   const iconMap = {
@@ -12,8 +13,11 @@ export default function Facilities() {
   };
 
   return (
-    <section id="facilities" className="py-20 bg-[#FFFDF9] relative border-t border-amber-100/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="facilities" className="py-20 bg-[#FFFDF9] relative overflow-hidden border-t border-amber-100/50">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="left" size="xl" opacity={0.038} rotate={8} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

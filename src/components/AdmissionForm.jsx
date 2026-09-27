@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MessageCircle, Phone, Copy, Check, AlertCircle, Sparkles, Send } from "lucide-react";
 import { schoolInfo, branches } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function AdmissionForm() {
   const [formData, setFormData] = useState({
@@ -95,8 +96,11 @@ export default function AdmissionForm() {
   };
 
   return (
-    <section id="admissions" className="py-20 bg-[#FFFDF9] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="admissions" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="left" size="lg" opacity={0.04} rotate={6} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">

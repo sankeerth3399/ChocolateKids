@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Heart, Shield, Award, Users, BookOpen, Compass, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolPhilosophy } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function About() {
   const philosophyHighlights = [
@@ -41,6 +42,9 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 sm:py-24 bg-[#FFFDF9] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="right" size="lg" opacity={0.045} rotate={-6} />
+
       {/* Decorative Storybook Background Elements */}
       <div 
         className="absolute top-10 -left-20 w-80 h-80 bg-amber-100/40 rounded-full blur-3xl pointer-events-none -z-0"

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, Image as ImageIcon, Eye } from "lucide-react";
 import { galleryImages } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -68,8 +69,11 @@ export default function Gallery() {
   }, [lightboxIndex, closeLightbox, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="py-20 bg-[#FFFDF9] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="top-left" size="lg" opacity={0.038} rotate={6} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">

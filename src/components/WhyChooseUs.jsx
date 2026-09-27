@@ -1,5 +1,6 @@
 import { Smile, Sparkles, Palette, Puzzle, ShieldCheck, GraduationCap } from "lucide-react";
 import { whyChooseUs } from "../data";
+import BrandWatermark from "./BrandWatermark";
 
 export default function WhyChooseUs() {
   const iconMap = {
@@ -13,7 +14,10 @@ export default function WhyChooseUs() {
 
   return (
     <section className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Brand Logo Watermark - Subtle Centered */}
+      <BrandWatermark position="center" size="xl" opacity={0.032} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
