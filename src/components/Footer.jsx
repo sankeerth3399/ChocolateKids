@@ -32,8 +32,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-stone-900 text-stone-300 pt-16 pb-12 border-t-4 border-amber-500 relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="bottom-right" size="lg" opacity={0.035} rotate={-10} />
+      {/* Brand Logo Watermark - Visible but Elegant */}
+      <BrandWatermark position="bottom-right" size="lg" opacity={0.08} rotate={-6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

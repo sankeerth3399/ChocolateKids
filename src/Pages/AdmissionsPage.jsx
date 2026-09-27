@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import AdmissionForm from "../components/AdmissionForm";
 import Branches from "../components/Branches";
+import BrandWatermark from "../components/BrandWatermark";
 import { Sparkles, Calendar, CheckCircle2, FileText, Users, HelpCircle } from "lucide-react";
 
 export default function AdmissionsPage() {
@@ -70,8 +71,10 @@ export default function AdmissionsPage() {
         </section>
 
         {/* 4 Step Admission Process */}
-        <section className="py-12 bg-white border-y border-amber-100/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 bg-white border-y border-amber-100/60 relative overflow-hidden">
+          {/* Brand Logo Watermark - Large Centered Watermark */}
+          <BrandWatermark position="center" size="lg" opacity={0.11} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="font-heading font-extrabold text-3xl text-stone-900 mb-2">
                 Simple 4-Step Admission Process

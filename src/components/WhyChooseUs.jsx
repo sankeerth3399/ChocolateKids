@@ -14,8 +14,8 @@ export default function WhyChooseUs() {
 
   return (
     <section className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark - Subtle Centered */}
-      <BrandWatermark position="center" size="xl" opacity={0.032} />
+      {/* Brand Logo Watermark - Large Centered Page Focal Point */}
+      <BrandWatermark position="center" size="xl" opacity={0.13} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

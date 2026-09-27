@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Activities from "../components/Activities";
 import AdmissionsCTA from "../components/AdmissionsCTA";
+import BrandWatermark from "../components/BrandWatermark";
 import { Sparkles, Calendar, Palette, Music, BookOpen, Smile } from "lucide-react";
 
 export default function ActivitiesPage() {
@@ -31,8 +32,10 @@ export default function ActivitiesPage() {
         <Activities />
 
         {/* 4 Pillars of Early Activity */}
-        <section className="py-16 bg-white border-t border-amber-100/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 bg-white border-t border-amber-100/60 relative overflow-hidden">
+          {/* Brand Logo Watermark - Centered Watermark */}
+          <BrandWatermark position="center" size="lg" opacity={0.12} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900">
                 Core Domains of Daily Preschool Activities

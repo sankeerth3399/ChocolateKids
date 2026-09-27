@@ -5,6 +5,7 @@ import LearningPrograms from "../components/LearningPrograms";
 import LearningApproach from "../components/LearningApproach";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import AdmissionForm from "../components/AdmissionForm";
+import BrandWatermark from "../components/BrandWatermark";
 import { BookOpen, Sparkles, CheckCircle2, Clock, Award } from "lucide-react";
 
 export default function AcademicsPage() {
@@ -69,8 +70,10 @@ export default function AcademicsPage() {
         <LearningApproach />
 
         {/* Daily Learning Rhythm */}
-        <section className="py-16 bg-white border-t border-amber-100/60">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 bg-white border-t border-amber-100/60 relative overflow-hidden">
+          {/* Brand Logo Watermark - Centered Watermark */}
+          <BrandWatermark position="center" size="lg" opacity={0.11} />
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
                 <Clock className="w-3.5 h-3.5 text-amber-700" />

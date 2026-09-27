@@ -6,8 +6,8 @@ import BrandWatermark from "./BrandWatermark";
 export default function AdmissionsCTA() {
   return (
     <section className="py-20 sm:py-24 bg-gradient-to-br from-amber-700 via-amber-600 to-orange-600 text-white relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="right" size="lg" opacity={0.06} rotate={-10} />
+      {/* Brand Logo Watermark - Large Centered Watermark */}
+      <BrandWatermark position="center" size="lg" opacity={0.11} />
 
       {/* Decorative Illustrated Clouds & Soft Blobs */}
       <div

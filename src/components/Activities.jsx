@@ -82,8 +82,8 @@ export default function Activities() {
 
   return (
     <section id="activities" className="py-20 sm:py-24 bg-[#FAF6EE] relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="bottom-right" size="lg" opacity={0.045} rotate={-10} />
+      {/* Brand Logo Watermark - Centered with slight right offset */}
+      <BrandWatermark position="center-offset-right" size="lg" opacity={0.11} />
 
       {/* Decorative Scrapbook Paper Texture Highlights */}
       <div 

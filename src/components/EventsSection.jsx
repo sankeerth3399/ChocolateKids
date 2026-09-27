@@ -1,5 +1,6 @@
 import { Sparkles, Calendar, Heart, Flag, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import BrandWatermark from "./BrandWatermark";
 
 export default function EventsSection() {
   const celebrationTimeline = [
@@ -47,6 +48,9 @@ export default function EventsSection() {
 
   return (
     <section id="events" className="py-20 sm:py-24 bg-[#FFFDF9] relative overflow-hidden">
+      {/* Brand Logo Watermark - Large Centered Watermark */}
+      <BrandWatermark position="center" size="xl" opacity={0.11} />
+
       {/* Soft Ambient Background Dots */}
       <div 
         className="absolute top-1/4 right-0 w-80 h-80 bg-rose-100/30 rounded-full blur-3xl pointer-events-none -z-0"

@@ -123,8 +123,8 @@ export default function FranchisePage() {
             <Sprout className="w-8 h-8 text-emerald-600" />
           </div>
 
-          {/* Official Brand Logo Watermark */}
-          <BrandWatermark position="right" size="xl" opacity={0.045} rotate={-6} />
+          {/* Official Brand Logo Watermark - Prominent Centered Watermark */}
+          <BrandWatermark position="center" size="xl" opacity={0.13} />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
@@ -310,7 +310,8 @@ export default function FranchisePage() {
             (8 BENEFIT CARDS)
            ================================================== */}
         <section id="benefits" className="py-20 bg-stone-50/70 border-b border-amber-100/70 relative overflow-hidden">
-          <BrandWatermark position="left" size="xl" opacity={0.04} rotate={8} />
+          {/* Official Brand Logo Watermark - Prominent Centered Watermark */}
+          <BrandWatermark position="center" size="xl" opacity={0.14} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
@@ -489,7 +490,7 @@ export default function FranchisePage() {
             SECTION 15 & 16: REQUIREMENTS & UNDERSTAND THE OPPORTUNITY
            ================================================== */}
         <section id="requirements" className="py-20 bg-stone-50/70 border-b border-amber-100/70 relative overflow-hidden">
-          <BrandWatermark position="right" size="lg" opacity={0.038} rotate={-8} />
+          <BrandWatermark position="center" size="lg" opacity={0.12} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
             
             {/* Section 15: What Does It Take to Start? */}
@@ -586,7 +587,7 @@ export default function FranchisePage() {
             SECTION 17: FRANCHISE JOURNEY (6-STEP TIMELINE)
            ================================================== */}
         <section className="py-20 bg-white border-b border-stone-100 relative overflow-hidden">
-          <BrandWatermark position="bottom-left" size="lg" opacity={0.035} rotate={6} />
+          <BrandWatermark position="center" size="lg" opacity={0.11} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
@@ -635,7 +636,7 @@ export default function FranchisePage() {
             CHAPTER 7: THE CONVERSATION (FRANCHISE ENQUIRY FORM)
            ================================================== */}
         <section id="enquiry-form" className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/40 to-white relative overflow-hidden">
-          <BrandWatermark position="right" size="lg" opacity={0.038} rotate={-6} />
+          <BrandWatermark position="center" size="lg" opacity={0.12} />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-200/80 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-300">
@@ -658,7 +659,7 @@ export default function FranchisePage() {
             SECTION 20: FRANCHISE FAQ (11 QUESTIONS)
            ================================================== */}
         <section id="franchise-faq" className="py-20 bg-white border-b border-stone-100 relative overflow-hidden">
-          <BrandWatermark position="left" size="lg" opacity={0.035} rotate={8} />
+          <BrandWatermark position="center" size="lg" opacity={0.10} />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">

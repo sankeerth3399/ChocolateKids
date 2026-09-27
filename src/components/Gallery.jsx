@@ -70,8 +70,8 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="top-left" size="lg" opacity={0.038} rotate={6} />
+      {/* Brand Logo Watermark - Subtle Centered Behind Gallery */}
+      <BrandWatermark position="center" size="lg" opacity={0.095} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

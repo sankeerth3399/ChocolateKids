@@ -5,8 +5,8 @@ import BrandWatermark from "./BrandWatermark";
 export default function LearningPrograms() {
   return (
     <section id="academics" className="py-20 bg-white relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="left" size="xl" opacity={0.04} rotate={8} />
+      {/* Brand Logo Watermark - Centered & Enlarged */}
+      <BrandWatermark position="center" size="xl" opacity={0.12} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

@@ -42,8 +42,8 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 sm:py-24 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="right" size="lg" opacity={0.045} rotate={-6} />
+      {/* Brand Logo Watermark - Centered with slight left offset */}
+      <BrandWatermark position="center-offset-left" size="lg" opacity={0.12} />
 
       {/* Decorative Storybook Background Elements */}
       <div 

@@ -97,8 +97,8 @@ export default function AdmissionForm() {
 
   return (
     <section id="admissions" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="left" size="lg" opacity={0.04} rotate={6} />
+      {/* Brand Logo Watermark - Large Centered Watermark */}
+      <BrandWatermark position="center" size="xl" opacity={0.12} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

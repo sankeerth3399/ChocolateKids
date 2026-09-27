@@ -4,6 +4,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import About from "../components/About";
 import WhyChooseUs from "../components/WhyChooseUs";
 import AdmissionsCTA from "../components/AdmissionsCTA";
+import BrandWatermark from "../components/BrandWatermark";
 import { Users, Heart, Award, Shield, Sparkles } from "lucide-react";
 import { schoolPhilosophy } from "../data";
 
@@ -33,8 +34,10 @@ export default function AboutPage() {
         <About />
 
         {/* Deep Dive into Pillars & Commitments */}
-        <section className="py-16 bg-white border-t border-amber-100/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 bg-white border-t border-amber-100/60 relative overflow-hidden">
+          {/* Brand Logo Watermark - Large Centered Watermark */}
+          <BrandWatermark position="center" size="lg" opacity={0.12} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900">
                 Our Commitments to Parents & Children
