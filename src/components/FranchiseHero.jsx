@@ -257,7 +257,7 @@ export default function FranchiseHero({ onScrollToSection }) {
         {/* Artistic Scalloped Wave SVG Divider */}
         <div className="w-full overflow-hidden leading-none -mb-[1px]" aria-hidden="true">
           <svg
-            className="relative block w-full h-12 sm:h-16 lg:h-20 text-white"
+            className="relative block w-full h-12 sm:h-16 lg:h-20 text-[#FFFDF9]"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
             fill="currentColor"

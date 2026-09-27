@@ -26,7 +26,8 @@ import {
   FileText,
   PhoneCall,
   Rocket,
-  Camera
+  Palette,
+  Sprout
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -101,80 +102,198 @@ export default function FranchisePage() {
         {/* ==================================================
             SECTION 10: FRANCHISE INTRODUCTION ("WHY CHOCOLATE KIDS?")
            ================================================== */}
-        <section id="why-chocolate-kids" className="py-20 bg-white border-b border-stone-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* ==================================================
+            CHAPTER 2: THE VISION ("WHY CHOCOLATE KIDS?")
+           ================================================== */}
+        <section 
+          id="why-chocolate-kids" 
+          className="relative py-20 sm:py-28 bg-gradient-to-b from-[#FFFDF9] via-[#FAF5EB] to-[#FFFDF9] border-b border-amber-200/60 overflow-hidden"
+        >
+          {/* Layer 1 & 2: Atmospheric Glows & Organic Ambient Shapes */}
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-amber-200/35 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute bottom-10 -right-20 w-[450px] h-[450px] bg-orange-200/25 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber-100/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+
+          {/* Layer 3: Subtle Educational Watermark Elements */}
+          <div className="absolute top-16 right-16 opacity-30 hidden lg:block animate-float" aria-hidden="true">
+            <Sparkles className="w-8 h-8 text-amber-500" />
+          </div>
+          <div className="absolute bottom-16 left-12 opacity-30 hidden lg:block animate-float-delayed" aria-hidden="true">
+            <Sprout className="w-8 h-8 text-emerald-600" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
               
-              {/* Left: Real Photo Anchor */}
+              {/* Left Column: Arched Storybook Visual Scene */}
               <div className="lg:col-span-6 relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-amber-50 group">
-                  <img
-                    src="/images/cow-shelter-banner-group.jpg"
-                    alt="Chocolate Kids official celebration banner and students in uniform"
-                    className="w-full h-[400px] sm:h-[460px] object-cover object-center group-hover:scale-103 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-900/10 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <span className="inline-block px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-bold text-xs uppercase tracking-wider mb-1.5">
-                      Established Preschool Brand
-                    </span>
-                    <h4 className="font-heading font-extrabold text-xl text-white">
-                      A Culture of Warmth, Safety & Discovery
-                    </h4>
-                    <p className="text-xs text-white/90 leading-relaxed mt-1">
-                      Our established campuses in Dammaiguda & Kapra showcase the joyful atmosphere, vibrant activities, and parent trust you can create in your city.
-                    </p>
+                <div className="relative mx-auto max-w-lg lg:max-w-none">
+                  {/* Organic Soft Backlight Behind Frame */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/40 via-orange-200/30 to-amber-100/40 rounded-t-[7rem] sm:rounded-t-[9rem] rounded-b-[3rem] blur-2xl transform -rotate-1 scale-102 pointer-events-none" />
+
+                  {/* Arched Framed Storybook Illustration */}
+                  <div className="relative rounded-t-[6rem] sm:rounded-t-[8rem] rounded-b-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/95 ring-1 ring-amber-200/80 bg-amber-50 group">
+                    <img
+                      src="/images/why-chocolate-kids-visual.jpg"
+                      alt="Early education leaders and franchise partner collaborating on preschool curriculum and blueprints"
+                      className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover object-center group-hover:scale-103 transition-transform duration-700 ease-out"
+                      loading="lazy"
+                    />
+                    
+                    {/* Soft Bottom Gradient for Text Protection */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-transparent to-transparent pointer-events-none" />
+
+                    {/* Top In-Scene Pill */}
+                    <div className="absolute top-5 left-5">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-white/95 text-amber-950 shadow-sm border border-amber-200/80 backdrop-blur-xs">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+                        <span>Curriculum & Co-Creation</span>
+                      </span>
+                    </div>
+
+                    {/* Bottom In-Scene Educational Philosophy Caption */}
+                    <div className="absolute bottom-6 left-6 right-6 text-white">
+                      <span className="inline-block px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-bold text-[11px] uppercase tracking-wider mb-1.5 shadow-2xs">
+                        Educational Vision
+                      </span>
+                      <h4 className="font-heading font-bold text-lg sm:text-xl text-white drop-shadow-xs">
+                        A Culture of Wonder, Warmth & Discovery
+                      </h4>
+                      <p className="text-xs text-stone-200 mt-1 leading-relaxed font-normal">
+                        Every campus is thoughtfully planned to nurture children's innate curiosity through playful guidance and caring educators.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Floating Growth Metaphor Badge */}
+                  <div className="absolute -bottom-4 -right-3 sm:-bottom-5 sm:-right-4 px-4 py-2.5 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-amber-200 flex items-center gap-3 animate-float hidden sm:flex">
+                    <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                      <Sprout className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-xs font-black text-amber-950">Growing Together</span>
+                      <span className="text-[10px] text-amber-800/80 font-medium">Curriculum • Care • Trust</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Right: Editorial Philosophy */}
+              {/* Right Column: Editorial Philosophy & Floating Benefits */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-200">
+                  <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200 shadow-2xs">
                     <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                     <span>Chapter 2 • Brand & Educational Philosophy</span>
                   </div>
-                  <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
-                    Why Chocolate Kids?
+
+                  <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-[1.12]">
+                    Why Choose{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-orange-600 to-amber-700 drop-shadow-xs">
+                      Chocolate Kids?
+                    </span>
                   </h2>
-                  <p className="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-                    At Chocolate Kids, preschool is more than memorization—it is a foundation of wonder, emotional confidence, and active discovery. We empower children through play-based methodologies that parents truly respect.
+
+                  <p className="mt-4 text-base sm:text-lg text-stone-700 leading-relaxed font-normal">
+                    At Chocolate Kids, early education is far more than routine memorization—it is a foundation of wonder, emotional confidence, and active discovery. We empower young children through child-centric, play-based methodologies that families genuinely love and respect.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-2xl bg-[#FFFDF9] border border-stone-200">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mb-2" />
-                    <h3 className="font-bold text-sm text-stone-900 mb-1">Child-Centric Learning</h3>
-                    <p className="text-xs text-stone-500">Every routine is designed around the child's natural curiosity and comfort.</p>
+                {/* 4 Floating Information Elements */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                  {/* Benefit 1 */}
+                  <div className="p-4 sm:p-4.5 rounded-2xl bg-white/85 backdrop-blur-sm border border-amber-200/70 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                          <Heart className="w-4 h-4" />
+                        </div>
+                        <h3 className="font-heading font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">
+                          Child-Centric Learning
+                        </h3>
+                      </div>
+                      <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                        Every daily rhythm is crafted around the child's natural curiosity, comfort, and developmental pace.
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-[#FFFDF9] border border-stone-200">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mb-2" />
-                    <h3 className="font-bold text-sm text-stone-900 mb-1">Activity-Based Education</h3>
-                    <p className="text-xs text-stone-500">Sensory bins, clay sculpting, color discovery, and musical movement.</p>
+
+                  {/* Benefit 2 */}
+                  <div className="p-4 sm:p-4.5 rounded-2xl bg-white/85 backdrop-blur-sm border border-amber-200/70 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                          <Palette className="w-4 h-4" />
+                        </div>
+                        <h3 className="font-heading font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">
+                          Activity-Based Education
+                        </h3>
+                      </div>
+                      <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                        Sensory discovery, clay sculpting, color days, and rhythmic expression that turn learning into lived joy.
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-[#FFFDF9] border border-stone-200">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mb-2" />
-                    <h3 className="font-bold text-sm text-stone-900 mb-1">Safe & Welcoming Spaces</h3>
-                    <p className="text-xs text-stone-500">Clean, child-proof, well-ventilated classrooms with sensitive caregivers.</p>
+
+                  {/* Benefit 3 */}
+                  <div className="p-4 sm:p-4.5 rounded-2xl bg-white/85 backdrop-blur-sm border border-amber-200/70 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-4 h-4" />
+                        </div>
+                        <h3 className="font-heading font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">
+                          Safe & Welcoming Spaces
+                        </h3>
+                      </div>
+                      <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                        Child-proof, thoughtfully ventilated spaces designed with gentle textures and vigilant hygiene protocols.
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-[#FFFDF9] border border-stone-200">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mb-2" />
-                    <h3 className="font-bold text-sm text-stone-900 mb-1">Strong Parent Engagement</h3>
-                    <p className="text-xs text-stone-500">Transparent daily communication and high satisfaction across communities.</p>
+
+                  {/* Benefit 4 */}
+                  <div className="p-4 sm:p-4.5 rounded-2xl bg-white/85 backdrop-blur-sm border border-amber-200/70 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center shrink-0">
+                          <Users className="w-4 h-4" />
+                        </div>
+                        <h3 className="font-heading font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">
+                          Strong Parent Engagement
+                        </h3>
+                      </div>
+                      <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                        Transparent daily communication, high satisfaction, and warm family participation in campus life.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-2">
+                {/* Growth Ecosystem Callout */}
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50/90 via-white/85 to-emerald-50/60 border border-amber-200/80 shadow-2xs flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                    <Sprout className="w-4.5 h-4.5 text-emerald-600" />
+                  </div>
+                  <p className="text-xs sm:text-sm font-semibold text-stone-700 leading-snug">
+                    <strong className="text-amber-950 font-bold">Growing Together: </strong>
+                    Nurturing early childhood curiosity into lasting academic, emotional, and social confidence.
+                  </p>
+                </div>
+
+                {/* Transition Statement & Prominent Franchise CTA */}
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <button
+                    type="button"
                     onClick={() => scrollToSection("benefits")}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-amber-800 hover:text-amber-950 group"
+                    className="inline-flex items-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full text-sm font-black text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-amber-300/40 cursor-pointer"
                   >
-                    <span>Discover our comprehensive franchise benefits</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <span>Explore Franchise Benefits</span>
+                    <ArrowRight className="w-4 h-4 text-amber-200" />
                   </button>
+
+                  <span className="text-xs sm:text-sm font-semibold text-stone-600">
+                    Bring this learning experience to your community.
+                  </span>
                 </div>
               </div>
 
@@ -506,156 +625,14 @@ export default function FranchisePage() {
         </section>
 
         {/* ==================================================
-            CHAPTER 7: THE EXPERIENCE (AUTHENTIC CAMPUS MOMENTS)
-           ================================================== */}
-        <section id="experience" className="py-20 bg-stone-50/70 border-b border-amber-100/70">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
-                <Camera className="w-3.5 h-3.5 text-amber-800" />
-                <span>Chapter 7 • Authentic Campus Life</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-                See the Chocolate Kids Experience in Action
-              </h2>
-              <p className="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-                Behind our franchise partnership is an authentic, vibrant early education community. Real moments from our running campuses showcasing joyful classrooms, caring teachers, and curious young learners.
-              </p>
-            </div>
-
-            {/* 4 Curated Photo Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-                <div>
-                  <div className="relative h-56 overflow-hidden bg-amber-50">
-                    <img
-                      src="/images/blue-colour-day-celebration.jpg"
-                      alt="Sensory and color day celebration at Chocolate Kids"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
-                      Thematic Days
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
-                      Sensory Discovery
-                    </h3>
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      Interactive events like Blue Day that spark curiosity, color identification, and joyful social expression.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-                <div>
-                  <div className="relative h-56 overflow-hidden bg-amber-50">
-                    <img
-                      src="/images/krishna-janmashtami-traditional.jpg"
-                      alt="Cultural and festive celebration at Chocolate Kids"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
-                      Celebrations
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
-                      Cultural Stage Poise
-                    </h3>
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      Rich annual traditions and stage events that foster cultural appreciation, self-confidence, and active parent engagement.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-                <div>
-                  <div className="relative h-56 overflow-hidden bg-amber-50">
-                    <img
-                      src="/images/cow-shelter-teacher-students.jpg"
-                      alt="Field excursion and experiential learning at Chocolate Kids"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
-                      Field Excursions
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
-                      Experiential Visits
-                    </h3>
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      Community and nature excursions that nurture empathy, real-world connection, and environmental observation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-                <div>
-                  <div className="relative h-56 overflow-hidden bg-amber-50">
-                    <img
-                      src="/images/clay-ganesha-craft-activity.jpg"
-                      alt="Tactile clay sculpting and creative craft activity at Chocolate Kids"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
-                      Creative Arts
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
-                      Tactile Clay & Art
-                    </h3>
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      Hands-on modeling and craft routines strengthening fine-motor dexterity, patience, and creative problem solving.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Genuine Campus Callout */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-amber-50/90 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
-                  Active Operations
-                </span>
-                <h3 className="font-heading font-bold text-xl text-stone-900">
-                  Established Campuses Serving Hyderabad Families
-                </h3>
-                <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl">
-                  Visit our running branches in Dammaiguda (Branch 1) and Kapra (Branch 2) to witness our play-based curriculum and parent satisfaction firsthand.
-                </p>
-              </div>
-
-              <Link
-                to="/branches"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-amber-950 bg-white border border-amber-300 shadow-2xs hover:bg-amber-100 transition-colors shrink-0"
-              >
-                <span>View Our Campuses</span>
-                <ArrowRight className="w-4 h-4 text-amber-800" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ==================================================
-            CHAPTER 8: THE CONVERSATION (FRANCHISE ENQUIRY FORM)
+            CHAPTER 7: THE CONVERSATION (FRANCHISE ENQUIRY FORM)
            ================================================== */}
         <section id="enquiry-form" className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/40 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-200/80 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-300">
                 <Briefcase className="w-3.5 h-3.5 text-amber-800" />
-                <span>Chapter 8 • The Conversation</span>
+                <span>Chapter 7 • The Conversation</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
                 Let's Build Something Meaningful Together.
