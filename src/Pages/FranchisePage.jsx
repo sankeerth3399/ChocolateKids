@@ -25,10 +25,12 @@ import {
   Send,
   FileText,
   PhoneCall,
-  Rocket
+  Rocket,
+  Camera
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FranchiseHero from "../components/FranchiseHero";
 import FranchiseForm from "../components/FranchiseForm";
 import { 
   schoolInfo, 
@@ -90,122 +92,11 @@ export default function FranchisePage() {
     <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
-      <main className="pt-24 sm:pt-28">
-        
+      <main>
         {/* ==================================================
-            SECTION 9: FRANCHISE HERO SECTION
+            CHAPTER 1: THE PARTNERSHIP (IMMERSIVE WALLPAPER HERO)
            ================================================== */}
-        <section className="relative bg-gradient-to-b from-amber-100/70 via-amber-50/50 to-[#FFFDF9] py-16 sm:py-24 border-b border-amber-200/60 overflow-hidden">
-          {/* Ambient Glows */}
-          <div className="absolute top-10 left-1/3 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-200/25 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-              
-              {/* Left Column: Heading, Value Proposition & CTAs */}
-              <div className="lg:col-span-7 text-center lg:text-left">
-                <Link
-                  to="/"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-amber-800 hover:text-amber-950 mb-6 bg-white/90 px-3.5 py-1.5 rounded-full border border-amber-200 shadow-2xs transition-colors"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Back to Preschool Home</span>
-                </Link>
-
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-200/80 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-4 border border-amber-300">
-                  <Briefcase className="w-3.5 h-3.5 text-amber-800" />
-                  <span>Preschool Franchise Opportunity</span>
-                </div>
-
-                <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-[1.12]">
-                  Build the Future of Early Learning With{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-orange-600 to-amber-600">
-                    Chocolate Kids
-                  </span>
-                </h1>
-
-                <p className="mt-5 text-base sm:text-lg lg:text-xl text-stone-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                  Explore the opportunity to become a Chocolate Kids franchise partner and bring a joyful, engaging and quality-focused preschool experience to families in your community.
-                </p>
-
-                {/* Trust markers */}
-                <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold text-stone-700">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-stone-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    Structured Educational Approach
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-stone-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    Staff Training & Guidance
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-stone-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    Curriculum & Marketing Support
-                  </span>
-                </div>
-
-                {/* Primary & Secondary CTAs */}
-                <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5">
-                  <button
-                    onClick={() => scrollToSection("enquiry-form")}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
-                  >
-                    <span>Enquire About Franchise</span>
-                    <ArrowRight className="w-4 h-4 text-amber-200" />
-                  </button>
-
-                  <button
-                    onClick={() => scrollToSection("why-chocolate-kids")}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 shadow-2xs transition-colors cursor-pointer"
-                  >
-                    <span>Explore the Opportunity</span>
-                  </button>
-
-                  <a
-                    href={waUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
-                  >
-                    <MessageCircle className="w-4 h-4 text-emerald-600" />
-                    <span>WhatsApp Enquiry</span>
-                  </a>
-                </div>
-
-                <div className="mt-4 text-xs font-semibold text-stone-500">
-                  Designed for passionate educators, entrepreneurs and business partners.
-                </div>
-              </div>
-
-              {/* Right Column: High Quality Real Chocolate Kids Photography */}
-              <div className="lg:col-span-5 relative">
-                <div className="relative mx-auto max-w-md lg:max-w-none">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-50 group">
-                    <img
-                      src="/images/cow-shelter-group-hd.png"
-                      alt="Chocolate Kids Preschool community gathering with staff and children"
-                      className="w-full h-80 sm:h-[450px] object-cover object-bottom group-hover:scale-103 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-5 left-5 right-5 text-white">
-                      <span className="inline-block px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-bold text-[11px] uppercase tracking-wider mb-1.5">
-                        Authentic Preschool Experience
-                      </span>
-                      <h4 className="font-heading font-bold text-lg text-white">
-                        Inspiring Happy Learning Every Day
-                      </h4>
-                      <p className="text-xs text-stone-200 mt-1">
-                        Build a preschool environment that earns the love of children and trust of parents.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        <FranchiseHero onScrollToSection={scrollToSection} />
 
         {/* ==================================================
             SECTION 10: FRANCHISE INTRODUCTION ("WHY CHOCOLATE KIDS?")
@@ -241,9 +132,9 @@ export default function FranchisePage() {
               {/* Right: Editorial Philosophy */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-3">
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-200">
                     <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-                    <span>Brand & Educational Philosophy</span>
+                    <span>Chapter 2 • Brand & Educational Philosophy</span>
                   </div>
                   <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
                     Why Chocolate Kids?
@@ -300,7 +191,7 @@ export default function FranchisePage() {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
                 <Award className="w-3.5 h-3.5 text-amber-800" />
-                <span>Partner Support System</span>
+                <span>Chapter 3 • The Opportunity</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
                 More Than a Franchise. A Chance to Shape Young Futures.
@@ -369,7 +260,7 @@ export default function FranchisePage() {
             
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-amber-400 text-amber-950 text-xs font-bold uppercase tracking-wider mb-3">
-                <span>End-to-End Partnership</span>
+                <span>Chapter 4 • The Support</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
                 Support Designed Around Your Journey
@@ -479,9 +370,9 @@ export default function FranchisePage() {
             {/* Section 15: What Does It Take to Start? */}
             <div>
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2 border border-amber-200">
                   <Info className="w-3.5 h-3.5 text-amber-800" />
-                  <span>Key Parameters (Editable)</span>
+                  <span>Chapter 5 • The Setup</span>
                 </div>
                 <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 tracking-tight">
                   What Does It Take to Start?
@@ -573,7 +464,7 @@ export default function FranchisePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
-                <span>Roadmap to Launch</span>
+                <span>Chapter 6 • Roadmap to Launch</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
                 Your Chocolate Kids Franchise Journey
@@ -615,6 +506,170 @@ export default function FranchisePage() {
         </section>
 
         {/* ==================================================
+            CHAPTER 7: THE EXPERIENCE (AUTHENTIC CAMPUS MOMENTS)
+           ================================================== */}
+        <section id="experience" className="py-20 bg-stone-50/70 border-b border-amber-100/70">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
+                <Camera className="w-3.5 h-3.5 text-amber-800" />
+                <span>Chapter 7 • Authentic Campus Life</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+                See the Chocolate Kids Experience in Action
+              </h2>
+              <p className="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
+                Behind our franchise partnership is an authentic, vibrant early education community. Real moments from our running campuses showcasing joyful classrooms, caring teachers, and curious young learners.
+              </p>
+            </div>
+
+            {/* 4 Curated Photo Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div className="relative h-56 overflow-hidden bg-amber-50">
+                    <img
+                      src="/images/blue-colour-day-celebration.jpg"
+                      alt="Sensory and color day celebration at Chocolate Kids"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
+                      Thematic Days
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
+                      Sensory Discovery
+                    </h3>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Interactive events like Blue Day that spark curiosity, color identification, and joyful social expression.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div className="relative h-56 overflow-hidden bg-amber-50">
+                    <img
+                      src="/images/krishna-janmashtami-traditional.jpg"
+                      alt="Cultural and festive celebration at Chocolate Kids"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
+                      Celebrations
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
+                      Cultural Stage Poise
+                    </h3>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Rich annual traditions and stage events that foster cultural appreciation, self-confidence, and active parent engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div className="relative h-56 overflow-hidden bg-amber-50">
+                    <img
+                      src="/images/cow-shelter-teacher-students.jpg"
+                      alt="Field excursion and experiential learning at Chocolate Kids"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
+                      Field Excursions
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
+                      Experiential Visits
+                    </h3>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Community and nature excursions that nurture empathy, real-world connection, and environmental observation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-2xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div className="relative h-56 overflow-hidden bg-amber-50">
+                    <img
+                      src="/images/clay-ganesha-craft-activity.jpg"
+                      alt="Tactile clay sculpting and creative craft activity at Chocolate Kids"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/95 text-stone-800 shadow-xs border border-stone-200">
+                      Creative Arts
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-bold text-base text-stone-900 mb-1 group-hover:text-amber-700 transition-colors">
+                      Tactile Clay & Art
+                    </h3>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Hands-on modeling and craft routines strengthening fine-motor dexterity, patience, and creative problem solving.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Genuine Campus Callout */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-amber-50/90 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
+                  Active Operations
+                </span>
+                <h3 className="font-heading font-bold text-xl text-stone-900">
+                  Established Campuses Serving Hyderabad Families
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl">
+                  Visit our running branches in Dammaiguda (Branch 1) and Kapra (Branch 2) to witness our play-based curriculum and parent satisfaction firsthand.
+                </p>
+              </div>
+
+              <Link
+                to="/branches"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-amber-950 bg-white border border-amber-300 shadow-2xs hover:bg-amber-100 transition-colors shrink-0"
+              >
+                <span>View Our Campuses</span>
+                <ArrowRight className="w-4 h-4 text-amber-800" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================================================
+            CHAPTER 8: THE CONVERSATION (FRANCHISE ENQUIRY FORM)
+           ================================================== */}
+        <section id="enquiry-form" className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/40 to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-200/80 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-300">
+                <Briefcase className="w-3.5 h-3.5 text-amber-800" />
+                <span>Chapter 8 • The Conversation</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+                Let's Build Something Meaningful Together.
+              </h2>
+              <p className="mt-3 text-base text-stone-600 max-w-xl mx-auto">
+                Submit your details below. Our franchise team will review your application and reach out to schedule an introductory conversation.
+              </p>
+            </div>
+
+            <FranchiseForm />
+          </div>
+        </section>
+
+        {/* ==================================================
             SECTION 20: FRANCHISE FAQ (11 QUESTIONS)
            ================================================== */}
         <section id="franchise-faq" className="py-20 bg-white border-b border-stone-100">
@@ -622,7 +677,7 @@ export default function FranchisePage() {
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
                 <HelpCircle className="w-3.5 h-3.5 text-amber-800" />
-                <span>Frequently Asked Questions</span>
+                <span>Transparency & Clarity</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 tracking-tight">
                 Franchise Partner FAQs
@@ -671,7 +726,7 @@ export default function FranchisePage() {
               })}
             </div>
 
-            {/* Section CTA (Section 23: After FAQ) */}
+            {/* Section CTA (After FAQ) */}
             <div className="mt-12 p-6 rounded-3xl bg-amber-50/80 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <h4 className="font-heading font-bold text-base text-stone-900">
@@ -693,28 +748,6 @@ export default function FranchisePage() {
               </a>
             </div>
 
-          </div>
-        </section>
-
-        {/* ==================================================
-            SECTION 21 & 22: FRANCHISE ENQUIRY FORM & WHATSAPP
-           ================================================== */}
-        <section id="enquiry-form" className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/40 to-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-200/80 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-300">
-                <Briefcase className="w-3.5 h-3.5 text-amber-800" />
-                <span>Application Process</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 tracking-tight">
-                Start Your Chocolate Kids Franchise Journey
-              </h2>
-              <p className="mt-3 text-base text-stone-600 max-w-xl mx-auto">
-                Submit your details below. Our franchise team will review your application and reach out to schedule an introductory conversation.
-              </p>
-            </div>
-
-            <FranchiseForm />
           </div>
         </section>
 

@@ -67,7 +67,7 @@ export default function Navbar({ onOpenEnquiry }) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "glass-nav shadow-md py-2 border-b border-amber-200/80"
-            : location.pathname === "/"
+            : location.pathname === "/" || location.pathname === "/franchise"
               ? "bg-white/40 md:bg-white/20 backdrop-blur-md py-3.5 border-b border-white/30"
               : "bg-white/95 md:bg-white/90 backdrop-blur-md py-3.5 border-b border-amber-100"
         }`}
