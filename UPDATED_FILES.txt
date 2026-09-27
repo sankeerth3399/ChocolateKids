@@ -1,0 +1,1 @@
+Copy these files into your existing src folder. Ensure react-router-dom is installed: npm install react-router-dom

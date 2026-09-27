@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-choco-dark: #3A1D0B;
+    --color-choco: #522B14;
+    --color-choco-light: #7B4422;
+    --color-cream: #FFFDF9;
+    --color-cream-alt: #FAF5EE;
+    --color-warm-sun: #F59E0B;
+    --color-sun-light: #FEF3C7;
+    --color-leaf: #16A34A;
+    --color-leaf-light: #DCFCE7;
+    --color-sky: #0284C7;
+    --color-sky-light: #E0F2FE;
+    --color-coral: #EA580C;
+    --color-coral-light: #FFEDD5;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #FFFDF9;
+    color: #33261D;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Fredoka', 'Outfit', system-ui, sans-serif;
+  }
+}
+
+/* Custom preschool micro-animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-1.5deg);
+  }
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 20px 30px -5px rgba(22, 163, 74, 0.55);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatReverse 4.5s ease-in-out 1s infinite;
+}
+
+.animate-sway {
+  animation: gentleSway 5s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.storybook-glow {
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 250, 240, 0.8);
+}
+
+.storybook-card-shadow {
+  box-shadow: 0 16px 36px -12px rgba(120, 53, 15, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: rgba(255, 253, 249, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Preschool organic blobs */
+.blob-shape-1 {
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+}
+
+.blob-shape-2 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7C3B3;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A98771;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
