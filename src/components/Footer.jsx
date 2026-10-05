@@ -210,13 +210,28 @@ export default function Footer() {
 
               <div className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/60">
                 <span className="font-bold text-white block mb-0.5">
-                  Kapra Campus
+                  Kapra / Yellareddyguda Campus
                 </span>
                 <p className="text-stone-400 leading-snug">
                   Shalivahana Colony, Near Anurag Line, KAPRA, Hyd - 062.
                 </p>
                 <Link
                   to="/branches/kapra-yellareddyguda"
+                  className="text-[11px] text-amber-400 hover:underline mt-1 inline-block"
+                >
+                  View Campus Details →
+                </Link>
+              </div>
+
+              <div className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/60">
+                <span className="font-bold text-white block mb-0.5">
+                  Yapral Branch
+                </span>
+                <p className="text-stone-400 leading-snug">
+                  5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087
+                </p>
+                <Link
+                  to="/branches/yapral"
                   className="text-[11px] text-amber-400 hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
@@ -262,7 +277,7 @@ export default function Footer() {
           </div>
 
           <div className="text-stone-500">
-            Innovative Learning Preschool • Dammaiguda & Kapra, Hyderabad
+            Innovative Learning Preschool • Dammaiguda, Kapra & Yapral, Hyderabad
           </div>
         </div>
 

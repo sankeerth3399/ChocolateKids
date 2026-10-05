@@ -68,7 +68,7 @@ export default function AdmissionsCTA() {
           </div>
 
           <div className="mt-6 text-xs text-amber-100/90 font-medium">
-            Personal campus tours available Monday to Saturday at Dammaiguda and Kapra branches.
+            Personal campus tours available Monday to Saturday at Dammaiguda, Kapra, and Yapral branches.
           </div>
 
         </div>

@@ -393,7 +393,7 @@ export default function LearningPrograms() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <span className="text-stone-700 text-sm font-bold">
-                    Campuses in Dammaiguda & Kapra (Vajpayee Nagar)
+                    Campuses in Dammaiguda, Kapra & Yapral
                   </span>
                 </div>
 
@@ -510,7 +510,8 @@ export default function LearningPrograms() {
                           className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
                         >
                           <option value="Dammaiguda Campus">Dammaiguda Campus</option>
-                          <option value="Kapra Campus">Kapra Campus</option>
+                          <option value="Kapra / Yellareddyguda Campus">Kapra / Yellareddyguda Campus</option>
+                          <option value="Yapral Campus">Yapral Campus</option>
                           <option value="Other Area in Hyderabad">Other Area in Hyderabad</option>
                         </select>
                       </div>

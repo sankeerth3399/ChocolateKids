@@ -262,7 +262,7 @@ export default function Facilities() {
                 Complete Campus Infrastructure & Hygiene
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-slate-500">
-                Designed specifically for toddlers and kindergarteners across our Dammaiguda and Kapra centers.
+                Designed specifically for toddlers and kindergarteners across our Dammaiguda, Kapra and Yapral centers.
               </p>
             </div>
 
@@ -289,7 +289,7 @@ export default function Facilities() {
                     {fac.desc}
                   </p>
                   <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-400">
-                    <span>Dammaiguda & Kapra</span>
+                    <span>Dammaiguda, Kapra & Yapral</span>
                     <span className="text-emerald-600 font-bold">100% Supervised</span>
                   </div>
                 </div>

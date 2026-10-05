@@ -111,14 +111,18 @@ export const branches = [
     slug: "dammaiguda",
     branchNo: "BRANCH 1",
     name: "Dammaiguda Branch",
+    campusTitle: "DAMMAIGUDA",
+    badge: "Main Campus",
     address: "H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyderabad - 500 083.",
+    displayAddress: "H.No. 11-1/66,\nSai Priya Colony,\nDammaiguda,\nHyderabad - 500 083.",
+    formattedAddress: "H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyderabad - 500 083.",
     location: "Dammaiguda, Hyderabad",
     pincode: "500083",
     phone: "9515869889",
     email: "chocolatekids1@gmail.com",
     workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
     availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "Day Care & Activity Club"],
-    image: "/images/cow-shelter-banner-group.jpg",
+    image: "/images/chocolate-kids-dammaiguda-branch.jpg",
     mapQuery: "H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyderabad 500083",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=H.No.+11-1%2F66%2C+Sai+Priya+Colony%2C+Dammaiguda%2C+Hyderabad+-+500+083.",
     description:
@@ -137,7 +141,11 @@ export const branches = [
     slug: "kapra-yellareddyguda",
     branchNo: "BRANCH 2",
     name: "Kapra / Yellareddyguda Branch",
+    campusTitle: "YELLAREDDYGUDA",
+    badge: "Kapra Campus",
     address:
+      "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD - 062.",
+    formattedAddress:
       "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD - 062.",
     location: "Kapra / Yellareddyguda, Hyderabad",
     pincode: "500062",
@@ -145,7 +153,7 @@ export const branches = [
     email: "chocolatekids1@gmail.com",
     workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
     availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "After School Activities"],
-    image: "/images/blue-colour-day-celebration.jpg",
+    image: "/images/chocolate-kids-kapra-branch.jpg",
     mapQuery:
       "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD 062",
     directionsUrl:
@@ -159,6 +167,39 @@ export const branches = [
       "Festive celebrations and stage performance arena",
       "Parent-friendly communication",
       "Secure and friendly neighborhood campus",
+    ],
+  },
+  {
+    id: 3,
+    slug: "yapral",
+    branchNo: "BRANCH 3",
+    name: "Yapral Branch",
+    campusTitle: "YAPRAL",
+    badge: "New Branch",
+    address:
+      "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
+    formattedAddress:
+      "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
+    location: "Yapral, Hyderabad",
+    pincode: "500087",
+    phone: "9515869889",
+    email: "chocolatekids1@gmail.com",
+    workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
+    availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "Day Care & Activity Club"],
+    image: "/images/chocolate-kids-yapral-branch.jpg",
+    mapQuery:
+      "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
+    directionsUrl:
+      "https://www.google.com/maps/search/?api=1&query=5-8-48%2F5%2C+Raghava+Kalyan+Estates%2C+Beside+Pochamma+Temple%2C+Shaili+Garden%2C+Yapral%2C+Hyderabad+-+500087",
+    description:
+      "Located in Shaili Garden beside Pochamma Temple, our Yapral campus provides a joyful, child-safe and nurturing preschool environment designed for early discovery, foundational concepts and playful learning.",
+    highlights: [
+      "Safe, child-proof indoor play zones",
+      "Hands-on learning kits & creative materials",
+      "Individualized child attention and love",
+      "Storytelling, music & interactive activity areas",
+      "Experienced, warm & attentive educators",
+      "Rigorous hygiene & daily cleanliness protocols",
     ],
   },
 ];
@@ -1032,6 +1073,150 @@ export const parentTestimonials = [
     quote:
       "The safe environment and loving staff gave us complete peace of mind. The educational visits, like the Goshala trip and police station visit, taught Vihaan practical life lessons that normal schools rarely offer. A truly wonderful preschool!",
     rating: 5,
+  },
+];
+
+export const whyFranchiseWithUs = [
+  {
+    num: "01",
+    title: "Trusted Brand",
+    desc: "Well-known and loved by parents",
+    icon: "GraduationCap",
+    color: "emerald",
+    bgLight: "bg-emerald-50/80",
+    borderLight: "border-emerald-200/80",
+    textLight: "text-emerald-700",
+    iconBg: "bg-emerald-100 text-emerald-700",
+  },
+  {
+    num: "02",
+    title: "Proven Curriculum",
+    desc: "Play-based & holistic learning",
+    icon: "Lightbulb",
+    color: "rose",
+    bgLight: "bg-rose-50/80",
+    borderLight: "border-rose-200/80",
+    textLight: "text-rose-700",
+    iconBg: "bg-rose-100 text-rose-600",
+  },
+  {
+    num: "03",
+    title: "Complete Support",
+    desc: "Training, operations & marketing assistance",
+    icon: "Users",
+    color: "sky",
+    bgLight: "bg-sky-50/80",
+    borderLight: "border-sky-200/80",
+    textLight: "text-sky-700",
+    iconBg: "bg-sky-100 text-sky-700",
+  },
+  {
+    num: "04",
+    title: "Growing Demand",
+    desc: "Rising need for quality early education",
+    icon: "TrendingUp",
+    color: "amber",
+    bgLight: "bg-amber-50/80",
+    borderLight: "border-amber-200/80",
+    textLight: "text-amber-800",
+    iconBg: "bg-amber-100 text-amber-700",
+  },
+  {
+    num: "05",
+    title: "Low to Moderate Investment",
+    desc: "High returns with long-term growth",
+    icon: "MapPin",
+    color: "purple",
+    bgLight: "bg-purple-50/80",
+    borderLight: "border-purple-200/80",
+    textLight: "text-purple-700",
+    iconBg: "bg-purple-100 text-purple-700",
+  },
+  {
+    num: "06",
+    title: "Positive Social Impact",
+    desc: "Shape young minds and build better communities",
+    icon: "Heart",
+    color: "teal",
+    bgLight: "bg-teal-50/80",
+    borderLight: "border-teal-200/80",
+    textLight: "text-teal-700",
+    iconBg: "bg-teal-100 text-teal-700",
+  },
+];
+
+export const franchiseKitIncludes = [
+  "Brand Identity & Logo Use",
+  "Complete Setup Guidance",
+  "Curriculum & Learning Materials",
+  "Teacher Training Program",
+  "Staff Training & Development",
+  "Marketing Support",
+  "Operational Manual",
+  "Ongoing Mentorship",
+];
+
+export const franchiseAlsoIncludes = [
+  "Digital learning screen",
+  "Frosted glass branding",
+  "Professional Training & Development",
+  "Team Training & Development",
+  "Staff Capacity Building Training & Skill Development",
+  "School Staff Development Program",
+  "Soft Toy Collection",
+  "Wooden Educational Materials",
+  "Wooden Activity Materials",
+  "Legal Registration",
+];
+
+export const franchiseSupportItems = [
+  {
+    title: "Setup & Operations Guidance",
+    desc: "Complete campus setup guidance, operational manual, and floor zoning guidelines.",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Teacher & Staff Training",
+    desc: "Teacher training program, staff training & development, and ongoing pedagogical skill workshops.",
+    icon: "GraduationCap",
+  },
+  {
+    title: "Curriculum & Learning Materials",
+    desc: "Holistic play-based curriculum, activity guides, and age-graded foundational learning resources.",
+    icon: "BookOpen",
+  },
+  {
+    title: "Marketing & Admissions Assistance",
+    desc: "Approved marketing support, brand design assets, exterior signage, and enrollment drive campaigns.",
+    icon: "Megaphone",
+  },
+  {
+    title: "Ongoing Mentorship & Growth",
+    desc: "Continuous leadership mentorship, operational reviews, and dedicated partner support.",
+    icon: "Users",
+  },
+];
+
+export const franchiseMaterialsList = [
+  {
+    name: "Teacher Training Manual",
+    desc: "Structured day-to-day lesson plans, pedagogical guidelines, phonics methodologies, and classroom management handbook.",
+    badge: "Official Manual",
+  },
+  {
+    name: "Curriculum Guide",
+    desc: "Complete early learning syllabus covering Play Group, Nursery, PP-1 / LKG, and PP-2 / UKG.",
+    badge: "Academic Guide",
+  },
+  {
+    name: "Branded Merchandise & Apparel",
+    desc: "Official Chocolate Kids polo shirts, branded school bags, stainless tumblers, notebooks, folders, and pens.",
+    badge: "Official Merch",
+  },
+  {
+    name: "Soft Toys & Wooden Educational Materials",
+    desc: "Plush soft toy mascots, child-safe wooden cognitive puzzles, manipulative blocks, and sensorial play resources.",
+    badge: "Learning Kits",
   },
 ];
 

@@ -38,7 +38,7 @@ export default function WhyPartnerWithUs() {
                     Authentic Community Goodwill
                   </h4>
                   <p className="text-xs text-white/90 font-medium leading-relaxed">
-                    Our Dammaiguda & Kapra campuses showcase the loving atmosphere, vibrant activities, and parent trust you can build in your city.
+                    Our Dammaiguda, Kapra & Yapral campuses showcase the loving atmosphere, vibrant activities, and parent trust you can build in your city.
                   </p>
                 </div>
               </div>

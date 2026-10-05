@@ -69,7 +69,22 @@ export default function FranchiseForm() {
   };
 
   const constructMessage = () => {
-    return `Hello Chocolate Kids Franchise Team,\n\nI would like to apply for the Chocolate Kids Preschool Franchise Opportunity.\n\n*Partner Application Details:*\n- Full Name: ${formData.name.trim()}\n- Mobile Number: ${formData.phone.trim()}\n- Email: ${formData.email.trim()}\n- City: ${formData.city.trim()}\n- State: ${formData.state.trim()}\n- Preferred Location: ${formData.preferredLocation.trim()}\n- Occupation: ${formData.occupation.trim() || "Not specified"}\n- Current Business: ${formData.currentBusiness.trim() || "Not specified"}\n- Available Property?: ${formData.hasProperty}\n- Property Details: ${formData.propertyDetails.trim() || "None"}\n- Investment Range: ${formData.investmentRange}\n- Relevant Experience: ${formData.relevantExperience.trim() || "None"}\n- Message: ${formData.message.trim() || "None"}\n\nPlease contact me regarding the franchise evaluation process.\n\nThank you.`;
+    return `Hello Chocolate Kids,
+
+I am interested in the Chocolate Kids franchise opportunity.
+
+Name: ${formData.name.trim()}
+Phone: ${formData.phone.trim()}
+Email: ${formData.email.trim()}
+City: ${formData.city.trim()}
+Preferred Location: ${formData.preferredLocation.trim()}
+Investment Range: ${formData.investmentRange}
+Experience: ${formData.relevantExperience.trim() || "Not specified"}
+Message: ${formData.message.trim() || "None"}
+
+Please contact me regarding the franchise opportunity.
+
+Thank you.`;
   };
 
   const handleSubmit = (e) => {

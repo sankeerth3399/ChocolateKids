@@ -51,7 +51,7 @@ export default function Hero() {
             >
               <BrandName className="text-sm sm:text-base" />
               <span className="tracking-wide">PRESCHOOL</span>
-              <span className="hidden sm:inline-block text-[#00A651] font-bold">• DAMMAIGUDA & KAPRA</span>
+              <span className="hidden sm:inline-block text-[#00A651] font-bold">• DAMMAIGUDA, KAPRA & YAPRAL</span>
             </motion.div>
 
             {/* Main Headline */}

@@ -40,7 +40,7 @@ export default function FacilitiesPage() {
                   Our Uncompromising Safety & Hygiene Standards
                 </h2>
                 <p className="text-stone-600 text-xs sm:text-sm">
-                  Parent peace of mind is our highest priority across both Dammaiguda and Kapra campuses.
+                  Parent peace of mind is our highest priority across our Dammaiguda, Kapra, and Yapral campuses.
                 </p>
               </div>
 

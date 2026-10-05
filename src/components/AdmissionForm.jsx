@@ -11,7 +11,7 @@ export default function AdmissionForm() {
     email: "",
     childName: "",
     childAge: "",
-    preferredBranch: "Branch 1: Dammaiguda",
+    preferredBranch: "Dammaiguda",
     admissionFor: "Playgroup / Nursery",
     message: "",
   });
@@ -260,8 +260,9 @@ export default function AdmissionForm() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
                 >
-                  <option value="Branch 1: Dammaiguda">Branch 1: Dammaiguda (Sai Priya Colony)</option>
-                  <option value="Branch 2: Kapra / Yellareddyguda">Branch 2: Kapra / Yellareddyguda (Shalivahana Colony)</option>
+                  <option value="Dammaiguda">Dammaiguda</option>
+                  <option value="Yellareddyguda">Yellareddyguda</option>
+                  <option value="Yapral">Yapral</option>
                 </select>
               </div>
             </div>

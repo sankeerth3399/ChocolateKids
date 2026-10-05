@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import CorePhilosophy from "../components/CorePhilosophy";
 import WhyChooseUs from "../components/WhyChooseUs";
 import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
@@ -15,7 +16,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Chocolate Kids | Innovative Learning Preschool - Dammaiguda & Kapra, Hyderabad";
+    document.title = "Chocolate Kids | Innovative Learning Preschool - Dammaiguda, Kapra & Yapral, Hyderabad";
   }, []);
 
   const handleScrollToEnquiry = () => {
@@ -34,7 +35,10 @@ export default function Home() {
         {/* 2. Simplified Clean Hero Section */}
         <Hero />
 
-        {/* 3. About Chocolate Kids */}
+        {/* 3. Our Core Philosophy: Play • Learn • Grow */}
+        <CorePhilosophy />
+
+        {/* 4. About Chocolate Kids */}
         <About />
 
         {/* 5. Educational Philosophy & Details */}

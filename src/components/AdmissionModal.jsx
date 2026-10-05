@@ -287,7 +287,8 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#C11C38]"
                   >
                     <option value="Dammaiguda Campus">Dammaiguda Campus</option>
-                    <option value="Kapra / Yellareddyguda Campus">Kapra Campus</option>
+                    <option value="Kapra / Yellareddyguda Campus">Kapra / Yellareddyguda Campus</option>
+                    <option value="Yapral Campus">Yapral Campus</option>
                   </select>
                 </div>
               </div>

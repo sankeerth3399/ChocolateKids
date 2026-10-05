@@ -67,7 +67,7 @@ export default function BranchDetails() {
     );
   }
 
-  const otherBranch = branches.find((item) => item.id !== branch.id);
+  const otherBranches = branches.filter((item) => item.id !== branch.id);
   const branchPhotos = galleryImages.slice(0, 6);
 
   return (
@@ -159,7 +159,7 @@ export default function BranchDetails() {
                   <img
                     src={branch.image}
                     alt={branch.name}
-                    className="w-full h-80 sm:h-96 object-cover group-hover:scale-103 transition-transform duration-500"
+                    className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-103 transition-transform duration-500"
                   />
                   <div className="p-4 bg-white/95 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
                     <span className="font-semibold text-stone-900">{branch.name} Campus</span>
@@ -311,15 +311,16 @@ export default function BranchDetails() {
                 <Navigation className="w-4 h-4" />
                 <span>Open in Google Maps</span>
               </a>
-              {otherBranch && (
+              {otherBranches.map((ob) => (
                 <Link
-                  to={`/branches/${otherBranch.slug}`}
+                  key={ob.id}
+                  to={`/branches/${ob.slug}`}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 transition-colors"
                 >
-                  <span>View {otherBranch.name}</span>
+                  <span>View {ob.name}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-              )}
+              ))}
             </div>
           </div>
         </section>

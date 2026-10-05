@@ -17,7 +17,7 @@ export default function AdmissionsPage() {
     {
       num: "02",
       title: "Campus Visit & Teacher Interaction",
-      desc: "Visit our Dammaiguda or Kapra campus with your child to observe the friendly environment and interact with our educators.",
+      desc: "Visit our Dammaiguda, Kapra, or Yapral campus with your child to observe the friendly environment and interact with our educators.",
     },
     {
       num: "03",
@@ -70,7 +70,7 @@ export default function AdmissionsPage() {
               Give Your Child a Joyful Start
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              Begin your child's learning journey with <BrandBadge isInline className="text-[0.88em]" />. Admissions are currently open across Play Group, Nursery, LKG, and UKG at both our Dammaiguda and Kapra campuses.
+              Begin your child's learning journey with <BrandBadge isInline className="text-[0.88em]" />. Admissions are currently open across Play Group, Nursery, LKG, and UKG at our Dammaiguda, Kapra, and Yapral campuses.
             </p>
           </div>
         </section>

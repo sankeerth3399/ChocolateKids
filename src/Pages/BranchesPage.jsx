@@ -40,6 +40,7 @@ export default function BranchesPage() {
     if (selectedFilter === "all") return matchesSearch;
     if (selectedFilter === "dammaiguda") return matchesSearch && branch.slug.includes("dammaiguda");
     if (selectedFilter === "kapra") return matchesSearch && branch.slug.includes("kapra");
+    if (selectedFilter === "yapral") return matchesSearch && branch.slug.includes("yapral");
     return matchesSearch;
   });
 
@@ -64,7 +65,7 @@ export default function BranchesPage() {
             </h1>
 
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Explore our branches and discover a welcoming learning environment for your child. Our child-safe campuses in Dammaiguda and Kapra are thoughtfully designed for joyful foundational learning.
+              Explore our branches and discover a welcoming learning environment for your child. Our child-safe campuses in Dammaiguda, Kapra, and Yapral are thoughtfully designed for joyful foundational learning.
             </p>
 
             {/* Quick stats mini-bar */}
@@ -144,6 +145,16 @@ export default function BranchesPage() {
                 >
                   Kapra / Yellareddyguda
                 </button>
+                <button
+                  onClick={() => setSelectedFilter("yapral")}
+                  className={`px-4 py-2 rounded-full text-xs font-bold transition-colors shrink-0 ${
+                    selectedFilter === "yapral"
+                      ? "bg-amber-600 text-white shadow-xs"
+                      : "bg-stone-100 text-stone-700 hover:bg-stone-200"
+                  }`}
+                >
+                  Yapral Campus
+                </button>
               </div>
 
             </div>
@@ -174,7 +185,7 @@ export default function BranchesPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8 items-stretch">
               {filteredBranches.map((branch) => (
                 <div
                   key={branch.id}
@@ -186,7 +197,7 @@ export default function BranchesPage() {
                       <img
                         src={branch.image}
                         alt={branch.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${branch.slug === "yapral" ? "object-top" : "object-center"}`}
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
@@ -331,11 +342,11 @@ export default function BranchesPage() {
                 Visit Our Preschool Campuses
               </h2>
               <p className="mt-2 text-stone-600 text-sm sm:text-base">
-                Both campuses are conveniently located in quiet, residential neighborhoods with safe pick-up and drop-off zones.
+                Our campuses are conveniently located in quiet, residential neighborhoods with safe pick-up and drop-off zones.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {branches.map((branch) => (
                 <div
                   key={`map-${branch.id}`}
