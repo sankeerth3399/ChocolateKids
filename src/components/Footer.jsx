@@ -52,7 +52,7 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col items-start gap-1">
-                <BrandBadge className="text-base sm:text-lg px-3 py-1" />
+                <BrandBadge className="text-xl sm:text-2xl" />
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block ml-1">
                   Innovative Learning
                 </span>
@@ -258,7 +258,7 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-[11px] px-2 py-0.5" />. All Rights Reserved.
+            © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-xs" />. All Rights Reserved.
           </div>
 
           <div className="text-stone-500">

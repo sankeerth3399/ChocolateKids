@@ -2,6 +2,7 @@ import { ArrowRight, Compass, Sparkles, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandName } from "./BrandName";
 
 export default function AdmissionsCTA() {
   return (
@@ -35,8 +36,8 @@ export default function AdmissionsCTA() {
             <span>ADMISSIONS OPEN 2026-27 • PLAY GROUP TO UKG</span>
           </div>
 
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-white tracking-tight leading-tight">
-            Let Their Learning Adventure Begin
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-white tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <span>Let Their Adventure Begin at</span> <BrandName variant="badge" className="text-[0.72em]" />
           </h2>
 
           <p className="mt-4 sm:mt-5 text-base sm:text-xl text-white/95 leading-relaxed font-semibold max-w-2xl mx-auto">

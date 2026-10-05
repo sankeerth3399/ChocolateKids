@@ -127,8 +127,8 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
             <span>Admissions Open 2026–27</span>
           </div>
 
-          <h3 id="modal-title" className="font-heading font-black text-lg sm:text-xl text-white">
-            Enrol Your Child
+          <h3 id="modal-title" className="font-heading font-black text-lg sm:text-xl text-white flex flex-wrap items-center gap-1.5">
+            <span>Enrol Your Child at</span> <BrandBadge className="text-xs px-2 py-0.5" />
           </h3>
           <p className="text-[11px] sm:text-xs text-white/90 font-medium mt-0.5">
             Fill this quick form to book a free campus tour & secure your child's seat.

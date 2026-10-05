@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Sparkles, ShieldCheck, Palette, HeartHandshake, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { facilitiesData } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Facilities() {
   const [showAll, setShowAll] = useState(false);
@@ -102,15 +103,13 @@ export default function Facilities() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
-          {/* Pill Badge: Facilities */}
-          <div className="inline-flex items-center justify-center px-5 py-1 rounded-full border border-purple-200/90 bg-[#FBF7FE] text-[#9333EA] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
-            Facilities
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-purple-200/90 bg-[#FBF7FE] text-[#9333EA] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
+            <span>Campus Amenities</span>
           </div>
 
           {/* Heading: What We Offer */}
-          <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-5xl tracking-tight">
-            <span className="text-[#FF5B89]">What </span>
-            <span className="text-[#02A6E9]">We Offer</span>
+          <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
+            <span className="text-[#FF5B89]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>
 

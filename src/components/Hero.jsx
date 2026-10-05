@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Sparkles, Palette, ShieldCheck, ChevronDown } from "lucide-react";
+import { BrandName } from "./BrandName";
 
 export default function Hero() {
   const handleScrollToAbout = (e) => {
@@ -48,9 +49,8 @@ export default function Hero() {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border-2 border-emerald-300 text-stone-800 text-xs sm:text-sm font-extrabold shadow-2xs mb-4 sm:mb-5"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00A651] animate-ping" />
-              <Sparkles className="w-3.5 h-3.5 text-[#00A651]" />
-              <span className="tracking-wide">CHILD-FIRST EARLY LEARNING</span>
+              <BrandName className="text-sm sm:text-base" />
+              <span className="tracking-wide">PRESCHOOL</span>
               <span className="hidden sm:inline-block text-[#00A651] font-bold">• DAMMAIGUDA & KAPRA</span>
             </motion.div>
 
@@ -81,7 +81,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-4 sm:mt-6 text-sm sm:text-lg text-[#5A2E1B]/85 font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Play-based learning, creative activities, and a nurturing environment where young children build confidence, curiosity, and strong foundational skills.
+              At <BrandName isInline className="text-[0.88em]" />, play-based learning, creative activities, and a nurturing environment help young children build confidence, curiosity, and strong foundational skills.
             </motion.p>
           </div>
 

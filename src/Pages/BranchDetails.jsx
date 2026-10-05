@@ -19,7 +19,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { branches, schoolInfo, programs, galleryImages } from "../data";
-import { BrandBadge } from "../utils/brandHelper";
+import { BrandBadge, highlightBrand } from "../utils/brandHelper";
 
 export default function BranchDetails() {
   const { branchId, slug } = useParams();
@@ -100,8 +100,9 @@ export default function BranchDetails() {
                   </span>
                 </div>
 
-                <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-stone-900 tracking-tight mb-4">
-                  {branch.name}
+                <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-stone-900 tracking-tight mb-4 flex flex-wrap items-center gap-2.5">
+                  <span>{branch.name}</span>
+                  <BrandBadge className="text-2xl sm:text-3xl" />
                 </h1>
 
                 <div className="flex items-start gap-2.5 text-stone-700 text-sm sm:text-base leading-relaxed mb-4">
@@ -115,7 +116,7 @@ export default function BranchDetails() {
                 </div>
 
                 <p className="text-stone-600 text-base sm:text-lg leading-relaxed font-normal mb-8">
-                  {branch.description}
+                  {highlightBrand(branch.description)}
                 </p>
 
                 {/* Main CTAs: Enquire About This Branch & Get Directions */}

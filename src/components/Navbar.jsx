@@ -57,7 +57,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col items-start gap-0.5">
-                <BrandBadge className="text-xs sm:text-sm px-2.5 py-0.5" />
+                <BrandBadge className="text-sm sm:text-base" />
                 <span className="text-[10px] font-black tracking-wider uppercase text-[#16A34A] ml-1">
                   Innovative Learning
                 </span>
@@ -254,7 +254,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 alt="Chocolate Kids Logo"
                 className="h-9 w-auto"
               />
-              <BrandBadge className="text-xs px-2.5 py-0.5" />
+              <BrandBadge className="text-sm" />
             </div>
             <button
               onClick={closeMenu}

@@ -96,7 +96,7 @@ export default function Gallery() {
             <span>CAMPUS MEMORIES & MOMENTS</span>
           </div>
           <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
-            <span>Moments at</span> <BrandBadge className="text-2xl sm:text-4xl lg:text-5xl px-3 py-1" />
+            <span>Moments at</span> <BrandBadge className="text-3xl sm:text-5xl lg:text-5xl" />
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium">
             Genuinely captured moments of educational visits, festive celebrations, creative days, and childhood milestones.

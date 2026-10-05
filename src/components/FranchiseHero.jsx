@@ -133,7 +133,7 @@ export default function FranchiseHero({ onScrollToSection }) {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-extrabold shadow-sm mb-4 sm:mb-6"
         >
           <Briefcase className="w-4 h-4 text-amber-700" />
-          <span className="tracking-wide flex items-center gap-1.5"><BrandBadge className="text-xs px-2 py-0.5" /> FRANCHISE</span>
+          <span className="tracking-wide flex items-center gap-1.5"><BrandBadge className="text-sm" /> FRANCHISE</span>
           <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
           <span className="text-amber-800 font-bold hidden sm:inline">PRESCHOOL PARTNERSHIP</span>
         </motion.div>
@@ -147,7 +147,7 @@ export default function FranchiseHero({ onScrollToSection }) {
         >
           Build the Future of Early Learning With{" "}
           <span className="block mt-2 sm:mt-3">
-            <BrandBadge className="text-2xl sm:text-4xl md:text-5xl lg:text-[54px] px-5 sm:px-8 py-1.5 sm:py-2.5 shadow-xl" />
+            <BrandBadge className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px]" />
           </span>
         </motion.h1>
 
@@ -158,7 +158,7 @@ export default function FranchiseHero({ onScrollToSection }) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl text-stone-700 font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-xs"
         >
-          Partner with <BrandBadge isInline className="text-sm sm:text-base px-2.5 py-0.5" /> to bring a joyful, engaging and quality-focused preschool experience to families in your community.
+          Partner with <BrandBadge isInline className="text-base sm:text-lg" /> to bring a joyful, engaging and quality-focused preschool experience to families in your community.
         </motion.p>
 
         {/* 4 In-Scene Value Indicators */}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Phone, Mail, MapPin, ArrowRight, ExternalLink, X, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import { branches, schoolInfo } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Branches() {
   const [selectedCampus, setSelectedCampus] = useState(null);
@@ -101,9 +102,8 @@ export default function Branches() {
           </div>
 
           {/* Heading: Explore Our Campuses */}
-          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-            <span className="text-[#FF5B89]">Explore </span>
-            <span className="text-[#02A6E9]">Our Campuses</span>
+          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center gap-2.5">
+            <span className="text-[#FF5B89]">Campuses of</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>
 

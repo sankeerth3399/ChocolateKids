@@ -62,13 +62,13 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
-            <span>WELCOME TO <BrandBadge isInline className="text-xs px-2.5 py-0.5" /></span>
+            <span>WELCOME TO <BrandBadge isInline className="text-sm" /></span>
           </div>
           <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight">
             Growing Curious Minds
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium max-w-2xl mx-auto">
-            At <BrandBadge isInline className="text-sm px-2.5 py-0.5" />, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
+            At <BrandBadge isInline className="text-base" />, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
           </p>
         </div>
 

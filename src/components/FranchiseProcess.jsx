@@ -59,7 +59,7 @@ export default function FranchiseProcess({ showCta = true, title = "Start Your C
                     {step.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    {step.desc}
+                    {highlightBrand(step.desc)}
                   </p>
                 </div>
 

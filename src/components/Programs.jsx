@@ -22,8 +22,8 @@ export default function Programs() {
             <Puzzle className="w-3.5 h-3.5 text-orange-700" />
             <span>Learning Dimensions</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            Our Preschool Learning Dimensions
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <span>Learning Dimensions at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             A balanced curriculum designed to support your child's natural growth across cognitive, creative, linguistic, social, and physical domains.

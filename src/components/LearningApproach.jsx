@@ -1,5 +1,6 @@
 import { Puzzle, Compass, Palette, Users, Activity, MessageSquare, Sparkles } from "lucide-react";
 import { learningApproach } from "../data";
+import { highlightBrand } from "../utils/brandHelper";
 
 export default function LearningApproach() {
   const iconMap = {
@@ -83,7 +84,7 @@ export default function LearningApproach() {
                     </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    {item.description}
+                    {highlightBrand(item.description)}
                   </p>
                 </div>
               );

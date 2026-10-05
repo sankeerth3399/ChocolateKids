@@ -13,7 +13,7 @@ import {
   Info
 } from "lucide-react";
 import { whoCanPartner, franchiseSpecs, franchiseInvestmentAreas } from "../data";
-import { BrandBadge } from "../utils/brandHelper";
+import { BrandBadge, highlightBrand } from "../utils/brandHelper";
 
 export default function FranchiseRequirements({ onOpenForm }) {
   const iconMap = {
@@ -75,7 +75,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    {item.desc}
+                    {highlightBrand(item.desc)}
                   </p>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
                       {area.title}
                     </h4>
                     <p className="text-xs text-stone-300 leading-relaxed font-normal">
-                      {area.desc}
+                      {highlightBrand(area.desc)}
                     </p>
                   </div>
                 </div>

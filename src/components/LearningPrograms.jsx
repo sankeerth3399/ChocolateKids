@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BookOpen, Check, ArrowRight, Sparkles, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
+import { BrandName, highlightBrand } from "../utils/brandHelper";
 
 export default function LearningPrograms() {
   const [activeStageId, setActiveStageId] = useState("pp2");
@@ -157,8 +158,8 @@ export default function LearningPrograms() {
             </div>
 
             {/* Massive Bold Display Heading */}
-            <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-5">
-              Structured Learning Paths for Early Years
+            <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span>Structured Learning Paths at</span> <BrandName variant="badge" className="text-[0.62em]" />
             </h1>
 
             {/* Subtitle */}
@@ -299,7 +300,7 @@ export default function LearningPrograms() {
 
                   {/* Description */}
                   <p className="text-white/95 text-sm sm:text-base leading-relaxed mb-6 font-medium">
-                    {currentStage.description}
+                    {highlightBrand(currentStage.description)}
                   </p>
 
                   {/* Feature Tags */}

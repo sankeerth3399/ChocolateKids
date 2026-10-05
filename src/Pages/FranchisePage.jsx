@@ -46,7 +46,6 @@ import {
   franchiseFAQs,
   branches
 } from "../data";
-import { highlightBrand } from "../utils/brandHelper";
 
 export default function FranchisePage() {
   const [openFaq, setOpenFaq] = useState(0);
@@ -477,7 +476,7 @@ export default function FranchisePage() {
                         {partner.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                        {partner.desc}
+                        {highlightBrand(partner.desc)}
                       </p>
                     </div>
                   </div>
@@ -554,7 +553,7 @@ export default function FranchisePage() {
                 {franchiseInvestmentAreas.map((area) => (
                   <div key={area.title} className="p-4 rounded-xl bg-stone-50 border border-stone-100">
                     <h4 className="font-bold text-sm text-stone-900 mb-1">{area.title}</h4>
-                    <p className="text-xs text-stone-600 leading-relaxed">{area.desc}</p>
+                    <p className="text-xs text-stone-600 leading-relaxed">{highlightBrand(area.desc)}</p>
                   </div>
                 ))}
               </div>
@@ -623,7 +622,7 @@ export default function FranchisePage() {
                         {step.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                        {step.desc}
+                        {highlightBrand(step.desc)}
                       </p>
                     </div>
                   </div>

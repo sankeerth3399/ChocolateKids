@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MessageSquare, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { highlightBrand } from "../utils/brandHelper";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -175,7 +176,7 @@ export default function Testimonials() {
 
                   {/* Quote Body */}
                   <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium mb-6">
-                    "{item.quote}"
+                    "{highlightBrand(item.quote)}"
                   </p>
                 </div>
 

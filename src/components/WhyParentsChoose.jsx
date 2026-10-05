@@ -90,7 +90,7 @@ export default function WhyParentsChoose() {
             <span>CHILD-FIRST PHILOSOPHY • PALLAVI KIDZ-GRADE EXCELLENCE</span>
           </div>
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#3D1A0D] tracking-tight flex flex-wrap items-center justify-center gap-2">
-            <span>Why Parents Choose</span> <BrandBadge className="text-2xl sm:text-3xl lg:text-4xl px-3 py-1" />
+            <span>Why Parents Choose</span> <BrandBadge className="text-3xl sm:text-4xl lg:text-5xl" />
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 font-medium leading-relaxed">
             Every child is a unique learner. Just as a note becomes a melody with the right rhythm, our caring mentors help children discover their fullest capabilities through joyful, activity-based discovery.

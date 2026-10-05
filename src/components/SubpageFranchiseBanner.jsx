@@ -26,7 +26,7 @@ export default function SubpageFranchiseBanner({
               {typeof title === "string" ? highlightBrand(title) : title}
             </h3>
             <p className="mt-2 text-sm sm:text-base text-stone-300 leading-relaxed font-normal">
-              {subtitle}
+              {typeof subtitle === "string" ? highlightBrand(subtitle) : subtitle}
             </p>
           </div>
 
