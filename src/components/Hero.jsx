@@ -1,18 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { 
-  Sparkles, 
-  Palette, 
-  BookOpen, 
-  Music, 
-  Sprout, 
-  Heart, 
-  Smile, 
-  ArrowRight, 
-  Compass, 
-  Star,
-  ChevronDown
-} from "lucide-react";
+import { Sparkles, Palette, ShieldCheck, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const handleScrollToAbout = (e) => {
@@ -23,231 +10,165 @@ export default function Hero() {
     }
   };
 
-  const handleScrollToAdmissions = (e) => {
-    e.preventDefault();
-    const elem = document.getElementById("admissions");
-    if (elem) {
-      elem.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section
       id="home"
-      className="relative min-h-[95vh] sm:min-h-screen w-full flex flex-col justify-between overflow-hidden bg-cover bg-center bg-no-repeat pt-24 sm:pt-28 pb-0 select-none"
-      style={{
-        backgroundImage: "url('/images/storybook-hero-wallpaper.jpg')",
-        backgroundPosition: "center 38%",
-      }}
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FFF8EE] to-[#FFF3E3] pt-24 sm:pt-28 pb-8 select-none"
     >
-      {/* 
-        Subtle Top Atmospheric Sky Gradient & Text Glow Filter
-        Keeps background 100% visible while ensuring perfect typographic legibility 
-      */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/15 to-transparent pointer-events-none" 
-        aria-hidden="true" 
-      />
-
-      {/* Soft Radial Backlight behind the central headline for organic blending */}
-      <div 
-        className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl h-[420px] bg-gradient-to-r from-amber-100/40 via-white/65 to-sky-100/40 rounded-full blur-3xl pointer-events-none -z-0"
+      {/* Subtle Polka-Dot Whimsical Texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: "radial-gradient(#F59E0B 1.5px, transparent 1.5px)",
+          backgroundSize: "28px 28px",
+        }}
         aria-hidden="true"
       />
 
-      {/* ==================================================
-          FLOATING IN-SCENE EDUCATIONAL ELEMENTS & ICONS
-          Gentle, slow micro-animations (2-4 seconds)
-         ================================================== */}
-      
-      {/* Floating Element 1: Creativity & Art (Top Left) */}
-      <motion.div
-        initial={{ opacity: 0, x: -30, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="absolute top-28 left-4 sm:left-12 lg:left-20 z-10 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-amber-200/70 shadow-sm animate-float"
-      >
-        <span className="w-7 h-7 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shadow-2xs">
-          <Palette className="w-3.5 h-3.5" />
-        </span>
-        <div className="flex flex-col text-left">
-          <span className="text-xs font-black text-amber-950 tracking-wide">🎨 Creativity</span>
-          <span className="text-[10px] text-amber-800/80 font-medium">Art & Hands-on Wonder</span>
-        </div>
-      </motion.div>
+      {/* Radiant Rich Color Orbs */}
+      <div
+        className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-gradient-to-br from-amber-300/30 via-orange-200/20 to-rose-200/15 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1/4 -right-24 w-[30rem] h-[30rem] rounded-full bg-gradient-to-bl from-sky-300/25 via-indigo-100/20 to-pink-200/20 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
 
-      {/* Floating Element 2: Phonics & Learning (Top Right) */}
-      <motion.div
-        initial={{ opacity: 0, x: 30, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute top-28 right-4 sm:right-12 lg:right-20 z-10 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-sky-200/70 shadow-sm animate-float-delayed"
-      >
-        <span className="w-7 h-7 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center shadow-2xs">
-          <BookOpen className="w-3.5 h-3.5" />
-        </span>
-        <div className="flex flex-col text-left">
-          <span className="text-xs font-black text-sky-950 tracking-wide">📚 Learning</span>
-          <span className="text-[10px] text-sky-800/80 font-medium">Phonics & Early Books</span>
-        </div>
-      </motion.div>
+      {/* Main Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-      {/* Floating Element 3: Music & Rhythm (Mid Right) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="absolute top-1/2 right-3 sm:right-8 lg:right-16 -translate-y-1/2 z-10 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-purple-200/60 shadow-xs animate-sway"
-      >
-        <Music className="w-3.5 h-3.5 text-purple-600" />
-        <span className="text-xs font-bold text-purple-900">🎵 Music & Dance</span>
-      </motion.div>
+          {/* LEFT COLUMN: Bold Headline & Call to Action */}
+          <div className="lg:col-span-7 text-center lg:text-left">
+            {/* Eyebrow Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border-2 border-emerald-300 text-stone-800 text-xs sm:text-sm font-extrabold shadow-2xs mb-4 sm:mb-5"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00A651] animate-ping" />
+              <Sparkles className="w-3.5 h-3.5 text-[#00A651]" />
+              <span className="tracking-wide">CHILD-FIRST EARLY LEARNING</span>
+              <span className="hidden sm:inline-block text-[#00A651] font-bold">• DAMMAIGUDA & KAPRA</span>
+            </motion.div>
 
-      {/* Floating Element 4: Growth & Curiosity (Mid Left) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.45 }}
-        className="absolute top-1/2 left-3 sm:left-8 lg:left-16 -translate-y-1/2 z-10 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-emerald-200/60 shadow-xs animate-float"
-      >
-        <Sprout className="w-3.5 h-3.5 text-emerald-600" />
-        <span className="text-xs font-bold text-emerald-900">🌱 Natural Growth</span>
-      </motion.div>
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-heading font-black text-3xl sm:text-5xl lg:text-[50px] xl:text-[54px] text-[#3D1A0D] tracking-tight leading-[1.15]"
+            >
+              Play School & Early Learning
+              <span className="block mt-2 bg-gradient-to-r from-[#00A651] via-[#F59E0B] to-[#EA580C] bg-clip-text text-transparent filter drop-shadow-xs">
+                For Bright, Happy Kids ✨
+              </span>
+            </motion.h1>
 
-      {/* Whimsical Floating Tiny Stars / Sparkles in the Sky */}
-      <div className="absolute top-36 left-1/4 animate-pulse opacity-70 pointer-events-none hidden lg:block" aria-hidden="true">
-        <Star className="w-4 h-4 text-amber-500 fill-amber-300" />
-      </div>
-      <div className="absolute top-44 right-1/4 animate-pulse opacity-70 pointer-events-none hidden lg:block" aria-hidden="true">
-        <Sparkles className="w-5 h-5 text-orange-400" />
-      </div>
+            {/* Squiggle flourish */}
+            <div className="hidden lg:block w-64 h-3 mt-2 text-[#00A651] opacity-80">
+              <svg viewBox="0 0 260 12" fill="none" className="w-full h-full">
+                <path d="M2 9C50 3 100 11 150 5C200 -1 230 11 258 7" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+            </div>
 
-      {/* ==================================================
-          CENTRAL STORYBOOK HERO CONTENT
-          Blends organically with the sky & rainbow
-         ================================================== */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-2 sm:pt-6 my-auto">
-        
-        {/* Curated Storybook Eyebrow Ribbon */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-extrabold shadow-sm mb-4 sm:mb-6"
-        >
-          <Sparkles className="w-4 h-4 text-amber-600" />
-          <span className="tracking-wide">CHOCOLATE KIDS PRESCHOOL</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-          <span className="text-amber-800 font-bold hidden sm:inline">INNOVATIVE LEARNING</span>
-        </motion.div>
+            {/* Preschool Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 sm:mt-6 text-sm sm:text-lg text-[#5A2E1B]/85 font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Play-based learning, creative activities, and a nurturing environment where young children build confidence, curiosity, and strong foundational skills.
+            </motion.p>
+          </div>
 
-        {/* Primary Storybook Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-heading font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] text-stone-900 tracking-tight leading-[1.08] sm:leading-[1.1] storybook-glow"
-        >
-          Where Little Minds{" "}
-          <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-orange-600 to-amber-700 drop-shadow-xs">
-            Grow, Learn & Shine
-          </span>
-        </motion.h1>
-
-        {/* Supporting Narrative Statement */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl text-stone-700 font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-xs"
-        >
-          A joyful beginning to a lifetime of learning, discovery and growth.
-        </motion.p>
-
-        {/* In-Scene Playful Ribbon Text: "Play • Learn • Explore" */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.28 }}
-          className="mt-3 flex items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-amber-950 uppercase tracking-widest"
-        >
-          <span>Play</span>
-          <span className="text-amber-500">•</span>
-          <span>Learn</span>
-          <span className="text-amber-500">•</span>
-          <span>Explore</span>
-          <span className="text-amber-500">•</span>
-          <span>Create</span>
-        </motion.div>
-
-        {/* Primary Storybook CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
-        >
-          {/* Primary CTA: "Explore Our World" */}
-          <a
-            href="#about"
-            onClick={handleScrollToAbout}
-            className="inline-flex items-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full text-sm sm:text-base font-black text-white bg-gradient-to-r from-amber-600 via-amber-500 to-orange-500 hover:from-amber-700 hover:to-orange-600 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-amber-300/40 cursor-pointer"
+          {/* RIGHT COLUMN: Harmoniously Aligned Visual Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 relative flex justify-center"
           >
-            <Compass className="w-4 h-4 text-amber-100" />
-            <span>Explore Our World</span>
-          </a>
+            <div className="relative w-full max-w-md">
+              {/* Halo Glow */}
+              <div
+                className="absolute -inset-3 bg-gradient-to-tr from-amber-400/30 via-orange-300/25 to-pink-300/25 rounded-[2.5rem] transform rotate-1 blur-sm"
+                aria-hidden="true"
+              />
 
-          {/* Secondary CTA: "Admissions" */}
-          <Link
-            to="/admissions"
-            className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 rounded-full text-sm sm:text-base font-bold text-stone-900 bg-white/90 hover:bg-white border-2 border-amber-300/90 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm cursor-pointer"
-          >
-            <span>Admissions</span>
-            <ArrowRight className="w-4 h-4 text-amber-700" />
-          </Link>
-        </motion.div>
+              {/* Main Photo Frame */}
+              <div className="relative rounded-[2rem] overflow-hidden border-4 border-white shadow-xl bg-white group">
+                <img
+                  src="/images/rich_preschool_hero.jpg"
+                  alt="Joyful preschool children at Chocolate Kids"
+                  className="w-full h-80 sm:h-[380px] object-cover object-center group-hover:scale-103 transition-transform duration-700"
+                  loading="eager"
+                />
 
-        {/* In-Scene Campus Badge */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
-          className="mt-5 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-800 bg-white/70 backdrop-blur-xs px-3.5 py-1 rounded-full border border-amber-200/60"
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span>Admissions Open 2026-27 • Dammaiguda & Kapra Campuses</span>
-        </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#451A03]/60 via-transparent to-transparent pointer-events-none" />
+
+                {/* In-Frame Tag */}
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F59E0B] text-white text-xs font-black uppercase tracking-wider mb-1 shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Joy of Early Childhood</span>
+                  </div>
+                  <p className="text-xs sm:text-sm font-bold text-white/95 leading-snug drop-shadow-xs">
+                    Building blocks of curiosity, creativity & lifelong joy
+                  </p>
+                </div>
+              </div>
+
+              {/* Badge 1: Creative Learning (Top Right - Neatly aligned) */}
+              <div className="absolute -top-3 -right-2 sm:-right-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs">
+                  <Palette className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[9px] font-extrabold text-[#F59E0B] uppercase tracking-wider block">
+                    Creative Arts
+                  </span>
+                  <span className="text-xs font-black text-[#5A2E1B] block">
+                    Art, Music & Dance
+                  </span>
+                </div>
+              </div>
+
+              {/* Badge 2: Safe Haven (Bottom Left - Neatly aligned) */}
+              <div className="absolute -bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[9px] font-extrabold text-[#16A34A] uppercase tracking-wider block">
+                    Safe & Nurturing
+                  </span>
+                  <span className="text-xs font-black text-[#5A2E1B] block">
+                    Child-First Campus
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
       </div>
 
-      {/* ==================================================
-          BOTTOM SCENE ANCHOR & CLOUD SCROLL TRANSITION
-          Seamlessly blends the wallpaper into the About section
-         ================================================== */}
-      <div className="relative z-10 w-full mt-auto">
-        {/* Playful Scroll Down Prompt */}
-        <div className="flex justify-center pb-2">
-          <a
-            href="#about"
-            onClick={handleScrollToAbout}
-            aria-label="Scroll to discover more"
-            className="flex flex-col items-center gap-1 text-[11px] font-extrabold text-stone-800/80 hover:text-amber-900 transition-colors bg-white/80 backdrop-blur-xs px-3 py-1 rounded-full border border-white/60 shadow-2xs group"
-          >
-            <span>Step Inside Our World</span>
-            <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform text-amber-700" />
-          </a>
-        </div>
-
-        {/* Artistic Scalloped Cloud / Organic Wave SVG Divider */}
-        <div className="w-full overflow-hidden leading-none -mb-[1px]" aria-hidden="true">
-          <svg
-            className="relative block w-full h-12 sm:h-16 lg:h-20 text-[#FFFDF9]"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            fill="currentColor"
-          >
-            <path d="M0,0 C150,80 350,-40 500,45 C650,110 900,10 1200,50 L1200,120 L0,120 Z" />
-          </svg>
-        </div>
+      {/* Bottom Scroll Indicator */}
+      <div className="relative z-10 w-full mt-2 flex justify-center pb-2">
+        <a
+          href="#about"
+          onClick={handleScrollToAbout}
+          aria-label="Scroll to discover our story"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#5A2E1B] bg-white/90 hover:bg-white px-4 py-1.5 rounded-full border border-amber-200/80 shadow-2xs hover:shadow-xs transition-all group"
+        >
+          <span>Explore Our School</span>
+          <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform text-[#F59E0B]" />
+        </a>
       </div>
     </section>
   );

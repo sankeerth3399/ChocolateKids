@@ -5,6 +5,7 @@ import EventsSection from "../components/EventsSection";
 import EducationalVisits from "../components/EducationalVisits";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import { Calendar, Sparkles } from "lucide-react";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function EventsPage() {
   return (
@@ -23,7 +24,7 @@ export default function EventsPage() {
               Celebrations & Special Moments
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              From joyful cultural festivals and patriotic flag hoistings to real-world educational excursions at the Goshala, discover how Chocolate Kids turns celebrations into meaningful learning.
+              From joyful cultural festivals and patriotic flag hoistings to real-world educational excursions at the Goshala, discover how <BrandBadge isInline className="text-[0.88em]" /> turns celebrations into meaningful learning.
             </p>
           </div>
         </section>

@@ -5,6 +5,7 @@ import About from "../components/About";
 import WhyChooseUs from "../components/WhyChooseUs";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import BrandWatermark from "../components/BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 import { Users, Heart, Award, Shield, Sparkles } from "lucide-react";
 import { schoolPhilosophy } from "../data";
 
@@ -25,7 +26,7 @@ export default function AboutPage() {
               Learning Today. Growing Tomorrow.
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              At Chocolate Kids, we believe every child arrives with an innate spark of wonder. Our mission is to nurture that curiosity into lasting confidence through love, play, and thoughtful early education.
+              At <BrandBadge isInline className="text-[0.88em]" />, we believe every child arrives with an innate spark of wonder. Our mission is to nurture that curiosity into lasting confidence through love, play, and thoughtful early education.
             </p>
           </div>
         </section>

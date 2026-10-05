@@ -1,5 +1,6 @@
 import { HeartHandshake, Sparkles, GraduationCap, ShieldCheck } from "lucide-react";
 import { schoolCommitments } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Aims() {
   const iconMap = {
@@ -23,7 +24,7 @@ export default function Aims() {
             To Meet Our Aims We Are Committed To:
           </h2>
           <p className="mt-3 text-base sm:text-lg text-stone-600 font-normal">
-            Four foundational promises that guide every teacher, caregiver, and classroom decision at Chocolate Kids.
+            Four foundational promises that guide every teacher, caregiver, and classroom decision at <BrandBadge isInline className="text-[0.88em]" />.
           </p>
         </div>
 

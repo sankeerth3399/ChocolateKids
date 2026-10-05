@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, MessageCircle, Heart, ArrowRight, ExternalLink } from "lucide-react";
 import { schoolInfo, branches } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
   const handleNavClick = (e, href) => {
@@ -31,15 +32,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-stone-900 text-stone-300 pt-16 pb-12 border-t-4 border-amber-500 relative overflow-hidden">
+    <footer className="bg-[#0B3D2E] text-stone-200 pt-16 pb-12 border-t-4 border-[#00A651] relative overflow-hidden">
       {/* Brand Logo Watermark - Visible but Elegant */}
       <BrandWatermark position="bottom-right" size="lg" opacity={0.08} rotate={-6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Main Footer 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/60">
+
           {/* Col 1: Brand & Tagline (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
@@ -50,11 +51,9 @@ export default function Footer() {
                   className="h-11 w-auto"
                 />
               </div>
-              <div>
-                <span className="font-heading font-extrabold text-2xl text-white block leading-none">
-                  Chocolate <span className="text-amber-400">Kids</span>
-                </span>
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block mt-0.5">
+              <div className="flex flex-col items-start gap-1">
+                <BrandBadge className="text-base sm:text-lg px-3 py-1" />
+                <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block ml-1">
                   Innovative Learning
                 </span>
               </div>
@@ -259,7 +258,7 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © {schoolInfo.copyrightYear} Chocolate Kids. All Rights Reserved.
+            © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-[11px] px-2 py-0.5" />. All Rights Reserved.
           </div>
 
           <div className="text-stone-500">

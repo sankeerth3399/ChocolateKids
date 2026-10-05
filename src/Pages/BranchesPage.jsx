@@ -19,6 +19,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { branches, schoolInfo } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function BranchesPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,8 +59,8 @@ export default function BranchesPage() {
               <span>Campus Locations • Hyderabad</span>
             </div>
 
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-tight max-w-4xl mx-auto">
-              Find a Chocolate Kids Branch Near You
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-tight max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+              <span>Find a</span> <BrandBadge className="text-[0.72em]" /> <span>Branch Near You</span>
             </h1>
 
             <p className="mt-4 text-base sm:text-lg lg:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
@@ -388,8 +389,8 @@ export default function BranchesPage() {
            ================================================== */}
         <section className="py-16 bg-white border-t border-amber-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-3">
-              Ready to Visit a Chocolate Kids Campus?
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+              <span>Ready to Visit a</span> <BrandBadge className="text-[0.78em]" /> <span>Campus?</span>
             </h3>
             <p className="text-sm sm:text-base text-stone-600 max-w-xl mx-auto mb-8">
               Schedule a personalized tour of our classrooms, meet our caring educators, and learn more about our 2026-27 admission process.

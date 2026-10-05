@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, HelpCircle, PhoneCall, MessageCircle } from "lucide-react";
 import { franchiseFAQs, schoolInfo } from "../data";
+import { highlightBrand, BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -23,7 +24,7 @@ export default function FranchiseFAQ() {
             Franchise Partner FAQs
           </h2>
           <p className="mt-3 text-base text-stone-600 leading-relaxed font-normal">
-            Clear, transparent answers to help you evaluate the Chocolate Kids preschool partnership.
+            Clear, transparent answers to help you evaluate the <BrandBadge isInline className="text-[0.85em]" /> preschool partnership.
           </p>
         </div>
 
@@ -46,7 +47,7 @@ export default function FranchiseFAQ() {
                     <span className="text-amber-600 mr-2 font-mono text-sm sm:text-base">
                       {index + 1 < 10 ? `0${index + 1}` : index + 1}.
                     </span>
-                    {faq.q}
+                    {highlightBrand(faq.q)}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
@@ -59,7 +60,7 @@ export default function FranchiseFAQ() {
 
                 {isOpen && (
                   <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-stone-600 leading-relaxed border-t border-stone-100">
-                    <p>{faq.a}</p>
+                    <p>{highlightBrand(faq.a)}</p>
                   </div>
                 )}
               </div>

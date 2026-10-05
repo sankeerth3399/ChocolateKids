@@ -1,6 +1,7 @@
 import { Sparkles, Calendar, Heart, Flag, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function EventsSection() {
   const celebrationTimeline = [
@@ -69,7 +70,7 @@ export default function EventsSection() {
             Moments We Celebrate
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-2xl mx-auto">
-            Festivals at Chocolate Kids are vibrant journeys into culture, heritage, and values. Real costumes, stage recitals, and precious smiles make each milestone unforgettable.
+            Festivals at <BrandBadge isInline className="text-[0.88em]" /> are vibrant journeys into culture, heritage, and values. Real costumes, stage recitals, and precious smiles make each milestone unforgettable.
           </p>
         </div>
 
@@ -148,7 +149,7 @@ export default function EventsSection() {
 
                       <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
                         <span className="text-xs font-bold text-amber-800">
-                          Authentic Chocolate Kids Memory
+                          Authentic <BrandBadge isInline className="text-[0.82em]" /> Memory
                         </span>
                         <Link
                           to="/events"

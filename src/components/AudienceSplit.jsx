@@ -1,5 +1,6 @@
 import { Heart, Briefcase, ArrowRight, BookOpen, Sparkles, CheckCircle2, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function AudienceSplit() {
   return (
@@ -72,7 +73,7 @@ export default function AudienceSplit() {
                 Want to Start a Preschool in Your Area?
               </h3>
               <p className="text-sm text-stone-300 leading-relaxed font-normal mb-6">
-                Turn your passion for education into a professionally supported preschool venture. Partner with Chocolate Kids for proven curriculum, complete setup guidance, and training.
+                Turn your passion for education into a professionally supported preschool venture. Partner with <BrandBadge isInline className="text-[0.85em]" /> for proven curriculum, complete setup guidance, and training.
               </p>
 
               {/* Step links */}

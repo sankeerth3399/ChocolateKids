@@ -1,6 +1,7 @@
 import { Award, Sparkles, GraduationCap, BookOpen, Megaphone, ShieldCheck, ArrowRight, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import { franchiseBenefits } from "../data";
+import { highlightBrand, BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseFeatureSection() {
   const iconMap = {
@@ -22,8 +23,8 @@ export default function FranchiseFeatureSection() {
             <Briefcase className="w-3.5 h-3.5 text-amber-800" />
             <span>Franchise Opportunity</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            Own a Chocolate Kids Preschool
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-2">
+            <span>Own a</span> <BrandBadge className="text-2xl sm:text-3xl lg:text-4xl px-3 py-1" /> <span>Preschool</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             Turn your passion for education into a professionally supported preschool venture. Partner with an established brand dedicated to joyful learning, safety, and community trust.
@@ -53,7 +54,7 @@ export default function FranchiseFeatureSection() {
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    {item.desc}
+                    {highlightBrand(item.desc)}
                   </p>
                 </div>
               </div>
@@ -67,8 +68,8 @@ export default function FranchiseFeatureSection() {
             <span className="text-xs font-bold text-amber-300 uppercase tracking-widest block mb-1">
               Ready to take the next step?
             </span>
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
-              Discover How to Partner With Chocolate Kids
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white flex flex-wrap items-center gap-2">
+              <span>Discover How to Partner With</span> <BrandBadge className="text-lg sm:text-2xl px-3 py-1" />
             </h3>
             <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-xl">
               Get our comprehensive franchise prospectus, requirements, and investment overview today.

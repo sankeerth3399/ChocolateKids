@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Briefcase, ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import { schoolInfo } from "../data";
+import { highlightBrand } from "../utils/brandHelper";
 
 export default function SubpageFranchiseBanner({
   badge = "Franchise Opportunity",
@@ -22,7 +23,7 @@ export default function SubpageFranchiseBanner({
               <span>{badge}</span>
             </div>
             <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
-              {title}
+              {typeof title === "string" ? highlightBrand(title) : title}
             </h3>
             <p className="mt-2 text-sm sm:text-base text-stone-300 leading-relaxed font-normal">
               {subtitle}

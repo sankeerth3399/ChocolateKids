@@ -4,6 +4,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import AdmissionForm from "../components/AdmissionForm";
 import Branches from "../components/Branches";
 import BrandWatermark from "../components/BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 import { Sparkles, Calendar, CheckCircle2, FileText, Users, HelpCircle } from "lucide-react";
 
 export default function AdmissionsPage() {
@@ -26,7 +27,11 @@ export default function AdmissionsPage() {
     {
       num: "04",
       title: "Welcome Kit & Orientation",
-      desc: "Receive the Chocolate Kids welcome pack, uniform guidance, and parent orientation details for a joyful first school day.",
+      desc: (
+        <>
+          Receive the <BrandBadge isInline className="text-[0.85em]" /> welcome pack, uniform guidance, and parent orientation details for a joyful first school day.
+        </>
+      ),
     },
   ];
 
@@ -65,7 +70,7 @@ export default function AdmissionsPage() {
               Give Your Child a Joyful Start
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              Begin your child's learning journey with Chocolate Kids. Admissions are currently open across Play Group, Nursery, LKG, and UKG at both our Dammaiguda and Kapra campuses.
+              Begin your child's learning journey with <BrandBadge isInline className="text-[0.88em]" />. Admissions are currently open across Play Group, Nursery, LKG, and UKG at both our Dammaiguda and Kapra campuses.
             </p>
           </div>
         </section>

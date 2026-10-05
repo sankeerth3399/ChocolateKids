@@ -1,37 +1,31 @@
-import { useState, useEffect, useCallback } from "react";
-import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, Image as ImageIcon, Eye } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  X, 
+  ChevronLeft, 
+  ChevronRight, 
+  Maximize2, 
+  Sparkles, 
+  Camera, 
+  Layers, 
+  Download,
+  Eye,
+  ZoomIn
+} from "lucide-react";
 import { galleryImages } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
+  const thumbnailStripRef = useRef(null);
 
-  const categories = [
-    { label: "All", filterKey: "All" },
-    { label: "Activities", filterKey: "Children's Activities" },
-    { label: "Celebrations", filterKey: "School Celebrations" },
-    { label: "Field Trips", filterKey: "Educational Visits" },
-    { label: "Cultural Events", filterKey: "Cultural Events" },
-    { label: "School Life", filterKey: "School Memories" },
-  ];
+  const filteredImages = galleryImages;
 
-  const filteredImages =
-    activeCategory === "All"
-      ? galleryImages
-      : galleryImages.filter((img) => {
-          if (activeCategory === "Children's Activities") return img.category === "Children's Activities";
-          if (activeCategory === "School Celebrations") return img.category === "School Celebrations" || img.category === "Special Days";
-          if (activeCategory === "Educational Visits") return img.category === "Educational Visits";
-          if (activeCategory === "Cultural Events") return img.category === "Cultural Events";
-          if (activeCategory === "School Memories") return img.category === "School Memories";
-          return img.category === activeCategory;
-        });
-
-  // When "All" is active, display 16 initially unless user toggles showAll
-  const displayLimit = activeCategory === "All" && !showAll ? 16 : filteredImages.length;
-  const displayedImages = filteredImages.slice(0, displayLimit);
+  // Display initial 12 photos for an ultra-fast, clean layout, toggleable with Show All
+  const initialLimit = 12;
+  const displayedImages = !showAll ? filteredImages.slice(0, initialLimit) : filteredImages;
 
   const openLightbox = (indexInFiltered) => {
     setLightboxIndex(indexInFiltered);
@@ -55,6 +49,16 @@ export default function Gallery() {
     }
   }, [lightboxIndex, filteredImages.length]);
 
+  // Scroll active thumbnail into view inside the lightbox
+  useEffect(() => {
+    if (lightboxIndex !== null && thumbnailStripRef.current) {
+      const activeThumb = thumbnailStripRef.current.children[lightboxIndex];
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+    }
+  }, [lightboxIndex]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -69,135 +73,123 @@ export default function Gallery() {
   }, [lightboxIndex, closeLightbox, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark - Subtle Centered Behind Gallery */}
-      <BrandWatermark position="center" size="lg" opacity={0.095} />
+    <section id="gallery" className="py-20 sm:py-28 bg-[#FFF9F0] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="center" size="lg" opacity={0.08} />
+
+      {/* Soft background accents */}
+      <div 
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#FFF0DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
+        aria-hidden="true"
+      />
+      <div 
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#DFF3FA]/40 rounded-full blur-3xl pointer-events-none -z-0"
+        aria-hidden="true"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100/90 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-            <span>School Life & Memories</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
+            <Camera className="w-3.5 h-3.5 text-[#F59E0B]" />
+            <span>CAMPUS MEMORIES & MOMENTS</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            Moments at Chocolate Kids
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
+            <span>Moments at</span> <BrandBadge className="text-2xl sm:text-4xl lg:text-5xl px-3 py-1" />
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-            Genuinely captured moments of educational visits, cultural festivals, sensory learning days, and proud childhood milestones.
+          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium">
+            Genuinely captured moments of educational visits, festive celebrations, creative days, and childhood milestones.
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {categories.map((catObj) => {
-            const count =
-              catObj.filterKey === "All"
-                ? galleryImages.length
-                : galleryImages.filter((img) => {
-                    if (catObj.filterKey === "Children's Activities") return img.category === "Children's Activities";
-                    if (catObj.filterKey === "School Celebrations") return img.category === "School Celebrations" || img.category === "Special Days";
-                    if (catObj.filterKey === "Educational Visits") return img.category === "Educational Visits";
-                    if (catObj.filterKey === "Cultural Events") return img.category === "Cultural Events";
-                    if (catObj.filterKey === "School Memories") return img.category === "School Memories";
-                    return img.category === catObj.filterKey;
-                  }).length;
+        {/* ==================================================
+            MODERN PHOTO-FIRST CARD GRID (Visual & Engaging)
+           ================================================== */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6"
+        >
+          <AnimatePresence>
+            {displayedImages.map((image, idx) => {
+              const filteredIdx = filteredImages.findIndex((item) => item.id === image.id);
+              const clickIdx = filteredIdx >= 0 ? filteredIdx : idx;
 
-            return (
-              <button
-                key={catObj.label}
-                onClick={() => {
-                  setActiveCategory(catObj.filterKey);
-                  setShowAll(false);
-                }}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
-                  activeCategory === catObj.filterKey
-                    ? "bg-amber-600 text-white shadow-md shadow-amber-600/20"
-                    : "bg-white text-stone-700 hover:bg-stone-100 border border-stone-200"
-                }`}
-              >
-                <span>{catObj.label}</span>
-                <span
-                  className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
-                    activeCategory === catObj.filterKey ? "bg-amber-700 text-white" : "bg-stone-100 text-stone-500"
-                  }`}
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, delay: (idx % 8) * 0.04 }}
+                  key={image.id}
+                  onClick={() => openLightbox(clickIdx)}
+                  className="group relative rounded-3xl overflow-hidden bg-white border border-amber-200/70 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1.5 flex flex-col"
                 >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  {/* Photo Frame Container */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                      loading="lazy"
+                    />
 
-        {/* Responsive Gallery Grid: 4 cols Desktop, 2-3 cols Tablet, 1-2 cols Mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
-          {displayedImages.map((image, idx) => {
-            // Find index in filteredImages for lightbox
-            const filteredIdx = filteredImages.findIndex((item) => item.id === image.id);
+                    {/* Gradient Overlay on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#5A2E1B]/85 via-[#5A2E1B]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-            return (
-              <div
-                key={image.id}
-                onClick={() => openLightbox(filteredIdx >= 0 ? filteredIdx : idx)}
-                className="group rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/90 bg-white flex flex-col cursor-pointer hover:-translate-y-1"
-              >
-                {/* Image frame - aspect-[4/5] with object-contain to never cut off children's faces */}
-                <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-stone-50 to-amber-50/30 flex items-center justify-center p-2">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-contain rounded-2xl transition-transform duration-500 group-hover:scale-102"
-                    loading="lazy"
-                  />
+                    {/* Top Floating Category Tag */}
+                    <div className="absolute top-3.5 left-3.5 z-10">
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/95 text-[#5A2E1B] shadow-2xs backdrop-blur-xs border border-amber-100">
+                        {image.category}
+                      </span>
+                    </div>
 
-                  {/* Category Pill Tag */}
-                  <div className="absolute top-3.5 left-3.5 pointer-events-none">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 text-stone-800 shadow-sm border border-stone-200/70">
-                      {image.category}
-                    </span>
+                    {/* Floating Zoom Action Button on Hover */}
+                    <div className="absolute top-3.5 right-3.5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                      <span className="w-8 h-8 rounded-full bg-white/95 text-[#5A2E1B] shadow-sm flex items-center justify-center backdrop-blur-xs">
+                        <ZoomIn className="w-4 h-4 text-[#F59E0B]" />
+                      </span>
+                    </div>
+
+                    {/* Bottom In-Image Caption on Hover */}
+                    <div className="absolute bottom-3 left-3.5 right-3.5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <p className="text-xs font-bold text-white leading-snug line-clamp-1 drop-shadow-xs">
+                        {image.title}
+                      </p>
+                      <span className="text-[10px] text-amber-200 font-semibold flex items-center gap-1 mt-0.5">
+                        <Eye className="w-3 h-3" /> Click to view full photo
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl m-2 pointer-events-none">
-                    <span className="p-3 rounded-full bg-white/95 text-amber-800 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <Maximize2 className="w-5 h-5" />
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card Caption Information */}
-                <div className="p-4 bg-white flex flex-col justify-between flex-1 border-t border-stone-100">
-                  <div>
-                    <h3 className="font-heading font-bold text-stone-900 text-sm leading-snug group-hover:text-amber-800 transition-colors line-clamp-1">
+                  {/* Clean Bottom Label Bar */}
+                  <div className="p-3.5 bg-white flex items-center justify-between border-t border-amber-100/60">
+                    <h3 className="font-heading font-extrabold text-sm text-[#5A2E1B] group-hover:text-[#F59E0B] transition-colors truncate">
                       {image.title}
                     </h3>
-                    <p className="text-xs text-stone-500 mt-1 line-clamp-2 leading-relaxed font-normal">
-                      {image.description || image.alt}
-                    </p>
+                    <span className="text-[11px] font-bold text-[#F59E0B] shrink-0 ml-2">
+                      View →
+                    </span>
                   </div>
-                  <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-amber-700 font-semibold">
-                    <span>Click to enlarge</span>
-                    <Eye className="w-3.5 h-3.5" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
 
-        {/* Load More / Show All Button for "All" view */}
-        {activeCategory === "All" && filteredImages.length > 16 && (
+        {/* Load More Button */}
+        {filteredImages.length > initialLimit && (
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[30px] text-sm font-extrabold text-[#5A2E1B] bg-white hover:bg-[#FFF0DD] border-2 border-amber-200 shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <Sparkles className="w-4 h-4 text-amber-600" />
+              <Sparkles className="w-4 h-4 text-[#F59E0B]" />
               <span>
                 {showAll
-                  ? "Show Fewer Photos"
-                  : `Show All ${filteredImages.length} Photographs`}
+                  ? `Show Fewer Photos`
+                  : `Explore All ${filteredImages.length} Photographs`}
               </span>
             </button>
           </div>
@@ -205,73 +197,130 @@ export default function Gallery() {
 
       </div>
 
-      {/* Lightbox Modal */}
-      {lightboxIndex !== null && filteredImages[lightboxIndex] && (
-        <div
-          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image gallery lightbox"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) closeLightbox();
-          }}
-        >
-          {/* Close button */}
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-60 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
-            aria-label="Close lightbox (Escape)"
+      {/* ==================================================
+          RE-ENGINEERED IMMERSIVE STORYBOOK LIGHTBOX
+         ================================================== */}
+      <AnimatePresence>
+        {lightboxIndex !== null && filteredImages[lightboxIndex] && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-[#1A0E08]/95 backdrop-blur-xl flex flex-col justify-between p-3 sm:p-6 select-none"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photo Lightbox"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) closeLightbox();
+            }}
           >
-            <X className="w-6 h-6" />
-          </button>
-
-          {/* Previous button */}
-          <button
-            onClick={showPrev}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-60 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
-            aria-label="Previous image (Left arrow)"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          {/* Next button */}
-          <button
-            onClick={showNext}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-60 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
-            aria-label="Next image (Right arrow)"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Modal Main Content Container */}
-          <div className="max-w-4xl max-h-[90vh] flex flex-col items-center justify-center">
-            {/* The Image itself with aspect ratio preserved and contained */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-black/50 p-1">
-              <img
-                src={filteredImages[lightboxIndex].src}
-                alt={filteredImages[lightboxIndex].alt}
-                className="max-h-[68vh] sm:max-h-[72vh] w-auto max-w-[88vw] object-contain mx-auto rounded-xl"
-              />
-            </div>
-
-            {/* Caption, Category and Counter */}
-            <div className="mt-3 sm:mt-4 text-center text-white px-4">
-              <div className="inline-block px-3 py-0.5 rounded-full bg-amber-500 text-stone-900 text-xs font-bold uppercase tracking-wider mb-1.5">
-                {filteredImages[lightboxIndex].category}
+            {/* Top Lightbox Navigation Header */}
+            <div className="w-full max-w-6xl mx-auto flex items-center justify-between z-20 pb-2">
+              <div className="flex items-center gap-2.5">
+                <span className="px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-amber-200 text-xs font-extrabold border border-white/15">
+                  {lightboxIndex + 1} / {filteredImages.length}
+                </span>
+                <span className="px-3 py-1 rounded-full bg-[#F59E0B] text-white text-xs font-bold uppercase tracking-wider hidden sm:inline-block">
+                  {filteredImages[lightboxIndex].category}
+                </span>
               </div>
-              <h4 className="font-heading font-bold text-base sm:text-xl text-amber-200 leading-snug">
-                {filteredImages[lightboxIndex].title}
-              </h4>
-              <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-xl mx-auto leading-relaxed">
-                {filteredImages[lightboxIndex].description || filteredImages[lightboxIndex].alt}
-              </p>
-              <p className="text-[11px] text-stone-400 mt-1.5 font-medium">
-                Image {lightboxIndex + 1} of {filteredImages.length}
-              </p>
+
+              {/* Close Button */}
+              <button
+                onClick={closeLightbox}
+                className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] flex items-center gap-1.5"
+                aria-label="Close photo preview"
+                title="Close (Esc)"
+              >
+                <span className="text-xs font-bold hidden sm:inline-block">Close</span>
+                <X className="w-5 h-5" />
+              </button>
             </div>
-          </div>
-        </div>
-      )}
+
+            {/* Central Stage: Image + Navigation Arrows */}
+            <div className="relative flex-1 w-full max-w-6xl mx-auto flex items-center justify-center my-auto min-h-0 py-2">
+              {/* Prev Button */}
+              <button
+                onClick={showPrev}
+                className="absolute left-1 sm:left-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transform hover:scale-108 active:scale-95"
+                aria-label="Previous image"
+                title="Previous (Left Arrow)"
+              >
+                <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+              </button>
+
+              {/* The Active Image */}
+              <motion.div
+                key={lightboxIndex}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="relative max-h-[60vh] sm:max-h-[66vh] max-w-[92vw] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-black/40"
+              >
+                <img
+                  src={filteredImages[lightboxIndex].src}
+                  alt={filteredImages[lightboxIndex].alt}
+                  className="max-h-[60vh] sm:max-h-[66vh] w-auto max-w-full object-contain rounded-xl"
+                />
+              </motion.div>
+
+              {/* Next Button */}
+              <button
+                onClick={showNext}
+                className="absolute right-1 sm:right-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transform hover:scale-108 active:scale-95"
+                aria-label="Next image"
+                title="Next (Right Arrow)"
+              >
+                <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+              </button>
+            </div>
+
+            {/* Bottom Panel: Title, Description & Thumbnail Filmstrip */}
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-center z-20 pt-2">
+              {/* Photo Title & Description */}
+              <div className="text-center text-white px-4 mb-3 max-w-2xl">
+                <h4 className="font-heading font-black text-base sm:text-xl text-[#FFF9F0] leading-snug">
+                  {filteredImages[lightboxIndex].title}
+                </h4>
+                <p className="text-xs sm:text-sm text-stone-300 mt-1 line-clamp-2 leading-relaxed">
+                  {filteredImages[lightboxIndex].description || filteredImages[lightboxIndex].alt}
+                </p>
+              </div>
+
+              {/* Interactive Thumbnail Filmstrip */}
+              <div 
+                ref={thumbnailStripRef}
+                className="w-full flex items-center justify-start sm:justify-center gap-2 overflow-x-auto py-1 px-2 no-scrollbar"
+                style={{ scrollbarWidth: "none" }}
+              >
+                {filteredImages.map((thumb, tIdx) => (
+                  <button
+                    key={thumb.id}
+                    onClick={() => setLightboxIndex(tIdx)}
+                    className={`relative shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer ${
+                      tIdx === lightboxIndex
+                        ? "border-[#F59E0B] scale-105 shadow-md shadow-[#F59E0B]/30"
+                        : "border-white/20 opacity-50 hover:opacity-100 hover:border-white/50"
+                    }`}
+                    title={thumb.title}
+                  >
+                    <img
+                      src={thumb.src}
+                      alt={thumb.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }

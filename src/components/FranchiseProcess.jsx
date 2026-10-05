@@ -1,6 +1,7 @@
 import { FileText, PhoneCall, MapPin, CheckCircle2, GraduationCap, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { franchiseSteps } from "../data";
+import { highlightBrand } from "../utils/brandHelper";
 
 export default function FranchiseProcess({ showCta = true, title = "Start Your Chocolate Kids Journey", subtitle = "A structured, transparent roadmap from initial inquiry to your school's festive opening day." }) {
   const iconMap = {
@@ -26,7 +27,7 @@ export default function FranchiseProcess({ showCta = true, title = "Start Your C
             <span>Step-by-Step Pathway</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            {title}
+            {typeof title === "string" ? highlightBrand(title) : title}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             {subtitle}

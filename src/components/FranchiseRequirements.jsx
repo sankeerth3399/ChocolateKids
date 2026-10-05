@@ -13,6 +13,7 @@ import {
   Info
 } from "lucide-react";
 import { whoCanPartner, franchiseSpecs, franchiseInvestmentAreas } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseRequirements({ onOpenForm }) {
   const iconMap = {
@@ -49,8 +50,8 @@ export default function FranchiseRequirements({ onOpenForm }) {
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
             <span>Partner Profile</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            Is Chocolate Kids Franchise Right For You?
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            <span>Is</span> <BrandBadge className="text-[0.72em]" /> <span>Franchise Right For You?</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             We partner with individuals and families who care deeply about children’s safety, character development, and academic joy in their neighborhoods.

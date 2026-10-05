@@ -3,6 +3,7 @@ import { Sparkles, Heart, Shield, Award, Users, BookOpen, Compass, CheckCircle2 
 import { Link } from "react-router-dom";
 import { schoolPhilosophy } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function About() {
   const philosophyHighlights = [
@@ -41,17 +42,17 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-[#FFFDF9] relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-24 bg-[#FFF9F0] relative overflow-hidden">
       {/* Brand Logo Watermark - Centered with slight left offset */}
-      <BrandWatermark position="center-offset-left" size="lg" opacity={0.12} />
+      <BrandWatermark position="center-offset-left" size="lg" opacity={0.10} />
 
       {/* Decorative Storybook Background Elements */}
       <div 
-        className="absolute top-10 -left-20 w-80 h-80 bg-amber-100/40 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-10 -left-20 w-80 h-80 bg-[#FFF0DF]/50 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-10 -right-20 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute bottom-10 -right-20 w-96 h-96 bg-[#EAF8EC]/40 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -59,15 +60,15 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/90 text-amber-950 text-xs font-black uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>WELCOME TO CHOCOLATE KIDS</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
+            <span>WELCOME TO <BrandBadge isInline className="text-xs px-2.5 py-0.5" /></span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight">
             Growing Curious Minds
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-2xl mx-auto">
-            At Chocolate Kids, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
+          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium max-w-2xl mx-auto">
+            At <BrandBadge isInline className="text-sm px-2.5 py-0.5" />, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
           </p>
         </div>
 
@@ -125,16 +126,6 @@ export default function About() {
                   <span className="text-[10px] text-stone-500">Sensory exploration</span>
                 </div>
               </motion.div>
-
-              {/* Floating Storybook Badge Sticker */}
-              <div className="absolute -top-5 -left-4 sm:-left-6 px-3.5 py-2 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-amber-200 flex items-center gap-2 animate-float">
-                <span className="text-lg">🌱</span>
-                <div>
-                  <div className="text-[11px] font-black text-amber-950">Trusted Since 2012</div>
-                  <div className="text-[9px] text-stone-500">Loving Preschool Havens</div>
-                </div>
-              </div>
-
             </div>
           </div>
 

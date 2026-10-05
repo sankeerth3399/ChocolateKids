@@ -1,6 +1,7 @@
 import { ArrowRight, MessageCircle, Briefcase, Sparkles, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolInfo } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseCTA() {
   const franchiseMsg = "Hello Chocolate Kids Team, I am interested in the preschool franchise opportunity. Please share the franchise details.";
@@ -25,8 +26,8 @@ export default function FranchiseCTA() {
             <span>Preschool Entrepreneurship</span>
           </div>
 
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
-            Ready to Build a Preschool With Chocolate Kids?
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <span>Ready to Build a Preschool With</span> <BrandBadge className="text-[0.72em]" /> <span>?</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed font-normal">

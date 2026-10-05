@@ -34,6 +34,7 @@ import Footer from "../components/Footer";
 import FranchiseHero from "../components/FranchiseHero";
 import FranchiseForm from "../components/FranchiseForm";
 import BrandWatermark from "../components/BrandWatermark";
+import { BrandBadge, highlightBrand } from "../utils/brandHelper";
 import { 
   schoolInfo, 
   franchiseBenefits, 
@@ -45,6 +46,7 @@ import {
   franchiseFAQs,
   branches
 } from "../data";
+import { highlightBrand } from "../utils/brandHelper";
 
 export default function FranchisePage() {
   const [openFaq, setOpenFaq] = useState(0);
@@ -190,15 +192,14 @@ export default function FranchisePage() {
                     <span>Chapter 2 • Brand & Educational Philosophy</span>
                   </div>
 
-                  <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-[1.12]">
-                    Why Choose{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-orange-600 to-amber-700 drop-shadow-xs">
-                      Chocolate Kids?
-                    </span>
+                  <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-[1.12] flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                    <span>Why Choose</span>{" "}
+                    <BrandBadge className="text-[0.72em]" />
+                    <span>?</span>
                   </h2>
 
                   <p className="mt-4 text-base sm:text-lg text-stone-700 leading-relaxed font-normal">
-                    At Chocolate Kids, early education is far more than routine memorization—it is a foundation of wonder, emotional confidence, and active discovery. We empower young children through child-centric, play-based methodologies that families genuinely love and respect.
+                    At <BrandBadge isInline className="text-[0.85em]" />, early education is far more than routine memorization—it is a foundation of wonder, emotional confidence, and active discovery. We empower young children through child-centric, play-based methodologies that families genuinely love and respect.
                   </p>
                 </div>
 
@@ -349,7 +350,7 @@ export default function FranchisePage() {
                         {item.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                        {item.desc}
+                        {highlightBrand(item.desc)}
                       </p>
                     </div>
 
@@ -391,7 +392,7 @@ export default function FranchisePage() {
                 Support Designed Around Your Journey
               </h2>
               <p className="mt-4 text-stone-300 text-base leading-relaxed">
-                From initial site selection to daily classroom operations, Chocolate Kids provides realistic, experienced support at every phase.
+                From initial site selection to daily classroom operations, <BrandBadge isInline className="text-[0.85em]" /> provides realistic, experienced support at every phase.
               </p>
             </div>
 
@@ -504,7 +505,7 @@ export default function FranchisePage() {
                   What Does It Take to Start?
                 </h2>
                 <p className="mt-2 text-stone-600 text-sm sm:text-base">
-                  Essential parameters for planning a successful Chocolate Kids preschool campus.
+                  Essential parameters for planning a successful <BrandBadge isInline className="text-[0.85em]" /> preschool campus.
                 </p>
               </div>
 
@@ -593,8 +594,8 @@ export default function FranchisePage() {
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
                 <span>Chapter 6 • Roadmap to Launch</span>
               </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-                Your Chocolate Kids Franchise Journey
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+                <span>Your</span> <BrandBadge className="text-[0.72em]" /> <span>Franchise Journey</span>
               </h2>
               <p className="mt-4 text-base text-stone-600 leading-relaxed font-normal">
                 A clear, professional sequence from your initial inquiry to welcoming your first preschool students.
@@ -670,7 +671,7 @@ export default function FranchisePage() {
                 Franchise Partner FAQs
               </h2>
               <p className="mt-3 text-base text-stone-600 leading-relaxed font-normal">
-                Transparent answers to common questions about starting and managing a Chocolate Kids preschool.
+                Transparent answers to common questions about starting and managing a <BrandBadge isInline className="text-[0.85em]" /> preschool.
               </p>
             </div>
 
@@ -692,7 +693,7 @@ export default function FranchisePage() {
                         <span className="text-amber-600 mr-2 font-mono text-sm sm:text-base">
                           {index + 1 < 10 ? `0${index + 1}` : index + 1}.
                         </span>
-                        {faq.q}
+                        {highlightBrand(faq.q)}
                       </span>
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
@@ -705,7 +706,7 @@ export default function FranchisePage() {
 
                     {isOpen && (
                       <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-stone-600 leading-relaxed border-t border-stone-100">
-                        <p>{faq.a}</p>
+                        <p>{highlightBrand(faq.a)}</p>
                       </div>
                     )}
                   </div>
@@ -743,8 +744,8 @@ export default function FranchisePage() {
            ================================================== */}
         <section className="py-16 bg-gradient-to-r from-amber-950 via-stone-900 to-amber-900 text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-white">
-              Ready to Build Your Chocolate Kids Preschool?
+            <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-white flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+              <span>Ready to Build Your</span> <BrandBadge className="text-[0.72em]" /> <span>Preschool?</span>
             </h3>
             <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
               Join hands with a respected preschool brand and create an early learning haven in your community.

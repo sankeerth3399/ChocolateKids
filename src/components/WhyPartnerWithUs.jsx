@@ -1,6 +1,7 @@
 import { CheckCircle2, ArrowRight, ShieldCheck, Heart, Sparkles, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { whyPartnerWithUs, schoolInfo } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function WhyPartnerWithUs() {
   return (
@@ -63,11 +64,11 @@ export default function WhyPartnerWithUs() {
                 <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                 <span>Mutual Growth & Trust</span>
               </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
-                Why Partner With Chocolate Kids?
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight flex flex-wrap items-center gap-2">
+                <span>Why Partner With</span> <BrandBadge className="text-2xl sm:text-3xl lg:text-4xl px-3 py-1" /><span>?</span>
               </h2>
               <p className="mt-3 text-base text-stone-600 leading-relaxed font-normal">
-                Starting a preschool is a deeply rewarding venture. As a Chocolate Kids partner, you receive the full backing of our curriculum, brand assets, and operational experience to build a thriving early childhood center.
+                Starting a preschool is a deeply rewarding venture. As a <BrandBadge isInline className="text-sm px-2.5 py-0.5" /> partner, you receive the full backing of our curriculum, brand assets, and operational experience to build a thriving early childhood center.
               </p>
             </div>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MessageCircle, Phone, Copy, Check, AlertCircle, Briefcase, Send, CheckCircle2 } from "lucide-react";
 import { schoolInfo } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseForm() {
   const [formData, setFormData] = useState({
@@ -103,8 +104,8 @@ export default function FranchiseForm() {
           <Briefcase className="w-3.5 h-3.5 text-amber-800" />
           <span>Application Form</span>
         </div>
-        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900">
-          Start Your Chocolate Kids Franchise Journey
+        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>Start Your</span> <BrandBadge className="text-[0.75em]" /> <span>Franchise Journey</span>
         </h3>
         <p className="text-xs sm:text-sm text-stone-600 mt-1">
           Complete the confidential details below. Our franchise director will review your profile and arrange an introductory discussion.
@@ -121,7 +122,7 @@ export default function FranchiseForm() {
               Application Received
             </h4>
             <p className="text-sm sm:text-base text-stone-800 font-semibold leading-relaxed bg-amber-50 p-5 rounded-2xl border border-amber-200">
-              Thank you for your interest in becoming a Chocolate Kids franchise partner. Our team will contact you shortly.
+              Thank you for your interest in becoming a <BrandBadge isInline className="text-[0.85em]" /> franchise partner. Our team will contact you shortly.
             </p>
           </div>
 

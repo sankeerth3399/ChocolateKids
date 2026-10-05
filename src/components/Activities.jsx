@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Palette, Music, BookOpen, Sun, Heart, Smile, ArrowRight, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Activities() {
   const [selectedActivity, setSelectedActivity] = useState(0);
@@ -81,17 +82,17 @@ export default function Activities() {
   ];
 
   return (
-    <section id="activities" className="py-20 sm:py-24 bg-[#FAF6EE] relative overflow-hidden">
+    <section id="activities" className="py-20 sm:py-24 bg-[#FFF0DD]/65 relative overflow-hidden">
       {/* Brand Logo Watermark - Centered with slight right offset */}
-      <BrandWatermark position="center-offset-right" size="lg" opacity={0.11} />
+      <BrandWatermark position="center-offset-right" size="lg" opacity={0.09} />
 
       {/* Decorative Scrapbook Paper Texture Highlights */}
       <div 
-        className="absolute top-1/2 -left-24 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-1/2 -left-24 w-96 h-96 bg-[#FFF0DF] rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
-        className="absolute top-1/3 -right-24 w-96 h-96 bg-rose-200/25 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-1/3 -right-24 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -99,15 +100,15 @@ export default function Activities() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 text-stone-900 text-xs font-black uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
-            <Camera className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-[#F59E0B]/40 shadow-2xs">
+            <Camera className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>DAILY SCRAPBOOK OF WONDER</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight">
             Discover. Create. Explore.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-2xl mx-auto">
-            Preschool isn't a desk job. At Chocolate Kids, every day is a colorful collage of art, rhythm, story circles, outdoor discovery, and festive smiles.
+          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium max-w-2xl mx-auto">
+            Preschool isn't a desk job. At <BrandBadge isInline className="text-[0.88em]" />, every day is a colorful collage of art, rhythm, story circles, outdoor discovery, and festive smiles.
           </p>
         </div>
 

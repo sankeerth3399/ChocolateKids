@@ -1,6 +1,7 @@
 import { Smile, Sparkles, Palette, Puzzle, ShieldCheck, GraduationCap } from "lucide-react";
 import { whyChooseUs } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function WhyChooseUs() {
   const iconMap = {
@@ -25,8 +26,8 @@ export default function WhyChooseUs() {
             <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>Educational Philosophy</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-            Why Choose Chocolate Kids?
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-2">
+            <span>Why Choose</span> <BrandBadge className="text-2xl sm:text-3xl lg:text-4xl px-3 py-1" /><span>?</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             Where your child's well-being, creative joy, and foundational confidence always come first.
@@ -68,18 +69,6 @@ export default function WhyChooseUs() {
                   </p>
                 </div>
               </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -left-4 glass-card p-3 rounded-2xl shadow-xl border border-amber-200 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold">
-                  ✓
-                </div>
-                <div>
-                  <div className="text-xs font-extrabold text-stone-900">Child-First Approach</div>
-                  <div className="text-[11px] text-stone-500">Care, Safety & Happiness</div>
-                </div>
-              </div>
-
             </div>
           </div>
 

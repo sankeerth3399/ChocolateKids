@@ -4,6 +4,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import Activities from "../components/Activities";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import BrandWatermark from "../components/BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 import { Sparkles, Calendar, Palette, Music, BookOpen, Smile } from "lucide-react";
 
 export default function ActivitiesPage() {
@@ -23,7 +24,7 @@ export default function ActivitiesPage() {
               Learning Through Fun & Activities
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              Every day at Chocolate Kids is infused with active exploration. From tactile clay crafting and sensory color days to music dance and storytelling circles, childhood curiosity is celebrated at every step.
+              Every day at <BrandBadge isInline className="text-[0.88em]" /> is infused with active exploration. From tactile clay crafting and sensory color days to music dance and storytelling circles, childhood curiosity is celebrated at every step.
             </p>
           </div>
         </section>

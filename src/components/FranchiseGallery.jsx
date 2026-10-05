@@ -1,5 +1,6 @@
 import { Sparkles, ArrowRight, Eye, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseGallery() {
   const showcaseItems = [
@@ -52,8 +53,8 @@ export default function FranchiseGallery() {
               <Camera className="w-3.5 h-3.5 text-amber-800" />
               <span>Campus Visual Tour</span>
             </div>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-              Experience the Chocolate Kids Environment
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span>Experience the</span> <BrandBadge className="text-[0.72em]" /> <span>Environment</span>
             </h2>
             <p className="mt-3 text-base text-stone-600 leading-relaxed font-normal">
               See what you will build as a franchise partner — happy classrooms, safe infrastructure, creative activities, and joyful celebrations that earn parent trust every single day.

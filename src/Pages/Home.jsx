@@ -4,11 +4,6 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import WhyChooseUs from "../components/WhyChooseUs";
 import LearningPrograms from "../components/LearningPrograms";
-import LearningApproach from "../components/LearningApproach";
-import Activities from "../components/Activities";
-import EventsSection from "../components/EventsSection";
-import EducationalVisits from "../components/EducationalVisits";
-import Gallery from "../components/Gallery";
 import Facilities from "../components/Facilities";
 import Branches from "../components/Branches";
 import Testimonials from "../components/Testimonials";
@@ -31,39 +26,24 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FFF9F0] text-[#5A2E1B] font-sans selection:bg-amber-200 selection:text-amber-900">
       {/* 1. Header / Navigation */}
       <Navbar onOpenEnquiry={handleScrollToEnquiry} />
 
       <main>
-        {/* 2. Hero Section (Child & Parent Focused) */}
+        {/* 2. Simplified Clean Hero Section */}
         <Hero />
 
         {/* 3. About Chocolate Kids */}
         <About />
 
-        {/* 4. Why Choose Chocolate Kids */}
+        {/* 5. Educational Philosophy & Details */}
         <WhyChooseUs />
 
         {/* 5. Learning Programs (Play Group, Nursery, LKG, UKG) */}
         <LearningPrograms />
 
-        {/* 6. Learning Approach (Beyond the Classroom) */}
-        <LearningApproach />
-
-        {/* 7. Activities (Learning Through Fun & Discovery) */}
-        <Activities />
-
-        {/* 8. Events & Celebrations (Special Cultural Moments) */}
-        <EventsSection />
-
-        {/* 9. Educational Experiences (Field Trips & Community Helpers) */}
-        <EducationalVisits />
-
-        {/* 10. Gallery Preview (Real Authentic Moments) */}
-        <Gallery />
-
-        {/* 11. Facilities (Safe & Child-Friendly Spaces) */}
+        {/* 6. Facilities (What We Offer) */}
         <Facilities />
 
         {/* 12. Branches Preview (Dammaiguda & Kapra Campuses) */}

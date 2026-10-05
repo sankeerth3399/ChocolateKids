@@ -1,5 +1,6 @@
 import { Compass, CheckCircle2, Heart, Sparkles, MapPin } from "lucide-react";
 import { educationalVisitsData } from "../data";
+import { highlightBrand, BrandBadge } from "../utils/brandHelper";
 
 export default function EducationalVisits() {
   const { heading, tagline, description, benefits, featuredVisit, secondaryVisit } = educationalVisitsData;
@@ -18,7 +19,7 @@ export default function EducationalVisits() {
             {heading}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-            {description}
+            {highlightBrand(description)}
           </p>
         </div>
 
@@ -84,8 +85,8 @@ export default function EducationalVisits() {
                 <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
                   Animal Empathy & Nature
                 </span>
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-3">
-                  Why Educational Visits Matter at Chocolate Kids
+                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span>Why Educational Visits Matter at</span> <BrandBadge className="text-[0.75em]" />
                 </h3>
                 <p className="text-sm text-stone-600 leading-relaxed font-normal">
                   {featuredVisit.description}

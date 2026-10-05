@@ -12,6 +12,8 @@ import AdmissionsPage from "./Pages/AdmissionsPage.jsx";
 import FranchisePage from "./Pages/FranchisePage.jsx";
 import ContactPage from "./Pages/ContactPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import StickyBottomDualBar from "./components/StickyBottomDualBar.jsx";
+import AdmissionModal from "./components/AdmissionModal.jsx";
 
 function App() {
   return (
@@ -33,6 +35,12 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
+
+      {/* EuroKids-Style Fixed Bottom-Center Action Bar */}
+      <StickyBottomDualBar />
+
+      {/* Global Enrol Your Child Admission Popup Modal */}
+      <AdmissionModal />
     </>
   );
 }

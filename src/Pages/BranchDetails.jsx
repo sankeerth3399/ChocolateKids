@@ -19,6 +19,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { branches, schoolInfo, programs, galleryImages } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function BranchDetails() {
   const { branchId, slug } = useParams();
@@ -232,7 +233,7 @@ export default function BranchDetails() {
                     {hl}
                   </h3>
                   <p className="text-xs text-stone-500">
-                    Compliant with Chocolate Kids preschool safety and hygiene guidelines.
+                    Compliant with <BrandBadge isInline className="text-[0.85em]" /> preschool safety and hygiene guidelines.
                   </p>
                 </div>
               </div>

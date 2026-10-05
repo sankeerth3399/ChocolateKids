@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MessageCircle, Phone, Copy, Check, AlertCircle, Sparkles, Send } from "lucide-react";
 import { schoolInfo, branches } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function AdmissionForm() {
   const [formData, setFormData] = useState({
@@ -96,22 +97,22 @@ export default function AdmissionForm() {
   };
 
   return (
-    <section id="admissions" className="py-20 bg-[#FFFDF9] relative overflow-hidden">
-      {/* Brand Logo Watermark - Large Centered Watermark */}
-      <BrandWatermark position="center" size="xl" opacity={0.12} />
+    <section id="admissions" className="py-20 sm:py-24 bg-[#FFF9F0] relative overflow-hidden">
+      {/* Brand Logo Watermark */}
+      <BrandWatermark position="center" size="xl" opacity={0.08} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100/90 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>Admission Enquiry 2026-27</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight">
             Begin Your Child's Journey
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-stone-600 font-normal">
+          <p className="mt-3 text-base sm:text-lg text-[#5A2E1B]/80 font-medium">
             Fill in the details below. We will pre-fill your admission enquiry directly on WhatsApp so our team can immediately guide you.
           </p>
         </div>
@@ -350,15 +351,15 @@ export default function AdmissionForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl font-extrabold text-base text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-700 hover:to-teal-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full py-4 px-6 rounded-[30px] font-extrabold text-base text-white bg-[#F59E0B] hover:bg-[#D97706] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
             >
-              <MessageCircle className="w-5 h-5 fill-white text-emerald-600" />
+              <MessageCircle className="w-5 h-5 fill-white text-[#F59E0B]" />
               <span>SEND ADMISSION ENQUIRY VIA WHATSAPP</span>
             </button>
 
             {/* Note on data privacy and direct school contact */}
             <p className="text-[11px] text-stone-500 text-center leading-relaxed">
-              We respect your privacy. Submitting this form opens WhatsApp directly to chat with Chocolate Kids Preschool (Ph: {schoolInfo.phone}). No data is saved to any third-party server.
+              We respect your privacy. Submitting this form opens WhatsApp directly to chat with <BrandBadge isInline className="text-[0.85em]" /> Preschool (Ph: {schoolInfo.phone}). No data is saved to any third-party server.
             </p>
 
           </form>

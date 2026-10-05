@@ -1,5 +1,6 @@
 import { Sun, Puzzle, Palette, BookOpen, Users, Activity, Check } from "lucide-react";
 import { programs } from "../data";
+import { BrandBadge } from "../utils/brandHelper";
 
 export default function Programs() {
   const iconMap = {
@@ -93,7 +94,7 @@ export default function Programs() {
         {/* Transparency note */}
         <div className="mt-12 text-center">
           <p className="text-xs text-stone-500 italic max-w-xl mx-auto">
-            * Note: These categories outline our overarching early learning approach at Chocolate Kids. Detailed age group criteria and batch timings are shared during campus visits.
+            * Note: These categories outline our overarching early learning approach at <BrandBadge isInline className="text-[0.85em] not-italic" />. Detailed age group criteria and batch timings are shared during campus visits.
           </p>
         </div>
 
