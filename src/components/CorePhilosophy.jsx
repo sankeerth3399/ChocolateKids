@@ -74,7 +74,7 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-            className="relative p-7 sm:p-8 rounded-3xl bg-white/95 border-2 border-rose-200 shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-3xl bg-white/95 border-2 border-rose-200 shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-100/60 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">
@@ -104,7 +104,7 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-            className="relative p-7 sm:p-8 rounded-3xl bg-white/95 border-2 border-amber-300 shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-3xl bg-white/95 border-2 border-amber-300 shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/60 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">
@@ -134,7 +134,7 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-            className="relative p-7 sm:p-8 rounded-3xl bg-white/95 border-2 border-emerald-200 shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-3xl bg-white/95 border-2 border-emerald-200 shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-100/60 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">

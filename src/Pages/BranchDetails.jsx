@@ -107,7 +107,7 @@ export default function BranchDetails() {
 
                 <div className="flex items-start gap-2.5 text-stone-700 text-sm sm:text-base leading-relaxed mb-4">
                   <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                  <span>{branch.address}</span>
+                  <span className="break-words-safe">{branch.address}</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-stone-700 text-xs sm:text-sm mb-6">
@@ -120,14 +120,14 @@ export default function BranchDetails() {
                 </p>
 
                 {/* Main CTAs: Enquire About This Branch & Get Directions */}
-                <div className="flex flex-wrap items-center gap-3.5">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5">
                   <a
                     href={`https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(
                       `Hello Chocolate Kids, I would like to enquire about admissions at ${branch.name}.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md transition-all text-center"
                   >
                     <MessageCircle className="w-4 h-4 text-amber-200" />
                     <span>Enquire About This Branch</span>
@@ -137,7 +137,7 @@ export default function BranchDetails() {
                     href={branch.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 shadow-2xs transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 min-h-[44px] rounded-full text-xs sm:text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 shadow-2xs transition-colors text-center"
                   >
                     <Navigation className="w-4 h-4 text-amber-600" />
                     <span>Get Directions</span>
@@ -145,7 +145,7 @@ export default function BranchDetails() {
 
                   <a
                     href={`tel:${branch.phone}`}
-                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-sm font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 min-h-[44px] rounded-full text-xs sm:text-sm font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors text-center"
                   >
                     <Phone className="w-4 h-4 text-stone-500" />
                     <span>Call: {branch.phone}</span>

@@ -145,6 +145,8 @@ export const branches = [
     badge: "Kapra Campus",
     address:
       "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD - 062.",
+    displayAddress:
+      "P. No. 46, 47,\nShalivahana Colony,\nNear Anurag Line,\nYellareddyguda,\nKAPRA, HYD - 062.",
     formattedAddress:
       "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD - 062.",
     location: "Kapra / Yellareddyguda, Hyderabad",
@@ -178,6 +180,8 @@ export const branches = [
     badge: "New Branch",
     address:
       "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
+    displayAddress:
+      "5-8-48/5,\nRaghava Kalyan Estates,\nBeside Pochamma Temple,\nShaili Garden,\nYapral,\nHyderabad - 500087",
     formattedAddress:
       "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
     location: "Yapral, Hyderabad",

@@ -20,7 +20,7 @@ export default function ActivitiesPage() {
               <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
               <span>Experiential Preschool Life</span>
             </div>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
               Learning Through Fun & Activities
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">

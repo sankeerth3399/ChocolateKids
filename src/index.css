@@ -31,6 +31,7 @@
   .brand-text-outline,
   .chocolatekids-brand-outline {
     display: inline-block;
+    max-width: 100%;
     font-family: 'Sour Gummy', 'Chewy', 'DynaPuff', cursive, sans-serif;
     font-weight: 800;
     color: #FFFFFF !important;
@@ -114,16 +115,39 @@
     background: transparent !important;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background-color: #FFF9F0;
     color: #5A2E1B;
     min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
+    touch-action: manipulation;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   h1,
@@ -133,7 +157,20 @@
   .font-heading {
     font-family: 'Fredoka', 'Baloo 2', system-ui, sans-serif;
     color: #5A2E1B;
+    overflow-wrap: break-word;
   }
+}
+
+/* Responsive typography and text-wrap helpers */
+.break-words-safe {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Touch target helper */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
 }
 
 /* Custom preschool micro-animations */

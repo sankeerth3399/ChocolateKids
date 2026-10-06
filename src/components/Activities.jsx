@@ -139,11 +139,11 @@ export default function Activities() {
         {/* ==================================================
             FEATURED SCRAPBOOK ALBUM COMPOSITION
            ================================================== */}
-        <div className="bg-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-xl border-2 border-stone-200/80 relative mb-16">
+        <div className="bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-10 lg:p-12 shadow-xl border-2 border-stone-200/80 relative mb-16">
           
           {/* Faux Washi Tape Strips on Scrapbook Corners */}
-          <div className="absolute -top-3.5 left-8 w-24 h-7 bg-amber-200/90 rounded-xs transform -rotate-3 shadow-2xs pointer-events-none opacity-80" />
-          <div className="absolute -top-3.5 right-8 w-24 h-7 bg-rose-200/90 rounded-xs transform rotate-2 shadow-2xs pointer-events-none opacity-80" />
+          <div className="absolute -top-3.5 left-4 sm:left-8 w-20 sm:w-24 h-7 bg-amber-200/90 rounded-xs transform -rotate-3 shadow-2xs pointer-events-none opacity-80" />
+          <div className="absolute -top-3.5 right-4 sm:right-8 w-20 sm:w-24 h-7 bg-rose-200/90 rounded-xs transform rotate-2 shadow-2xs pointer-events-none opacity-80" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             

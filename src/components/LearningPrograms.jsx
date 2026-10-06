@@ -186,10 +186,10 @@ export default function LearningPrograms() {
             </div>
 
             {/* Two Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 to="/branches"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-[#00A651] hover:bg-[#008f45] shadow-lg shadow-emerald-900/30 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-[#00A651] hover:bg-[#008f45] shadow-lg shadow-emerald-900/30 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 Find a Nearby Campus
               </Link>
@@ -197,7 +197,7 @@ export default function LearningPrograms() {
               <button
                 type="button"
                 onClick={() => window.dispatchEvent(new CustomEvent("open-admission-modal"))}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center"
               >
                 Enquire Now
               </button>
@@ -272,7 +272,7 @@ export default function LearningPrograms() {
 
             {/* Right Column: Giant Rounded Stage Card (8 cols) */}
             <div className="lg:col-span-8">
-              <div className="rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[440px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-6 sm:p-10 lg:p-12 border border-stone-200/80 group">
+              <div className="rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[380px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-4 sm:p-10 lg:p-12 border border-stone-200/80 group">
                 {/* Stage Photo with smooth transition */}
                 <img
                   key={currentStage.id}
@@ -419,7 +419,7 @@ export default function LearningPrograms() {
 
             {/* Right Column: Neo-Brutalist Enquire Now Form Card (6 cols) */}
             <div className="lg:col-span-6">
-              <div className="bg-[#FFFDF5] border-2 border-[#1E293B] shadow-[6px_8px_0px_#1E293B] rounded-3xl p-6 sm:p-8 relative">
+              <div className="bg-[#FFFDF5] border-2 border-[#1E293B] shadow-[4px_6px_0px_#1E293B] sm:shadow-[6px_8px_0px_#1E293B] rounded-3xl p-4 sm:p-8 relative">
                 <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#1E293B] mb-2">
                   Enquire Now
                 </h3>

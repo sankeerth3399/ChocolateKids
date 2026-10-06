@@ -83,7 +83,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="relative bg-white rounded-3xl sm:rounded-[2.5rem] border-2 sm:border-4 border-amber-200/90 shadow-2xl p-6 sm:p-10 lg:p-12 overflow-hidden"
+          className="relative bg-white rounded-3xl sm:rounded-[2.5rem] border-2 sm:border-4 border-amber-200/90 shadow-2xl p-4 sm:p-8 lg:p-12 overflow-hidden"
         >
           {/* Subtle Centered Logo Watermark */}
           <BrandWatermark position="center" size="xl" opacity={0.07} />
@@ -102,13 +102,13 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
               <img 
                 src="/logo.png" 
                 alt="Chocolate Kids Innovative Learning" 
-                className="h-14 sm:h-20 object-contain drop-shadow-xs"
+                className="h-12 sm:h-20 object-contain drop-shadow-xs"
               />
             </motion.div>
 
             {/* Franchise Opportunity Headline Pill */}
             <motion.div variants={itemVariants} className="mb-2">
-              <div className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-500 text-white font-heading font-black text-2xl sm:text-3xl lg:text-4xl shadow-lg uppercase tracking-tight transform -rotate-1 border border-red-400/50">
+              <div className="inline-block px-4 sm:px-8 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-500 text-white font-heading font-black text-xl sm:text-3xl lg:text-4xl shadow-lg uppercase tracking-tight transform -rotate-1 border border-red-400/50 max-w-full">
                 Franchise Opportunity
               </div>
             </motion.div>
@@ -131,14 +131,14 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             {/* Philosophy Banner Pill */}
             <motion.div 
               variants={itemVariants}
-              className="mt-5 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 px-5 sm:px-7 py-2 sm:py-2.5 rounded-full bg-amber-50 border border-amber-200 text-amber-950 font-bold text-xs sm:text-sm shadow-2xs"
+              className="mt-4 sm:mt-5 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-7 py-2 sm:py-2.5 rounded-2xl sm:rounded-full bg-amber-50 border border-amber-200 text-amber-950 font-bold text-xs sm:text-sm shadow-2xs max-w-full"
             >
               <div className="flex items-center gap-1.5 text-amber-800 font-black tracking-wide">
                 <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                 <span>Play • Learn • Grow</span>
               </div>
               <span className="hidden sm:inline text-amber-300">•</span>
-              <span className="text-stone-700 font-semibold">
+              <span className="text-stone-700 font-semibold text-center">
                 Building brighter futures, one child at a time!
               </span>
             </motion.div>
@@ -365,11 +365,11 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             </a>
 
             {/* Right: Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full lg:w-auto">
               <button
                 type="button"
                 onClick={() => handleScroll("enquiry-form")}
-                className="px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center gap-2"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
               >
                 <span>Enquire About Franchise</span>
                 <ArrowDown className="w-3.5 h-3.5 text-amber-200" />
@@ -379,7 +379,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 rounded-full text-xs sm:text-sm font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition-colors flex items-center gap-2"
+                className="w-full sm:w-auto px-5 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition-colors flex items-center justify-center gap-2 text-center"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-700" />
                 <span>WhatsApp Us</span>

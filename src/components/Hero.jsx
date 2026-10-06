@@ -59,10 +59,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-heading font-black text-3xl sm:text-5xl lg:text-[50px] xl:text-[54px] text-[#3D1A0D] tracking-tight leading-[1.15]"
+              className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[54px] text-[#3D1A0D] tracking-tight leading-[1.18]"
             >
               Play School & Early Learning
-              <span className="block mt-2 bg-gradient-to-r from-[#00A651] via-[#F59E0B] to-[#EA580C] bg-clip-text text-transparent filter drop-shadow-xs">
+              <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#00A651] via-[#F59E0B] to-[#EA580C] bg-clip-text text-transparent filter drop-shadow-xs">
                 For Bright, Happy Kids ✨
               </span>
             </motion.h1>
@@ -79,7 +79,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-4 sm:mt-6 text-sm sm:text-lg text-[#5A2E1B]/85 font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="mt-3 sm:mt-6 text-sm sm:text-lg text-[#5A2E1B]/85 font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
               At <BrandName isInline className="text-[0.88em]" />, play-based learning, creative activities, and a nurturing environment help young children build confidence, curiosity, and strong foundational skills.
             </motion.p>
@@ -104,7 +104,7 @@ export default function Hero() {
                 <img
                   src="/images/rich_preschool_hero.jpg"
                   alt="Joyful preschool children at Chocolate Kids"
-                  className="w-full h-80 sm:h-[380px] object-cover object-center group-hover:scale-103 transition-transform duration-700"
+                  className="w-full h-72 sm:h-[360px] md:h-[380px] object-cover object-center group-hover:scale-103 transition-transform duration-700"
                   loading="eager"
                 />
 
@@ -123,30 +123,30 @@ export default function Hero() {
               </div>
 
               {/* Badge 1: Creative Learning (Top Right - Neatly aligned) */}
-              <div className="absolute -top-3 -right-2 sm:-right-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs">
-                  <Palette className="w-4 h-4" />
+              <div className="absolute -top-3 right-0 sm:-right-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[200px]">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs shrink-0">
+                  <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
                   <span className="text-[9px] font-extrabold text-[#F59E0B] uppercase tracking-wider block">
                     Creative Arts
                   </span>
-                  <span className="text-xs font-black text-[#5A2E1B] block">
+                  <span className="text-[11px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
                     Art, Music & Dance
                   </span>
                 </div>
               </div>
 
               {/* Badge 2: Safe Haven (Bottom Left - Neatly aligned) */}
-              <div className="absolute -bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs">
-                  <ShieldCheck className="w-4 h-4" />
+              <div className="absolute -bottom-3 left-0 sm:-left-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[200px]">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
                   <span className="text-[9px] font-extrabold text-[#16A34A] uppercase tracking-wider block">
                     Safe & Nurturing
                   </span>
-                  <span className="text-xs font-black text-[#5A2E1B] block">
+                  <span className="text-[11px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
                     Child-First Campus
                   </span>
                 </div>

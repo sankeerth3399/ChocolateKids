@@ -6,7 +6,6 @@ import CorePhilosophy from "../components/CorePhilosophy";
 import WhyChooseUs from "../components/WhyChooseUs";
 import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
-import Branches from "../components/Branches";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import AdmissionForm from "../components/AdmissionForm";
@@ -50,10 +49,7 @@ export default function Home() {
         {/* 6. Facilities (What We Offer) */}
         <Facilities />
 
-        {/* 12. Branches Preview (Dammaiguda & Kapra Campuses) */}
-        <Branches />
-
-        {/* 13. Parent & Child Focused Testimonials */}
+        {/* 7. Parent & Child Focused Testimonials */}
         <Testimonials />
 
         {/* 14. Admissions Call to Action & Interactive Form */}

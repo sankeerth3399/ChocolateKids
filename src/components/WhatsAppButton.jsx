@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
   return (
     <aside
       aria-label={label}
-      className="fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2"
+      className="fixed bottom-20 sm:bottom-6 right-3 sm:right-6 z-40 flex items-center gap-2"
     >
       {/* Pill label on hover */}
       <span

@@ -1,7 +1,7 @@
 import React from "react";
 import { Phone, Mail, MessageCircle, MapPin, Navigation, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { schoolInfo, branches } from "../data";
+import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";
 
 export default function Contact() {
@@ -30,7 +30,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           
           {/* Card 1: Direct Phone */}
-          <div className="p-7 rounded-3xl bg-[#FFF9F0] border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          <div className="p-5 sm:p-7 rounded-3xl bg-[#FFF9F0] border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#FFF0DD] text-[#F59E0B] flex items-center justify-center mb-4">
                 <Phone className="w-6 h-6" />
@@ -57,7 +57,7 @@ export default function Contact() {
           </div>
 
           {/* Card 2: WhatsApp Chat */}
-          <div className="p-7 rounded-3xl bg-emerald-50/70 border border-emerald-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div className="p-5 sm:p-7 rounded-3xl bg-emerald-50/70 border border-emerald-200/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-emerald-200/70 text-emerald-900 flex items-center justify-center mb-4">
                 <MessageCircle className="w-6 h-6" />
@@ -86,7 +86,7 @@ export default function Contact() {
           </div>
 
           {/* Card 3: Email Us */}
-          <div className="p-7 rounded-3xl bg-stone-50 border border-stone-200 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div className="p-5 sm:p-7 rounded-3xl bg-stone-50 border border-stone-200 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-stone-200/80 text-stone-800 flex items-center justify-center mb-4">
                 <Mail className="w-6 h-6" />
@@ -115,100 +115,29 @@ export default function Contact() {
         </div>
 
         {/* ==================================================
-            Campus Locations & Branches Section (All 3 Branches)
+            Campus Locations Gateway (Links to Our Schools Page)
            ================================================== */}
-        <div className="pt-8 border-t border-stone-200">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
-              <MapPin className="w-3.5 h-3.5 text-amber-700" />
-              <span>Campus Locations</span>
-            </div>
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 tracking-tight">
-              Visit Our Branches
-            </h3>
-            <p className="mt-2 text-stone-600 text-xs sm:text-sm">
-              Personal campus tours available Monday to Saturday across all three campuses.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {branches.map((branch) => (
-              <div
-                key={`contact-branch-${branch.id}`}
-                className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-7 border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-200/80 text-amber-950">
-                      {branch.branchNo}
-                    </span>
-                    <span className="text-xs font-bold text-stone-500">
-                      {branch.location}
-                    </span>
-                  </div>
-
-                  <h4 className="font-heading font-black text-xl text-stone-900 mb-2">
-                    {branch.name}
-                  </h4>
-
-                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700 leading-relaxed mb-4">
-                    <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                    <span className="font-medium whitespace-pre-line">{branch.address}</span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs font-bold text-stone-800 mb-5">
-                    <Phone className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                    <span>+91 {branch.phone}</span>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-amber-100 flex flex-col gap-2">
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href={`tel:${branch.phone}`}
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-bold text-stone-800 bg-white border border-stone-200 hover:bg-stone-100 transition-colors"
-                      title={`Call ${branch.name}`}
-                    >
-                      <Phone className="w-3.5 h-3.5 text-stone-700" />
-                      <span>Call</span>
-                    </a>
-                    <a
-                      href={`https://wa.me/91${branch.phone}?text=${encodeURIComponent(
-                        `Hello Chocolate Kids, I would like to enquire about your ${branch.name}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-colors"
-                      title={`WhatsApp ${branch.name}`}
-                    >
-                      <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href={branch.directionsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-bold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-2xs"
-                      title="Open Google Maps Directions"
-                    >
-                      <Navigation className="w-3.5 h-3.5" />
-                      <span>Directions</span>
-                    </a>
-                    <Link
-                      to={`/branches/${branch.slug}`}
-                      className="inline-flex items-center justify-center gap-1 py-2 px-3 rounded-xl text-xs font-bold text-stone-800 bg-stone-100 hover:bg-stone-200 transition-colors"
-                    >
-                      <span>Details</span>
-                      <ArrowRight className="w-3 h-3 text-stone-500" />
-                    </Link>
-                  </div>
-                </div>
-
+        <div className="pt-10 border-t border-stone-200">
+          <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFDF9] border border-amber-200/80 shadow-xs max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
+                <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                <span>Campus Locations</span>
               </div>
-            ))}
+              <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-stone-900 leading-tight">
+                Explore Our Schools
+              </h3>
+              <p className="mt-1 text-stone-600 text-xs sm:text-sm">
+                View campus addresses, photos & directions for Dammaiguda, Kapra & Yapral.
+              </p>
+            </div>
+            <Link
+              to="/branches"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 shadow-sm hover:shadow-md transition-all shrink-0 cursor-pointer"
+            >
+              <span>View Our Schools</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 

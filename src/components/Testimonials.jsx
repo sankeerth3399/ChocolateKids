@@ -137,7 +137,7 @@ export default function Testimonials() {
           <button
             onClick={handlePrev}
             aria-label="Previous testimonials"
-            className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
+            className="absolute left-1 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -146,7 +146,7 @@ export default function Testimonials() {
           <button
             onClick={handleNext}
             aria-label="Next testimonials"
-            className="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
+            className="absolute right-1 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -156,7 +156,7 @@ export default function Testimonials() {
             {visibleCards.map((item, idx) => (
               <div
                 key={`${item.id}-${idx}`}
-                className={`p-7 sm:p-8 rounded-[28px] ${item.cardBg} ${item.border} border shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between relative group`}
+                className={`p-5 sm:p-8 rounded-[28px] ${item.cardBg} ${item.border} border shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between relative group`}
               >
                 {/* Decorative Quotation Mark in Top Right */}
                 <div

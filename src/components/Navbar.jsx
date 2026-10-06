@@ -40,8 +40,8 @@ export default function Navbar({ onOpenEnquiry }) {
           }`}
       >
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* Logo */}
             <Link
               to="/"
@@ -49,16 +49,16 @@ export default function Navbar({ onOpenEnquiry }) {
                 closeMenu();
                 window.scrollTo(0, 0);
               }}
-              className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#00A651] rounded-lg p-1"
+              className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#00A651] rounded-lg p-0.5 sm:p-1"
             >
               <img
                 src="/logo.png"
                 alt="Chocolate Kids Preschool Logo"
-                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col items-start gap-0.5">
-                <BrandBadge className="text-sm sm:text-base" />
-                <span className="text-[10px] font-black tracking-wider uppercase text-[#16A34A] ml-1">
+                <BrandBadge className="text-xs sm:text-base" />
+                <span className="text-[9px] sm:text-[10px] font-black tracking-wider uppercase text-[#16A34A] ml-0.5 sm:ml-1">
                   Innovative Learning
                 </span>
               </div>
@@ -240,32 +240,32 @@ export default function Navbar({ onOpenEnquiry }) {
       )}
 
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-xs bg-white shadow-2xl transition-transform duration-300 ease-out transform lg:hidden flex flex-col justify-between overflow-y-auto ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[85vw] sm:max-w-xs bg-white shadow-2xl transition-transform duration-300 ease-out transform lg:hidden flex flex-col justify-between overflow-y-auto ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="flex items-center justify-between pb-4 border-b border-stone-100">
             <div className="flex items-center gap-2">
               <img
                 src="/logo.png"
                 alt="Chocolate Kids Logo"
-                className="h-9 w-auto"
+                className="h-8 sm:h-9 w-auto"
               />
-              <BrandBadge className="text-sm" />
+              <BrandBadge className="text-xs sm:text-sm" />
             </div>
             <button
               onClick={closeMenu}
-              className="p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none"
+              className="p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer"
               aria-label="Close navigation"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          <nav className="mt-6 flex flex-col gap-1.5">
+          <nav className="mt-5 sm:mt-6 flex flex-col gap-1.5">
             {/* Home */}
             <Link
               to="/"
@@ -273,7 +273,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 closeMenu();
                 window.scrollTo(0, 0);
               }}
-              className={`px-4 py-2.5 rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60"
                 }`}
             >
               Home
@@ -284,7 +284,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <button
                 type="button"
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                className={`w-full px-4 py-2.5 rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60"
+                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60"
                   }`}
               >
                 <span>About Us</span>
@@ -299,7 +299,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   <Link
                     to="/about"
                     onClick={closeMenu}
-                    className="px-3 py-2 rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
+                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
                   >
                     <Sparkles className="w-3.5 h-3.5 text-[#00A651]" />
                     <span>About Us</span>
@@ -308,7 +308,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   <Link
                     to="/facilities"
                     onClick={closeMenu}
-                    className="px-3 py-2 rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
+                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
                   >
                     <Building2 className="w-3.5 h-3.5 text-teal-600" />
                     <span>Facilities</span>
@@ -317,7 +317,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   <Link
                     to="/gallery"
                     onClick={closeMenu}
-                    className="px-3 py-2 rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
+                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#00A651] hover:bg-emerald-50 flex items-center gap-2"
                   >
                     <ImageIcon className="w-3.5 h-3.5 text-purple-600" />
                     <span>Gallery</span>
@@ -330,7 +330,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/branches"
               onClick={closeMenu}
-              className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
                 }`}
             >
               Our Schools
@@ -340,7 +340,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/academics"
               onClick={closeMenu}
-              className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
                 }`}
             >
               Programs
@@ -350,7 +350,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/franchise"
               onClick={closeMenu}
-              className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
                 }`}
             >
               Franchise
@@ -360,14 +360,14 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60 hover:text-[#00A651]"
                 }`}
             >
               Contact
             </Link>
           </nav>
 
-          <div className="mt-6 pt-6 border-t border-stone-200 flex flex-col gap-3">
+          <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-stone-200 flex flex-col gap-3">
             {/* Orange Enquire Now Button */}
             <button
               type="button"
@@ -375,7 +375,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 closeMenu();
                 window.dispatchEvent(new CustomEvent("open-admission-modal"));
               }}
-              className="w-full inline-flex items-center justify-center px-5 py-3 rounded-2xl text-base font-extrabold text-white bg-[#FF7A00] hover:bg-[#F37000] border-2 border-[#1E293B] shadow-[3px_4px_0px_#1E293B] active:shadow-[1px_2px_0px_#1E293B] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer text-center"
+              className="w-full inline-flex items-center justify-center px-4 py-3 min-h-[46px] rounded-2xl text-sm sm:text-base font-extrabold text-white bg-[#FF7A00] hover:bg-[#F37000] border-2 border-[#1E293B] shadow-[3px_4px_0px_#1E293B] active:shadow-[1px_2px_0px_#1E293B] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer text-center"
             >
               <span>Enquire Now</span>
             </button>
@@ -385,25 +385,25 @@ export default function Navbar({ onOpenEnquiry }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-600" />
+              <MessageCircle className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>Chat on WhatsApp</span>
             </a>
 
             <a
               href={`tel:${schoolInfo.phone}`}
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors"
             >
-              <Phone className="w-4 h-4 text-stone-600" />
+              <Phone className="w-4 h-4 text-stone-600 shrink-0" />
               <span>Call: {schoolInfo.phone}</span>
             </a>
           </div>
         </div>
 
-        <div className="p-4 bg-amber-50/60 border-t border-amber-100 text-center">
-          <p className="text-xs text-stone-500 font-medium">
-            Sai Priya Colony & Shalivahana Colony, Hyd
+        <div className="p-3.5 sm:p-4 bg-amber-50/60 border-t border-amber-100 text-center">
+          <p className="text-xs text-stone-600 font-semibold">
+            Dammaiguda, Kapra & Yapral, Hyderabad
           </p>
         </div>
       </div>

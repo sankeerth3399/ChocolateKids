@@ -197,7 +197,7 @@ export default function Footer() {
                 <span className="font-bold text-white block mb-0.5">
                   Dammaiguda Campus
                 </span>
-                <p className="text-stone-400 leading-snug">
+                <p className="text-stone-400 leading-snug break-words-safe">
                   H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyd - 083.
                 </p>
                 <Link
@@ -212,7 +212,7 @@ export default function Footer() {
                 <span className="font-bold text-white block mb-0.5">
                   Kapra / Yellareddyguda Campus
                 </span>
-                <p className="text-stone-400 leading-snug">
+                <p className="text-stone-400 leading-snug break-words-safe">
                   Shalivahana Colony, Near Anurag Line, KAPRA, Hyd - 062.
                 </p>
                 <Link
@@ -227,7 +227,7 @@ export default function Footer() {
                 <span className="font-bold text-white block mb-0.5">
                   Yapral Branch
                 </span>
-                <p className="text-stone-400 leading-snug">
+                <p className="text-stone-400 leading-snug break-words-safe">
                   5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087
                 </p>
                 <Link

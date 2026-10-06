@@ -94,42 +94,38 @@ export default function Branches() {
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
                   {/* Location Icon & Branch Name Header */}
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5 border border-amber-200/70">
-                      <MapPin className="w-5 h-5 text-amber-700" />
+                  <div className="flex items-start gap-2.5 sm:gap-3 mb-3 sm:mb-4">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5 border border-amber-200/70">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-black uppercase tracking-widest text-[#FF5B89]">
+                      <div className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#FF5B89]">
                         CHOCOLATE KIDS
                       </div>
-                      <h4 className="font-heading font-black text-lg text-stone-900 leading-tight">
+                      <h4 className="font-heading font-black text-base sm:text-lg text-stone-900 leading-tight">
                         {branch.campusTitle}
                       </h4>
                     </div>
                   </div>
 
                   {/* Complete Exact Address */}
-                  <div className="bg-[#FFFDF9] rounded-2xl p-4 border border-amber-100/90 text-xs sm:text-sm text-stone-700 leading-relaxed mb-6">
+                  <div className="bg-[#FFFDF9] rounded-2xl p-3 sm:p-4 border border-amber-100/90 text-xs sm:text-sm text-stone-700 leading-relaxed mb-4 sm:mb-6 break-words">
                     <p className="whitespace-pre-line font-medium text-stone-800">
-                      {branch.slug === "yapral"
-                        ? "5-8-48/5,\nRaghava Kalyan Estates,\nBeside Pochamma Temple,\nShaili Garden,\nYapral,\nHyderabad - 500087"
-                        : branch.slug === "dammaiguda"
-                        ? "H.No. 11-1/66,\nSai Priya Colony,\nDammaiguda,\nHyderabad - 500 083."
-                        : "P. No. 46, 47,\nShalivahana Colony,\nNear Anurag Line,\nYellareddyguda,\nKAPRA, HYD - 062."}
+                      {branch.displayAddress || branch.address}
                     </p>
                   </div>
                 </div>
 
                 {/* Action Buttons: Call, WhatsApp, Get Directions, View Campus */}
-                <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5">
+                <div className="pt-3 sm:pt-4 border-t border-stone-100 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-2">
                     {/* Call button */}
                     <a
                       href="tel:9515869889"
-                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer"
+                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-2.5 sm:px-3 min-h-[40px] rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer text-center"
                       title={`Call ${branch.name}`}
                       aria-label={`Call ${branch.name}`}
                     >
@@ -182,14 +178,14 @@ export default function Branches() {
 
         {/* Bottom Quick Campus Finder Link */}
         <div className="mt-12 text-center">
-          <Link
-            to="/branches"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-extrabold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all"
+          <a
+            href="#campus-maps"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-extrabold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
           >
             <MapPin className="w-4 h-4 text-[#FF5B89]" />
             <span>View All Campus Locations & Route Maps</span>
             <ArrowRight className="w-4 h-4 text-stone-500" />
-          </Link>
+          </a>
         </div>
 
       </div>

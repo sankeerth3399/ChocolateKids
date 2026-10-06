@@ -118,9 +118,9 @@ export default function AdmissionForm() {
         </div>
 
         {/* Form Container */}
-        <div className="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-stone-200/90 relative">
+        <div className="max-w-3xl mx-auto bg-white rounded-3xl p-4 sm:p-10 shadow-xl border border-stone-200/90 relative">
           
-          <form onSubmit={handleSubmit} noValidate className="space-y-6">
+          <form onSubmit={handleSubmit} noValidate className="space-y-5 sm:space-y-6">
             
             {/* Row 1: Parent Name & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -352,9 +352,9 @@ export default function AdmissionForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-[30px] font-extrabold text-base text-white bg-[#F59E0B] hover:bg-[#D97706] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full py-3.5 sm:py-4 px-4 sm:px-6 rounded-[30px] font-extrabold text-xs sm:text-base text-white bg-[#F59E0B] hover:bg-[#D97706] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 text-center tracking-wide"
             >
-              <MessageCircle className="w-5 h-5 fill-white text-[#F59E0B]" />
+              <MessageCircle className="w-5 h-5 fill-white text-[#F59E0B] shrink-0" />
               <span>SEND ADMISSION ENQUIRY VIA WHATSAPP</span>
             </button>
 

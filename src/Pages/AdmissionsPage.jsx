@@ -2,10 +2,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import AdmissionForm from "../components/AdmissionForm";
-import Branches from "../components/Branches";
+import { Link } from "react-router-dom";
 import BrandWatermark from "../components/BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
-import { Sparkles, Calendar, CheckCircle2, FileText, Users, HelpCircle } from "lucide-react";
+import { Sparkles, Calendar, CheckCircle2, FileText, Users, HelpCircle, MapPin, ArrowRight } from "lucide-react";
 
 export default function AdmissionsPage() {
   const steps = [
@@ -66,7 +66,7 @@ export default function AdmissionsPage() {
               <Sparkles className="w-3.5 h-3.5 text-amber-700" />
               <span>Admissions Open for Academic Year 2026-27</span>
             </div>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
               Give Your Child a Joyful Start
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
@@ -115,8 +115,28 @@ export default function AdmissionsPage() {
         {/* Validated Admission Form */}
         <AdmissionForm />
 
-        {/* Campus Branches */}
-        <Branches />
+        {/* Campus Locations Gateway */}
+        <div className="py-12 bg-white text-center border-t border-amber-100/60">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="p-6 rounded-3xl bg-[#FFFDF9] border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+              <div>
+                <span className="text-xs font-bold text-amber-800 uppercase tracking-wider block mb-1">
+                  Campus Tours & Locations
+                </span>
+                <p className="text-sm sm:text-base font-heading font-bold text-stone-900">
+                  Admissions Open at Dammaiguda, Kapra & Yapral
+                </p>
+              </div>
+              <Link
+                to="/branches"
+                className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-xs shrink-0 cursor-pointer"
+              >
+                <span>View Our Schools</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* Parent FAQs */}
         <section className="py-16 bg-white border-t border-amber-100/60">

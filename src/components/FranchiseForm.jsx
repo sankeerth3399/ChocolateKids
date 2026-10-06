@@ -111,7 +111,7 @@ Thank you.`;
   const franchiseWaMsg = "Hello Chocolate Kids Team, I am interested in the franchise opportunity. Please share the franchise details.";
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-stone-200/90 relative">
+    <div className="bg-white rounded-3xl p-4 sm:p-10 shadow-xl border border-stone-200/90 relative">
       
       {/* Form Header */}
       <div className="mb-8 border-b border-stone-100 pb-5">
@@ -441,7 +441,7 @@ Thank you.`;
           <div className="flex flex-col sm:flex-row items-center gap-3.5 pt-2">
             <button
               type="submit"
-              className="flex-1 w-full py-4 px-6 rounded-2xl font-extrabold text-base text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer transform hover:-translate-y-0.5"
+              className="flex-1 w-full py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl font-extrabold text-sm sm:text-base text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5"
             >
               <span>Submit Franchise Enquiry</span>
               <Send className="w-4 h-4 text-amber-200" />
@@ -452,9 +452,9 @@ Thank you.`;
               href={`https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(franchiseWaMsg)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto py-4 px-6 rounded-2xl font-bold text-sm text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl font-bold text-xs sm:text-sm text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition-colors flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-700" />
+              <MessageCircle className="w-4 h-4 text-emerald-700 shrink-0" />
               <span>Talk to Our Franchise Team</span>
             </a>
           </div>
