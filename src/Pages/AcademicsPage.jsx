@@ -48,8 +48,8 @@ export default function AcademicsPage() {
       <Navbar />
 
       <main className="pt-16 sm:pt-20">
-        {/* Full Programs Section matching reference design */}
-        <LearningPrograms />
+        {/* Full Programs Section matching reference design (including Grade 1 & 2) */}
+        <LearningPrograms showGrades={true} />
 
 
         {/* Learning Beyond the Classroom Philosophy */}
@@ -65,7 +65,7 @@ export default function AcademicsPage() {
                 <Clock className="w-3.5 h-3.5 text-amber-700" />
                 <span>Daily Experience</span>
               </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-stone-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
                 <span>A Day in the Life at</span> <BrandBadge className="text-[0.75em]" />
               </h2>
               <p className="mt-3 text-stone-600 text-sm sm:text-base">

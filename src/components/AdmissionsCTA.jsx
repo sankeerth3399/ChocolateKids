@@ -1,10 +1,14 @@
-import { ArrowRight, Compass, Sparkles, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles, Heart } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandName } from "./BrandName";
 
-export default function AdmissionsCTA() {
+export default function AdmissionsCTA({ showQuickInquiry }) {
+  const location = useLocation();
+  const shouldShowQuickInquiry =
+    showQuickInquiry !== undefined ? showQuickInquiry : location.pathname !== "/";
+
   return (
     <section className="py-20 sm:py-24 bg-[#F59E0B] text-white relative overflow-hidden">
       {/* Brand Logo Watermark */}
@@ -36,35 +40,41 @@ export default function AdmissionsCTA() {
             <span>ADMISSIONS OPEN 2026-27 • PLAY GROUP TO UKG</span>
           </div>
 
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-white tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>Let Their Adventure Begin at</span> <BrandName variant="badge" className="text-[0.72em]" />
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-xl text-white/95 leading-relaxed font-semibold max-w-2xl mx-auto">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-lg lg:text-xl text-white/95 leading-relaxed font-semibold max-w-2xl mx-auto">
             Give your child a joyful environment to learn, explore, create and grow.
           </p>
 
           {/* Primary CTA Buttons */}
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div
+            className={`mt-8 sm:mt-10 flex items-center justify-center ${
+              shouldShowQuickInquiry ? "flex-col sm:flex-row gap-4" : ""
+            }`}
+          >
             <Link
               to="/admissions"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-4 rounded-[30px] text-base font-black text-[#5A2E1B] bg-white hover:bg-[#FFF9F0] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-10 py-3.5 sm:py-4 min-h-[46px] rounded-[30px] text-sm sm:text-base font-black text-[#5A2E1B] bg-white hover:bg-[#FFF9F0] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               <span>Explore Admissions</span>
               <ArrowRight className="w-4 h-4 text-[#F59E0B]" />
             </Link>
 
-            <a
-              href="#admissions"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("admissions")?.scrollIntoView({ behavior: "smooth", block: "start" });
-                window.history.pushState(null, "", "#admissions");
-              }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-[30px] text-base font-bold text-white bg-black/15 hover:bg-black/25 border border-white/40 backdrop-blur-xs transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
-            >
-              <span>Quick Inquiry Form</span>
-            </a>
+            {shouldShowQuickInquiry && (
+              <a
+                href="#admissions"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("admissions")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  window.history.pushState(null, "", "#admissions");
+                }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-[30px] text-base font-bold text-white bg-black/15 hover:bg-black/25 border border-white/40 backdrop-blur-xs transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+              >
+                <span>Quick Inquiry Form</span>
+              </a>
+            )}
           </div>
 
           <div className="mt-6 text-xs text-amber-100/90 font-medium">

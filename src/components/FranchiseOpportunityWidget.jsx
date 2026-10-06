@@ -83,7 +83,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="relative bg-white rounded-3xl sm:rounded-[2.5rem] border-2 sm:border-4 border-amber-200/90 shadow-2xl p-4 sm:p-8 lg:p-12 overflow-hidden"
+          className="relative bg-white rounded-3xl sm:rounded-[2.5rem] border-2 sm:border-4 border-amber-200/90 shadow-2xl p-3.5 sm:p-8 lg:p-12 overflow-hidden"
         >
           {/* Subtle Centered Logo Watermark */}
           <BrandWatermark position="center" size="xl" opacity={0.07} />
@@ -108,7 +108,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
 
             {/* Franchise Opportunity Headline Pill */}
             <motion.div variants={itemVariants} className="mb-2">
-              <div className="inline-block px-4 sm:px-8 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-500 text-white font-heading font-black text-xl sm:text-3xl lg:text-4xl shadow-lg uppercase tracking-tight transform -rotate-1 border border-red-400/50 max-w-full">
+              <div className="inline-block px-3.5 sm:px-8 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-500 text-white font-heading font-black text-lg sm:text-3xl lg:text-4xl shadow-lg uppercase tracking-tight transform -rotate-1 border border-red-400/50 max-w-full">
                 Franchise Opportunity
               </div>
             </motion.div>
@@ -221,7 +221,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             
             {/* Left Subsection: Franchise Kit Includes (8 items) */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-emerald-50/50 border border-emerald-200/80 flex flex-col justify-between">
+            <div className="p-4 sm:p-7 rounded-3xl bg-emerald-50/50 border border-emerald-200/80 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <div className="flex items-center gap-2.5">
@@ -267,7 +267,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             </div>
 
             {/* Right Subsection: Also Includes (10 items) */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-rose-50/50 border border-rose-200/80 flex flex-col justify-between">
+            <div className="p-4 sm:p-7 rounded-3xl bg-rose-50/50 border border-rose-200/80 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <div className="flex items-center gap-2.5">
@@ -358,7 +358,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             {/* Center: Official Contact Helpline */}
             <a
               href={`tel:${schoolInfo.phone}`}
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-mono text-lg sm:text-xl font-black transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-2xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-mono text-lg sm:text-xl font-black transition-colors"
             >
               <Phone className="w-5 h-5 text-amber-700" />
               <span>{schoolInfo.phone}</span>

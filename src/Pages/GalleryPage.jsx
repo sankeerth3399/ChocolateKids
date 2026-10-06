@@ -19,7 +19,7 @@ export default function GalleryPage() {
               <Sparkles className="w-3.5 h-3.5 text-amber-700" />
               <span>Campus Visual Memories</span>
             </div>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
               <span>Moments at</span> <BrandBadge className="text-[0.75em]" />
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">

@@ -66,7 +66,7 @@ export default function EventsSection() {
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>ANNUAL FESTIVALS & TRADITIONS</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
             Moments We Celebrate
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal max-w-2xl mx-auto">

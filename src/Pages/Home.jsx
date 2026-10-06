@@ -8,7 +8,6 @@ import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
-import AdmissionForm from "../components/AdmissionForm";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
@@ -18,17 +17,10 @@ export default function Home() {
     document.title = "Chocolate Kids | Innovative Learning Preschool - Dammaiguda, Kapra & Yapral, Hyderabad";
   }, []);
 
-  const handleScrollToEnquiry = () => {
-    const el = document.getElementById("admissions");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#FFF9F0] text-[#5A2E1B] font-sans selection:bg-amber-200 selection:text-amber-900">
       {/* 1. Header / Navigation */}
-      <Navbar onOpenEnquiry={handleScrollToEnquiry} />
+      <Navbar />
 
       <main>
         {/* 2. Simplified Clean Hero Section */}
@@ -43,8 +35,8 @@ export default function Home() {
         {/* 5. Educational Philosophy & Details */}
         <WhyChooseUs />
 
-        {/* 5. Learning Programs (Play Group, Nursery, LKG, UKG) */}
-        <LearningPrograms />
+        {/* 5. Learning Programs (Playgroup, Nursery, PP1/LKG, PP2/UKG, Day Care) */}
+        <LearningPrograms showGrades={false} />
 
         {/* 6. Facilities (What We Offer) */}
         <Facilities />
@@ -52,9 +44,8 @@ export default function Home() {
         {/* 7. Parent & Child Focused Testimonials */}
         <Testimonials />
 
-        {/* 14. Admissions Call to Action & Interactive Form */}
-        <AdmissionsCTA />
-        <AdmissionForm />
+        {/* 14. Admissions Call to Action */}
+        <AdmissionsCTA showQuickInquiry={false} />
 
         {/* 15. Contact & Campus Information */}
         <Contact />

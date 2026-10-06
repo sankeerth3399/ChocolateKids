@@ -109,7 +109,7 @@ export default function AdmissionForm() {
             <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>Admission Enquiry 2026-27</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>Begin Your Child's Journey at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#5A2E1B]/80 font-medium">

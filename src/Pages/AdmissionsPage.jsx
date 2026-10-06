@@ -66,10 +66,10 @@ export default function AdmissionsPage() {
               <Sparkles className="w-3.5 h-3.5 text-amber-700" />
               <span>Admissions Open for Academic Year 2026-27</span>
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
               Give Your Child a Joyful Start
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
               Begin your child's learning journey with <BrandBadge isInline className="text-[0.88em]" />. Admissions are currently open across Play Group, Nursery, LKG, and UKG at our Dammaiguda, Kapra, and Yapral campuses.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function AdmissionsPage() {
           <BrandWatermark position="center" size="lg" opacity={0.11} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="font-heading font-extrabold text-3xl text-stone-900 mb-2">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-2">
                 Simple 4-Step Admission Process
               </h2>
               <p className="text-xs sm:text-sm text-stone-600">
@@ -129,7 +129,7 @@ export default function AdmissionsPage() {
               </div>
               <Link
                 to="/branches"
-                className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-xs shrink-0 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-xs shrink-0 cursor-pointer"
               >
                 <span>View Our Schools</span>
                 <ArrowRight className="w-4 h-4" />

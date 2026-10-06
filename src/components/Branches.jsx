@@ -138,7 +138,7 @@ export default function Branches() {
                       href="https://wa.me/919515869889"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors cursor-pointer"
+                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors cursor-pointer"
                       title={`WhatsApp ${branch.name}`}
                       aria-label={`WhatsApp ${branch.name}`}
                     >
@@ -153,7 +153,7 @@ export default function Branches() {
                       href={branch.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 shadow-2xs transition-colors cursor-pointer"
+                      className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 shadow-2xs transition-colors cursor-pointer"
                       title={`Get Directions to ${branch.name}`}
                       aria-label={`Get Directions to ${branch.name}`}
                     >
@@ -164,7 +164,7 @@ export default function Branches() {
                     {/* View Campus Link */}
                     <Link
                       to={`/branches/${branch.slug}`}
-                      className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+                      className="inline-flex items-center justify-center gap-1 py-2.5 px-3 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
                     >
                       <span>View Campus</span>
                       <ArrowRight className="w-3.5 h-3.5 text-stone-500" />
@@ -177,15 +177,15 @@ export default function Branches() {
         </div>
 
         {/* Bottom Quick Campus Finder Link */}
-        <div className="mt-12 text-center">
-          <a
-            href="#campus-maps"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-extrabold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+        <div className="mt-10 sm:mt-12 text-center">
+          <Link
+            to="/branches"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 min-h-[46px] rounded-full text-xs sm:text-sm font-extrabold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
           >
             <MapPin className="w-4 h-4 text-[#FF5B89]" />
-            <span>View All Campus Locations & Route Maps</span>
+            <span>Explore All Campus Locations & Facilities</span>
             <ArrowRight className="w-4 h-4 text-stone-500" />
-          </a>
+          </Link>
         </div>
 
       </div>

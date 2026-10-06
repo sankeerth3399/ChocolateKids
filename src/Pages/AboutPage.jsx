@@ -22,10 +22,10 @@ export default function AboutPage() {
               <Users className="w-3.5 h-3.5 text-amber-700" />
               <span>About Our School</span>
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
               Learning Today. Growing Tomorrow.
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
               At <BrandBadge isInline className="text-[0.88em]" />, we believe every child arrives with an innate spark of wonder. Our mission is to nurture that curiosity into lasting confidence through love, play, and thoughtful early education.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
           <BrandWatermark position="center" size="lg" opacity={0.12} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-stone-900">
                 Our Commitments to Parents & Children
               </h2>
               <p className="mt-3 text-stone-600 text-sm sm:text-base">

@@ -20,7 +20,7 @@ export default function EventsPage() {
               <Calendar className="w-3.5 h-3.5 text-rose-700" />
               <span>School Events & Excursions</span>
             </div>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
               Celebrations & Special Moments
             </h1>
             <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">

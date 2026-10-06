@@ -20,10 +20,10 @@ export default function ActivitiesPage() {
               <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
               <span>Experiential Preschool Life</span>
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
               Learning Through Fun & Activities
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
               Every day at <BrandBadge isInline className="text-[0.88em]" /> is infused with active exploration. From tactile clay crafting and sensory color days to music dance and storytelling circles, childhood curiosity is celebrated at every step.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function ActivitiesPage() {
           <BrandWatermark position="center" size="lg" opacity={0.12} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-stone-900">
                 Core Domains of Daily Preschool Activities
               </h2>
               <p className="mt-3 text-stone-600 text-sm sm:text-base">

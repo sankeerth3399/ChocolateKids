@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Sun, Puzzle, Palette, BookOpen, Users, Activity, Check } from "lucide-react";
 import { programs } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
@@ -22,7 +23,7 @@ export default function Programs() {
             <Puzzle className="w-3.5 h-3.5 text-orange-700" />
             <span>Learning Dimensions</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>Learning Dimensions at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
@@ -82,9 +83,9 @@ export default function Programs() {
                 {/* Bottom link */}
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-amber-800">
                   <span>Enquire For This Age Group</span>
-                  <a href="#admissions" className="hover:underline">
+                  <Link to="/admissions" className="hover:underline">
                     Apply →
-                  </a>
+                  </Link>
                 </div>
               </div>
             );

@@ -19,10 +19,10 @@ export default function FacilitiesPage() {
               <ShieldCheck className="w-3.5 h-3.5 text-sky-700" />
               <span>Campus Infrastructure & Care</span>
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
               <span>Campus Facilities at</span> <BrandBadge className="text-[0.75em]" />
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
               Safe, vibrant, and thoughtfully designed preschool campuses where little ones explore, play, and learn with absolute safety and comfort.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function FacilitiesPage() {
         {/* Safety & Hygiene Protocol Detail */}
         <section className="py-16 bg-white border-t border-amber-100/60">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-8 rounded-3xl bg-amber-50/70 border border-amber-200/80">
+            <div className="p-5 sm:p-8 rounded-3xl bg-amber-50/70 border border-amber-200/80">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 mb-2">
                   Our Uncompromising Safety & Hygiene Standards

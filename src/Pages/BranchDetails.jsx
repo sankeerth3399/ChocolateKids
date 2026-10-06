@@ -100,9 +100,9 @@ export default function BranchDetails() {
                   </span>
                 </div>
 
-                <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-stone-900 tracking-tight mb-4 flex flex-wrap items-center gap-2.5">
+                <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight mb-4 flex flex-wrap items-center gap-2.5">
                   <span>{branch.name}</span>
-                  <BrandBadge className="text-2xl sm:text-3xl" />
+                  <BrandBadge className="text-xl sm:text-3xl" />
                 </h1>
 
                 <div className="flex items-start gap-2.5 text-stone-700 text-sm sm:text-base leading-relaxed mb-4">
@@ -159,7 +159,7 @@ export default function BranchDetails() {
                   <img
                     src={branch.image}
                     alt={branch.name}
-                    className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                    className="w-full h-64 sm:h-80 md:h-96 object-cover object-top group-hover:scale-103 transition-transform duration-500"
                   />
                   <div className="p-4 bg-white/95 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
                     <span className="font-semibold text-stone-900">{branch.name} Campus</span>
@@ -285,8 +285,8 @@ export default function BranchDetails() {
             5. LOCATION & DIRECTIONS MAP BOX
            ================================================== */}
         <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl bg-amber-50/80 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
+          <div className="p-6 sm:p-8 md:p-10 rounded-3xl bg-amber-50/80 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="w-full md:w-auto">
               <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
                 Plan Your Campus Tour
               </span>
@@ -301,12 +301,12 @@ export default function BranchDetails() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 shrink-0">
               <a
                 href={branch.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-amber-600 hover:bg-amber-700 shadow-md transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[44px] rounded-xl font-bold text-sm text-white bg-amber-600 hover:bg-amber-700 shadow-md transition-colors"
               >
                 <Navigation className="w-4 h-4" />
                 <span>Open in Google Maps</span>
@@ -315,7 +315,7 @@ export default function BranchDetails() {
                 <Link
                   key={ob.id}
                   to={`/branches/${ob.slug}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 min-h-[44px] rounded-xl font-bold text-sm text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 transition-colors"
                 >
                   <span>View {ob.name}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -335,10 +335,10 @@ export default function BranchDetails() {
           <p className="text-sm text-stone-600 mb-6">
             Send an admission enquiry or chat with our team on WhatsApp for fee details, age eligibility, and campus visit timings.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
             <Link
-              to="/#admissions"
-              className="px-7 py-3.5 rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md"
+              to="/admissions"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 min-h-[46px] rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md text-center cursor-pointer"
             >
               Fill Admission Form
             </Link>
@@ -348,7 +348,7 @@ export default function BranchDetails() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-full text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors inline-flex items-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 min-h-[46px] rounded-full text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors inline-flex items-center justify-center gap-2 text-center cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-emerald-600" />
               <span>Chat on WhatsApp</span>

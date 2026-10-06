@@ -26,13 +26,13 @@ export default function Footer() {
     { name: "Events", href: "/#events", page: "/events" },
     { name: "Facilities", href: "/#facilities", page: "/facilities" },
     { name: "Branches", href: "/branches", page: "/branches", isPage: true },
-    { name: "Admissions", href: "/#admissions", page: "/admissions" },
+    { name: "Admissions", href: "/admissions", page: "/admissions", isPage: true },
     { name: "Franchise", href: "/franchise", page: "/franchise", isPage: true },
     { name: "Contact", href: "/#contact", page: "/contact" },
   ];
 
   return (
-    <footer className="bg-[#0B3D2E] text-stone-200 pt-16 pb-12 border-t-4 border-[#00A651] relative overflow-hidden">
+    <footer className="bg-[#0B3D2E] text-stone-200 pt-16 pb-24 sm:pb-14 border-t-4 border-[#00A651] relative overflow-hidden">
       {/* Brand Logo Watermark - Visible but Elegant */}
       <BrandWatermark position="bottom-right" size="lg" opacity={0.08} rotate={-6} />
 
@@ -51,9 +51,9 @@ export default function Footer() {
                   className="h-11 w-auto"
                 />
               </div>
-              <div className="flex flex-col items-start gap-1">
-                <BrandBadge className="text-xl sm:text-2xl" />
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block ml-1">
+              <div className="flex flex-col items-start leading-none">
+                <BrandBadge className="text-2xl sm:text-3xl lg:text-3xl leading-none select-none" />
+                <span className="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-widest block ml-1 mt-1">
                   Innovative Learning
                 </span>
               </div>
@@ -126,13 +126,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/#admissions"
-                  onClick={(e) => handleNavClick(e, "/#admissions")}
+                <Link
+                  to="/admissions"
                   className="font-bold text-amber-400 hover:text-amber-300 transition-colors inline-block"
                 >
                   Admissions Enquiry 2026-27 →
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

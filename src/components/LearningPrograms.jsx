@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BookOpen, Check, ArrowRight, Sparkles, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 import { BrandName, highlightBrand } from "../utils/brandHelper";
 
-export default function LearningPrograms() {
+export default function LearningPrograms({ showGrades }) {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const shouldIncludeGrades = showGrades !== undefined ? showGrades : !isHome;
+
   const [activeStageId, setActiveStageId] = useState("pp2");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -15,7 +19,7 @@ export default function LearningPrograms() {
     grade: "PP2 (Senior KG / UKG)",
   });
 
-  const stages = [
+  const allStages = [
     {
       id: "playgroup",
       name: "Playgroup",
@@ -123,7 +127,11 @@ export default function LearningPrograms() {
     },
   ];
 
-  const currentStage = stages.find((s) => s.id === activeStageId) || stages[3];
+  const stages = shouldIncludeGrades
+    ? allStages
+    : allStages.filter((s) => s.id !== "grade1" && s.id !== "grade2");
+
+  const currentStage = stages.find((s) => s.id === activeStageId) || stages[3] || stages[0];
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -171,7 +179,7 @@ export default function LearningPrograms() {
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/95 text-xs sm:text-sm font-bold mb-8">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#00A651]" />
-                Playgroup to Grade 2
+                {shouldIncludeGrades ? "Playgroup to Grade 2" : "Playgroup to UKG"}
               </span>
               <span className="text-white/40 hidden sm:inline">|</span>
               <span className="flex items-center gap-2">
@@ -223,7 +231,7 @@ export default function LearningPrograms() {
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
               <span className="text-[#FF4081]">From Playgroup </span>
-              <span className="text-[#0EA5E9]">to Grade 2</span>
+              <span className="text-[#0EA5E9]">{shouldIncludeGrades ? "to Grade 2" : "to UKG"}</span>
             </h2>
 
             <p className="mt-3 text-stone-600 text-sm sm:text-base font-semibold">
@@ -529,8 +537,12 @@ export default function LearningPrograms() {
                           <option value="Nursery">Nursery (2.6+ Yrs)</option>
                           <option value="PP1">PP1 / LKG (3.6+ Yrs)</option>
                           <option value="PP2">PP2 / UKG (4.6+ Yrs)</option>
-                          <option value="Grade 1">Grade 1 (5.6+ Yrs)</option>
-                          <option value="Grade 2">Grade 2 (6.6+ Yrs)</option>
+                          {shouldIncludeGrades && (
+                            <>
+                              <option value="Grade 1">Grade 1 (5.6+ Yrs)</option>
+                              <option value="Grade 2">Grade 2 (6.6+ Yrs)</option>
+                            </>
+                          )}
                           <option value="Day Care">Day Care (1.5 – 8 Yrs)</option>
                         </select>
                       </div>

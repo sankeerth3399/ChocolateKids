@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
   MapPin, 
-  Navigation, 
-  ArrowRight, 
   Sparkles, 
   ShieldCheck, 
   Clock, 
@@ -13,7 +11,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Branches from "../components/Branches";
-import { branches, schoolInfo } from "../data";
+import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
 export default function BranchesPage() {
@@ -71,73 +69,6 @@ export default function BranchesPage() {
         <Branches />
 
         {/* ==================================================
-            4. MAP & DIRECTIONS SECTION
-           ================================================== */}
-        <section id="campus-maps" className="py-16 bg-stone-50 border-t border-amber-100/70 scroll-mt-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
-                <Navigation className="w-3.5 h-3.5 text-amber-700" />
-                <span>Google Maps & Navigation</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-stone-900 tracking-tight">
-                Visit Our Preschool Campuses
-              </h2>
-              <p className="mt-2 text-stone-600 text-sm sm:text-base">
-                Our campuses are conveniently located in quiet, residential neighborhoods with safe pick-up and drop-off zones.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {branches.map((branch) => (
-                <div
-                  key={`map-${branch.id}`}
-                  className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-sm flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-extrabold px-2.5 py-1 rounded-md bg-amber-100 text-amber-950">
-                        {branch.branchNo}
-                      </span>
-                      <span className="text-xs font-bold text-stone-500">
-                        {branch.location}
-                      </span>
-                    </div>
-
-                    <h3 className="font-heading font-bold text-xl text-stone-900 mb-2">
-                      {branch.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6">
-                      📍 {branch.address}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 border-t border-stone-100">
-                    <a
-                      href={branch.directionsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-xs"
-                    >
-                      <Navigation className="w-4 h-4" />
-                      <span>Get Directions on Google Maps</span>
-                    </a>
-
-                    <Link
-                      to={`/branches/${branch.slug}`}
-                      className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-stone-100 hover:bg-stone-200 transition-colors"
-                    >
-                      <span>View Branch</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ==================================================
             5. ADMISSIONS CTA FOR PARENTS
            ================================================== */}
         <section className="py-16 bg-white border-t border-amber-100">
@@ -149,10 +80,10 @@ export default function BranchesPage() {
               Schedule a personalized tour of our classrooms, meet our caring educators, and learn more about our 2026-27 admission process.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
               <Link
-                to="/#admissions"
-                className="px-8 py-3.5 rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md transition-colors"
+                to="/admissions"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 min-h-[46px] rounded-full text-sm font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-md transition-colors text-center cursor-pointer"
               >
                 <span>Fill Admission Form</span>
               </Link>
@@ -160,7 +91,7 @@ export default function BranchesPage() {
                 href={schoolInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-full text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors inline-flex items-center gap-2"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 min-h-[46px] rounded-full text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors gap-2 text-center cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Chat on WhatsApp</span>

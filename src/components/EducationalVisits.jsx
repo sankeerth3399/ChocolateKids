@@ -15,7 +15,7 @@ export default function EducationalVisits() {
             <Compass className="w-3.5 h-3.5 text-emerald-700" />
             <span>{tagline}</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
             {heading}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">

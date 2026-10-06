@@ -56,16 +56,16 @@ export default function Navbar({ onOpenEnquiry }) {
                 alt="Chocolate Kids Preschool Logo"
                 className="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="flex flex-col items-start gap-0.5">
-                <BrandBadge className="text-xs sm:text-base" />
-                <span className="text-[9px] sm:text-[10px] font-black tracking-wider uppercase text-[#16A34A] ml-0.5 sm:ml-1">
+              <div className="flex flex-col items-start justify-center leading-none">
+                <BrandBadge className="text-[clamp(1.25rem,2.5vw,2.15rem)] leading-none select-none tracking-normal" />
+                <span className="text-[8px] sm:text-[9.5px] lg:text-[10.5px] font-black tracking-[0.15em] uppercase text-[#16A34A] leading-tight ml-0.5 mt-0.5">
                   Innovative Learning
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation - Home | About Us ▾ | Our Schools | Programs | Franchise | Contact */}
-            <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4">
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3.5">
               {/* Home */}
               <Link
                 to="/"
@@ -73,7 +73,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   closeMenu();
                   window.scrollTo(0, 0);
                 }}
-                className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${isHomeActive
+                className={`px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isHomeActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
                     : "text-[#1E293B] hover:text-[#00A651] hover:bg-[#EAF8EC]/70"
                   }`}
@@ -157,7 +157,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/branches"
                 onClick={closeMenu}
-                className={`px-3.5 py-1.5 rounded-full text-sm font-bold transition-all ${isSchoolsActive
+                className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isSchoolsActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
                     : "text-[#1E293B] hover:text-[#00A651] hover:bg-[#EAF8EC]/70"
                   }`}
@@ -169,7 +169,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/academics"
                 onClick={closeMenu}
-                className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${isProgramsActive
+                className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isProgramsActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
                     : "text-[#1E293B] hover:text-[#00A651] hover:bg-[#EAF8EC]/70"
                   }`}
@@ -181,7 +181,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/franchise"
                 onClick={closeMenu}
-                className={`px-3.5 py-1.5 rounded-full text-sm font-bold transition-all ${isFranchiseActive
+                className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isFranchiseActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
                     : "text-[#1E293B] hover:text-[#00A651] hover:bg-[#EAF8EC]/70"
                   }`}
@@ -193,7 +193,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/contact"
                 onClick={closeMenu}
-                className={`px-3.5 py-1.5 rounded-full text-sm font-bold transition-all ${isContactActive
+                className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isContactActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
                     : "text-[#1E293B] hover:text-[#00A651] hover:bg-[#EAF8EC]/70"
                   }`}
@@ -207,7 +207,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <button
                 type="button"
                 onClick={() => window.dispatchEvent(new CustomEvent("open-admission-modal"))}
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-2xl text-sm font-extrabold text-white bg-[#FF7A00] hover:bg-[#F37000] border-2 border-[#1E293B] shadow-[3px_4px_0px_#1E293B] hover:shadow-[1px_2px_0px_#1E293B] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer shrink-0"
+                className="inline-flex items-center justify-center px-4 xl:px-6 py-2 xl:py-2.5 rounded-2xl text-xs xl:text-sm font-extrabold text-white bg-[#FF7A00] hover:bg-[#F37000] border-2 border-[#1E293B] shadow-[3px_4px_0px_#1E293B] hover:shadow-[1px_2px_0px_#1E293B] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer shrink-0"
               >
                 <span>Enquire Now</span>
               </button>
@@ -254,7 +254,12 @@ export default function Navbar({ onOpenEnquiry }) {
                 alt="Chocolate Kids Logo"
                 className="h-8 sm:h-9 w-auto"
               />
-              <BrandBadge className="text-xs sm:text-sm" />
+              <div className="flex flex-col items-start justify-center leading-none">
+                <BrandBadge className="text-xl sm:text-2xl leading-none select-none" />
+                <span className="text-[8px] sm:text-[9px] font-black tracking-[0.14em] uppercase text-[#16A34A] leading-tight ml-0.5 mt-0.5">
+                  Innovative Learning
+                </span>
+              </div>
             </div>
             <button
               onClick={closeMenu}

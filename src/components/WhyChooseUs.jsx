@@ -26,8 +26,8 @@ export default function WhyChooseUs() {
             <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>Educational Philosophy</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-2">
-            <span>Why Choose</span> <BrandBadge className="text-3xl sm:text-4xl lg:text-5xl" /><span>?</span>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-2">
+            <span>Why Choose</span> <BrandBadge className="text-2xl sm:text-4xl lg:text-5xl" /><span>?</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
             Where your child's well-being, creative joy, and foundational confidence always come first.

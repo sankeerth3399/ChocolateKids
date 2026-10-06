@@ -11,7 +11,7 @@ export default function Testimonials() {
       quote:
         "Excellent environment and caring teachers. My child loves going to school every day — he wakes up excited and comes home with new stories!",
       name: "Ravi Kumar",
-      relation: "Parent of Aarav · Grade 1",
+      relation: "Parent of Aarav · UKG",
       initials: "RK",
       rating: 5,
       // Pink theme (exact match to card 1)
@@ -133,20 +133,20 @@ export default function Testimonials() {
         {/* Carousel Container with Side Arrow Buttons */}
         <div className="relative">
           
-          {/* Left Arrow Button */}
+          {/* Left Arrow Button (Desktop & Tablet) */}
           <button
             onClick={handlePrev}
             aria-label="Previous testimonials"
-            className="absolute left-1 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
+            className="hidden sm:flex absolute -left-4 lg:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          {/* Right Arrow Button */}
+          {/* Right Arrow Button (Desktop & Tablet) */}
           <button
             onClick={handleNext}
             aria-label="Next testimonials"
-            className="absolute right-1 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg flex items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
+            className="hidden sm:flex absolute -right-4 lg:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-white border border-slate-200 shadow-md hover:shadow-lg items-center justify-center text-slate-700 hover:text-black hover:scale-105 transition-all cursor-pointer focus:outline-none"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -200,20 +200,38 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* Pagination Indicators at Bottom */}
-          <div className="flex items-center justify-center gap-2 mt-8 sm:mt-10">
-            {testimonials.map((_, dotIdx) => (
-              <button
-                key={dotIdx}
-                onClick={() => setCurrentIndex(dotIdx)}
-                aria-label={`Go to slide ${dotIdx + 1}`}
-                className={`transition-all duration-300 cursor-pointer ${
-                  currentIndex === dotIdx
-                    ? "w-7 h-2 rounded-full bg-[#FF5B89]"
-                    : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
-            ))}
+          {/* Pagination Indicators at Bottom with Mobile Controls */}
+          <div className="flex items-center justify-center gap-2.5 sm:gap-2 mt-8 sm:mt-10">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous testimonial"
+              className="sm:hidden p-2 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  onClick={() => setCurrentIndex(dotIdx)}
+                  aria-label={`Go to slide ${dotIdx + 1}`}
+                  className={`transition-all duration-300 cursor-pointer ${
+                    currentIndex === dotIdx
+                      ? "w-7 h-2 rounded-full bg-[#FF5B89]"
+                      : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={handleNext}
+              aria-label="Next testimonial"
+              className="sm:hidden p-2 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
 
         </div>

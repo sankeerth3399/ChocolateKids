@@ -77,7 +77,7 @@ export default function About() {
           
           {/* Left: Editorial Overlapping Photo Composition (Storybook Scrapbook) */}
           <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
+            <div className="relative mx-auto max-w-lg lg:max-w-none mb-10 lg:mb-0">
               
               {/* Decorative pastel backdrop shape */}
               <div 
@@ -108,7 +108,7 @@ export default function About() {
               <motion.div 
                 whileHover={{ rotate: 0, scale: 1.03 }}
                 transition={{ duration: 0.3 }}
-                className="absolute -bottom-8 right-0 sm:-right-8 w-44 sm:w-56 max-w-[70%] p-2.5 sm:p-3 bg-white rounded-2xl shadow-2xl border-2 border-stone-200/80 transform rotate-3 z-20 group cursor-pointer"
+                className="absolute -bottom-6 sm:-bottom-8 right-0 sm:-right-4 lg:-right-8 w-40 sm:w-56 max-w-[65%] p-2 sm:p-3 bg-white rounded-2xl shadow-2xl border-2 border-stone-200/80 transform rotate-3 z-20 group cursor-pointer"
               >
                 <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-amber-50">
                   <img
@@ -130,7 +130,7 @@ export default function About() {
           </div>
 
           {/* Right: Editorial Narrative + Educational Pillars */}
-          <div className="lg:col-span-6 space-y-6 pt-6 lg:pt-0">
+          <div className="lg:col-span-6 space-y-6 pt-8 lg:pt-0">
             
             {/* Storybook Narrative Box */}
             <div className="p-6 sm:p-7 rounded-3xl bg-amber-50/70 border border-amber-200/70 shadow-2xs relative">

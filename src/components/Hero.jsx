@@ -59,7 +59,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[54px] text-[#3D1A0D] tracking-tight leading-[1.18]"
+              className="font-heading font-black text-[clamp(1.65rem,4.2vw,3.35rem)] text-[#3D1A0D] tracking-tight leading-[1.18]"
             >
               Play School & Early Learning
               <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#00A651] via-[#F59E0B] to-[#EA580C] bg-clip-text text-transparent filter drop-shadow-xs">
@@ -123,7 +123,7 @@ export default function Hero() {
               </div>
 
               {/* Badge 1: Creative Learning (Top Right - Neatly aligned) */}
-              <div className="absolute -top-3 right-0 sm:-right-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[200px]">
+              <div className="absolute -top-3 right-0 sm:-right-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[170px] sm:max-w-[200px]">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs shrink-0">
                   <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
@@ -138,7 +138,7 @@ export default function Hero() {
               </div>
 
               {/* Badge 2: Safe Haven (Bottom Left - Neatly aligned) */}
-              <div className="absolute -bottom-3 left-0 sm:-left-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[200px]">
+              <div className="absolute -bottom-3 left-0 sm:-left-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[170px] sm:max-w-[200px]">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>

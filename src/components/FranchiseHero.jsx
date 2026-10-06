@@ -57,11 +57,10 @@ export default function FranchiseHero({ onScrollToSection }) {
           - Responsive background position for mobile/tablet/desktop
          ================================================== */}
       <motion.div
-        className="absolute inset-0 w-full h-full bg-cover bg-no-repeat pointer-events-none -z-0"
+        className="absolute inset-0 w-full h-full bg-cover bg-no-repeat pointer-events-none -z-0 bg-[center_22%] md:bg-[center_32%]"
         style={{
           backgroundImage: `url("/images/storybook-school-garden.png"), url("/images/Welcome to Our Storybook School Garden(1).png")`,
-          backgroundPosition: typeof window !== "undefined" && window.innerWidth < 768 ? "center 22%" : "center 32%",
-          y: typeof window !== "undefined" && window.innerWidth >= 1024 ? bgY : 0,
+          y: bgY,
         }}
         aria-hidden="true"
       />
@@ -112,7 +111,7 @@ export default function FranchiseHero({ onScrollToSection }) {
           {/* Main Heading */}
           <motion.h1 
             variants={itemVariants}
-            className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-[1.14] drop-shadow-xs"
+            className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-[1.14] drop-shadow-xs"
           >
             Franchise Opportunity
           </motion.h1>
@@ -120,7 +119,7 @@ export default function FranchiseHero({ onScrollToSection }) {
           {/* Subtitle with Chocolate Kids Brand Badge */}
           <motion.h2 
             variants={itemVariants}
-            className="mt-2.5 font-heading font-black text-xl sm:text-3xl lg:text-4xl text-[#FF5B89] tracking-tight flex items-center justify-center gap-2 flex-wrap drop-shadow-xs"
+            className="mt-2.5 font-heading font-black text-lg sm:text-2xl md:text-3xl lg:text-4xl text-[#FF5B89] tracking-tight flex items-center justify-center gap-2 flex-wrap drop-shadow-xs"
           >
             <span>Join the</span> <BrandBadge className="text-[0.78em]" /> <span>Family</span>
           </motion.h2>
@@ -128,7 +127,7 @@ export default function FranchiseHero({ onScrollToSection }) {
           {/* Supporting Franchise Description */}
           <motion.p 
             variants={itemVariants}
-            className="mt-3 sm:mt-4 text-sm sm:text-lg lg:text-xl text-stone-800 leading-relaxed font-semibold max-w-2xl mx-auto drop-shadow-xs"
+            className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-stone-800 leading-relaxed font-semibold max-w-2xl mx-auto drop-shadow-xs"
           >
             Be a part of a trusted brand in early childhood education and help build brighter futures, one child at a time.
           </motion.p>
@@ -136,13 +135,13 @@ export default function FranchiseHero({ onScrollToSection }) {
           {/* CTA Action Buttons */}
           <motion.div 
             variants={itemVariants}
-            className="mt-7 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full"
+            className="mt-7 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto"
           >
             {/* Primary CTA: Enquire */}
             <button
               type="button"
               onClick={() => handleScroll("enquiry-form")}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 min-h-[46px] rounded-full text-xs sm:text-base font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-amber-300/40 cursor-pointer flex items-center justify-center gap-2 text-center"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 min-h-[46px] rounded-full text-xs sm:text-sm md:text-base font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-800 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-amber-300/40 cursor-pointer flex items-center justify-center gap-2 text-center"
             >
               <span>ENQUIRE ABOUT FRANCHISE</span>
               <ArrowDown className="w-4 h-4 text-amber-200" />
@@ -153,7 +152,7 @@ export default function FranchiseHero({ onScrollToSection }) {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 sm:px-7 py-3.5 sm:py-4 min-h-[46px] rounded-full text-xs sm:text-base font-bold text-emerald-950 bg-white/95 hover:bg-emerald-50 border border-emerald-400 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 backdrop-blur-xs transform hover:-translate-y-0.5 text-center"
+              className="w-full sm:w-auto px-5 sm:px-7 py-3.5 sm:py-4 min-h-[46px] rounded-full text-xs sm:text-sm md:text-base font-bold text-emerald-950 bg-white/95 hover:bg-emerald-50 border border-emerald-400 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 backdrop-blur-xs transform hover:-translate-y-0.5 text-center"
             >
               <MessageCircle className="w-4 h-4 text-emerald-600" />
               <span>WHATSAPP US</span>

@@ -108,7 +108,7 @@ export default function Facilities() {
           </div>
 
           {/* Heading: What We Offer */}
-          <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
             <span className="text-[#FF5B89]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>

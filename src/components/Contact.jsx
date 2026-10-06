@@ -133,7 +133,7 @@ export default function Contact() {
             </div>
             <Link
               to="/branches"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 shadow-sm hover:shadow-md transition-all shrink-0 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-xs sm:text-sm font-extrabold text-white bg-amber-600 hover:bg-amber-700 shadow-sm hover:shadow-md transition-all shrink-0 cursor-pointer text-center"
             >
               <span>View Our Schools</span>
               <ArrowRight className="w-4 h-4" />
