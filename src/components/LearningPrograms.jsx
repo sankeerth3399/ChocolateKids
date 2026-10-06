@@ -148,7 +148,7 @@ export default function LearningPrograms({ showGrades }) {
       {/* =========================================================================
           PART 1: HERO BANNER - Structured Learning Paths for Early Years (Screenshot 1)
           ========================================================================= */}
-      <section className="relative min-h-[480px] sm:min-h-[540px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] flex items-center justify-center overflow-hidden">
         {/* Rich Background Classroom Image */}
         <img
           src="/images/structured_learning_hero.jpg"
@@ -158,15 +158,15 @@ export default function LearningPrograms({ showGrades }) {
         {/* Dark Gradient Overlay for Ultra-Legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/50" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 relative z-10 w-full">
           <div className="max-w-3xl">
             {/* Pill: Our Programs */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-5">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
               <span>Our Programs</span>
             </div>
 
             {/* Massive Bold Display Heading */}
-            <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h1 className="font-heading font-black text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] mb-4 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
               <span>Structured Learning Paths at</span> <BrandName variant="badge" className="text-[0.62em]" />
             </h1>
 
@@ -280,7 +280,7 @@ export default function LearningPrograms({ showGrades }) {
 
             {/* Right Column: Giant Rounded Stage Card (8 cols) */}
             <div className="lg:col-span-8">
-              <div className="rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[380px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-4 sm:p-10 lg:p-12 border border-stone-200/80 group">
+              <div className="rounded-3xl sm:rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[360px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-4 sm:p-10 lg:p-12 border border-stone-200/80 group">
                 {/* Stage Photo with smooth transition */}
                 <img
                   key={currentStage.id}
@@ -295,14 +295,14 @@ export default function LearningPrograms({ showGrades }) {
                 {/* Card Content */}
                 <div className="relative z-10 text-white max-w-xl">
                   {/* Age Badge */}
-                  <div className="mb-3">
+                  <div className="mb-2 sm:mb-3">
                     <span className={`inline-block px-3.5 py-1 rounded-full text-xs font-black text-white ${currentStage.badgeBg} shadow-md uppercase tracking-wider`}>
                       {currentStage.ageBadge}
                     </span>
                   </div>
 
                   {/* Stage Headline */}
-                  <h3 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight mb-3">
+                  <h3 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-2 sm:mb-3">
                     {currentStage.headline}
                   </h3>
 

@@ -6,10 +6,10 @@ export default function BrandWatermark({
   className = "" 
 }) {
   const sizeClasses = {
-    sm: "w-[320px] sm:w-[460px] lg:w-[600px]",
-    md: "w-[380px] sm:w-[560px] lg:w-[720px] xl:w-[780px]",
-    lg: "w-[440px] sm:w-[650px] lg:w-[840px] xl:w-[920px]",
-    xl: "w-[480px] sm:w-[750px] lg:w-[950px] xl:w-[1020px]",
+    sm: "w-[min(70vw,260px)] sm:w-[420px] lg:w-[600px]",
+    md: "w-[min(78vw,300px)] sm:w-[500px] lg:w-[720px] xl:w-[780px]",
+    lg: "w-[min(84vw,340px)] sm:w-[580px] lg:w-[840px] xl:w-[920px]",
+    xl: "w-[min(90vw,380px)] sm:w-[680px] lg:w-[950px] xl:w-[1020px]",
   };
 
   const positionClasses = {

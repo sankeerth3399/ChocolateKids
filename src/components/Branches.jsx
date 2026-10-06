@@ -161,12 +161,12 @@ export default function Branches() {
                       <span>Get Directions</span>
                     </a>
 
-                    {/* View Campus Link */}
+                    {/* View Branch Link */}
                     <Link
                       to={`/branches/${branch.slug}`}
                       className="inline-flex items-center justify-center gap-1 py-2.5 px-3 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
                     >
-                      <span>View Campus</span>
+                      <span>View Branch</span>
                       <ArrowRight className="w-3.5 h-3.5 text-stone-500" />
                     </Link>
                   </div>

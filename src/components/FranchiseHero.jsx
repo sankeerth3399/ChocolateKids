@@ -44,7 +44,7 @@ export default function FranchiseHero({ onScrollToSection }) {
   return (
     <section
       id="franchise-hero"
-      className="relative min-h-[580px] sm:min-h-[740px] lg:min-h-[820px] xl:min-h-[860px] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-14 sm:pb-20"
+      className="relative min-h-[440px] sm:min-h-[640px] lg:min-h-[780px] xl:min-h-[840px] flex items-center justify-center overflow-hidden pt-20 sm:pt-28 pb-10 sm:pb-20"
       style={{
         backgroundColor: "#FAF4EB",
       }}

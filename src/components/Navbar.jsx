@@ -19,6 +19,22 @@ export default function Navbar({ onOpenEnquiry }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   const closeMenu = () => {
     setMobileMenuOpen(false);
     setAboutDropdownOpen(false);
@@ -57,7 +73,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 className="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col items-start justify-center leading-none">
-                <BrandBadge className="text-[clamp(1.25rem,2.5vw,2.15rem)] leading-none select-none tracking-normal" />
+                <BrandBadge className="text-[clamp(1.1rem,2.8vw,2.15rem)] leading-none select-none tracking-normal" />
                 <span className="text-[8px] sm:text-[9.5px] lg:text-[10.5px] font-black tracking-[0.15em] uppercase text-[#16A34A] leading-tight ml-0.5 mt-0.5">
                   Innovative Learning
                 </span>

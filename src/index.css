@@ -165,13 +165,25 @@
     font-size: 16px; /* Prevents auto-zoom on iOS mobile browsers */
   }
 
+  @media screen and (max-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
   h1,
   h2,
   h3,
   h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
   .font-heading {
-    font-family: 'Fredoka', 'Baloo 2', system-ui, sans-serif;
-    color: #5A2E1B;
     overflow-wrap: break-word;
     word-break: normal;
   }

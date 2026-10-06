@@ -108,7 +108,7 @@ export default function About() {
               <motion.div 
                 whileHover={{ rotate: 0, scale: 1.03 }}
                 transition={{ duration: 0.3 }}
-                className="absolute -bottom-6 sm:-bottom-8 right-0 sm:-right-4 lg:-right-8 w-40 sm:w-56 max-w-[65%] p-2 sm:p-3 bg-white rounded-2xl shadow-2xl border-2 border-stone-200/80 transform rotate-3 z-20 group cursor-pointer"
+                className="absolute -bottom-4 sm:-bottom-8 right-1 sm:-right-4 lg:-right-8 w-36 sm:w-56 max-w-[55%] sm:max-w-[65%] p-1.5 sm:p-3 bg-white rounded-2xl shadow-2xl border-2 border-stone-200/80 transform rotate-2 z-20 group cursor-pointer"
               >
                 <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-amber-50">
                   <img

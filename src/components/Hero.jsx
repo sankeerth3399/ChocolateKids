@@ -123,30 +123,30 @@ export default function Hero() {
               </div>
 
               {/* Badge 1: Creative Learning (Top Right - Neatly aligned) */}
-              <div className="absolute -top-3 right-0 sm:-right-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[170px] sm:max-w-[200px]">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs shrink-0">
+              <div className="absolute -top-3 right-0 sm:-right-3 bg-white/95 backdrop-blur-md p-1.5 sm:p-3 rounded-xl shadow-lg border border-amber-200/90 flex items-center gap-1.5 sm:gap-2.5 max-w-[150px] sm:max-w-[200px]">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-2xs shrink-0">
                   <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-extrabold text-[#F59E0B] uppercase tracking-wider block">
+                  <span className="text-[8px] sm:text-[9px] font-extrabold text-[#F59E0B] uppercase tracking-wider block">
                     Creative Arts
                   </span>
-                  <span className="text-[11px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
+                  <span className="text-[10px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
                     Art, Music & Dance
                   </span>
                 </div>
               </div>
 
               {/* Badge 2: Safe Haven (Bottom Left - Neatly aligned) */}
-              <div className="absolute -bottom-3 left-0 sm:-left-3 bg-white/95 backdrop-blur-md p-2 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-2 sm:gap-2.5 max-w-[170px] sm:max-w-[200px]">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs shrink-0">
+              <div className="absolute -bottom-3 left-0 sm:-left-3 bg-white/95 backdrop-blur-md p-1.5 sm:p-3 rounded-xl shadow-lg border border-emerald-200/90 flex items-center gap-1.5 sm:gap-2.5 max-w-[150px] sm:max-w-[200px]">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xs shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-extrabold text-[#16A34A] uppercase tracking-wider block">
+                  <span className="text-[8px] sm:text-[9px] font-extrabold text-[#16A34A] uppercase tracking-wider block">
                     Safe & Nurturing
                   </span>
-                  <span className="text-[11px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
+                  <span className="text-[10px] sm:text-xs font-black text-[#5A2E1B] block leading-tight">
                     Child-First Campus
                   </span>
                 </div>
