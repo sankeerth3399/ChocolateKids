@@ -8,7 +8,6 @@ import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
-import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 
@@ -46,9 +45,6 @@ export default function Home() {
 
         {/* 14. Admissions Call to Action */}
         <AdmissionsCTA showQuickInquiry={false} />
-
-        {/* 15. Contact & Campus Information */}
-        <Contact />
       </main>
 
       {/* 16. Comprehensive Footer */}
