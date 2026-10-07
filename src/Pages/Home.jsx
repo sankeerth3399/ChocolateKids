@@ -41,14 +41,14 @@ export default function Home() {
         {/* 6. Facilities (What We Offer) */}
         <Facilities />
 
-        {/* Compact CONNECT US CTA Banner */}
-        <ConnectCTA />
-
         {/* 7. Parent & Child Focused Testimonials */}
         <Testimonials />
 
-        {/* 14. Admissions Call to Action */}
+        {/* 14. Admissions Call to Action ("Let Their Adventure Begin at") */}
         <AdmissionsCTA showQuickInquiry={false} />
+
+        {/* 15. Final Compact CONNECT US CTA Banner */}
+        <ConnectCTA />
       </main>
 
       {/* 16. Comprehensive Footer */}
