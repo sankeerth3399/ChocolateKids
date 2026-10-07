@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MessageSquare, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { highlightBrand } from "../utils/brandHelper";
 
-export default function Testimonials() {
+export default function Testimonials({ className = "" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
@@ -107,7 +107,7 @@ export default function Testimonials() {
   const visibleCards = getVisibleTestimonials();
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className={`pt-6 sm:pt-8 pb-16 sm:pb-24 bg-white relative overflow-hidden ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

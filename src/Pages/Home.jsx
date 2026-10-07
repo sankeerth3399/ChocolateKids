@@ -6,6 +6,7 @@ import CorePhilosophy from "../components/CorePhilosophy";
 import WhyChooseUs from "../components/WhyChooseUs";
 import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
+import ConnectCTA from "../components/ConnectCTA";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import Footer from "../components/Footer";
@@ -39,6 +40,9 @@ export default function Home() {
 
         {/* 6. Facilities (What We Offer) */}
         <Facilities />
+
+        {/* Compact CONNECT US CTA Banner */}
+        <ConnectCTA />
 
         {/* 7. Parent & Child Focused Testimonials */}
         <Testimonials />

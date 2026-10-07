@@ -290,6 +290,49 @@
   animation: pulseSubtle 3s ease-in-out infinite;
 }
 
+@keyframes connectWiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  2% {
+    transform: translateX(-4px);
+  }
+  4% {
+    transform: translateX(4px);
+  }
+  6% {
+    transform: translateX(-3px);
+  }
+  8% {
+    transform: translateX(3px);
+  }
+  10% {
+    transform: translateX(-2px);
+  }
+  12% {
+    transform: translateX(2px);
+  }
+  14% {
+    transform: translateX(-1px);
+  }
+  16% {
+    transform: translateX(1px);
+  }
+  18% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wiggle-subtle {
+  display: inline-flex;
+  animation: connectWiggle 3.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-wiggle-subtle:hover {
+  animation-play-state: paused;
+}
+
 .storybook-glow {
   text-shadow: 0 2px 14px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 250, 240, 0.8);
 }

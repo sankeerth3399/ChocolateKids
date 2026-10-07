@@ -3,11 +3,11 @@ import { Sparkles, ShieldCheck, Palette, HeartHandshake, CheckCircle2, ChevronDo
 import { facilitiesData } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
-export default function Facilities() {
+export default function Facilities({ className = "" }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section id="facilities" className="py-16 sm:py-24 bg-white relative overflow-hidden">
+    <section id="facilities" className={`pt-16 sm:pt-20 pb-4 sm:pb-6 bg-white relative overflow-hidden ${className}`}>
       {/* Whimsical curved dotted pastel paths in the background (similar to reference) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
         <svg
@@ -244,7 +244,7 @@ export default function Facilities() {
         </div>
 
         {/* Optional Expandable Button to View Full Campus Facilities */}
-        <div className="mt-14 text-center">
+        <div className="mt-8 sm:mt-10 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-bold border border-slate-200 transition-colors shadow-2xs cursor-pointer"
