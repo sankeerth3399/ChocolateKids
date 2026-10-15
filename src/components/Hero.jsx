@@ -14,27 +14,198 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FFF8EE] to-[#FFF3E3] pt-24 sm:pt-28 pb-8 select-none"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFF7E8] via-[#FFF0D4] to-[#FFE8C8] pt-24 sm:pt-28 pb-10 select-none"
     >
-      {/* Subtle Polka-Dot Whimsical Texture */}
+      {/* =========================================================
+          BACKGROUND LAYER 1: Rich Multi-Color Atmospheric Glows
+          - Warm sunshine yellow, soft orange, peach, and cream
+          - Splashes of pastel green, sky blue, coral pink, lavender
+          ========================================================= */}
+
+      {/* Sunshine & Warm Peach Radiant Glow (Top-Left) */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-20"
-        style={{
-          backgroundImage: "radial-gradient(#F59E0B 1.5px, transparent 1.5px)",
-          backgroundSize: "28px 28px",
-        }}
+        className="absolute -top-24 -left-20 w-[28rem] sm:w-[38rem] h-[28rem] sm:h-[38rem] rounded-full bg-gradient-to-br from-amber-300/45 via-orange-300/35 to-rose-200/25 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Radiant Rich Color Orbs */}
+      {/* Sky Blue & Mint Creative Bloom (Top-Right behind Photo) */}
       <div
-        className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-gradient-to-br from-amber-300/30 via-orange-200/20 to-rose-200/15 blur-3xl pointer-events-none"
+        className="absolute -top-12 -right-16 w-[28rem] sm:w-[40rem] h-[28rem] sm:h-[40rem] rounded-full bg-gradient-to-bl from-sky-300/40 via-cyan-200/35 to-emerald-200/30 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
+
+      {/* Soft Coral & Pastel Lavender Hearth (Bottom-Center) */}
       <div
-        className="absolute top-1/4 -right-24 w-[30rem] h-[30rem] rounded-full bg-gradient-to-bl from-sky-300/25 via-indigo-100/20 to-pink-200/20 blur-3xl pointer-events-none"
+        className="absolute -bottom-20 left-1/3 -translate-x-1/2 w-[30rem] sm:w-[44rem] h-[24rem] sm:h-[30rem] rounded-full bg-gradient-to-tr from-pink-300/25 via-purple-200/20 to-amber-200/30 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
+
+      {/* Pastel Mint Breeze (Bottom-Left) */}
+      <div
+        className="absolute bottom-6 -left-12 w-80 h-80 rounded-full bg-gradient-to-tr from-emerald-300/25 via-teal-200/20 to-transparent blur-2xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Readability Shield: Luminous Cream/Ivory Area Behind Left Headline & Paragraph */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 left-0 sm:left-4 w-full sm:w-[620px] lg:w-[680px] h-[520px] rounded-[3rem] bg-gradient-to-r from-white/90 via-white/75 to-transparent blur-2xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* =========================================================
+          BACKGROUND LAYER 2: Whimsical Preschool Decorative Elements
+          - Puffy soft clouds, playful stars, pastel bubbles & paths
+          ========================================================= */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+
+        {/* Pastel Rainbow Arc (Echoing the classroom rainbow in illustration) */}
+        <div className="absolute -top-10 right-4 sm:right-20 lg:right-44 w-72 sm:w-96 h-36 sm:h-48 opacity-40 pointer-events-none">
+          <svg viewBox="0 0 320 160" fill="none" className="w-full h-full">
+            <path d="M20,150 A140,140 0 0,1 300,150" stroke="#FB7185" strokeWidth="9" strokeLinecap="round" />
+            <path d="M35,150 A125,125 0 0,1 285,150" stroke="#FBBF24" strokeWidth="9" strokeLinecap="round" />
+            <path d="M50,150 A110,110 0 0,1 270,150" stroke="#4ADE80" strokeWidth="9" strokeLinecap="round" />
+            <path d="M65,150 A95,95 0 0,1 255,150" stroke="#38BDF8" strokeWidth="9" strokeLinecap="round" />
+            <path d="M80,150 A80,80 0 0,1 240,150" stroke="#C084FC" strokeWidth="9" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        {/* Soft Puffy Cloud 1 (Top Left) */}
+        <div className="absolute top-20 sm:top-24 left-4 sm:left-12 lg:left-16 animate-float opacity-85">
+          <svg className="w-16 h-10 sm:w-22 sm:h-14 drop-shadow-[0_4px_12px_rgba(251,146,60,0.15)]" viewBox="0 0 100 60" fill="none">
+            <path
+              d="M25 45 H75 C84 45 90 39 90 31 C90 24 84 18 77 18 C76 11 70 5 62 5 C56 5 50 9 47 14 C44 11 39 9 34 9 C24 9 16 17 16 27 C10 28 6 34 6 40 C6 47 11 45 25 45 Z"
+              fill="#FFFFFF"
+            />
+            <path
+              d="M25 45 H75 C82 45 87 41 89 36 C80 43 65 44 47 43 C32 42 20 44 12 39 C14 43 19 45 25 45 Z"
+              fill="#FED7AA"
+              opacity="0.6"
+            />
+          </svg>
+        </div>
+
+        {/* Soft Puffy Cloud 2 (Top Right near Badge) */}
+        <div className="hidden sm:block absolute top-14 sm:top-16 right-8 sm:right-28 animate-float-delayed opacity-80">
+          <svg className="w-14 h-9 sm:w-18 sm:h-11 drop-shadow-[0_4px_12px_rgba(56,189,248,0.18)]" viewBox="0 0 100 60" fill="none">
+            <path
+              d="M25 45 H75 C84 45 90 39 90 31 C90 24 84 18 77 18 C76 11 70 5 62 5 C56 5 50 9 47 14 C44 11 39 9 34 9 C24 9 16 17 16 27 C10 28 6 34 6 40 C6 47 11 45 25 45 Z"
+              fill="#FFFFFF"
+            />
+            <path
+              d="M25 45 H75 C82 45 87 41 89 36 C80 43 65 44 47 43 C32 42 20 44 12 39 C14 43 19 45 25 45 Z"
+              fill="#BAE6FD"
+              opacity="0.6"
+            />
+          </svg>
+        </div>
+
+        {/* Whimsical Flight Dashed Trail */}
+        <div className="hidden md:block absolute top-28 left-36 w-64 h-32 opacity-35">
+          <svg viewBox="0 0 240 120" fill="none" className="w-full h-full">
+            <path
+              d="M10 80 C60 20, 140 110, 200 40 C220 20, 235 30, 230 45 C220 60, 205 50, 215 35"
+              stroke="#F59E0B"
+              strokeWidth="2"
+              strokeDasharray="5 5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
+        {/* Playful Floating Glassmorphic Bubbles */}
+        {/* Bubble 1: Lavender (Top Left) */}
+        <div className="absolute top-36 left-8 sm:left-24 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-purple-300/40 via-pink-200/30 to-white/70 border border-white/60 shadow-xs backdrop-blur-xs animate-float" />
+
+        {/* Bubble 2: Sky Blue (Mid Right) */}
+        <div className="absolute top-1/2 right-6 sm:right-16 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-sky-300/45 via-cyan-100/35 to-white/70 border border-white/70 shadow-xs backdrop-blur-xs animate-float-delayed" />
+
+        {/* Bubble 3: Sunshine Amber (Bottom Left) */}
+        <div className="absolute bottom-24 left-10 sm:left-28 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-amber-300/45 via-yellow-100/40 to-white/70 border border-white/60 shadow-xs backdrop-blur-xs animate-sway" />
+
+        {/* Bubble 4: Mint Green (Top Center) */}
+        <div className="hidden lg:block absolute top-24 left-1/2 w-6 h-6 rounded-full bg-gradient-to-tr from-emerald-300/40 via-teal-100/30 to-white/70 border border-white/60 shadow-xs backdrop-blur-xs animate-float" />
+
+        {/* Floating Sparkle Stars */}
+        {/* Gold 4-point star near Top Left */}
+        <div className="absolute top-16 left-1/4 animate-pulse-subtle text-amber-500/80">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-xs" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+          </svg>
+        </div>
+
+        {/* Coral pink star near Top Right */}
+        <div className="absolute top-28 right-1/3 animate-sway text-rose-400/80">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 drop-shadow-xs" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+          </svg>
+        </div>
+
+        {/* Cyan star near Bottom Right Photo */}
+        <div className="absolute bottom-16 right-10 sm:right-24 animate-float text-sky-400/80">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-xs" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+          </svg>
+        </div>
+
+        {/* Emerald sparkle near Bottom Left */}
+        <div className="absolute bottom-28 left-6 sm:left-20 animate-float-delayed text-emerald-500/70">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 drop-shadow-xs" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+          </svg>
+        </div>
+
+        {/* Playful Soft Geometric Wooden-Block Motifs (Edges only) */}
+        {/* Soft rounded pastel triangle (Bottom Right edge) */}
+        <div className="hidden md:block absolute bottom-8 right-8 rotate-12 opacity-40">
+          <svg className="w-8 h-8 text-amber-400" viewBox="0 0 40 40" fill="currentColor">
+            <polygon points="20,4 38,36 2,36" />
+          </svg>
+        </div>
+
+        {/* Soft rounded pastel ring (Top Right edge) */}
+        <div className="hidden lg:block absolute top-12 right-12 opacity-35">
+          <div className="w-10 h-10 rounded-full border-4 border-dashed border-sky-400 animate-spin [animation-duration:25s]" />
+        </div>
+
+        {/* =========================================================
+            BACKGROUND LAYER 3: Rolling Gentle Preschool Hills at Bottom
+            - Soft flowing pastel curves connecting to CorePhilosophy
+            ========================================================= */}
+        <svg
+          className="absolute bottom-0 left-0 right-0 w-full h-16 sm:h-24 pointer-events-none"
+          viewBox="0 0 1440 90"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          {/* Back wave: Warm Sunshine Peach / Pink gradient */}
+          <path
+            d="M0,35 C280,70 540,15 820,45 C1100,75 1300,20 1440,40 L1440,90 L0,90 Z"
+            fill="url(#hero-hill-gradient-1)"
+            opacity="0.55"
+          />
+          {/* Front wave: Soft Mint / Sky Blue / Warm Cream blend */}
+          <path
+            d="M0,55 C360,25 720,70 1080,40 C1260,25 1380,50 1440,45 L1440,90 L0,90 Z"
+            fill="url(#hero-hill-gradient-2)"
+            opacity="0.85"
+          />
+          <defs>
+            <linearGradient id="hero-hill-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#FDE68A" />
+              <stop offset="35%" stopColor="#FED7AA" />
+              <stop offset="70%" stopColor="#FBCFE8" />
+              <stop offset="100%" stopColor="#BAE6FD" />
+            </linearGradient>
+            <linearGradient id="hero-hill-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#FFF9F0" />
+              <stop offset="30%" stopColor="#FEF3C7" />
+              <stop offset="65%" stopColor="#DCFCE7" />
+              <stop offset="100%" stopColor="#FFF9F0" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+      </div>
 
       {/* Main Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
