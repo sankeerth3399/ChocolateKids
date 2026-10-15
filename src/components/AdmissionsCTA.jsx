@@ -67,8 +67,12 @@ export default function AdmissionsCTA({ showQuickInquiry }) {
                 href="#admissions"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("admissions")?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  window.history.pushState(null, "", "#admissions");
+                  const target = document.getElementById("admissions");
+                  if (target) {
+                    target.scrollIntoView({ behavior: "auto", block: "start" });
+                  } else {
+                    window.dispatchEvent(new CustomEvent("open-admission-modal"));
+                  }
                 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-[30px] text-base font-bold text-white bg-black/15 hover:bg-black/25 border border-white/40 backdrop-blur-xs transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
               >

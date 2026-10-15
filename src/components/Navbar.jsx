@@ -63,7 +63,9 @@ export default function Navbar({ onOpenEnquiry }) {
               to="/"
               onClick={() => {
                 closeMenu();
-                window.scrollTo(0, 0);
+                if (window.location.pathname === "/") {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }
               }}
               className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#00A651] rounded-lg p-0.5 sm:p-1"
             >
@@ -87,7 +89,9 @@ export default function Navbar({ onOpenEnquiry }) {
                 to="/"
                 onClick={() => {
                   closeMenu();
-                  window.scrollTo(0, 0);
+                  if (window.location.pathname === "/") {
+                    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                  }
                 }}
                 className={`px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-sm font-bold transition-all ${isHomeActive
                     ? "bg-[#EAF8EC] text-[#00A651]"
@@ -264,7 +268,16 @@ export default function Navbar({ onOpenEnquiry }) {
       >
         <div className="p-4 sm:p-6">
           <div className="flex items-center justify-between pb-4 border-b border-stone-100">
-            <div className="flex items-center gap-2">
+            <Link
+              to="/"
+              onClick={() => {
+                closeMenu();
+                if (window.location.pathname === "/") {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }
+              }}
+              className="flex items-center gap-2 group focus:outline-none"
+            >
               <img
                 src="/logo.png"
                 alt="Chocolate Kids Logo"
@@ -276,7 +289,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   Innovative Learning
                 </span>
               </div>
-            </div>
+            </Link>
             <button
               onClick={closeMenu}
               className="p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer"
@@ -292,7 +305,9 @@ export default function Navbar({ onOpenEnquiry }) {
               to="/"
               onClick={() => {
                 closeMenu();
-                window.scrollTo(0, 0);
+                if (window.location.pathname === "/") {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }
               }}
               className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#EAF8EC] text-[#00A651]" : "text-stone-700 hover:bg-[#EAF8EC]/60"
                 }`}

@@ -7,7 +7,7 @@ export default function Hero() {
     e.preventDefault();
     const elem = document.getElementById("about");
     if (elem) {
-      elem.scrollIntoView({ behavior: "smooth", block: "start" });
+      elem.scrollIntoView({ behavior: "auto", block: "start" });
     }
   };
 

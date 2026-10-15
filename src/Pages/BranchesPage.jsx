@@ -16,7 +16,6 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function BranchesPage() {
   useEffect(() => {
-    window.scrollTo(0, 0);
     document.title = "Our Schools | Chocolate Kids Preschool Branches in Hyderabad";
   }, []);
 

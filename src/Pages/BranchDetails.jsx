@@ -34,7 +34,6 @@ export default function BranchDetails() {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     if (branch) {
       document.title = `${branch.name} | Chocolate Kids Preschool Hyderabad`;
     }

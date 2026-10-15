@@ -26,10 +26,10 @@ export default function StickyFranchiseBar({ onOpenEnquiry }) {
 
   const handleEnquireClick = (e) => {
     if (location.pathname === "/franchise") {
-      const el = document.getElementById("franchise-form");
+      const el = document.getElementById("enquiry-form") || document.getElementById("franchise-form");
       if (el) {
         e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        el.scrollIntoView({ behavior: "auto", block: "start" });
       }
     } else if (onOpenEnquiry) {
       e.preventDefault();
@@ -64,7 +64,7 @@ export default function StickyFranchiseBar({ onOpenEnquiry }) {
         <div className="flex items-center gap-3 max-w-md mx-auto">
           {/* Enquire Now Button */}
           <Link
-            to={location.pathname === "/franchise" ? "#franchise-form" : "/franchise#enquiry"}
+            to={location.pathname === "/franchise" ? "#enquiry-form" : "/franchise#enquiry-form"}
             onClick={handleEnquireClick}
             className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl text-xs font-extrabold text-white bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 shadow-md active:scale-98 transition-transform"
           >

@@ -11,7 +11,7 @@ export default function ScrollToTop() {
         const id = hash.replace("#", "");
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          element.scrollIntoView({ behavior: "auto", block: "start" });
         }
       }, 100);
       return () => clearTimeout(timer);

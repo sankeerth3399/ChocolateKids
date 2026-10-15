@@ -33,18 +33,17 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
 
         {/* Blue Button: Become a Partner (Goes to Franchise) */}
         {isFranchise ? (
-          <a
-            href="#franchise-form"
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.getElementById("franchise-form") || document.getElementById("apply");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+          <button
+            type="button"
+            onClick={() => {
+              const el = document.getElementById("enquiry-form") || document.getElementById("franchise-form");
+              if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
             }}
             className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold text-white bg-[#194B9E] hover:bg-[#143D82] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer shrink-0"
           >
             <Briefcase className="w-3.5 h-3.5 text-blue-200 shrink-0" />
             <span>Become a Partner</span>
-          </a>
+          </button>
         ) : (
           <Link
             to="/franchise"

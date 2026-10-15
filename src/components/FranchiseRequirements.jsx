@@ -34,10 +34,10 @@ export default function FranchiseRequirements({ onOpenForm }) {
       onOpenForm();
       return;
     }
-    const formElem = document.getElementById("franchise-form") || document.getElementById("enquiry");
+    const formElem = document.getElementById("enquiry-form") || document.getElementById("franchise-form") || document.getElementById("enquiry");
     if (formElem) {
       e.preventDefault();
-      formElem.scrollIntoView({ behavior: "smooth", block: "start" });
+      formElem.scrollIntoView({ behavior: "auto", block: "start" });
     }
   };
 
@@ -171,7 +171,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
             </div>
 
             <a
-              href="#franchise-form"
+              href="#enquiry-form"
               onClick={handleScrollToForm}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-extrabold text-amber-950 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 transition-colors shadow-lg cursor-pointer"
             >

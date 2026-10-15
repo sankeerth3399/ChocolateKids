@@ -45,7 +45,6 @@ export default function FranchisePage() {
   const [openFaq, setOpenFaq] = useState(0);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     document.title = "Chocolate Kids Franchise | Preschool Franchise Opportunity";
 
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -82,7 +81,7 @@ export default function FranchisePage() {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.scrollIntoView({ behavior: "auto", block: "start" });
     }
   };
 

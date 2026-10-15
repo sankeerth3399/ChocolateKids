@@ -330,7 +330,7 @@ export default function LearningPrograms({ showGrades }) {
                       setFormData((prev) => ({ ...prev, grade: currentStage.headline }));
                       const formSection = document.getElementById("program-enquire-form");
                       if (formSection) {
-                        formSection.scrollIntoView({ behavior: "smooth" });
+                        formSection.scrollIntoView({ behavior: "auto" });
                       } else {
                         window.dispatchEvent(new CustomEvent("open-admission-modal"));
                       }

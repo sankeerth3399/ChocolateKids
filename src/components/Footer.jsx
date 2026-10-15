@@ -5,30 +5,18 @@ import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
-  const handleNavClick = (e, href) => {
-    if (href.startsWith("/#") && window.location.pathname === "/") {
-      e.preventDefault();
-      const id = href.replace("/#", "");
-      const elem = document.getElementById(id);
-      if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "start" });
-        window.history.pushState(null, "", `#${id}`);
-      }
-    }
-  };
-
   const navLinks = [
-    { name: "Home", href: "/#home", page: "/" },
-    { name: "About Us", href: "/#about", page: "/about" },
-    { name: "Academics", href: "/#academics", page: "/academics" },
-    { name: "Activities", href: "/#activities", page: "/activities" },
-    { name: "Gallery", href: "/#gallery", page: "/gallery" },
-    { name: "Events", href: "/#events", page: "/events" },
-    { name: "Facilities", href: "/#facilities", page: "/facilities" },
-    { name: "Branches", href: "/branches", page: "/branches", isPage: true },
-    { name: "Admissions", href: "/admissions", page: "/admissions", isPage: true },
-    { name: "Franchise", href: "/franchise", page: "/franchise", isPage: true },
-    { name: "Contact", href: "/#contact", page: "/contact" },
+    { name: "Home", page: "/" },
+    { name: "About Us", page: "/about" },
+    { name: "Academics", page: "/academics" },
+    { name: "Activities", page: "/activities" },
+    { name: "Gallery", page: "/gallery" },
+    { name: "Events", page: "/events" },
+    { name: "Facilities", page: "/facilities" },
+    { name: "Branches", page: "/branches" },
+    { name: "Admissions", page: "/admissions" },
+    { name: "Franchise", page: "/franchise" },
+    { name: "Contact", page: "/contact" },
   ];
 
   return (
@@ -43,8 +31,16 @@ export default function Footer() {
 
           {/* Col 1: Brand & Tagline (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="p-1.5 rounded-xl bg-white shadow-md">
+            <Link
+              to="/"
+              onClick={() => {
+                if (window.location.pathname === "/") {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }
+              }}
+              className="flex items-center gap-3 group focus:outline-none"
+            >
+              <div className="p-1.5 rounded-xl bg-white shadow-md group-hover:scale-105 transition-transform">
                 <img
                   src="/logo.png"
                   alt="Chocolate Kids Preschool Logo"
@@ -57,7 +53,7 @@ export default function Footer() {
                   Innovative Learning
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-sm text-stone-400 leading-relaxed font-normal">
               A child-centered, friendly and safe haven where little minds grow, learn, and shine. Focused on foundational curiosity, gentle care, and active experiential learning.
@@ -90,31 +86,28 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a
-                  href="/#academics"
-                  onClick={(e) => handleNavClick(e, "/#academics")}
+                <Link
+                  to="/academics"
                   className="text-stone-400 hover:text-white transition-colors"
                 >
                   Learning Programs (Play–UKG)
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/#activities"
-                  onClick={(e) => handleNavClick(e, "/#activities")}
+                <Link
+                  to="/activities"
                   className="text-stone-400 hover:text-white transition-colors"
                 >
                   Sensory & Play Activities
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/#facilities"
-                  onClick={(e) => handleNavClick(e, "/#facilities")}
+                <Link
+                  to="/facilities"
                   className="text-stone-400 hover:text-white transition-colors"
                 >
                   Child-Safe Facilities
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
@@ -244,29 +237,20 @@ export default function Footer() {
         {/* Quick Links Navigation Row (Section 26) */}
         <div className="py-6 border-b border-stone-800/80 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-stone-400">
           <span className="font-bold text-stone-300 uppercase tracking-wider">Quick Navigation:</span>
-          {navLinks.map((item) => {
-            if (item.isPage) {
-              return (
-                <Link
-                  key={item.name}
-                  to={item.page}
-                  className="hover:text-amber-400 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              );
-            }
-            return (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="hover:text-amber-400 transition-colors"
-              >
-                {item.name}
-              </a>
-            );
-          })}
+          {navLinks.map((item) => (
+            <Link
+              key={item.name}
+              to={item.page}
+              onClick={() => {
+                if (window.location.pathname === item.page) {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }
+              }}
+              className="hover:text-amber-400 transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
 
         {/* Footer Bottom Bar */}
