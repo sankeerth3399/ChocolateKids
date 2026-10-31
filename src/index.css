@@ -392,3 +392,64 @@
     scroll-behavior: auto !important;
   }
 }
+/* =========================================================
+   RESPONSIVE SAFEGUARDS
+   ========================================================= */
+
+/* Use the dynamic viewport so mobile browser toolbars don't cut off full-height layouts */
+@supports (min-height: 100dvh) {
+  body,
+  #root {
+    min-height: 100dvh;
+  }
+}
+
+/* Never let media or embeds push a layout wider than its container */
+iframe,
+canvas,
+table {
+  max-width: 100%;
+}
+
+/* Long words / emails / URLs wrap instead of overflowing small screens */
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+a {
+  overflow-wrap: break-word;
+}
+.chocolatekids-brand,
+.brand-logo-badge,
+.brand-text-outline,
+.chocolatekids-brand-outline {
+  overflow-wrap: normal;
+}
+
+/* Touch screens: comfortable tap targets for text links in the footer */
+@media (pointer: coarse) {
+  footer ul a,
+  footer nav a,
+  footer a.inline-block {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+}
+
+/* Keep floating UI clear of phone notches / home indicators */
+@supports (padding: max(0px)) {
+  .fixed.bottom-3,
+  .fixed.bottom-20 {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Short landscape phones: keep modals and menus scrollable instead of clipped */
+@media (max-height: 520px) and (orientation: landscape) {
+  [role="dialog"] .max-h-\[78vh\] {
+    max-height: none;
+  }
+}

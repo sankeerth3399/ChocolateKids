@@ -8,21 +8,16 @@ import {
   TrendingUp, 
   MapPin, 
   Heart, 
-  Check, 
-  CheckCircle2, 
-  Package, 
-  Layers, 
-  Sparkles, 
+  Package,
+  Sparkles,
   MessageCircle, 
   Phone, 
   ArrowRight,
   ArrowDown
 } from "lucide-react";
-import { 
-  schoolInfo, 
-  whyFranchiseWithUs, 
-  franchiseKitIncludes, 
-  franchiseAlsoIncludes 
+import {
+  schoolInfo,
+  whyFranchiseWithUs
 } from "../data";
 import BrandWatermark from "./BrandWatermark";
 
@@ -210,112 +205,6 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
 
           {/* ==================================================
               SUBTLE INTERNAL DIVIDER 2
-             ================================================== */}
-          <div className="relative z-10 border-t border-amber-200/80 my-8 sm:my-10" />
-
-          {/* ==================================================
-              3. FRANCHISE KIT INCLUDES & ALSO INCLUDES
-              - Side-by-side 2-column layout inside the unified widget
-              - 8 Kit offerings + 10 Additional offerings
-             ================================================== */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            
-            {/* Left Subsection: Franchise Kit Includes (8 items) */}
-            <div className="p-4 sm:p-7 rounded-3xl bg-emerald-50/50 border border-emerald-200/80 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-black text-xl text-stone-900">
-                        Franchise Kit Includes
-                      </h4>
-                      <p className="text-xs text-stone-500 font-medium">
-                        8 core institutional deliverables
-                      </p>
-                    </div>
-                  </div>
-                  <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-black text-[11px] uppercase tracking-wider">
-                    Core Kit
-                  </span>
-                </div>
-
-                {/* 8 Items - 2 columns */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
-                  {franchiseKitIncludes.map((item) => (
-                    <div
-                      key={item}
-                      className="p-3 rounded-xl bg-white border border-emerald-200/90 shadow-2xs hover:border-emerald-300 hover:shadow-xs transition-all flex items-start gap-2.5 group"
-                    >
-                      <div className="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                      <span className="text-xs font-bold text-stone-800 leading-snug">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-5 pt-3 border-t border-emerald-200/60 text-xs font-semibold text-emerald-900 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Standardized turnkey learning & operations kit</span>
-              </div>
-            </div>
-
-            {/* Right Subsection: Also Includes (10 items) */}
-            <div className="p-4 sm:p-7 rounded-3xl bg-rose-50/50 border border-rose-200/80 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-rose-100 text-[#FF5B89] flex items-center justify-center shrink-0">
-                      <Layers className="w-4 h-4 text-[#FF5B89]" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-black text-xl text-stone-900">
-                        Also Includes
-                      </h4>
-                      <p className="text-xs text-stone-500 font-medium">
-                        10 campus setup & staff development assets
-                      </p>
-                    </div>
-                  </div>
-                  <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-rose-100 text-rose-900 font-black text-[11px] uppercase tracking-wider">
-                    Extended
-                  </span>
-                </div>
-
-                {/* 10 Items - 2 columns */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
-                  {franchiseAlsoIncludes.map((item) => (
-                    <div
-                      key={item}
-                      className="p-3 rounded-xl bg-white border border-rose-200/90 shadow-2xs hover:border-rose-300 hover:shadow-xs transition-all flex items-start gap-2.5 group"
-                    >
-                      <div className="w-5 h-5 rounded-md bg-rose-100 text-[#FF5B89] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#FF5B89] group-hover:text-white transition-colors">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                      <span className="text-xs font-bold text-stone-800 leading-snug">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-5 pt-3 border-t border-rose-200/60 text-xs font-semibold text-rose-900 flex items-center gap-2">
-                <Heart className="w-3.5 h-3.5 text-[#FF5B89] shrink-0" />
-                <span>Complete support for your ongoing success!</span>
-              </div>
-            </div>
-
-          </div>
-
-          {/* ==================================================
-              SUBTLE INTERNAL DIVIDER 3
              ================================================== */}
           <div className="relative z-10 border-t border-amber-200/80 my-8 sm:my-10" />
 

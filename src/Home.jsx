@@ -896,7 +896,7 @@ function Home() {
             <div>
               <small>EMAIL</small>
               <p>
-                info@brightfuture.edu
+                Chocolatekidspreschool@gmail.com
               </p>
             </div>
 

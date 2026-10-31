@@ -9,7 +9,7 @@ export default function LearningPrograms({ showGrades }) {
   const isHome = location.pathname === "/";
   const shouldIncludeGrades = showGrades !== undefined ? showGrades : !isHome;
 
-  const [activeStageId, setActiveStageId] = useState("pp2");
+  const [activeStageId, setActiveStageId] = useState("playgroup");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     parentName: "",
@@ -131,7 +131,7 @@ export default function LearningPrograms({ showGrades }) {
     ? allStages
     : allStages.filter((s) => s.id !== "grade1" && s.id !== "grade2");
 
-  const currentStage = stages.find((s) => s.id === activeStageId) || stages[3] || stages[0];
+  const currentStage = stages.find((s) => s.id === activeStageId) || stages[0];
 
   const handleFormSubmit = (e) => {
     e.preventDefault();

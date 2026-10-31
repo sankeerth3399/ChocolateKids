@@ -282,7 +282,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#451A03]/60 via-transparent to-transparent pointer-events-none" />
 
                 {/* In-Frame Tag */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
+                <div className="absolute bottom-10 left-4 right-4 text-white">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F59E0B] text-white text-xs font-black uppercase tracking-wider mb-1 shadow-sm">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Joy of Early Childhood</span>

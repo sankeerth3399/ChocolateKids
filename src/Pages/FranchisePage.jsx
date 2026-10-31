@@ -6,7 +6,6 @@ import {
   ArrowRight, 
   ArrowDown,
   CheckCircle2, 
-  Check,
   Phone, 
   MessageCircle, 
   ShieldCheck, 
@@ -24,8 +23,7 @@ import {
   Monitor,
   Palette,
   ChevronDown,
-  HelpCircle,
-  BookCheck
+  HelpCircle
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -150,23 +148,9 @@ export default function FranchisePage() {
                 <h3 className="font-heading font-extrabold text-xl text-stone-900 mb-2">
                   Teacher & Staff Training
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   Teacher Training Program, Staff Training & Development, Professional Training & Development, and School Staff Development Program.
                 </p>
-                <ul className="space-y-2 text-xs font-semibold text-stone-700">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Teacher Training Program</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Staff Capacity Building Training</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Team Training & Development</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Pillar 2: Setup Guidance & Operational Manual */}
@@ -177,23 +161,9 @@ export default function FranchisePage() {
                 <h3 className="font-heading font-extrabold text-xl text-stone-900 mb-2">
                   Setup & Operational Manual
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   Complete setup guidance for classroom planning, frosted glass branding, child safety norms, and a comprehensive operational manual.
                 </p>
-                <ul className="space-y-2 text-xs font-semibold text-stone-700">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Complete Setup Guidance</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Operational Manual & Checklists</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Frosted Glass Branding Setup</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Pillar 3: Curriculum & Learning Materials */}
@@ -204,23 +174,9 @@ export default function FranchisePage() {
                 <h3 className="font-heading font-extrabold text-xl text-stone-900 mb-2">
                   Curriculum & Learning Materials
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   Full early childhood curriculum, learning materials, digital learning screen, soft toy collection, and wooden educational materials.
                 </p>
-                <ul className="space-y-2 text-xs font-semibold text-stone-700">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Curriculum & Learning Materials</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Wooden Educational Materials</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Digital Learning Screen</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Pillar 4: Marketing Assistance */}
@@ -231,23 +187,9 @@ export default function FranchisePage() {
                 <h3 className="font-heading font-extrabold text-xl text-stone-900 mb-2">
                   Marketing Assistance
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   Approved marketing support, brand identity & logo use, local parent outreach collaterals, and admissions campaign assistance.
                 </p>
-                <ul className="space-y-2 text-xs font-semibold text-stone-700">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Brand Identity & Logo Use</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Marketing Support</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Admissions Drive Collaterals</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Pillar 5: Ongoing Mentorship */}
@@ -258,23 +200,9 @@ export default function FranchisePage() {
                 <h3 className="font-heading font-extrabold text-xl text-stone-900 mb-2">
                   Ongoing Mentorship
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   Continuous operational guidance, pedagogy upgrades, center performance mentorship, and legal registration support.
                 </p>
-                <ul className="space-y-2 text-xs font-semibold text-stone-700">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Ongoing Mentorship</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Operations Assistance</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Legal Registration Guidance</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Pillar 6: Dedicated Helpline & Communication */}
@@ -302,130 +230,6 @@ export default function FranchisePage() {
                   <MessageCircle className="w-4 h-4 text-emerald-700" />
                   <span>Chat on WhatsApp</span>
                 </a>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* ==================================================
-            11. FRANCHISE MATERIALS VISUAL SECTION
-            - Visually introducing the materials shown in the official banner:
-              - Teacher training manual
-              - Curriculum guide
-              - Branded merchandise & Bags
-              - Educational & Activity materials
-              - Soft toys & Wooden learning resources
-           ================================================== */}
-        <section id="franchise-materials" className="py-20 sm:py-28 bg-stone-50/70 border-b border-amber-200/60 relative overflow-hidden">
-          {/* Centered Logo Watermark */}
-          <BrandWatermark position="center" size="xl" opacity={0.12} />
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3 border border-amber-200 shadow-2xs">
-                <Palette className="w-3.5 h-3.5 text-amber-800" />
-                <span>Kit & Material Showcase</span>
-              </div>
-              <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
-                Franchise Learning & Operational Materials
-              </h2>
-              <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-                As displayed in our official franchise banner, every branch is equipped with standardized, child-safe curriculum guides, manuals, merchandise, and sensorial kits.
-              </p>
-            </div>
-
-            {/* 4 Visual Showcase Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              
-              {/* Material 1: Teacher Training Manual */}
-              <div className="p-6 rounded-3xl bg-white border border-stone-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <BookCheck className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
-                    Official Manual
-                  </span>
-                  <h3 className="font-heading font-extrabold text-lg text-stone-900 mt-2.5 mb-2">
-                    Teacher Training Manual
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Step-by-step classroom choreography, phonics routines, circle-time guides, and daily lesson plans for educators.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-stone-500">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Standardized Pedagogy</span>
-                </div>
-              </div>
-
-              {/* Material 2: Curriculum Guide */}
-              <div className="p-6 rounded-3xl bg-white border border-stone-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-rose-100 text-[#FF5B89] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <BookOpen className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-[#FF5B89] bg-rose-50 px-2 py-0.5 rounded-md border border-rose-200">
-                    Academic Syllabus
-                  </span>
-                  <h3 className="font-heading font-extrabold text-lg text-stone-900 mt-2.5 mb-2">
-                    Curriculum Guide
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Complete year-round early childhood framework covering Play Group, Nursery, PP-1 / LKG, and PP-2 / UKG milestones.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-stone-500">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Age-Graded Modules</span>
-                </div>
-              </div>
-
-              {/* Material 3: Branded Merchandise & Bags */}
-              <div className="p-6 rounded-3xl bg-white border border-stone-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Package className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-sky-800 bg-sky-50 px-2 py-0.5 rounded-md border border-sky-200">
-                    Official Merch
-                  </span>
-                  <h3 className="font-heading font-extrabold text-lg text-stone-900 mt-2.5 mb-2">
-                    Branded Merchandise & Bags
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Official Chocolate Kids polo shirts, premium school bags, stainless steel tumblers, branded folders, and stationery.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-stone-500">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Consistent Brand Identity</span>
-                </div>
-              </div>
-
-              {/* Material 4: Soft Toys & Wooden Materials */}
-              <div className="p-6 rounded-3xl bg-white border border-stone-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Heart className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                    Sensory Resources
-                  </span>
-                  <h3 className="font-heading font-extrabold text-lg text-stone-900 mt-2.5 mb-2">
-                    Soft Toys & Wooden Materials
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Soft toy collection, child-safe wooden educational materials, tactile manipulatives, and wooden activity puzzles.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-stone-500">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Tactile & Sensory Play</span>
-                </div>
               </div>
 
             </div>
@@ -532,11 +336,11 @@ export default function FranchisePage() {
         {/* ==================================================
             FAQ SECTION (TRANSPARENCY & CLARITY)
            ================================================== */}
-        <section id="franchise-faq" className="py-20 bg-stone-50/80 border-t border-stone-200/80 relative overflow-hidden">
+        <section id="franchise-faq" className="py-14 sm:py-16 bg-stone-50/80 border-t border-stone-200/80 relative overflow-hidden">
           <BrandWatermark position="center" size="lg" opacity={0.10} />
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-14">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-8 sm:mb-10">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
                 <HelpCircle className="w-3.5 h-3.5 text-amber-800" />
                 <span>Transparency & Clarity</span>
@@ -549,74 +353,84 @@ export default function FranchisePage() {
               </p>
             </div>
 
-            <div className="space-y-3.5">
-              {franchiseFAQs.map((faq, index) => {
-                const isOpen = openFaq === index;
+            {/* Two side-by-side columns on tablet/desktop, stacked on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 lg:gap-x-5 gap-y-3 items-start">
+              {[franchiseFAQs.slice(0, Math.ceil(franchiseFAQs.length / 2)), franchiseFAQs.slice(Math.ceil(franchiseFAQs.length / 2))].map((column, colIdx) => {
+                const offset = colIdx === 0 ? 0 : Math.ceil(franchiseFAQs.length / 2);
                 return (
-                  <div
-                    key={faq.q}
-                    className="rounded-2xl border border-stone-200/90 bg-white overflow-hidden transition-all duration-200 shadow-2xs hover:border-amber-300"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? -1 : index)}
-                      className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left focus:outline-none"
-                      aria-expanded={isOpen}
-                    >
-                      <span className="font-heading font-bold text-base sm:text-lg text-stone-900 leading-snug">
-                        <span className="text-amber-600 mr-2 font-mono text-sm sm:text-base">
-                          {index + 1 < 10 ? `0${index + 1}` : index + 1}.
-                        </span>
-                        {highlightBrand(faq.q)}
-                      </span>
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                          isOpen ? "bg-amber-100 text-amber-800 rotate-180" : "bg-stone-100 text-stone-600"
-                        }`}
-                      >
-                        <ChevronDown className="w-4 h-4" />
-                      </div>
-                    </button>
+                  <div key={colIdx} className="space-y-3 min-w-0">
+                    {column.map((faq, i) => {
+                      const index = offset + i;
+                      const isOpen = openFaq === index;
+                      return (
+                        <div
+                          key={faq.q}
+                          className="rounded-2xl border border-stone-200/90 bg-white overflow-hidden transition-all duration-200 shadow-2xs hover:border-amber-300"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                            className="w-full flex items-center justify-between gap-3 p-4 text-left focus:outline-none"
+                            aria-expanded={isOpen}
+                          >
+                            <span className="font-heading font-bold text-sm sm:text-base text-stone-900 leading-snug">
+                              <span className="text-amber-600 mr-1.5 font-mono text-xs sm:text-sm">
+                                {index + 1 < 10 ? `0${index + 1}` : index + 1}.
+                              </span>
+                              {highlightBrand(faq.q)}
+                            </span>
+                            <div
+                              className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                                isOpen ? "bg-amber-100 text-amber-800 rotate-180" : "bg-stone-100 text-stone-600"
+                              }`}
+                            >
+                              <ChevronDown className="w-4 h-4" />
+                            </div>
+                          </button>
 
-                    {isOpen && (
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-stone-600 leading-relaxed border-t border-stone-100">
-                        <p>{highlightBrand(faq.a)}</p>
+                          {isOpen && (
+                            <div className="px-4 pb-4 pt-1 text-sm text-stone-600 leading-relaxed border-t border-stone-100">
+                              <p>{highlightBrand(faq.a)}</p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                    {/* Quick contact card fills the free slot under the last question */}
+                    {colIdx === 1 && (
+                      <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col gap-2.5">
+                        <div>
+                          <h4 className="font-heading font-bold text-sm sm:text-base text-stone-900 leading-snug">
+                            Have another question not covered here?
+                          </h4>
+                          <p className="text-xs text-stone-600 mt-0.5">
+                            Speak directly with our franchise team: <a href="tel:9515869889" className="font-bold text-amber-900 hover:underline">9515869889</a>
+                          </p>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-2">
+                          <a
+                            href={waUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 transition-colors"
+                          >
+                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                            <span>Chat on WhatsApp</span>
+                          </a>
+                          <a
+                            href="tel:9515869889"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-stone-800 bg-white hover:bg-stone-100 border border-stone-200 transition-colors"
+                          >
+                            <Phone className="w-4 h-4 text-stone-600" />
+                            <span>Call 9515869889</span>
+                          </a>
+                        </div>
                       </div>
                     )}
                   </div>
                 );
               })}
-            </div>
-
-            {/* Quick Contact Bar below FAQ */}
-            <div className="mt-12 p-6 rounded-3xl bg-amber-50 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <h4 className="font-heading font-bold text-base text-stone-900">
-                  Have another question not covered here?
-                </h4>
-                <p className="text-xs sm:text-sm text-stone-600">
-                  Speak directly with our franchise team: <a href="tel:9515869889" className="font-bold text-amber-900 hover:underline">9515869889</a>
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 transition-colors shrink-0"
-                >
-                  <MessageCircle className="w-4 h-4 text-emerald-700" />
-                  <span>Chat on WhatsApp</span>
-                </a>
-                <a
-                  href="tel:9515869889"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-stone-800 bg-white hover:bg-stone-100 border border-stone-200 transition-colors shrink-0"
-                >
-                  <Phone className="w-4 h-4 text-stone-600" />
-                  <span>Call 9515869889</span>
-                </a>
-              </div>
             </div>
 
           </div>

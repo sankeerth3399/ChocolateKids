@@ -216,7 +216,7 @@ export default function Testimonials({ className = "" }) {
                   key={dotIdx}
                   onClick={() => setCurrentIndex(dotIdx)}
                   aria-label={`Go to slide ${dotIdx + 1}`}
-                  className={`transition-all duration-300 cursor-pointer ${
+                  className={`relative transition-all duration-300 cursor-pointer after:content-[''] after:absolute after:-inset-x-1.5 after:-inset-y-3 ${
                     currentIndex === dotIdx
                       ? "w-7 h-2 rounded-full bg-[#FF5B89]"
                       : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"

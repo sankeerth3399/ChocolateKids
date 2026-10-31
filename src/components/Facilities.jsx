@@ -123,7 +123,7 @@ export default function Facilities({ className = "" }) {
               <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#F472B6] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
-                    src="/images/structured_learning_hero.jpg"
+                    src="/photos/facility_smart_classroom.svg"
                     alt="Smart Classrooms"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -137,9 +137,6 @@ export default function Facilities({ className = "" }) {
               <h3 className="font-heading font-black text-slate-800 text-lg sm:text-xl">
                 Smart Classrooms
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                Interactive boards, digital tools, and modern learning aids that foster active engagement.
-              </p>
             </div>
           </div>
 
@@ -149,7 +146,7 @@ export default function Facilities({ className = "" }) {
             <div className="w-[230px] sm:w-[240px] aspect-square rounded-full p-2 sm:p-2.5 bg-white border-[3.5px] border-dashed border-[#A855F7] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
               <div className="w-full h-full rounded-full overflow-hidden bg-slate-100">
                 <img
-                  src="/photos/kids_reading_corner.jpg"
+                  src="/photos/facility_library_reading.svg"
                   alt="Library & Reading Corner"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -162,9 +159,6 @@ export default function Facilities({ className = "" }) {
               <h3 className="font-heading font-black text-slate-800 text-lg sm:text-xl">
                 Library & Reading Corner
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                A calm, curated space full of books, stories, and imagination — cultivating a lifelong love for reading.
-              </p>
             </div>
           </div>
 
@@ -175,7 +169,7 @@ export default function Facilities({ className = "" }) {
               <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#38BDF8] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
-                    src="/photos/sports_parade.jpg"
+                    src="/photos/facility_sports_play_area.svg"
                     alt="Sports & Play Area"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -189,9 +183,6 @@ export default function Facilities({ className = "" }) {
               <h3 className="font-heading font-black text-slate-800 text-lg sm:text-xl">
                 Sports & Play Area
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                Safe, spacious outdoor zones designed for joyful movement, gross motor play, and team coordination.
-              </p>
             </div>
           </div>
 
@@ -209,7 +200,7 @@ export default function Facilities({ className = "" }) {
                 <polygon points="140,14 12,254 268,254" fill="#ffffff" />
                 {/* School bus / van image */}
                 <image
-                  href="/images/school-van-safety-care.jpg"
+                  href="/photos/facility_transport_bus.svg"
                   x="16"
                   y="16"
                   width="248"
@@ -235,9 +226,6 @@ export default function Facilities({ className = "" }) {
               <h3 className="font-heading font-black text-slate-800 text-lg sm:text-xl">
                 Transport Facility
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                Reliable, GPS-tracked buses with trained female attendants ensuring a safe, comfortable daily journey.
-              </p>
             </div>
           </div>
 
