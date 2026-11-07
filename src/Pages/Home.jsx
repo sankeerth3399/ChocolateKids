@@ -36,7 +36,7 @@ export default function Home() {
         <WhyChooseUs />
 
         {/* 5. Learning Programs (Playgroup, Nursery, PP1/LKG, PP2/UKG, Day Care) */}
-        <LearningPrograms showGrades={false} />
+        <LearningPrograms />
 
         {/* 6. Facilities (What We Offer) */}
         <Facilities />

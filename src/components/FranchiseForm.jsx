@@ -8,15 +8,7 @@ export default function FranchiseForm() {
     name: "",
     phone: "",
     email: "",
-    city: "",
-    state: "Telangana",
-    preferredLocation: "",
-    occupation: "",
-    currentBusiness: "",
-    hasProperty: "Searching / Shortlisting",
-    propertyDetails: "",
-    investmentRange: "15 - 25 Lakhs",
-    relevantExperience: "",
+    investmentRange: "3 - 3.5 Lakhs",
     message: "",
   });
 
@@ -52,18 +44,6 @@ export default function FranchiseForm() {
       newErrors.email = "Please enter a valid email address.";
     }
 
-    if (!formData.city.trim()) {
-      newErrors.city = "City is required.";
-    }
-
-    if (!formData.state.trim()) {
-      newErrors.state = "State is required.";
-    }
-
-    if (!formData.preferredLocation.trim()) {
-      newErrors.preferredLocation = "Preferred Location is required.";
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -76,10 +56,7 @@ I am interested in the Chocolate Kids franchise opportunity.
 Name: ${formData.name.trim()}
 Phone: ${formData.phone.trim()}
 Email: ${formData.email.trim()}
-City: ${formData.city.trim()}
-Preferred Location: ${formData.preferredLocation.trim()}
 Investment Range: ${formData.investmentRange}
-Experience: ${formData.relevantExperience.trim() || "Not specified"}
 Message: ${formData.message.trim() || "None"}
 
 Please contact me regarding the franchise opportunity.
@@ -222,7 +199,7 @@ Thank you.`;
             </div>
           </div>
 
-          {/* Row 2: Email & Occupation */}
+          {/* Row 2: Email & Investment Range */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
@@ -250,146 +227,6 @@ Thank you.`;
 
             <div>
               <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                Occupation
-              </label>
-              <input
-                type="text"
-                name="occupation"
-                value={formData.occupation}
-                onChange={handleChange}
-                placeholder="e.g. Educator, Professional, Business Owner"
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-            </div>
-          </div>
-
-          {/* Row 3: City, State & Preferred Location */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                City <span className="text-rose-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                placeholder="e.g. Hyderabad"
-                className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
-                  errors.city
-                    ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                    : "border-stone-300 bg-stone-50/40 focus:ring-amber-500"
-                }`}
-              />
-              {errors.city && (
-                <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
-                  <AlertCircle className="w-3.5 h-3.5" />
-                  {errors.city}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                State <span className="text-rose-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="state"
-                value={formData.state}
-                onChange={handleChange}
-                placeholder="e.g. Telangana"
-                className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
-                  errors.state
-                    ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                    : "border-stone-300 bg-stone-50/40 focus:ring-amber-500"
-                }`}
-              />
-              {errors.state && (
-                <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
-                  <AlertCircle className="w-3.5 h-3.5" />
-                  {errors.state}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                Preferred Location <span className="text-rose-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="preferredLocation"
-                value={formData.preferredLocation}
-                onChange={handleChange}
-                placeholder="e.g. Sainikpuri, Kapra, Alwal"
-                className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
-                  errors.preferredLocation
-                    ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                    : "border-stone-300 bg-stone-50/40 focus:ring-amber-500"
-                }`}
-              />
-              {errors.preferredLocation && (
-                <p className="mt-1 text-xs text-rose-600 flex items-center gap-1">
-                  <AlertCircle className="w-3.5 h-3.5" />
-                  {errors.preferredLocation}
-                </p>
-              )}
-            </div>
-          </div>
-
-          {/* Row 4: Current Business & Available Property? */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                Current Business / Background
-              </label>
-              <input
-                type="text"
-                name="currentBusiness"
-                value={formData.currentBusiness}
-                onChange={handleChange}
-                placeholder="e.g. Running tutoring center / IT / Retail / First-time entrepreneur"
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                Available Property?
-              </label>
-              <select
-                name="hasProperty"
-                value={formData.hasProperty}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              >
-                <option value="Yes - Owned Space">Yes - Owned Commercial/Residential Space</option>
-                <option value="Yes - Rented/Leased Space Ready">Yes - Rented/Leased Space Ready</option>
-                <option value="Searching / Shortlisting Locations">Searching / Shortlisting Locations</option>
-                <option value="Need Guidance for Site Selection">Need Guidance for Site Selection</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Row 5: Property Details & Investment Range */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                Property Details <span className="text-stone-400 font-normal">(Approx. sq ft, floor)</span>
-              </label>
-              <input
-                type="text"
-                name="propertyDetails"
-                value={formData.propertyDetails}
-                onChange={handleChange}
-                placeholder="e.g. 2,000 sq ft, independent ground floor house"
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
                 Investment Range
               </label>
               <select
@@ -398,31 +235,14 @@ Thank you.`;
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
-                <option value="10 - 15 Lakhs">₹10 Lakhs – ₹15 Lakhs</option>
-                <option value="15 - 25 Lakhs">₹15 Lakhs – ₹25 Lakhs</option>
-                <option value="25 - 35 Lakhs">₹25 Lakhs – ₹35 Lakhs</option>
-                <option value="Above 35 Lakhs">Above ₹35 Lakhs</option>
+                <option value="3 - 3.5 Lakhs">₹3 Lakhs – ₹3.5 Lakhs</option>
+                <option value="8 - 10 Lakhs">₹8 Lakhs – ₹10 Lakhs</option>
                 <option value="Flexible / Need guidance">Flexible / Need guidance</option>
               </select>
             </div>
           </div>
 
-          {/* Row 6: Relevant Experience */}
-          <div>
-            <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-              Relevant Experience <span className="text-stone-400 font-normal">(Teaching, School Management, Entrepreneurship)</span>
-            </label>
-            <input
-              type="text"
-              name="relevantExperience"
-              value={formData.relevantExperience}
-              onChange={handleChange}
-              placeholder="e.g. 4 years early childhood teaching / Managing retail branch / Passionate parent"
-              className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-            />
-          </div>
-
-          {/* Row 7: Message */}
+          {/* Row 3: Message */}
           <div>
             <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
               Message <span className="text-stone-400 font-normal">(Optional)</span>

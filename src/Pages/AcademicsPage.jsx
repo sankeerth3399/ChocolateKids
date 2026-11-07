@@ -49,7 +49,7 @@ export default function AcademicsPage() {
 
       <main className="pt-16 sm:pt-20">
         {/* Full Programs Section matching reference design (including Grade 1 & 2) */}
-        <LearningPrograms showGrades={true} />
+        <LearningPrograms />
 
 
         {/* Learning Beyond the Classroom Philosophy */}

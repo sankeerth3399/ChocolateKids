@@ -5,20 +5,6 @@ import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
-  const navLinks = [
-    { name: "Home", page: "/" },
-    { name: "About Us", page: "/about" },
-    { name: "Academics", page: "/academics" },
-    { name: "Activities", page: "/activities" },
-    { name: "Gallery", page: "/gallery" },
-    { name: "Events", page: "/events" },
-    { name: "Facilities", page: "/facilities" },
-    { name: "Branches", page: "/branches" },
-    { name: "Admissions", page: "/admissions" },
-    { name: "Franchise", page: "/franchise" },
-    { name: "Contact", page: "/contact" },
-  ];
-
   return (
     <footer className="bg-[#0B3D2E] text-stone-200 pt-16 pb-24 sm:pb-14 border-t-4 border-[#00A651] relative overflow-hidden">
       {/* Brand Logo Watermark - Visible but Elegant */}
@@ -234,27 +220,8 @@ export default function Footer() {
 
         </div>
 
-        {/* Quick Links Navigation Row (Section 26) */}
-        <div className="py-6 border-b border-stone-800/80 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-stone-400">
-          <span className="font-bold text-stone-300 uppercase tracking-wider">Quick Navigation:</span>
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              to={item.page}
-              onClick={() => {
-                if (window.location.pathname === item.page) {
-                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-                }
-              }}
-              className="hover:text-amber-400 transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-
         {/* Footer Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <div className="pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
             © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-xs" />. All Rights Reserved.
           </div>

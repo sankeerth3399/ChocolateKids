@@ -244,9 +244,13 @@ export default function FranchisePage() {
             - Large typography, soft gradient, logo watermark
             - WhatsApp CTA, Franchise Enquiry CTA
            ================================================== */}
-        <section className="py-20 sm:py-24 bg-gradient-to-r from-amber-950 via-stone-900 to-amber-900 text-white relative overflow-hidden">
+        <section className="py-20 sm:py-24 bg-gradient-to-br from-amber-100 via-orange-50 to-rose-100 text-stone-900 border-y border-amber-200/70 relative overflow-hidden">
+          {/* Playful soft accents */}
+          <div className="absolute -top-16 -left-16 w-64 h-64 rounded-full bg-amber-300/40 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -right-16 w-72 h-72 rounded-full bg-rose-300/40 blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-sky-200/40 blur-3xl pointer-events-none" />
           {/* Centered Logo Watermark */}
-          <BrandWatermark position="center" size="xl" opacity={0.15} className="filter invert" />
+          <BrandWatermark position="center" size="xl" opacity={0.12} />
 
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
             
@@ -255,17 +259,17 @@ export default function FranchisePage() {
               <span>Everything You Need to Start, Succeed and Grow!</span>
             </div>
 
-            <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
+            <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
               Complete Support for Your Success!
             </h2>
 
-            <p className="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-stone-700 max-w-2xl mx-auto leading-relaxed font-normal">
               Be a part of our growing family! Let's build a brighter future together with a trusted early education preschool brand.
             </p>
 
             {/* Helpline Callout */}
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm text-amber-300 font-mono text-xl sm:text-2xl font-black">
-              <Phone className="w-6 h-6 text-amber-400" />
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/80 border border-amber-300 shadow-sm backdrop-blur-sm text-amber-800 font-mono text-xl sm:text-2xl font-black">
+              <Phone className="w-6 h-6 text-amber-600" />
               <a href="tel:9515869889" className="hover:underline">
                 9515869889
               </a>
@@ -286,17 +290,17 @@ export default function FranchisePage() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-sm shadow-md transition-all flex items-center gap-2.5"
+                className="px-7 py-4 rounded-full text-sm sm:text-base font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 shadow-md transition-all flex items-center gap-2.5"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <MessageCircle className="w-4 h-4 text-emerald-700" />
                 <span>Talk to Our Franchise Team</span>
               </a>
 
               <a
                 href="tel:9515869889"
-                className="px-6 py-4 rounded-full text-sm sm:text-base font-bold text-stone-300 hover:text-white bg-transparent hover:bg-white/10 border border-white/20 transition-all flex items-center gap-2"
+                className="px-6 py-4 rounded-full text-sm sm:text-base font-bold text-stone-800 hover:text-stone-900 bg-white/60 hover:bg-white border border-stone-300 transition-all flex items-center gap-2"
               >
-                <Phone className="w-4 h-4 text-amber-300" />
+                <Phone className="w-4 h-4 text-amber-700" />
                 <span>Call 9515869889</span>
               </a>
             </div>

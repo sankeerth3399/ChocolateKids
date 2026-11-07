@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BookOpen, Check, ArrowRight, Sparkles, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 import { BrandName, highlightBrand } from "../utils/brandHelper";
 
-export default function LearningPrograms({ showGrades }) {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-  const shouldIncludeGrades = showGrades !== undefined ? showGrades : !isHome;
-
+export default function LearningPrograms() {
   const [activeStageId, setActiveStageId] = useState("playgroup");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,8 +19,6 @@ export default function LearningPrograms({ showGrades }) {
     {
       id: "playgroup",
       name: "Playgroup",
-      ageLabel: "2+ Yrs",
-      ageBadge: "2+ YRS",
       dotColor: "bg-[#FF4081]",
       borderActive: "border-[#FF4081]",
       bgActive: "bg-[#FFF0F5]",
@@ -38,8 +32,6 @@ export default function LearningPrograms({ showGrades }) {
     {
       id: "nursery",
       name: "Nursery",
-      ageLabel: "2.6 Yrs",
-      ageBadge: "2.6 YRS",
       dotColor: "bg-[#10B981]",
       borderActive: "border-[#10B981]",
       bgActive: "bg-[#ECFDF5]",
@@ -53,8 +45,6 @@ export default function LearningPrograms({ showGrades }) {
     {
       id: "pp1",
       name: "PP1",
-      ageLabel: "3.6 Yrs",
-      ageBadge: "3.6 YRS",
       dotColor: "bg-[#0EA5E9]",
       borderActive: "border-[#0EA5E9]",
       bgActive: "bg-[#F0F9FF]",
@@ -68,8 +58,6 @@ export default function LearningPrograms({ showGrades }) {
     {
       id: "pp2",
       name: "PP2",
-      ageLabel: "4.6 Yrs",
-      ageBadge: "4.6 YRS",
       dotColor: "bg-[#8B5CF6]",
       borderActive: "border-[#8B5CF6]",
       bgActive: "bg-[#F5F3FF]",
@@ -81,40 +69,8 @@ export default function LearningPrograms({ showGrades }) {
       image: "/photos/kids_reading_corner.jpg",
     },
     {
-      id: "grade1",
-      name: "Grade 1",
-      ageLabel: "5.6 Yrs",
-      ageBadge: "5.6 YRS",
-      dotColor: "bg-[#F97316]",
-      borderActive: "border-[#F97316]",
-      bgActive: "bg-[#FFF7ED]",
-      textActive: "text-[#EA580C]",
-      badgeBg: "bg-[#F97316]",
-      headline: "Grade 1",
-      description: "Formal primary schooling foundation focusing on independent comprehension, analytical reasoning, and creative writing.",
-      tags: ["Reading Fluency", "Applied Math", "Inquiry Skills"],
-      image: "/images/Chocolate_Kids_Enhanced_04.jpg",
-    },
-    {
-      id: "grade2",
-      name: "Grade 2",
-      ageLabel: "6.6 Yrs",
-      ageBadge: "6.6 YRS",
-      dotColor: "bg-[#6366F1]",
-      borderActive: "border-[#6366F1]",
-      bgActive: "bg-[#EEF2FF]",
-      textActive: "text-[#4F46E5]",
-      badgeBg: "bg-[#6366F1]",
-      headline: "Grade 2",
-      description: "Advanced cognitive thinking, science projects, bilingual expression, and well-rounded co-curricular excellence.",
-      tags: ["Science Discovery", "Logical Thinking", "Leadership"],
-      image: "/photos/science_park_trip.jpg",
-    },
-    {
       id: "daycare",
       name: "Day Care",
-      ageLabel: "1.5 – 8 Yrs",
-      ageBadge: "1.5 – 8 YRS",
       dotColor: "bg-[#EC4899]",
       borderActive: "border-[#EC4899]",
       bgActive: "bg-[#FDF2F8]",
@@ -127,9 +83,7 @@ export default function LearningPrograms({ showGrades }) {
     },
   ];
 
-  const stages = shouldIncludeGrades
-    ? allStages
-    : allStages.filter((s) => s.id !== "grade1" && s.id !== "grade2");
+  const stages = allStages;
 
   const currentStage = stages.find((s) => s.id === activeStageId) || stages[0];
 
@@ -179,7 +133,7 @@ export default function LearningPrograms({ showGrades }) {
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/95 text-xs sm:text-sm font-bold mb-8">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#00A651]" />
-                {shouldIncludeGrades ? "Playgroup to Grade 2" : "Playgroup to UKG"}
+                Playgroup to UKG
               </span>
               <span className="text-white/40 hidden sm:inline">|</span>
               <span className="flex items-center gap-2">
@@ -215,7 +169,7 @@ export default function LearningPrograms({ showGrades }) {
       </section>
 
       {/* =========================================================================
-          PART 2: INTERACTIVE STAGE EXPLORER - From Playgroup to Grade 2 (Screenshot 2)
+          PART 2: INTERACTIVE STAGE EXPLORER - From Playgroup to UKG
           ========================================================================= */}
       <section className="py-20 sm:py-28 bg-[#FFFDF9] relative overflow-hidden">
         {/* Subtle Watermark */}
@@ -231,7 +185,7 @@ export default function LearningPrograms({ showGrades }) {
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
               <span className="text-[#FF4081]">From Playgroup </span>
-              <span className="text-[#0EA5E9]">{shouldIncludeGrades ? "to Grade 2" : "to UKG"}</span>
+              <span className="text-[#0EA5E9]">to UKG</span>
             </h2>
 
             <p className="mt-3 text-stone-600 text-sm sm:text-base font-semibold">
@@ -263,9 +217,6 @@ export default function LearningPrograms({ showGrades }) {
                         }`}>
                           {stage.name}
                         </span>
-                        <span className="text-xs font-semibold text-stone-500">
-                          {stage.ageLabel}
-                        </span>
                       </div>
                     </div>
                     {isActive && (
@@ -294,12 +245,6 @@ export default function LearningPrograms({ showGrades }) {
 
                 {/* Card Content */}
                 <div className="relative z-10 text-white max-w-xl">
-                  {/* Age Badge */}
-                  <div className="mb-2 sm:mb-3">
-                    <span className={`inline-block px-3.5 py-1 rounded-full text-xs font-black text-white ${currentStage.badgeBg} shadow-md uppercase tracking-wider`}>
-                      {currentStage.ageBadge}
-                    </span>
-                  </div>
 
                   {/* Stage Headline */}
                   <h3 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-2 sm:mb-3">
@@ -533,17 +478,11 @@ export default function LearningPrograms({ showGrades }) {
                           onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                           className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
                         >
-                          <option value="Playgroup">Playgroup (2+ Yrs)</option>
-                          <option value="Nursery">Nursery (2.6+ Yrs)</option>
-                          <option value="PP1">PP1 / LKG (3.6+ Yrs)</option>
-                          <option value="PP2">PP2 / UKG (4.6+ Yrs)</option>
-                          {shouldIncludeGrades && (
-                            <>
-                              <option value="Grade 1">Grade 1 (5.6+ Yrs)</option>
-                              <option value="Grade 2">Grade 2 (6.6+ Yrs)</option>
-                            </>
-                          )}
-                          <option value="Day Care">Day Care (1.5 – 8 Yrs)</option>
+                          <option value="Playgroup">Playgroup</option>
+                          <option value="Nursery">Nursery</option>
+                          <option value="PP1">PP1 / LKG</option>
+                          <option value="PP2">PP2 / UKG</option>
+                          <option value="Day Care">Day Care</option>
                         </select>
                       </div>
                     </div>
