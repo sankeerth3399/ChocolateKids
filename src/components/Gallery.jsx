@@ -1,17 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  Maximize2, 
-  Sparkles, 
-  Camera, 
-  Layers, 
-  Download,
-  Eye,
-  ZoomIn
-} from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Maximize2, Camera, Layers, Download, Eye, ZoomIn } from "lucide-react";
 import { galleryImages } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
@@ -73,17 +62,17 @@ export default function Gallery() {
   }, [lightboxIndex, closeLightbox, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#FFF9F0] relative overflow-hidden">
+    <section id="gallery" className="py-20 sm:py-28 bg-[#FAF8F3] relative overflow-hidden">
       {/* Brand Logo Watermark */}
       <BrandWatermark position="center" size="lg" opacity={0.08} />
 
       {/* Soft background accents */}
       <div 
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#FFF0DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F0E9DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#DFF3FA]/40 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#E1E7F0]/40 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -91,14 +80,14 @@ export default function Gallery() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
-            <Camera className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
+            <Camera className="w-3.5 h-3.5 text-[#C29A45]" />
             <span>CAMPUS MEMORIES & MOMENTS</span>
           </div>
-          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#17243A] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
             <span>Moments at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium">
+          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium">
             Genuinely captured moments of educational visits, festive celebrations, creative days, and childhood milestones.
           </p>
         </div>
@@ -136,19 +125,19 @@ export default function Gallery() {
                     />
 
                     {/* Gradient Overlay on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#5A2E1B]/85 via-[#5A2E1B]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#17243A]/85 via-[#17243A]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                     {/* Top Floating Category Tag */}
                     <div className="absolute top-3.5 left-3.5 z-10">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/95 text-[#5A2E1B] shadow-2xs backdrop-blur-xs border border-amber-100">
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/95 text-[#17243A] shadow-2xs backdrop-blur-xs border border-amber-100">
                         {image.category}
                       </span>
                     </div>
 
                     {/* Floating Zoom Action Button on Hover */}
                     <div className="absolute top-3.5 right-3.5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                      <span className="w-8 h-8 rounded-full bg-white/95 text-[#5A2E1B] shadow-sm flex items-center justify-center backdrop-blur-xs">
-                        <ZoomIn className="w-4 h-4 text-[#F59E0B]" />
+                      <span className="w-8 h-8 rounded-full bg-white/95 text-[#17243A] shadow-sm flex items-center justify-center backdrop-blur-xs">
+                        <ZoomIn className="w-4 h-4 text-[#C29A45]" />
                       </span>
                     </div>
 
@@ -165,10 +154,10 @@ export default function Gallery() {
 
                   {/* Clean Bottom Label Bar */}
                   <div className="p-3.5 bg-white flex items-center justify-between border-t border-amber-100/60">
-                    <h3 className="font-heading font-extrabold text-sm text-[#5A2E1B] group-hover:text-[#F59E0B] transition-colors truncate">
+                    <h3 className="font-heading font-extrabold text-sm text-[#17243A] group-hover:text-[#C29A45] transition-colors truncate">
                       {image.title}
                     </h3>
-                    <span className="text-[11px] font-bold text-[#F59E0B] shrink-0 ml-2">
+                    <span className="text-[11px] font-bold text-[#C29A45] shrink-0 ml-2">
                       View →
                     </span>
                   </div>
@@ -183,9 +172,8 @@ export default function Gallery() {
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[30px] text-sm font-extrabold text-[#5A2E1B] bg-white hover:bg-[#FFF0DD] border-2 border-amber-200 shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[30px] text-sm font-extrabold text-[#17243A] bg-white hover:bg-[#F0E9DD] border-2 border-amber-200 shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <Sparkles className="w-4 h-4 text-[#F59E0B]" />
               <span>
                 {showAll
                   ? `Show Fewer Photos`
@@ -221,7 +209,7 @@ export default function Gallery() {
                 <span className="px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-amber-200 text-xs font-extrabold border border-white/15">
                   {lightboxIndex + 1} / {filteredImages.length}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#F59E0B] text-white text-xs font-bold uppercase tracking-wider hidden sm:inline-block">
+                <span className="px-3 py-1 rounded-full bg-[#C29A45] text-white text-xs font-bold uppercase tracking-wider hidden sm:inline-block">
                   {filteredImages[lightboxIndex].category}
                 </span>
               </div>
@@ -229,7 +217,7 @@ export default function Gallery() {
               {/* Close Button */}
               <button
                 onClick={closeLightbox}
-                className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] flex items-center gap-1.5"
+                className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29A45] flex items-center gap-1.5"
                 aria-label="Close photo preview"
                 title="Close (Esc)"
               >
@@ -243,7 +231,7 @@ export default function Gallery() {
               {/* Prev Button */}
               <button
                 onClick={showPrev}
-                className="absolute left-1 sm:left-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transform hover:scale-108 active:scale-95"
+                className="absolute left-1 sm:left-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29A45] transform hover:scale-108 active:scale-95"
                 aria-label="Previous image"
                 title="Previous (Left Arrow)"
               >
@@ -269,7 +257,7 @@ export default function Gallery() {
               {/* Next Button */}
               <button
                 onClick={showNext}
-                className="absolute right-1 sm:right-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F59E0B] transform hover:scale-108 active:scale-95"
+                className="absolute right-1 sm:right-4 z-30 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29A45] transform hover:scale-108 active:scale-95"
                 aria-label="Next image"
                 title="Next (Right Arrow)"
               >
@@ -281,7 +269,7 @@ export default function Gallery() {
             <div className="w-full max-w-4xl mx-auto flex flex-col items-center z-20 pt-2">
               {/* Photo Title & Description */}
               <div className="text-center text-white px-4 mb-3 max-w-2xl">
-                <h4 className="font-heading font-black text-base sm:text-xl text-[#FFF9F0] leading-snug">
+                <h4 className="font-heading font-black text-base sm:text-xl text-[#FAF8F3] leading-snug">
                   {filteredImages[lightboxIndex].title}
                 </h4>
                 <p className="text-xs sm:text-sm text-stone-300 mt-1 line-clamp-2 leading-relaxed">
@@ -301,7 +289,7 @@ export default function Gallery() {
                     onClick={() => setLightboxIndex(tIdx)}
                     className={`relative shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer ${
                       tIdx === lightboxIndex
-                        ? "border-[#F59E0B] scale-105 shadow-md shadow-[#F59E0B]/30"
+                        ? "border-[#C29A45] scale-105 shadow-md shadow-[#C29A45]/30"
                         : "border-white/20 opacity-50 hover:opacity-100 hover:border-white/50"
                     }`}
                     title={thumb.title}

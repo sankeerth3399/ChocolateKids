@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Briefcase, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MessageCircle, Briefcase, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";

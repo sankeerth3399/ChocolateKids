@@ -1,16 +1,202 @@
 @import "tailwindcss";
 
+/* =========================================================
+   CHOCOLATE KIDS DESIGN SYSTEM (premium navy / burgundy / champagne gold)
+   One set of tokens drives every page. Legacy Tailwind colour scales used
+   throughout the codebase are remapped here so old classes inherit the
+   new identity instead of the previous rainbow theme.
+   ========================================================= */
+@theme {
+  /* ---- Typography ---- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Playfair Display", "Times New Roman", Georgia, serif;
+
+  /* ---- Core brand tokens ---- */
+  --color-midnight: #111827;
+  --color-navy: #17243a;
+  --color-burgundy: #801d3a;
+  --color-cherry: #5e152e;
+  --color-gold: #d6b56d;
+  --color-ivory: #faf8f3;
+  --color-beige: #f0e9dd;
+  --color-slate-grey: #64748b;
+
+  /* ---- Radii: less pillowy, more refined ---- */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.875rem;
+  --radius-3xl: 1.125rem;
+
+  /* ---- Neutrals: warm ivory / beige surfaces, slate secondary text, navy ink ---- */
+  --color-stone-50: #faf8f3;
+  --color-stone-100: #eae3d9;
+  --color-stone-200: #e8e0d4;
+  --color-stone-300: #dcd1bd;
+  --color-stone-400: #94a3b8;
+  --color-stone-500: #64748b;
+  --color-stone-600: #536174;
+  --color-stone-700: #33415a;
+  --color-stone-800: #17243a;
+  --color-stone-900: #17243a;
+  --color-stone-950: #0b1220;
+
+  /* ---- Champagne gold (amber / yellow) ---- */
+  --color-amber-50: #fffcf4;
+  --color-amber-100: #f3e8ca;
+  --color-amber-200: #e5cc8d;
+  --color-amber-300: #e0c98a;
+  --color-amber-400: #d6b56d;
+  --color-amber-500: #c29a45;
+  --color-amber-600: #a67f32;
+  --color-amber-700: #98702d;
+  --color-amber-800: #664c26;
+  --color-amber-900: #4a381f;
+  --color-amber-950: #2a1f10;
+  --color-yellow-50: #fffcf4;
+  --color-yellow-100: #f3e8ca;
+  --color-yellow-200: #e5cc8d;
+  --color-yellow-300: #e0c98a;
+  --color-yellow-400: #d6b56d;
+  --color-yellow-500: #c29a45;
+  --color-yellow-600: #a67f32;
+
+  /* ---- Bronze (orange) ---- */
+  --color-orange-50: #fbf5ee;
+  --color-orange-100: #f5e6d3;
+  --color-orange-200: #ebcda7;
+  --color-orange-300: #ddae76;
+  --color-orange-400: #cc9050;
+  --color-orange-500: #b97838;
+  --color-orange-600: #9c602f;
+  --color-orange-700: #7c4a28;
+  --color-orange-800: #5f3924;
+  --color-orange-900: #46291c;
+  --color-orange-950: #271610;
+
+  /* ---- Burgundy (rose / red / pink / fuchsia) ---- */
+  --color-rose-50: #fff8f5;
+  --color-rose-100: #f4dde2;
+  --color-rose-200: #e8b6be;
+  --color-rose-300: #de95a6;
+  --color-rose-400: #c9667f;
+  --color-rose-500: #a83a59;
+  --color-rose-600: #801d3a;
+  --color-rose-700: #6b1830;
+  --color-rose-800: #5e152e;
+  --color-rose-900: #470f22;
+  --color-rose-950: #2a0914;
+  --color-red-50: #fff8f5;
+  --color-red-100: #f4dde2;
+  --color-red-200: #e8b6be;
+  --color-red-300: #de95a6;
+  --color-red-400: #c9667f;
+  --color-red-500: #a83a59;
+  --color-red-600: #801d3a;
+  --color-red-700: #6b1830;
+  --color-red-800: #5e152e;
+  --color-red-900: #470f22;
+  --color-pink-50: #fff8f5;
+  --color-pink-100: #f4dde2;
+  --color-pink-200: #e8b6be;
+  --color-pink-300: #de95a6;
+  --color-pink-400: #c9667f;
+  --color-pink-500: #a83a59;
+  --color-pink-600: #801d3a;
+  --color-pink-700: #6b1830;
+  --color-fuchsia-50: #fff8f5;
+  --color-fuchsia-100: #f4dde2;
+  --color-fuchsia-200: #e8b6be;
+  --color-fuchsia-500: #a83a59;
+  --color-fuchsia-600: #801d3a;
+  --color-fuchsia-700: #6b1830;
+
+  /* ---- Navy (blue / sky / cyan / indigo / violet / purple / teal) ---- */
+  --color-sky-50: #f5f8fc;
+  --color-sky-100: #dde7f2;
+  --color-sky-200: #b8c9df;
+  --color-sky-300: #94a6c2;
+  --color-sky-400: #62789c;
+  --color-sky-500: #3f5680;
+  --color-sky-600: #2b4066;
+  --color-sky-700: #24456d;
+  --color-sky-800: #17243a;
+  --color-sky-900: #111827;
+  --color-blue-50: #f5f8fc;
+  --color-blue-100: #dde7f2;
+  --color-blue-200: #b8c9df;
+  --color-blue-300: #94a6c2;
+  --color-blue-400: #62789c;
+  --color-blue-500: #3f5680;
+  --color-blue-600: #2b4066;
+  --color-blue-700: #24456d;
+  --color-blue-800: #17243a;
+  --color-blue-900: #111827;
+  --color-cyan-50: #f5f8fc;
+  --color-cyan-100: #dde7f2;
+  --color-cyan-500: #3f5680;
+  --color-cyan-600: #2b4066;
+  --color-indigo-50: #f5f8fc;
+  --color-indigo-100: #dde7f2;
+  --color-indigo-200: #b8c9df;
+  --color-indigo-500: #3f5680;
+  --color-indigo-600: #2b4066;
+  --color-indigo-700: #22334f;
+  --color-violet-50: #f5f8fc;
+  --color-violet-100: #dde7f2;
+  --color-violet-200: #b8c9df;
+  --color-violet-500: #3f5680;
+  --color-violet-600: #2b4066;
+  --color-violet-700: #22334f;
+  --color-purple-50: #f5f8fc;
+  --color-purple-100: #dde7f2;
+  --color-purple-200: #b8c9df;
+  --color-purple-500: #3f5680;
+  --color-purple-600: #2b4066;
+  --color-purple-700: #22334f;
+  --color-purple-800: #17243a;
+  --color-teal-50: #f5f8fc;
+  --color-teal-100: #dde7f2;
+  --color-teal-200: #b8c9df;
+  --color-teal-500: #3f5680;
+  --color-teal-600: #2b4066;
+  --color-teal-700: #22334f;
+
+  /* ---- Muted forest green (emerald / green): WhatsApp & success only ---- */
+  --color-emerald-50: #f1f7f4;
+  --color-emerald-100: #dcebe3;
+  --color-emerald-200: #b9d7c8;
+  --color-emerald-300: #8cbba3;
+  --color-emerald-400: #5e9b7e;
+  --color-emerald-500: #3e7f61;
+  --color-emerald-600: #2d6a4f;
+  --color-emerald-700: #245840;
+  --color-emerald-800: #1e4635;
+  --color-emerald-900: #17362a;
+  --color-emerald-950: #0e2219;
+  --color-green-50: #f1f7f4;
+  --color-green-100: #dcebe3;
+  --color-green-200: #b9d7c8;
+  --color-green-300: #8cbba3;
+  --color-green-400: #5e9b7e;
+  --color-green-500: #3e7f61;
+  --color-green-600: #2d6a4f;
+  --color-green-700: #245840;
+  --color-green-800: #1e4635;
+  --color-green-900: #17362a;
+  --color-green-950: #0e2219;
+}
+
 @layer base {
   :root {
-    --color-primary: #F59E0B;
-    --color-primary-hover: #D97706;
-    --color-brown: #5A2E1B;
+    --color-primary: #D6B56D;
+    --color-primary-hover: #C29A45;
+    --color-brown: #17243A;
     --color-sky-blue: #DFF3FA;
     --color-sky-accent: #2493C5;
     --color-green: #48A868;
-    --color-green-light: #EAF8EC;
-    --color-cream: #FFF9F0;
-    --color-peach-light: #FFF0DD;
+    --color-green-light: #F0E9DD;
+    --color-cream: #FAF8F3;
+    --color-peach-light: #F0E9DD;
     --color-cream-card: #FFFFFF;
     --color-logo-red: #EE3338;
   }
@@ -122,7 +308,7 @@
   }
 
   html {
-    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -132,8 +318,8 @@
   }
 
   body {
-    background-color: #FFF9F0;
-    color: #5A2E1B;
+    background-color: #FAF8F3;
+    color: #17243A;
     min-height: 100vh;
     width: 100%;
     max-width: 100%;
@@ -369,16 +555,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF5EE;
+  background: #F0E9DD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D7C3B3;
+  background: #D6B56D;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A98771;
+  background: #801D3A;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -453,3 +639,152 @@ a {
     max-height: none;
   }
 }
+
+/* =========================================================
+   TYPOGRAPHY SYSTEM
+   Headings: Playfair Display, refined weight. Body: Inter.
+   ========================================================= */
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.012em;
+}
+
+/* Tame heavy weights: elegant serif reads best at 600-700 */
+.font-heading.font-black,
+.font-heading.font-extrabold,
+.font-heading.font-bold {
+  font-weight: 700;
+}
+
+h1.font-heading, h2.font-heading { line-height: 1.12; }
+h3.font-heading, h4.font-heading { line-height: 1.25; }
+
+/* Body copy rhythm */
+p { line-height: 1.7; }
+
+/* Small uppercase labels get a refined, wider tracking */
+.tracking-wider { letter-spacing: 0.14em; }
+
+/* =========================================================
+   GLOBAL MOTION
+   Subtle, consistent, and fully optional (reduced-motion respected)
+   ========================================================= */
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a, button { transition-timing-function: var(--ease-premium); }
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+main { animation: pageEnter 0.6s var(--ease-premium) both; }
+
+/* Scroll-reveal for sections (progressive enhancement; no JS needed) */
+@supports (animation-timeline: view()) {
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  main section:not(#home):not(#franchise-hero) > div {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+/* Calm the previously playful, bouncy ambient animations */
+.animate-float,
+.animate-float-delayed,
+.animate-sway,
+.animate-pulse-subtle {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main, main section > div { animation: none !important; }
+}
+
+/* =========================================================
+   REFINED SURFACES
+   ========================================================= */
+.shadow-2xl { box-shadow: 0 30px 60px -20px rgba(17, 24, 39, 0.28); }
+.shadow-xl { box-shadow: 0 20px 40px -18px rgba(17, 24, 39, 0.22); }
+.shadow-lg { box-shadow: 0 14px 30px -16px rgba(17, 24, 39, 0.20); }
+
+/* =========================================================
+   HOME PAGE CANVAS
+   One calm ivory canvas with whisper-soft gold / burgundy / navy glows.
+   Sections sit transparently on it, so the page reads as one design.
+   ========================================================= */
+.home-theme {
+  background-color: #faf8f3;
+  background-image:
+    radial-gradient(900px 600px at 0% 700px, rgba(214, 181, 109, 0.20), transparent 70%),
+    radial-gradient(900px 600px at 100% 1200px, rgba(128, 29, 58, 0.08), transparent 70%),
+    radial-gradient(900px 600px at 0% 1700px, rgba(23, 36, 58, 0.07), transparent 70%),
+    radial-gradient(900px 600px at 100% 2000px, rgba(214, 181, 109, 0.18), transparent 70%);
+  background-size: 100% 2400px;
+  background-repeat: repeat-y;
+  overflow-x: clip;
+}
+
+.home-theme main section:not(#home):not(.keep-bg) {
+  background: transparent;
+  border-color: transparent;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.home-theme main section:not(#home):not(.keep-bg) {
+  padding-block: clamp(2.75rem, 5.5vw, 5rem);
+}
+
+.home-theme main section:not(#home):not(.keep-bg) h2 {
+  color: #17243a;
+}
+
+/* =========================================================
+   CARD AND WIDGET SYSTEM
+   One refined treatment for every card: thin warm border, soft navy-tinted
+   shadow, consistent radius, gentle 280ms hover. Accent families are limited
+   to burgundy (blush), champagne (ivory) and navy (cool ivory).
+   ========================================================= */
+:root {
+  --card-border: #e8e0d4;
+  --card-divider: #eae3d9;
+  --card-heading: #17243a;
+  --card-body: #536174;
+  --card-hover-border: rgba(214, 181, 109, 0.7);
+  --card-shadow: 0 1px 2px rgba(23, 36, 58, 0.04), 0 8px 24px -14px rgba(23, 36, 58, 0.16);
+  --card-shadow-hover: 0 2px 4px rgba(23, 36, 58, 0.05), 0 18px 34px -16px rgba(23, 36, 58, 0.24);
+}
+
+/* Soft, realistic shadows everywhere */
+.shadow-xs, .shadow-2xs { box-shadow: 0 1px 2px rgba(23, 36, 58, 0.05); }
+.shadow-sm { box-shadow: var(--card-shadow); }
+.shadow-md { box-shadow: var(--card-shadow); }
+
+/* Thin borders: cards drawn with 2px or 4px borders become 1px (divs only, never buttons or inputs) */
+div[class*="rounded-"][class*="border-2"],
+div[class*="rounded-"][class*="border-4"],
+article[class*="rounded-"][class*="border-2"] {
+  border-width: 1px;
+}
+
+/* One consistent large radius for cards that used oversized arbitrary radii */
+[class*="rounded-[2.5rem]"], [class*="rounded-[2rem]"] { border-radius: 1.25rem; }
+
+/* Smooth, restrained hover on cards (transform is left to the components and Framer Motion) */
+div[class*="rounded-"][class*="border"],
+article[class*="rounded-"][class*="border"] {
+  transition: box-shadow 280ms ease, border-color 280ms ease, background-color 280ms ease;
+}
+div[class*="rounded-"][class*="hover:shadow"]:hover,
+article[class*="rounded-"][class*="hover:shadow"]:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.group:hover svg { transition: transform 280ms ease; }

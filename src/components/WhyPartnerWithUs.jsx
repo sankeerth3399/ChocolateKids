@@ -1,4 +1,4 @@
-import { CheckCircle2, ArrowRight, ShieldCheck, Heart, Sparkles, MapPin } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Heart, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { whyPartnerWithUs, schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
@@ -61,7 +61,6 @@ export default function WhyPartnerWithUs() {
           <div className="lg:col-span-6 space-y-6">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100/90 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                 <span>Mutual Growth & Trust</span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight flex flex-wrap items-center gap-2">

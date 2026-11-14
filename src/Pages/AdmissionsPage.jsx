@@ -5,7 +5,7 @@ import AdmissionForm from "../components/AdmissionForm";
 import { Link } from "react-router-dom";
 import BrandWatermark from "../components/BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
-import { Sparkles, Calendar, CheckCircle2, FileText, Users, HelpCircle, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, CheckCircle2, FileText, Users, HelpCircle, MapPin, ArrowRight } from "lucide-react";
 
 export default function AdmissionsPage() {
   const steps = [
@@ -55,21 +55,22 @@ export default function AdmissionsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
-      <main className="pt-24 sm:pt-28">
+      <main>
         {/* Page Hero Banner */}
-        <section className="bg-gradient-to-b from-amber-100/60 to-transparent py-14 sm:py-16 text-center px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-200/70 text-amber-950 text-xs font-bold uppercase tracking-wider mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#17243A] to-[#5E152E] pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4">
+          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#D6B56D]/15 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#801D3A]/35 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="max-w-4xl mx-auto relative z-10">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em] text-[#D6B56D] mb-5">
               <span>Admissions Open for Academic Year 2026-27</span>
             </div>
-            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight">
               Give Your Child a Joyful Start
             </h1>
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Begin your child's learning journey with <BrandBadge isInline className="text-[0.88em]" />. Admissions are currently open across Play Group, Nursery, LKG, and UKG at our Dammaiguda, Kapra, and Yapral campuses.
             </p>
           </div>
@@ -93,7 +94,7 @@ export default function AdmissionsPage() {
               {steps.map((st) => (
                 <div
                   key={st.num}
-                  className="p-6 rounded-2xl bg-[#FFFDF9] border border-stone-200/80 shadow-xs flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-[#FAF8F3] border border-stone-200/80 shadow-xs flex flex-col justify-between"
                 >
                   <div>
                     <span className="font-heading font-extrabold text-2xl text-amber-600 mb-2 block">
@@ -118,7 +119,7 @@ export default function AdmissionsPage() {
         {/* Campus Locations Gateway */}
         <div className="py-12 bg-white text-center border-t border-amber-100/60">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="p-6 rounded-3xl bg-[#FFFDF9] border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="p-6 rounded-3xl bg-[#FAF8F3] border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div>
                 <span className="text-xs font-bold text-amber-800 uppercase tracking-wider block mb-1">
                   Campus Tours & Locations
@@ -155,7 +156,7 @@ export default function AdmissionsPage() {
               {faqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="p-5 rounded-2xl bg-[#FFFDF9] border border-stone-200/80 shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FAF8F3] border border-stone-200/80 shadow-xs"
                 >
                   <h3 className="font-heading font-bold text-base sm:text-lg text-stone-900 mb-2">
                     {faq.q}

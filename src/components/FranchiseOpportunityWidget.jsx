@@ -1,20 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Award, 
-  GraduationCap, 
-  Lightbulb, 
-  Users, 
-  TrendingUp, 
-  MapPin, 
-  Heart, 
-  Package,
-  Sparkles,
-  MessageCircle, 
-  Phone, 
-  ArrowRight,
-  ArrowDown
-} from "lucide-react";
+import { Award, GraduationCap, Lightbulb, Users, TrendingUp, MapPin, Heart, Package, MessageCircle, Phone, ArrowRight, ArrowDown, Star } from "lucide-react";
 import {
   schoolInfo,
   whyFranchiseWithUs
@@ -60,7 +46,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
   return (
     <section 
       id="franchise-opportunity-widget" 
-      className="py-14 sm:py-20 bg-gradient-to-b from-[#FFFDF9] via-[#FAF5EB] to-[#FFFDF9] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF8F3] via-[#F0E9DD] to-[#FAF8F3] relative overflow-hidden"
     >
       {/* Ambient Backlight Glow */}
       <div 
@@ -113,7 +99,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
               variants={itemVariants}
               className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-stone-900 mt-2"
             >
-              Join the <span className="text-[#FF5B89]">Chocolate Kids</span> Family
+              Join the <span className="text-[#801D3A]">Chocolate Kids</span> Family
             </motion.h3>
 
             <motion.p 
@@ -129,7 +115,6 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
               className="mt-4 sm:mt-5 inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-7 py-2 sm:py-2.5 rounded-2xl sm:rounded-full bg-amber-50 border border-amber-200 text-amber-950 font-bold text-xs sm:text-sm shadow-2xs max-w-full"
             >
               <div className="flex items-center gap-1.5 text-amber-800 font-black tracking-wide">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                 <span>Play • Learn • Grow</span>
               </div>
               <span className="hidden sm:inline text-amber-300">•</span>
@@ -163,7 +148,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             {/* 6 Interactive Tiles (3 columns on desktop, 2 on tablet, 1 on mobile) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
               {whyFranchiseWithUs.map((card) => {
-                const IconComponent = iconMap[card.icon] || Sparkles;
+                const IconComponent = iconMap[card.icon] || Star;
                 return (
                   <motion.div
                     key={card.title}
@@ -233,7 +218,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             
             {/* Left: Message & Contact */}
             <div>
-              <span className="text-xs font-black tracking-widest text-[#FF5B89] uppercase block mb-0.5">
+              <span className="text-xs font-black tracking-widest text-[#801D3A] uppercase block mb-0.5">
                 Join Chocolate Kids
               </span>
               <h4 className="font-heading font-black text-lg sm:text-xl text-stone-900">

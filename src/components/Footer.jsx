@@ -6,14 +6,14 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B3D2E] text-stone-200 pt-16 pb-24 sm:pb-14 border-t-4 border-[#00A651] relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#17243A] via-[#111827] to-[#0B1220] text-stone-200 pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden">
       {/* Brand Logo Watermark - Visible but Elegant */}
       <BrandWatermark position="bottom-right" size="lg" opacity={0.08} rotate={-6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Main Footer 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#D6B56D]/20">
 
           {/* Col 1: Brand & Tagline (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-start leading-none">
                 <BrandBadge className="text-2xl sm:text-3xl lg:text-3xl leading-none select-none" />
-                <span className="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-widest block ml-1 mt-1">
+                <span className="text-[10px] sm:text-xs font-bold text-[#D6B56D] uppercase tracking-widest block ml-1 mt-1">
                   Innovative Learning
                 </span>
               </div>
@@ -50,16 +50,16 @@ export default function Footer() {
                 href={schoolInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-700/90 hover:bg-emerald-600 text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D6B56D] hover:bg-[#E0C98A] text-[#111827] text-xs font-bold transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-white text-emerald-700" />
+                <MessageCircle className="w-4 h-4 fill-[#111827] text-[#D6B56D]" />
                 <span>WhatsApp Helpline</span>
               </a>
               <a
                 href={`tel:${schoolInfo.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 ring-1 ring-[#D6B56D]/40 text-white text-xs font-bold transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-amber-400" />
+                <Phone className="w-3.5 h-3.5 text-[#D6B56D]" />
                 <span>{schoolInfo.phone}</span>
               </a>
             </div>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Col 2: For Parents (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-bold text-sm text-white uppercase tracking-wider text-amber-400">
+            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
               For Parents
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -101,13 +101,13 @@ export default function Footer() {
                   className="text-stone-400 hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span>Find a Branch Near You</span>
-                  <ArrowRight className="w-3 h-3 text-amber-400" />
+                  <ArrowRight className="w-3 h-3 text-[#D6B56D]" />
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admissions"
-                  className="font-bold text-amber-400 hover:text-amber-300 transition-colors inline-block"
+                  className="font-bold text-[#D6B56D] hover:text-[#E0C98A] transition-colors inline-block"
                 >
                   Admissions Enquiry 2026-27 →
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Col 3: For Franchise Partners (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-heading font-bold text-sm text-white uppercase tracking-wider text-amber-400">
+            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
               For Franchise Partners
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#enquiry-form"
-                  className="font-bold text-amber-400 hover:text-amber-300 transition-colors"
+                  className="font-bold text-[#D6B56D] hover:text-[#E0C98A] transition-colors"
                 >
                   Franchise Enquiry →
                 </Link>
@@ -166,12 +166,12 @@ export default function Footer() {
 
           {/* Col 4: Campus Locations & Contact (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-bold text-sm text-white uppercase tracking-wider text-amber-400">
+            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
               Campus Locations
             </h3>
 
             <div className="space-y-3 text-xs">
-              <div className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/60">
+              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
                 <span className="font-bold text-white block mb-0.5">
                   Dammaiguda Campus
                 </span>
@@ -180,13 +180,13 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/dammaiguda"
-                  className="text-[11px] text-amber-400 hover:underline mt-1 inline-block"
+                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
-              <div className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/60">
+              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
                 <span className="font-bold text-white block mb-0.5">
                   Kapra / Yellareddyguda Campus
                 </span>
@@ -195,13 +195,13 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/kapra-yellareddyguda"
-                  className="text-[11px] text-amber-400 hover:underline mt-1 inline-block"
+                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
-              <div className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/60">
+              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
                 <span className="font-bold text-white block mb-0.5">
                   Yapral Branch
                 </span>
@@ -210,7 +210,7 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/yapral"
-                  className="text-[11px] text-amber-400 hover:underline mt-1 inline-block"
+                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
@@ -220,13 +220,52 @@ export default function Footer() {
 
         </div>
 
+        {/* Quick links + contact strip */}
+        <div className="py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 border-b border-[#D6B56D]/20">
+          <nav aria-label="Footer quick links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-300">
+            {[
+              ["Home", "/"],
+              ["About", "/about"],
+              ["Programs", "/academics"],
+              ["Activities", "/activities"],
+              ["Facilities", "/facilities"],
+              ["Gallery", "/gallery"],
+              ["Branches", "/branches"],
+              ["Admissions", "/admissions"],
+              ["Franchise", "/franchise"],
+              ["Contact", "/contact"],
+            ].map(([label, to]) => (
+              <Link
+                key={to}
+                to={to}
+                onClick={() => {
+                  if (window.location.pathname === to) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }}
+                className="hover:text-[#D6B56D] transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-300">
+            <a href={`mailto:${schoolInfo.email}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors break-all">
+              <Mail className="w-4 h-4 text-[#D6B56D] shrink-0" />
+              <span>{schoolInfo.email}</span>
+            </a>
+            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors">
+              <Phone className="w-4 h-4 text-[#D6B56D] shrink-0" />
+              <span>{schoolInfo.phoneFormatted}</span>
+            </a>
+          </div>
+        </div>
+
         {/* Footer Bottom Bar */}
-        <div className="pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
           <div>
             © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-xs" />. All Rights Reserved.
           </div>
 
-          <div className="text-stone-500">
+          <div className="text-stone-400">
             Innovative Learning Preschool • Dammaiguda, Kapra & Yapral, Hyderabad
           </div>
         </div>

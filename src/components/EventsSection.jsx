@@ -1,4 +1,4 @@
-import { Sparkles, Calendar, Heart, Flag, Star, ArrowRight } from "lucide-react";
+import { Calendar, Heart, Flag, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
@@ -39,7 +39,7 @@ export default function EventsSection() {
       id: "goshala",
       title: "Educational Field Visit to Shree Aaiji Goshala",
       occasion: "Experiential Community Learning",
-      icon: Sparkles,
+      icon: Star,
       badge: "Community Field Excursion",
       image: "/images/cow-shelter-group-hd.png",
       description: "A memorable outdoor excursion where children interacted respectfully with gentle cows and calves under the guidance of devoted educators.",
@@ -48,7 +48,7 @@ export default function EventsSection() {
   ];
 
   return (
-    <section id="events" className="py-20 sm:py-24 bg-[#FFFDF9] relative overflow-hidden">
+    <section id="events" className="py-20 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
       {/* Brand Logo Watermark - Large Centered Watermark */}
       <BrandWatermark position="center" size="xl" opacity={0.11} />
 
@@ -63,7 +63,6 @@ export default function EventsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-950 text-xs font-black uppercase tracking-wider mb-3.5 border border-rose-200/80 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>ANNUAL FESTIVALS & TRADITIONS</span>
           </div>
           <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, MessageCircle, Send, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Send } from "lucide-react";
 import { schoolInfo } from "../data";
 
 export default function StickyFranchiseBar({ onOpenEnquiry }) {

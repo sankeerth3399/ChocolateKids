@@ -6,26 +6,28 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import BrandWatermark from "../components/BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
-import { Users, Heart, Award, Shield, Sparkles } from "lucide-react";
+import { Users, Heart, Award, Shield } from "lucide-react";
 import { schoolPhilosophy } from "../data";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
-      <main className="pt-24 sm:pt-28">
+      <main>
         {/* Page Hero Banner */}
-        <section className="bg-gradient-to-b from-amber-100/60 to-transparent py-14 sm:py-16 text-center px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-200/70 text-amber-950 text-xs font-bold uppercase tracking-wider mb-4">
-              <Users className="w-3.5 h-3.5 text-amber-700" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#17243A] to-[#5E152E] pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4">
+          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#D6B56D]/15 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#801D3A]/35 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="max-w-4xl mx-auto relative z-10">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em] text-[#D6B56D] mb-5">
+              <Users className="w-3.5 h-3.5 text-[#D6B56D]" />
               <span>About Our School</span>
             </div>
-            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight">
               Learning Today. Growing Tomorrow.
             </h1>
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
               At <BrandBadge isInline className="text-[0.88em]" />, we believe every child arrives with an innate spark of wonder. Our mission is to nurture that curiosity into lasting confidence through love, play, and thoughtful early education.
             </p>
           </div>

@@ -1,9 +1,9 @@
-import { Sparkles, ShieldCheck, GraduationCap, HeartHandshake } from "lucide-react";
+import { ShieldCheck, GraduationCap, HeartHandshake, Star } from "lucide-react";
 import { quickHighlights } from "../data";
 
 export default function QuickHighlights() {
   const iconMap = {
-    Sparkles,
+    Sparkles: Star,
     ShieldCheck,
     GraduationCap,
     HeartHandshake,
@@ -13,7 +13,7 @@ export default function QuickHighlights() {
     <section className="relative -mt-6 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {quickHighlights.map((item, idx) => {
-          const Icon = iconMap[item.icon] || Sparkles;
+          const Icon = iconMap[item.icon] || Star;
           return (
             <div
               key={item.title}

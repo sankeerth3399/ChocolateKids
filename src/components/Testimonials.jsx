@@ -15,11 +15,11 @@ export default function Testimonials({ className = "" }) {
       initials: "RK",
       rating: 5,
       // Pink theme (exact match to card 1)
-      cardBg: "bg-[#FFF0F5]",
+      cardBg: "bg-[#F6DEE3]",
       border: "border-[#FFE2EC]",
-      starColor: "text-[#FB7185] fill-[#FB7185]",
-      quoteColor: "text-[#FB7185]/20",
-      avatarBg: "bg-[#FB7185]",
+      starColor: "text-[#C9667F] fill-[#C9667F]",
+      quoteColor: "text-[#C9667F]/20",
+      avatarBg: "bg-[#C9667F]",
     },
     {
       id: 2,
@@ -30,11 +30,11 @@ export default function Testimonials({ className = "" }) {
       initials: "SR",
       rating: 5,
       // Sky Blue theme (exact match to card 2)
-      cardBg: "bg-[#F0F9FF]",
+      cardBg: "bg-[#F2F5FA]",
       border: "border-[#E0F2FE]",
-      starColor: "text-[#0EA5E9] fill-[#0EA5E9]",
-      quoteColor: "text-[#0EA5E9]/20",
-      avatarBg: "bg-[#0EA5E9]",
+      starColor: "text-[#2B4066] fill-[#2B4066]",
+      quoteColor: "text-[#2B4066]/20",
+      avatarBg: "bg-[#2B4066]",
     },
     {
       id: 3,
@@ -47,9 +47,9 @@ export default function Testimonials({ className = "" }) {
       // Mint Green theme (exact match to card 3)
       cardBg: "bg-[#F0FDF4]",
       border: "border-[#DCFCE7]",
-      starColor: "text-[#10B981] fill-[#10B981]",
-      quoteColor: "text-[#10B981]/20",
-      avatarBg: "bg-[#10B981]",
+      starColor: "text-[#2B4066] fill-[#2B4066]",
+      quoteColor: "text-[#2B4066]/20",
+      avatarBg: "bg-[#2B4066]",
     },
     {
       id: 4,
@@ -62,9 +62,9 @@ export default function Testimonials({ className = "" }) {
       // Soft Lavender / Purple theme
       cardBg: "bg-[#FAF5FF]",
       border: "border-[#F3E8FF]",
-      starColor: "text-[#A855F7] fill-[#A855F7]",
-      quoteColor: "text-[#A855F7]/20",
-      avatarBg: "bg-[#A855F7]",
+      starColor: "text-[#3F5680] fill-[#3F5680]",
+      quoteColor: "text-[#3F5680]/20",
+      avatarBg: "bg-[#3F5680]",
     },
     {
       id: 5,
@@ -76,10 +76,10 @@ export default function Testimonials({ className = "" }) {
       rating: 5,
       // Soft Amber / Gold theme
       cardBg: "bg-[#FFFBEB]",
-      border: "border-[#FEF3C7]",
-      starColor: "text-[#F59E0B] fill-[#F59E0B]",
-      quoteColor: "text-[#F59E0B]/20",
-      avatarBg: "bg-[#F59E0B]",
+      border: "border-[#F5EDD7]",
+      starColor: "text-[#C29A45] fill-[#C29A45]",
+      quoteColor: "text-[#C29A45]/20",
+      avatarBg: "bg-[#C29A45]",
     },
   ];
 
@@ -113,14 +113,14 @@ export default function Testimonials({ className = "" }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           {/* Pill Badge: Parent Voices */}
-          <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full border border-purple-200/90 bg-[#FAF7FD] text-[#9333EA] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
-            <MessageSquare className="w-3.5 h-3.5 text-[#9333EA]" />
+          <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full border border-purple-200/90 bg-[#FAF7FD] text-[#3F5680] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
+            <MessageSquare className="w-3.5 h-3.5 text-[#3F5680]" />
             <span>Parent Voices</span>
           </div>
 
           {/* Heading: Happy Parents, Happy Kids */}
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-            <span className="text-[#FF5B89]">Happy Parents, </span>
+            <span className="text-[#801D3A]">Happy Parents, </span>
             <span className="text-[#02A6E9]">Happy Kids</span>
           </h2>
 
@@ -218,7 +218,7 @@ export default function Testimonials({ className = "" }) {
                   aria-label={`Go to slide ${dotIdx + 1}`}
                   className={`relative transition-all duration-300 cursor-pointer after:content-[''] after:absolute after:-inset-x-1.5 after:-inset-y-3 ${
                     currentIndex === dotIdx
-                      ? "w-7 h-2 rounded-full bg-[#FF5B89]"
+                      ? "w-7 h-2 rounded-full bg-[#801D3A]"
                       : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"
                   }`}
                 />

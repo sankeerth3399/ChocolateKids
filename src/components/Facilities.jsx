@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sparkles, ShieldCheck, Palette, HeartHandshake, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { ShieldCheck, Palette, HeartHandshake, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { facilitiesData } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -20,14 +20,14 @@ export default function Facilities({ className = "" }) {
           {/* Pastel Pink dotted trail */}
           <path
             d="M-50 420 C 200 480, 250 240, 500 280 C 750 320, 850 180, 1100 210 C 1280 230, 1400 360, 1500 380"
-            stroke="#F472B6"
+            stroke="#C9667F"
             strokeWidth="2.5"
             strokeDasharray="8 8"
           />
           {/* Pastel Blue dotted trail */}
           <path
             d="M-40 280 C 180 220, 360 440, 680 390 C 950 350, 1150 480, 1480 340"
-            stroke="#38BDF8"
+            stroke="#62789C"
             strokeWidth="2.5"
             strokeDasharray="8 8"
           />
@@ -47,10 +47,10 @@ export default function Facilities({ className = "" }) {
           />
 
           {/* Playful Floating Decorative Dots */}
-          <circle cx="280" cy="460" r="4.5" fill="#F472B6" />
-          <circle cx="720" cy="110" r="4.5" fill="#38BDF8" />
-          <circle cx="1020" cy="430" r="4" fill="#A855F7" />
-          <circle cx="1290" cy="220" r="5" fill="#FBBF24" />
+          <circle cx="280" cy="460" r="4.5" fill="#C9667F" />
+          <circle cx="720" cy="110" r="4.5" fill="#62789C" />
+          <circle cx="1020" cy="430" r="4" fill="#3F5680" />
+          <circle cx="1290" cy="220" r="5" fill="#D6B56D" />
           <circle cx="450" cy="210" r="3.5" fill="#34D399" />
         </svg>
 
@@ -81,20 +81,20 @@ export default function Facilities({ className = "" }) {
             {/* Nose Cone */}
             <path
               d="M48 16 C45 13, 40 14, 38 16 L48 26 C50 24, 51 19, 48 16 Z"
-              fill="#FB7185"
+              fill="#C9667F"
             />
             {/* Porthole Window */}
-            <circle cx="36" cy="28" r="4.5" fill="#38BDF8" stroke="#0284C7" strokeWidth="1.5" />
+            <circle cx="36" cy="28" r="4.5" fill="#62789C" stroke="#2B4066" strokeWidth="1.5" />
             <circle cx="37" cy="27" r="1.5" fill="#FFFFFF" />
             {/* Left Fin */}
             <path
               d="M23 27 L15 28 C16 34, 21 37, 24 37 L23 27 Z"
-              fill="#F43F5E"
+              fill="#A83A59"
             />
             {/* Right Fin */}
             <path
               d="M37 41 L36 49 C42 48, 45 43, 45 40 L37 41 Z"
-              fill="#F43F5E"
+              fill="#A83A59"
             />
           </svg>
         </div>
@@ -103,13 +103,13 @@ export default function Facilities({ className = "" }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-purple-200/90 bg-[#FBF7FE] text-[#9333EA] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-purple-200/90 bg-[#FBF7FE] text-[#3F5680] text-xs sm:text-sm font-bold tracking-wide mb-3 shadow-2xs">
             <span>Campus Amenities</span>
           </div>
 
           {/* Heading: What We Offer */}
           <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
-            <span className="text-[#FF5B89]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
+            <span className="text-[#801D3A]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>
 
@@ -120,7 +120,7 @@ export default function Facilities({ className = "" }) {
           <div className="flex flex-col items-center group">
             {/* Tilted frame */}
             <div className="w-full max-w-[270px] sm:max-w-none transform -rotate-[5deg] group-hover:rotate-0 transition-transform duration-300">
-              <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#F472B6] shadow-sm group-hover:shadow-md transition-shadow">
+              <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#C9667F] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
                     src="/photos/facility_smart_classroom.svg"
@@ -143,7 +143,7 @@ export default function Facilities({ className = "" }) {
           {/* 2. LIBRARY & READING CORNER - Dashed Purple Circle */}
           <div className="flex flex-col items-center group">
             {/* Circular frame */}
-            <div className="w-[230px] sm:w-[240px] aspect-square rounded-full p-2 sm:p-2.5 bg-white border-[3.5px] border-dashed border-[#A855F7] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+            <div className="w-[230px] sm:w-[240px] aspect-square rounded-full p-2 sm:p-2.5 bg-white border-[3.5px] border-dashed border-[#3F5680] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
               <div className="w-full h-full rounded-full overflow-hidden bg-slate-100">
                 <img
                   src="/photos/facility_library_reading.svg"
@@ -166,7 +166,7 @@ export default function Facilities({ className = "" }) {
           <div className="flex flex-col items-center group">
             {/* Tilted frame */}
             <div className="w-full max-w-[270px] sm:max-w-none transform -rotate-[4deg] group-hover:rotate-0 transition-transform duration-300">
-              <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#38BDF8] shadow-sm group-hover:shadow-md transition-shadow">
+              <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#62789C] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
                     src="/photos/facility_sports_play_area.svg"

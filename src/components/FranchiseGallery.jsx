@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, Eye, Camera } from "lucide-react";
+import { ArrowRight, Eye, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BrandBadge } from "../utils/brandHelper";
 

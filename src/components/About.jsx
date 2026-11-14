@@ -1,58 +1,62 @@
 import { motion } from "framer-motion";
-import { Sparkles, Heart, Shield, Award, Users, BookOpen, Compass, CheckCircle2 } from "lucide-react";
+import { Heart, Shield, Award, Users, BookOpen, Compass, CheckCircle2, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolPhilosophy } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
 
-export default function About() {
+export default function About({ showPhotos = true }) {
   const philosophyHighlights = [
     {
+      tint: "bg-[#F5F8FC]",
       title: "Friendly, Clean & Safe Haven",
       desc: "A clean, healthy, comfortable and safe environment where children are stimulated, challenged, and physically protected.",
       icon: Shield,
-      accent: "text-emerald-700",
-      bg: "bg-emerald-50",
-      border: "border-emerald-200",
+      accent: "text-[#24456D]",
+      bg: "bg-[#DDE7F2]",
+      border: "border-[#B8C9DF]",
     },
     {
+      tint: "bg-[#FFFCF4]",
       title: "Discovery Linked with Joy",
       desc: "Enjoyment, fun and achievement are linked with real discovery—from science to art and early sensory exploration.",
-      icon: Sparkles,
-      accent: "text-amber-700",
-      bg: "bg-amber-50",
-      border: "border-amber-200",
+      icon: Star,
+      accent: "text-[#98702D]",
+      bg: "bg-[#F3E8CA]",
+      border: "border-[#E5CC8D]",
     },
     {
+      tint: "bg-[#FFF8F5]",
       title: "Individual Attention & Warmth",
       desc: "Sensitive and responsive educators who nurture each child's unique personality and developmental pace.",
       icon: Heart,
-      accent: "text-rose-700",
-      bg: "bg-rose-50",
-      border: "border-rose-200",
+      accent: "text-[#8B2445]",
+      bg: "bg-[#F4DDE2]",
+      border: "border-[#E8B6BE]",
     },
     {
+      tint: "bg-[#F5F8FC]",
       title: "Early Foundations for Life",
       desc: "Cultivating social confidence, polite empathy, verbal fluency, and boundless imagination for future school success.",
       icon: BookOpen,
-      accent: "text-sky-700",
-      bg: "bg-sky-50",
-      border: "border-sky-200",
+      accent: "text-[#24456D]",
+      bg: "bg-[#DDE7F2]",
+      border: "border-[#B8C9DF]",
     },
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-[#FFF9F0] relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
       {/* Brand Logo Watermark - Centered with slight left offset */}
       <BrandWatermark position="center-offset-left" size="lg" opacity={0.10} />
 
       {/* Decorative Storybook Background Elements */}
       <div 
-        className="absolute top-10 -left-20 w-80 h-80 bg-[#FFF0DF]/50 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-10 -left-20 w-80 h-80 bg-[#F0E9DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-10 -right-20 w-96 h-96 bg-[#EAF8EC]/40 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute bottom-10 -right-20 w-96 h-96 bg-[#F0E9DD]/40 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -60,22 +64,21 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
             <span>WELCOME TO <BrandBadge isInline className="text-sm" /></span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#5A2E1B] tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#17243A] tracking-tight leading-tight">
             Growing Curious Minds
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium max-w-2xl mx-auto">
             At <BrandBadge isInline className="text-base" />, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
           </p>
         </div>
 
         {/* Editorial Storybook Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className={`grid grid-cols-1 gap-12 lg:gap-14 items-center ${showPhotos ? "lg:grid-cols-12" : "max-w-4xl mx-auto"}`}>
           
-          {/* Left: Editorial Overlapping Photo Composition (Storybook Scrapbook) */}
+          {showPhotos && (
           <div className="lg:col-span-6 relative">
             <div className="relative mx-auto max-w-lg lg:max-w-none mb-10 lg:mb-0">
               
@@ -128,22 +131,23 @@ export default function About() {
               </motion.div>
             </div>
           </div>
+          )}
 
           {/* Right: Editorial Narrative + Educational Pillars */}
-          <div className="lg:col-span-6 space-y-6 pt-8 lg:pt-0">
+          <div className={`space-y-6 pt-8 lg:pt-0 ${showPhotos ? "lg:col-span-6" : ""}`}>
             
             {/* Storybook Narrative Box */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-amber-50/70 border border-amber-200/70 shadow-2xs relative">
-              <span className="text-5xl text-amber-300/80 font-serif leading-none absolute top-3 right-4 select-none">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#FFFCF4] border border-[#E5CC8D] shadow-sm relative">
+              <span className="text-5xl text-[#D6B56D] font-serif leading-none absolute top-3 right-4 select-none">
                 “
               </span>
-              <h3 className="font-heading font-black text-xl text-amber-950 mb-2">
+              <h3 className="font-heading font-bold text-xl text-[#17243A] mb-2">
                 A Loving Sanctuary Where Childhood Shines
               </h3>
-              <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#536174] text-sm sm:text-base leading-relaxed">
                 {schoolPhilosophy.primaryStatement}
               </p>
-              <div className="mt-3 pt-3 border-t border-amber-200/50">
+              <div className="mt-4 pt-4 border-t border-[#EAE3D9]">
                 <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
                   {schoolPhilosophy.secondaryStatement}
                 </p>
@@ -157,17 +161,17 @@ export default function About() {
                 return (
                   <div
                     key={pillar.title}
-                    className={`p-4 rounded-2xl bg-white border ${pillar.border} shadow-2xs hover:shadow-md transition-all duration-200`}
+                    className={`p-5 rounded-2xl border ${pillar.border} ${pillar.tint} shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}
                   >
                     <div className="flex items-center gap-2.5 mb-1.5">
-                      <div className={`w-8 h-8 rounded-xl ${pillar.bg} flex items-center justify-center`}>
+                      <div className={`w-9 h-9 rounded-xl ${pillar.bg} flex items-center justify-center`}>
                         <Icon className={`w-4 h-4 ${pillar.accent}`} />
                       </div>
-                      <h4 className="font-heading font-bold text-stone-900 text-sm">
+                      <h4 className="font-heading font-bold text-[#17243A] text-base">
                         {pillar.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-stone-600 leading-relaxed">
+                    <p className="text-sm text-[#536174] leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>

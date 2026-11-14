@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Sparkles, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
+import { X, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -113,7 +113,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
         onClick={(e) => e.stopPropagation()}
       >
         {/* Compact Modal Header */}
-        <div className="bg-gradient-to-r from-[#C11C38] via-[#B91C1C] to-[#E11D48] text-white p-3.5 sm:p-4 relative">
+        <div className="bg-gradient-to-r from-[#801D3A] via-[#B91C1C] to-[#801D3A] text-white p-3.5 sm:p-4 relative">
           <button
             onClick={onClose}
             aria-label="Close dialog"
@@ -123,7 +123,6 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
           </button>
 
           <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-[10px] font-black uppercase tracking-wider mb-1">
-            <Sparkles className="w-3 h-3 text-amber-300" />
             <span>Admissions Open 2026–27</span>
           </div>
 
@@ -142,23 +141,23 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
-              <h4 className="font-heading font-black text-lg text-[#3D1A0D]">
+              <h4 className="font-heading font-black text-lg text-[#111827]">
                 Enquiry Sent Successfully!
               </h4>
-              <p className="text-xs text-[#5A2E1B]/80 max-w-xs mx-auto leading-relaxed">
+              <p className="text-xs text-[#17243A]/80 max-w-xs mx-auto leading-relaxed">
                 Thank you for contacting <BrandBadge isInline className="text-[0.85em]" /> Preschool. Our admissions counselor will connect with you on WhatsApp shortly.
               </p>
               <div className="pt-2 flex items-center justify-center gap-2">
                 <a
                   href={`tel:${schoolInfo.phone}`}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-[#5A2E1B] bg-amber-100 hover:bg-amber-200 transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-[#17243A] bg-amber-100 hover:bg-amber-200 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-amber-700" />
                   <span>Call Us</span>
                 </a>
                 <button
                   onClick={onClose}
-                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#C11C38] hover:bg-[#A81730] shadow-sm transition-colors cursor-pointer"
+                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#801D3A] hover:bg-[#5E152E] shadow-sm transition-colors cursor-pointer"
                 >
                   Done
                 </button>
@@ -169,7 +168,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Parent & Child Names */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Parent's Name *
                   </label>
                   <input
@@ -178,7 +177,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.parentName}
                     onChange={handleChange}
                     placeholder="e.g. Priya Sharma"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#C11C38] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
                       errors.parentName ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -190,7 +189,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Mobile Number *
                   </label>
                   <input
@@ -199,7 +198,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="10-digit number"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#C11C38] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
                       errors.phone ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -214,7 +213,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Child Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Child's Name *
                   </label>
                   <input
@@ -223,7 +222,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.childName}
                     onChange={handleChange}
                     placeholder="e.g. Aarav"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#C11C38] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
                       errors.childName ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -235,7 +234,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Child's Age *
                   </label>
                   <input
@@ -244,7 +243,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.childAge}
                     onChange={handleChange}
                     placeholder="e.g. 2.5 Years"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#C11C38] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
                       errors.childAge ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -259,14 +258,14 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Program & Campus Selection */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Program
                   </label>
                   <select
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#C11C38]"
+                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
                   >
                     <option value="Playgroup (1.5 – 2.5 Yrs)">Play Group (1.5 – 2.5 Yrs)</option>
                     <option value="Nursery (2.5 – 3.5 Yrs)">Nursery (2.5 – 3.5 Yrs)</option>
@@ -277,14 +276,14 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
                     Preferred Campus
                   </label>
                   <select
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#C11C38]"
+                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
                   >
                     <option value="Dammaiguda Campus">Dammaiguda Campus</option>
                     <option value="Kapra / Yellareddyguda Campus">Kapra / Yellareddyguda Campus</option>
@@ -295,7 +294,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
 
               {/* Optional message */}
               <div>
-                <label className="block text-[11px] font-bold text-[#3D1A0D] mb-1">
+                <label className="block text-[11px] font-bold text-[#111827] mb-1">
                   Message / Visit Date (Optional)
                 </label>
                 <textarea
@@ -304,7 +303,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="e.g. Planning to visit this weekend..."
-                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#C11C38]"
+                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
                 />
               </div>
 
@@ -312,7 +311,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#C11C38] hover:bg-[#A81730] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#801D3A] hover:bg-[#5E152E] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Submit & Connect on WhatsApp</span>
@@ -321,9 +320,9 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
 
               {/* Direct helpline note */}
               <div className="pt-1 text-center">
-                <p className="text-[10px] text-[#5A2E1B]/70 font-semibold">
+                <p className="text-[10px] text-[#17243A]/70 font-semibold">
                   Prefer a call?{" "}
-                  <a href={`tel:${schoolInfo.phone}`} className="text-[#C11C38] font-bold hover:underline">
+                  <a href={`tel:${schoolInfo.phone}`} className="text-[#801D3A] font-bold hover:underline">
                     {schoolInfo.phoneFormatted}
                   </a>
                 </p>

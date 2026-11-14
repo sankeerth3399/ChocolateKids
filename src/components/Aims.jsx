@@ -1,17 +1,17 @@
-import { HeartHandshake, Sparkles, GraduationCap, ShieldCheck } from "lucide-react";
+import { HeartHandshake, GraduationCap, ShieldCheck, Star } from "lucide-react";
 import { schoolCommitments } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
 export default function Aims() {
   const iconMap = {
     HeartHandshake,
-    Sparkles,
+    Sparkles: Star,
     GraduationCap,
     ShieldCheck,
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/40 to-white relative">
+    <section className="py-20 bg-gradient-to-b from-[#FAF8F3] via-amber-50/40 to-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -7,7 +7,7 @@ import AdmissionsCTA from "../components/AdmissionsCTA";
 import AdmissionForm from "../components/AdmissionForm";
 import BrandWatermark from "../components/BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
-import { BookOpen, Sparkles, CheckCircle2, Clock, Award } from "lucide-react";
+import { BookOpen, CheckCircle2, Clock, Award } from "lucide-react";
 
 export default function AcademicsPage() {
   const dailyRhythm = [
@@ -44,7 +44,7 @@ export default function AcademicsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-emerald-200 selection:text-emerald-900">
       <Navbar />
 
       <main className="pt-16 sm:pt-20">
@@ -77,7 +77,7 @@ export default function AcademicsPage() {
               {dailyRhythm.map((slot, index) => (
                 <div
                   key={slot.time}
-                  className="p-5 sm:p-6 rounded-2xl bg-[#FFFDF9] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  className="p-5 sm:p-6 rounded-2xl bg-[#FAF8F3] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="sm:w-1/3">
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 inline-block">

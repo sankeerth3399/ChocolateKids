@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, Phone, Copy, Check, AlertCircle, Sparkles, Send } from "lucide-react";
+import { MessageCircle, Phone, Copy, Check, AlertCircle, Send } from "lucide-react";
 import { schoolInfo, branches } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
@@ -97,7 +97,7 @@ export default function AdmissionForm() {
   };
 
   return (
-    <section id="admissions" className="py-20 sm:py-24 bg-[#FFF9F0] relative overflow-hidden">
+    <section id="admissions" className="py-20 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
       {/* Brand Logo Watermark */}
       <BrandWatermark position="center" size="xl" opacity={0.08} />
 
@@ -105,14 +105,13 @@ export default function AdmissionForm() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
             <span>Admission Enquiry 2026-27</span>
           </div>
-          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#17243A] tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>Begin Your Child's Journey at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#5A2E1B]/80 font-medium">
+          <p className="mt-3 text-base sm:text-lg text-[#17243A]/80 font-medium">
             Fill in the details below. We will pre-fill your admission enquiry directly on WhatsApp so our team can immediately guide you.
           </p>
         </div>
@@ -352,9 +351,9 @@ export default function AdmissionForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3.5 sm:py-4 px-3 sm:px-6 rounded-[30px] font-extrabold text-[11px] sm:text-sm md:text-base text-white bg-[#F59E0B] hover:bg-[#D97706] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 text-center tracking-normal sm:tracking-wide"
+              className="w-full py-3.5 sm:py-4 px-3 sm:px-6 rounded-[30px] font-extrabold text-[11px] sm:text-sm md:text-base text-white bg-[#C29A45] hover:bg-[#A67F32] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 text-center tracking-normal sm:tracking-wide"
             >
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-[#F59E0B] shrink-0" />
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-[#C29A45] shrink-0" />
               <span>SEND ADMISSION ENQUIRY VIA WHATSAPP</span>
             </button>
 

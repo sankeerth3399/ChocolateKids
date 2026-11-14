@@ -1,17 +1,4 @@
-import { 
-  Heart, 
-  Briefcase, 
-  MapPin, 
-  ShieldCheck, 
-  Users, 
-  Layout, 
-  Puzzle, 
-  Sparkles, 
-  GraduationCap, 
-  Megaphone, 
-  ArrowRight,
-  Info
-} from "lucide-react";
+import { Heart, Briefcase, MapPin, ShieldCheck, Users, Layout, Puzzle, GraduationCap, Megaphone, ArrowRight, Info, Star } from "lucide-react";
 import { whoCanPartner, franchiseSpecs, franchiseInvestmentAreas } from "../data";
 import { BrandBadge, highlightBrand } from "../utils/brandHelper";
 
@@ -24,7 +11,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
     Users,
     Layout,
     Puzzle,
-    Sparkles,
+    Sparkles: Star,
     GraduationCap,
     Megaphone,
   };

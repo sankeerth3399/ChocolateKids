@@ -1,4 +1,4 @@
-import { Compass, CheckCircle2, Heart, Sparkles, MapPin } from "lucide-react";
+import { Compass, CheckCircle2, Heart, MapPin } from "lucide-react";
 import { educationalVisitsData } from "../data";
 import { highlightBrand, BrandBadge } from "../utils/brandHelper";
 
@@ -24,7 +24,7 @@ export default function EducationalVisits() {
         </div>
 
         {/* Featured Educational Visit: Goshala Cow Shelter Visit */}
-        <div className="rounded-3xl bg-[#FFFDF9] border border-amber-200/80 shadow-md p-6 sm:p-8 lg:p-10 mb-12">
+        <div className="rounded-3xl bg-[#FAF8F3] border border-amber-200/80 shadow-md p-6 sm:p-8 lg:p-10 mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: 3 Real Photos Grid */}
@@ -114,7 +114,6 @@ export default function EducationalVisits() {
 
               {/* Secondary Helper Visit Mention */}
               <div className="p-4 rounded-2xl bg-sky-50 border border-sky-100 flex items-start gap-3">
-                <Sparkles className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <span className="font-bold text-sky-950 block">{secondaryVisit.title}</span>
                   <p className="text-stone-600 mt-1 leading-relaxed">{secondaryVisit.description}</p>

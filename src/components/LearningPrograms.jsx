@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, Check, ArrowRight, Sparkles, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { BookOpen, Check, ArrowRight, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
-import { BrandName, highlightBrand } from "../utils/brandHelper";
+import { highlightBrand } from "../utils/brandHelper";
 
-export default function LearningPrograms() {
+export default function LearningPrograms({ showShowcase = true, showSafetyLine = true }) {
   const [activeStageId, setActiveStageId] = useState("playgroup");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -19,24 +19,25 @@ export default function LearningPrograms() {
     {
       id: "playgroup",
       name: "Playgroup",
-      dotColor: "bg-[#FF4081]",
-      borderActive: "border-[#FF4081]",
-      bgActive: "bg-[#FFF0F5]",
+      dotColor: "bg-[#801D3A]",
+      borderActive: "border-[#801D3A]",
+      bgActive: "bg-[#F6DEE3]",
       textActive: "text-[#D81B60]",
-      badgeBg: "bg-[#FF4081]",
+      badgeBg: "bg-[#801D3A]",
       headline: "Playgroup",
       description: "A gentle, joyful transition from home to preschool centered on sensory exploration, social warmth, and fun daily routines.",
       tags: ["Sensory Play", "Social Discovery", "Loving Care"],
-      image: "/photos/early_social_play.jpg",
+      image: null,
+      fallbackBg: "bg-gradient-to-br from-[#801D3A] via-[#F43F7E] to-[#FB923C]",
     },
     {
       id: "nursery",
       name: "Nursery",
-      dotColor: "bg-[#10B981]",
-      borderActive: "border-[#10B981]",
+      dotColor: "bg-[#2B4066]",
+      borderActive: "border-[#2B4066]",
       bgActive: "bg-[#ECFDF5]",
       textActive: "text-[#059669]",
-      badgeBg: "bg-[#10B981]",
+      badgeBg: "bg-[#2B4066]",
       headline: "Nursery",
       description: "Developing expressive speech, phonics curiosity, fine-motor coordination, and self-confidence through interactive story-telling.",
       tags: ["Phonics Fun", "Creative Arts", "Motor Skills"],
@@ -45,11 +46,11 @@ export default function LearningPrograms() {
     {
       id: "pp1",
       name: "PP1",
-      dotColor: "bg-[#0EA5E9]",
-      borderActive: "border-[#0EA5E9]",
-      bgActive: "bg-[#F0F9FF]",
-      textActive: "text-[#0284C7]",
-      badgeBg: "bg-[#0EA5E9]",
+      dotColor: "bg-[#2B4066]",
+      borderActive: "border-[#2B4066]",
+      bgActive: "bg-[#F2F5FA]",
+      textActive: "text-[#2B4066]",
+      badgeBg: "bg-[#2B4066]",
       headline: "PP1",
       description: "Foundational literacy and numbers combined with hands-on science curiosity, creative expression, and teamwork.",
       tags: ["Early Reading", "Math Concepts", "Curiosity Lab"],
@@ -58,11 +59,11 @@ export default function LearningPrograms() {
     {
       id: "pp2",
       name: "PP2",
-      dotColor: "bg-[#8B5CF6]",
-      borderActive: "border-[#8B5CF6]",
+      dotColor: "bg-[#3F5680]",
+      borderActive: "border-[#3F5680]",
       bgActive: "bg-[#F5F3FF]",
       textActive: "text-[#7C3AED]",
-      badgeBg: "bg-[#8B5CF6]",
+      badgeBg: "bg-[#3F5680]",
       headline: "PP2",
       description: "School readiness through confidence building, phonics, and early mathematics.",
       tags: ["Structured Learning", "Play-Based", "Certified Teachers"],
@@ -71,11 +72,11 @@ export default function LearningPrograms() {
     {
       id: "daycare",
       name: "Day Care",
-      dotColor: "bg-[#EC4899]",
-      borderActive: "border-[#EC4899]",
-      bgActive: "bg-[#FDF2F8]",
+      dotColor: "bg-[#A83A59]",
+      borderActive: "border-[#A83A59]",
+      bgActive: "bg-[#FBF1F3]",
       textActive: "text-[#DB2777]",
-      badgeBg: "bg-[#EC4899]",
+      badgeBg: "bg-[#A83A59]",
       headline: "Day Care & After School",
       description: "A secure, loving after-school sanctuary with hygienic rest spaces, homework mentoring, and creative recreational play.",
       tags: ["Hygienic Rest", "Homework Support", "Evening Activities"],
@@ -100,92 +101,23 @@ export default function LearningPrograms() {
   return (
     <div id="academics" className="w-full">
       {/* =========================================================================
-          PART 1: HERO BANNER - Structured Learning Paths for Early Years (Screenshot 1)
-          ========================================================================= */}
-      <section className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] flex items-center justify-center overflow-hidden">
-        {/* Rich Background Classroom Image */}
-        <img
-          src="/images/structured_learning_hero.jpg"
-          alt="Preschool children learning and playing in modern classroom"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* Dark Gradient Overlay for Ultra-Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/50" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 relative z-10 w-full">
-          <div className="max-w-3xl">
-            {/* Pill: Our Programs */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 sm:mb-5">
-              <span>Our Programs</span>
-            </div>
-
-            {/* Massive Bold Display Heading */}
-            <h1 className="font-heading font-black text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] mb-4 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
-              <span>Structured Learning Paths at</span> <BrandName variant="badge" className="text-[0.62em]" />
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-white/90 text-base sm:text-lg lg:text-xl font-medium leading-relaxed mb-6 max-w-2xl">
-              Age-appropriate programs designed to build confidence, creativity, communication, and school-readiness.
-            </p>
-
-            {/* Feature Bullets with Emerald Dots */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/95 text-xs sm:text-sm font-bold mb-8">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00A651]" />
-                Playgroup to UKG
-              </span>
-              <span className="text-white/40 hidden sm:inline">|</span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00A651]" />
-                Activity-Based Learning
-              </span>
-              <span className="text-white/40 hidden sm:inline">|</span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00A651]" />
-                Holistic Child Development
-              </span>
-            </div>
-
-            {/* Two Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-              <Link
-                to="/branches"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-[#00A651] hover:bg-[#008f45] shadow-lg shadow-emerald-900/30 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 text-center"
-              >
-                Find a Nearby Campus
-              </Link>
-
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent("open-admission-modal"))}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-extrabold text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center"
-              >
-                Enquire Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
           PART 2: INTERACTIVE STAGE EXPLORER - From Playgroup to UKG
           ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#FFFDF9] relative overflow-hidden">
+      <section className="py-20 sm:py-28 bg-[#FAF8F3] relative overflow-hidden">
         {/* Subtle Watermark */}
         <BrandWatermark position="center" size="xl" opacity={0.06} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-rose-50 border border-rose-200 text-[#FF4081] text-xs font-bold mb-3 shadow-2xs">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-rose-50 border border-rose-200 text-[#801D3A] text-xs font-bold mb-3 shadow-2xs">
               <span>📕</span>
               <span>Our Programs</span>
             </div>
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
-              <span className="text-[#FF4081]">From Playgroup </span>
-              <span className="text-[#0EA5E9]">to UKG</span>
+              <span className="text-[#801D3A]">From Playgroup </span>
+              <span className="text-[#2B4066]">to UKG</span>
             </h2>
 
             <p className="mt-3 text-stone-600 text-sm sm:text-base font-semibold">
@@ -193,7 +125,36 @@ export default function LearningPrograms() {
             </p>
           </div>
 
-          {/* Interactive Layout: Left Tabs + Right Large Showcase Card */}
+          {!showShowcase ? (
+            /* Compact program cards (no photo showcase): evenly centred rows */
+            <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
+              {stages.map((stage, i) => (
+                <div
+                  key={stage.id}
+                  className={`group relative overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] rounded-3xl bg-gradient-to-br ${stage.bgActive} to-white border-2 ${stage.borderActive} shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 p-6 sm:p-7`}
+                >
+                  <span className={`absolute inset-x-0 top-0 h-1.5 ${stage.dotColor}`} aria-hidden="true" />
+                  <span className={`absolute -right-3 -top-4 font-heading font-black text-7xl sm:text-8xl ${stage.textActive} opacity-10 select-none leading-none`} aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="relative flex items-center gap-3 mb-3">
+                    <span className={`w-10 h-10 rounded-2xl ${stage.dotColor} text-white font-heading font-black text-sm flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className={`font-heading font-black text-xl sm:text-2xl ${stage.textActive}`}>{stage.name}</h3>
+                  </div>
+                  <p className="relative text-sm sm:text-base text-stone-600 leading-relaxed mb-5">{highlightBrand(stage.description)}</p>
+                  <div className="relative mt-auto flex flex-wrap gap-2">
+                    {stage.tags.map((tag) => (
+                      <span key={tag} className={`px-3 py-1 rounded-full text-xs font-bold bg-white shadow-xs border ${stage.borderActive} ${stage.textActive}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left Column: Stage Selector Tabs (5 cols) */}
             <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 justify-center">
@@ -232,13 +193,21 @@ export default function LearningPrograms() {
             {/* Right Column: Giant Rounded Stage Card (8 cols) */}
             <div className="lg:col-span-8">
               <div className="rounded-3xl sm:rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[360px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-4 sm:p-10 lg:p-12 border border-stone-200/80 group">
-                {/* Stage Photo with smooth transition */}
-                <img
-                  key={currentStage.id}
-                  src={currentStage.image}
-                  alt={`${currentStage.name} at Chocolate Kids Preschool`}
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700 animate-in fade-in duration-300"
-                />
+                {/* Stage Photo with smooth transition (gradient fallback when no photo) */}
+                {currentStage.image ? (
+                  <img
+                    key={currentStage.id}
+                    src={currentStage.image}
+                    alt={`${currentStage.name} at Chocolate Kids Preschool`}
+                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700 animate-in fade-in duration-300"
+                  />
+                ) : (
+                  <div
+                    key={currentStage.id}
+                    className={`absolute inset-0 ${currentStage.fallbackBg}`}
+                    aria-hidden="true"
+                  />
+                )}
 
                 {/* Dark Gradient Overlay for High Contrast Text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/15" />
@@ -280,7 +249,7 @@ export default function LearningPrograms() {
                         window.dispatchEvent(new CustomEvent("open-admission-modal"));
                       }
                     }}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-extrabold text-white bg-[#00A651] hover:bg-[#008f45] shadow-lg transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-extrabold text-white bg-[#17243A] hover:bg-[#0B1220] shadow-lg transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                   >
                     <span>Enquire for {currentStage.name}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -289,13 +258,14 @@ export default function LearningPrograms() {
               </div>
             </div>
           </div>
+          )}
         </div>
       </section>
 
       {/* =========================================================================
           PART 3: EXPLORE ALL PROGRAMS STRIP & ADMISSIONS FORM (Screenshot 3)
           ========================================================================= */}
-      <section id="program-enquire-form" className="py-20 bg-gradient-to-b from-white to-[#FFFDF9] relative overflow-hidden border-t border-stone-200/60">
+      <section id="program-enquire-form" className="py-20 bg-gradient-to-b from-white to-[#FAF8F3] relative overflow-hidden border-t border-stone-200/60">
         {/* Top Centered Pill Button with Doodle Banner Background */}
         <div className="max-w-4xl mx-auto px-4 text-center mb-16 relative">
           {/* Whimsical Doodle SVG Band in Background */}
@@ -310,7 +280,7 @@ export default function LearningPrograms() {
 
           <Link
             to="/admissions"
-            className="relative z-10 inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-extrabold text-white bg-[#1E293B] hover:bg-[#0F172A] shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+            className="relative z-10 inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-extrabold text-white bg-[#17243A] hover:bg-[#0F172A] shadow-xl transition-all duration-200 hover:-translate-y-0.5"
           >
             <span>Explore All Programs</span>
             <ArrowRight className="w-4 h-4 text-amber-400" />
@@ -325,12 +295,12 @@ export default function LearningPrograms() {
             <div className="lg:col-span-6 space-y-6">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-extrabold">
-                <span className="w-2 h-2 rounded-full bg-[#00A651] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#17243A] animate-pulse" />
                 <span>Admissions Open</span>
               </div>
 
               {/* Title */}
-              <h2 className="font-heading font-black text-3xl sm:text-5xl text-[#1E293B] tracking-tight leading-tight">
+              <h2 className="font-heading font-black text-3xl sm:text-5xl text-[#17243A] tracking-tight leading-tight">
                 Ready to Enroll Your Child?
               </h2>
 
@@ -359,6 +329,7 @@ export default function LearningPrograms() {
                   </span>
                 </div>
 
+                {showSafetyLine && (
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5" />
@@ -367,13 +338,14 @@ export default function LearningPrograms() {
                     100% CCTV Monitored & Child-First Safety Protocols
                   </span>
                 </div>
+                )}
               </div>
             </div>
 
             {/* Right Column: Neo-Brutalist Enquire Now Form Card (6 cols) */}
             <div className="lg:col-span-6">
-              <div className="bg-[#FFFDF5] border-2 border-[#1E293B] shadow-[4px_6px_0px_#1E293B] sm:shadow-[6px_8px_0px_#1E293B] rounded-3xl p-4 sm:p-8 relative">
-                <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#1E293B] mb-2">
+              <div className="bg-[#FFFDF5] border-2 border-[#17243A] shadow-[4px_6px_0px_#17243A] sm:shadow-[6px_8px_0px_#17243A] rounded-3xl p-4 sm:p-8 relative">
+                <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#17243A] mb-2">
                   Enquire Now
                 </h3>
                 <p className="text-stone-500 text-xs sm:text-sm font-medium mb-6">
@@ -382,7 +354,7 @@ export default function LearningPrograms() {
 
                 {formSubmitted ? (
                   <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 text-center space-y-3">
-                    <div className="w-12 h-12 rounded-full bg-[#00A651] text-white flex items-center justify-center mx-auto">
+                    <div className="w-12 h-12 rounded-full bg-[#17243A] text-white flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <h4 className="font-extrabold text-lg text-emerald-950">
@@ -394,7 +366,7 @@ export default function LearningPrograms() {
                     <button
                       type="button"
                       onClick={() => setFormSubmitted(false)}
-                      className="text-xs font-bold text-[#00A651] underline pt-2"
+                      className="text-xs font-bold text-[#17243A] underline pt-2"
                     >
                       Submit another enquiry
                     </button>
@@ -412,7 +384,7 @@ export default function LearningPrograms() {
                         placeholder="Enter your name"
                         value={formData.parentName}
                         onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
+                        className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#17243A] focus:border-transparent font-medium"
                       />
                     </div>
 
@@ -432,7 +404,7 @@ export default function LearningPrograms() {
                             placeholder="9876543210"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full px-3 py-2.5 rounded-r-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
+                            className="w-full px-3 py-2.5 rounded-r-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#17243A] focus:border-transparent font-medium"
                           />
                         </div>
                       </div>
@@ -446,7 +418,7 @@ export default function LearningPrograms() {
                           placeholder="you@gmail.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
+                          className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#17243A] focus:border-transparent font-medium"
                         />
                       </div>
                     </div>
@@ -460,7 +432,7 @@ export default function LearningPrograms() {
                         <select
                           value={formData.locality}
                           onChange={(e) => setFormData({ ...formData, locality: e.target.value })}
-                          className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
+                          className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#17243A] focus:border-transparent font-medium"
                         >
                           <option value="Dammaiguda Campus">Dammaiguda Campus</option>
                           <option value="Kapra / Yellareddyguda Campus">Kapra / Yellareddyguda Campus</option>
@@ -476,7 +448,7 @@ export default function LearningPrograms() {
                         <select
                           value={formData.grade}
                           onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                          className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent font-medium"
+                          className="w-full px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#17243A] focus:border-transparent font-medium"
                         >
                           <option value="Playgroup">Playgroup</option>
                           <option value="Nursery">Nursery</option>
@@ -490,7 +462,7 @@ export default function LearningPrograms() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full mt-2 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base text-white bg-[#FF7A00] hover:bg-[#F37000] border-2 border-[#1E293B] shadow-[3px_4px_0px_#1E293B] hover:shadow-[1px_2px_0px_#1E293B] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
+                      className="w-full mt-2 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base text-white bg-[#801D3A] hover:bg-[#5E152E] border-2 border-[#17243A] shadow-[3px_4px_0px_#17243A] hover:shadow-[1px_2px_0px_#17243A] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>Submit Enquiry</span>

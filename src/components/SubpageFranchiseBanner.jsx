@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Briefcase, ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { Briefcase, ArrowRight, MessageCircle } from "lucide-react";
 import { schoolInfo } from "../data";
 import { highlightBrand } from "../utils/brandHelper";
 
@@ -13,7 +13,7 @@ export default function SubpageFranchiseBanner({
   const franchiseMsg = "Hello Chocolate Kids Team, I am interested in the preschool franchise opportunity. Please share the franchise details.";
 
   return (
-    <section className="py-14 bg-gradient-to-b from-stone-50/80 to-[#FFFDF9] border-t border-amber-200/50">
+    <section className="py-14 bg-gradient-to-b from-stone-50/80 to-[#FAF8F3] border-t border-amber-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-r from-amber-950 via-stone-900 to-amber-900 text-white shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
           

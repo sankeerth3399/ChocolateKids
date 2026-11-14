@@ -1,20 +1,6 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  MessageCircle, 
-  Navigation, 
-  ArrowLeft, 
-  ArrowRight, 
-  ShieldCheck, 
-  Sparkles, 
-  Heart, 
-  CheckCircle2, 
-  BookOpen 
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Navigation, ArrowLeft, ArrowRight, ShieldCheck, Heart, CheckCircle2, BookOpen } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
@@ -41,7 +27,7 @@ export default function BranchDetails() {
 
   if (!branch) {
     return (
-      <div className="min-h-screen bg-[#FFFDF9] flex flex-col justify-between">
+      <div className="min-h-screen bg-[#FAF8F3] flex flex-col justify-between">
         <Navbar />
         <div className="max-w-md mx-auto my-auto text-center px-4 py-32">
           <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -70,7 +56,7 @@ export default function BranchDetails() {
   const branchPhotos = galleryImages.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
       <main className="pt-24 sm:pt-28 pb-20">
@@ -78,7 +64,7 @@ export default function BranchDetails() {
         {/* ==================================================
             1. BRANCH HERO BANNER
            ================================================== */}
-        <section className="bg-gradient-to-b from-amber-100/60 via-amber-50/40 to-[#FFFDF9] py-12 sm:py-16 border-b border-amber-200/50">
+        <section className="bg-gradient-to-b from-amber-100/60 via-amber-50/40 to-[#FAF8F3] py-12 sm:py-16 border-b border-amber-200/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               to="/branches"

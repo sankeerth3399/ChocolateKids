@@ -1,4 +1,4 @@
-import { Award, Sparkles, GraduationCap, BookOpen, Megaphone, ShieldCheck, ArrowRight, Briefcase } from "lucide-react";
+import { Award, GraduationCap, BookOpen, Megaphone, ShieldCheck, ArrowRight, Briefcase, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { franchiseBenefits } from "../data";
 import { highlightBrand, BrandBadge } from "../utils/brandHelper";
@@ -6,7 +6,7 @@ import { highlightBrand, BrandBadge } from "../utils/brandHelper";
 export default function FranchiseFeatureSection() {
   const iconMap = {
     Award,
-    Sparkles,
+    Sparkles: Star,
     GraduationCap,
     BookOpen,
     Megaphone,
@@ -14,7 +14,7 @@ export default function FranchiseFeatureSection() {
   };
 
   return (
-    <section id="franchise-opportunity" className="py-20 bg-gradient-to-b from-[#FFFDF9] via-amber-50/60 to-white relative overflow-hidden border-t border-amber-200/50">
+    <section id="franchise-opportunity" className="py-20 bg-gradient-to-b from-[#FAF8F3] via-amber-50/60 to-white relative overflow-hidden border-t border-amber-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -34,7 +34,7 @@ export default function FranchiseFeatureSection() {
         {/* 6 Benefit Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-14">
           {franchiseBenefits.map((item) => {
-            const Icon = iconMap[item.icon] || Sparkles;
+            const Icon = iconMap[item.icon] || Star;
             return (
               <div
                 key={item.title}

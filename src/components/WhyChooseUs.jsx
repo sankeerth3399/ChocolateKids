@@ -1,20 +1,26 @@
-import { Smile, Sparkles, Palette, Puzzle, ShieldCheck, GraduationCap } from "lucide-react";
+import { Smile, Palette, Puzzle, ShieldCheck, GraduationCap, Star } from "lucide-react";
 import { whyChooseUs } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
 
-export default function WhyChooseUs() {
+export default function WhyChooseUs({ showPhoto = true }) {
   const iconMap = {
     Smile,
-    Sparkles,
+    Sparkles: Star,
     Palette,
     Puzzle,
     ShieldCheck,
     GraduationCap,
   };
 
+  const accents = [
+    { card: "bg-[#FFF8F5] border-[#E8B6BE]", tile: "bg-[#F4DDE2] text-[#8B2445]", num: "bg-[#F4DDE2] text-[#8B2445]" },
+    { card: "bg-[#FFFCF4] border-[#E5CC8D]", tile: "bg-[#F3E8CA] text-[#98702D]", num: "bg-[#F3E8CA] text-[#98702D]" },
+    { card: "bg-[#F5F8FC] border-[#B8C9DF]", tile: "bg-[#DDE7F2] text-[#24456D]", num: "bg-[#DDE7F2] text-[#24456D]" },
+  ];
+
   return (
-    <section className="py-20 bg-[#FFFDF9] relative overflow-hidden">
+    <section className="py-20 bg-[#FAF8F3] relative overflow-hidden">
       {/* Brand Logo Watermark - Large Centered Page Focal Point */}
       <BrandWatermark position="center" size="xl" opacity={0.13} />
 
@@ -23,7 +29,6 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100/90 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>Educational Philosophy</span>
           </div>
           <h2 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight flex flex-wrap items-center justify-center gap-2">
@@ -35,9 +40,9 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Split Layout: Left Photograph + Right Checklist Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className={`grid grid-cols-1 gap-12 items-center ${showPhoto ? "lg:grid-cols-12" : ""}`}>
           
-          {/* Left Column: Real School Photograph with Floating Badge */}
+          {showPhoto && (
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
@@ -71,28 +76,30 @@ export default function WhyChooseUs() {
               </div>
             </div>
           </div>
+          )}
 
           {/* Right Column: 6 Structured Cards (01 to 06) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {whyChooseUs.map((item) => {
+          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${showPhoto ? "lg:col-span-7" : "lg:grid-cols-3"}`}>
+            {whyChooseUs.map((item, idx) => {
+              const accent = accents[idx % 3];
               const Icon = iconMap[item.icon] || ShieldCheck;
               return (
                 <div
                   key={item.title}
-                  className="p-5 rounded-2xl bg-white border border-stone-200/80 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-start relative group"
+                  className={`p-6 rounded-2xl border ${accent.card} shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-start relative group`}
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-700 shrink-0 group-hover:scale-105 transition-transform">
+                    <div className={`w-11 h-11 rounded-xl ${accent.tile} flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-heading font-extrabold text-base text-amber-600/70 bg-amber-50 px-2.5 py-0.5 rounded-md">
+                    <span className={`font-heading font-semibold text-sm ${accent.num} px-2.5 py-0.5 rounded-md`}>
                       {item.number}
                     </span>
                   </div>
-                  <h3 className="font-heading font-bold text-stone-900 text-base leading-snug mb-1.5">
+                  <h3 className="font-heading font-bold text-[#17243A] text-lg leading-snug mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                  <p className="text-sm text-[#536174] leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>

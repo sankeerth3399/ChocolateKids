@@ -1,69 +1,50 @@
-import { ArrowRight, Sparkles, Heart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandName } from "./BrandName";
+import ConnectCTA from "./ConnectCTA";
 
-export default function AdmissionsCTA({ showQuickInquiry }) {
+export default function AdmissionsCTA({ showQuickInquiry, showConnect = false }) {
   const location = useLocation();
   const shouldShowQuickInquiry =
     showQuickInquiry !== undefined ? showQuickInquiry : location.pathname !== "/";
 
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-br from-[#FFD54F] via-[#FBBF24] to-[#FB923C] text-[#3D1A0D] relative overflow-hidden">
-      {/* Brand Logo Watermark */}
-      <BrandWatermark position="center" size="lg" opacity={0.12} />
+    <section className="keep-bg py-20 sm:py-24 bg-gradient-to-br from-[#111827] via-[#17243A] to-[#5E152E] text-white relative overflow-hidden">
+      <BrandWatermark position="center" size="lg" opacity={0.06} className="filter invert" />
 
-      {/* Decorative Illustrated Soft Blobs */}
-      <div
-        className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/40 blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-rose-400/40 blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full bg-sky-300/30 blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* Floating Storybook Icons */}
-      <div className="absolute top-10 left-12 opacity-30 hidden lg:block animate-float">
-        <Sparkles className="w-10 h-10 text-[#C11C38]" />
-      </div>
-      <div className="absolute bottom-12 right-12 opacity-30 hidden lg:block animate-float-delayed">
-        <Heart className="w-10 h-10 text-[#C11C38]" />
-      </div>
+      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#D6B56D]/15 blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#801D3A]/40 blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md text-[#5A2E1B] text-xs font-black uppercase tracking-wider mb-5 border border-amber-200 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#C11C38]" />
-            <span>ADMISSIONS OPEN 2026-27 • PLAY GROUP TO UKG</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            <span className="h-px w-8 bg-[#D6B56D]" />
+            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] sm:tracking-[0.26em] text-[#D6B56D] text-center">
+              Admissions Open 2026-27 · Play Group to UKG
+            </span>
+            <span className="h-px w-8 bg-[#D6B56D]" />
           </div>
 
-          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#3D1A0D] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
             <span>Let Their Adventure Begin at</span> <BrandName variant="badge" className="text-[0.72em]" />
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-sm sm:text-lg lg:text-xl text-[#5A2E1B] leading-relaxed font-semibold max-w-2xl mx-auto">
+          <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
             Give your child a joyful environment to learn, explore, create and grow.
           </p>
 
-          {/* Primary CTA Buttons */}
           <div
-            className={`mt-8 sm:mt-10 flex items-center justify-center ${
+            className={`mt-9 sm:mt-10 flex items-center justify-center ${
               shouldShowQuickInquiry ? "flex-col sm:flex-row gap-4" : ""
             }`}
           >
             <Link
               to="/admissions"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-10 py-3.5 sm:py-4 min-h-[46px] rounded-[30px] text-sm sm:text-base font-black text-white bg-[#C11C38] hover:bg-[#A81730] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 min-h-[46px] rounded-md text-sm sm:text-base font-semibold tracking-wide text-[#111827] bg-[#D6B56D] hover:bg-[#E0C98A] shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               <span>Explore Admissions</span>
-              <ArrowRight className="w-4 h-4 text-amber-200" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
 
             {shouldShowQuickInquiry && (
@@ -78,17 +59,22 @@ export default function AdmissionsCTA({ showQuickInquiry }) {
                     window.dispatchEvent(new CustomEvent("open-admission-modal"));
                   }
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-[30px] text-base font-bold text-[#5A2E1B] bg-white/70 hover:bg-white border border-[#5A2E1B]/25 backdrop-blur-xs transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 min-h-[46px] rounded-md text-sm sm:text-base font-semibold tracking-wide text-white border border-[#D6B56D]/60 hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
               >
                 <span>Quick Inquiry Form</span>
               </a>
             )}
           </div>
 
-          <div className="mt-6 text-xs text-[#5A2E1B]/80 font-semibold">
+          <p className="mt-7 text-xs sm:text-sm text-slate-400">
             Personal campus tours available Monday to Saturday at Dammaiguda, Kapra, and Yapral branches.
-          </div>
+          </p>
 
+          {showConnect && (
+            <div className="mt-8 sm:mt-10 flex justify-center">
+              <ConnectCTA />
+            </div>
+          )}
         </div>
       </div>
     </section>

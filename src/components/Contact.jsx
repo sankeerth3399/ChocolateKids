@@ -14,14 +14,14 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF0DD] text-[#5A2E1B] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
-            <Phone className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
+            <Phone className="w-3.5 h-3.5 text-[#C29A45]" />
             <span>Connect With Us</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#5A2E1B] tracking-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#17243A] tracking-tight">
             We'd Love to Hear From You
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5A2E1B]/80 leading-relaxed font-medium">
+          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium">
             Have questions about admissions, daily routines, or visiting our campuses? Get in touch with our friendly admissions desk.
           </p>
         </div>
@@ -30,25 +30,25 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           
           {/* Card 1: Direct Phone */}
-          <div className="p-5 sm:p-7 rounded-3xl bg-[#FFF9F0] border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          <div className="p-5 sm:p-7 rounded-3xl bg-[#FAF8F3] border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#FFF0DD] text-[#F59E0B] flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#F0E9DD] text-[#C29A45] flex items-center justify-center mb-4">
                 <Phone className="w-6 h-6" />
               </div>
-              <h3 className="font-heading font-extrabold text-xl text-[#5A2E1B] mb-1">
+              <h3 className="font-heading font-extrabold text-xl text-[#17243A] mb-1">
                 Call Us Directly
               </h3>
-              <p className="text-xs text-[#5A2E1B]/75 mb-4">
+              <p className="text-xs text-[#17243A]/75 mb-4">
                 Direct phone line for quick admission inquiries & campus visit slots.
               </p>
-              <div className="text-lg font-extrabold text-[#5A2E1B] font-mono">
+              <div className="text-lg font-extrabold text-[#17243A] font-mono">
                 +91 95158 69889
               </div>
             </div>
             <div className="mt-6">
               <a
                 href={`tel:${schoolInfo.phone}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-[30px] text-sm font-extrabold text-white bg-[#F59E0B] hover:bg-[#D97706] transition-colors shadow-2xs"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-[30px] text-sm font-extrabold text-white bg-[#C29A45] hover:bg-[#A67F32] transition-colors shadow-2xs"
               >
                 <Phone className="w-4 h-4" />
                 <span>CALL NOW</span>
@@ -118,7 +118,7 @@ export default function Contact() {
             Campus Locations Gateway (Links to Our Schools Page)
            ================================================== */}
         <div className="pt-10 border-t border-stone-200">
-          <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFDF9] border border-amber-200/80 shadow-xs max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+          <div className="p-6 sm:p-8 rounded-3xl bg-[#FAF8F3] border border-amber-200/80 shadow-xs max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-700" />

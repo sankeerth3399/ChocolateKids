@@ -1,4 +1,4 @@
-import { Heart, Briefcase, ArrowRight, BookOpen, Sparkles, CheckCircle2, ChevronRight } from "lucide-react";
+import { Heart, Briefcase, ArrowRight, BookOpen, CheckCircle2, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -9,7 +9,7 @@ export default function AudienceSplit() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Pathway 1: For Parents */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-50/90 via-[#FFFDF9] to-orange-50/60 border border-amber-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-50/90 via-[#FAF8F3] to-orange-50/60 border border-amber-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-200/80 text-amber-950 uppercase tracking-wider">

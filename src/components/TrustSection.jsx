@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Smile, HeartHandshake } from "lucide-react";
+import { ShieldCheck, Smile, HeartHandshake, Star } from "lucide-react";
 
 export default function TrustSection() {
   const trustPillars = [
@@ -14,7 +14,7 @@ export default function TrustSection() {
     {
       title: "Learning Through Play",
       description: "Stimulating activities where natural curiosity meets joyful hands-on discovery.",
-      icon: Sparkles,
+      icon: Star,
       colorBg: "bg-amber-50",
       colorBorder: "border-amber-100",
       colorText: "text-amber-800",
