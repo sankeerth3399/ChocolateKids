@@ -5,7 +5,7 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function WhyPartnerWithUs() {
   return (
-    <section className="py-20 bg-white relative overflow-hidden border-t border-amber-100/60">
+    <section className="py-20 relative overflow-hidden border-t border-[#E8DCC9] bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

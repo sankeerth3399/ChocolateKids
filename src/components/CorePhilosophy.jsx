@@ -7,7 +7,7 @@ export default function CorePhilosophy() {
   return (
     <section 
       id="core-philosophy" 
-      className="relative py-16 sm:py-24 bg-gradient-to-b from-[#FAF8F3] via-[#F0E9DD] to-[#FAF8F3] border-y border-amber-200/70 overflow-hidden"
+      className="relative py-16 sm:py-24 border-y border-[#E8DCC9] overflow-hidden bg-[#FFFDF8]"
     >
       {/* Subtle Ambient Backlight */}
       <div 
@@ -73,23 +73,23 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             whileHover={{ y: -4, transition: { duration: 0.28 } }}
-            className="relative p-5 sm:p-8 rounded-2xl bg-[#FFF8F5] border border-[#E8B6BE] shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-2xl bg-white border border-[#E8DCC9] shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-28 h-28 bg-[#F4DDE2]/45 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-xl bg-[#F4DDE2] text-[#8B2445] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-[#C51F45] text-white shadow-md flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                 <Smile className="w-7 h-7" />
               </div>
-              <span className="text-xs font-semibold tracking-widest text-[#8B2445] uppercase block mb-1">
+              <span className="text-xs font-semibold tracking-widest text-[#C51F45] uppercase block mb-1">
                 Foundation 01
               </span>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#17243A] mb-3">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#142B4A] mb-3">
                 PLAY
               </h3>
               <p className="text-sm text-[#536174] leading-relaxed font-normal">
                 Joyful play-based sensory activities, clay exploration, music, and outdoor games that turn every discovery into lived happiness and active curiosity.
               </p>
-              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#8B2445]">
+              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#C51F45]">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Sensorial & Cognitive Joy</span>
               </div>
@@ -103,23 +103,23 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ y: -4, transition: { duration: 0.28 } }}
-            className="relative p-5 sm:p-8 rounded-2xl bg-[#FFFCF4] border border-[#E5CC8D] shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-2xl bg-white border border-[#E8DCC9] shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-28 h-28 bg-[#F3E8CA]/55 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-xl bg-[#F3E8CA] text-[#98702D] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-[#F26A21] text-white shadow-md flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                 <BookCheck className="w-7 h-7" />
               </div>
-              <span className="text-xs font-semibold tracking-widest text-[#98702D] uppercase block mb-1">
+              <span className="text-xs font-semibold tracking-widest text-[#B26A00] uppercase block mb-1">
                 Foundation 02
               </span>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#17243A] mb-3">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#142B4A] mb-3">
                 LEARN
               </h3>
               <p className="text-sm text-[#536174] leading-relaxed font-normal">
                 Structured, age-graded phonics, numbers, language milestones, and thematic learning modules taught by thoroughly trained, caring educators.
               </p>
-              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#98702D]">
+              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#B26A00]">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Holistic & Proven Curriculum</span>
               </div>
@@ -133,23 +133,23 @@ export default function CorePhilosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{ y: -4, transition: { duration: 0.28 } }}
-            className="relative p-5 sm:p-8 rounded-2xl bg-[#F5F8FC] border border-[#B8C9DF] shadow-md hover:shadow-xl transition-all group overflow-hidden"
+            className="relative p-5 sm:p-8 rounded-2xl bg-white border border-[#E8DCC9] shadow-md hover:shadow-xl transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-28 h-28 bg-[#DDE7F2]/55 rounded-bl-full pointer-events-none -z-0" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-xl bg-[#DDE7F2] text-[#24456D] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-[#174EA6] text-white shadow-md flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                 <Compass className="w-7 h-7" />
               </div>
-              <span className="text-xs font-semibold tracking-widest text-[#24456D] uppercase block mb-1">
+              <span className="text-xs font-semibold tracking-widest text-[#174EA6] uppercase block mb-1">
                 Foundation 03
               </span>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#17243A] mb-3">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#142B4A] mb-3">
                 GROW
               </h3>
               <p className="text-sm text-[#536174] leading-relaxed font-normal">
                 Developing emotional confidence, social harmony, ethical values, and school readiness so every child steps into the future bright and prepared.
               </p>
-              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#24456D]">
+              <div className="mt-5 pt-4 border-t border-[#EAE3D9] flex items-center gap-2 text-xs font-semibold text-[#174EA6]">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Emotional & Social Readiness</span>
               </div>

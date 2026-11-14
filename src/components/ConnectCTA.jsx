@@ -10,7 +10,7 @@ export default function ConnectCTA() {
   return (
     <Link
       to="/contact"
-      className="animate-wiggle-subtle inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide text-white bg-gradient-to-r from-[#C29A45] to-[#EA580C] hover:from-[#A67F32] hover:to-[#C2410C] shadow-lg shadow-black/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer select-none"
+      className="animate-wiggle-subtle inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide text-white bg-[#C51F45] hover:bg-[#A31838] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer select-none"
     >
       <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
       <span>CONNECT US</span>

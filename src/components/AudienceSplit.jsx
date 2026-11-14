@@ -4,12 +4,12 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function AudienceSplit() {
   return (
-    <section className="py-12 bg-white relative border-b border-amber-100/60 z-20">
+    <section className="py-12 relative border-b border-[#E8DCC9] z-20 bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Pathway 1: For Parents */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-50/90 via-[#FAF8F3] to-orange-50/60 border border-amber-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-50/90 via-[#FFFDF8] to-orange-50/60 border border-amber-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-200/80 text-amber-950 uppercase tracking-wider">

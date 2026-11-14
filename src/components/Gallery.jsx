@@ -62,13 +62,13 @@ export default function Gallery() {
   }, [lightboxIndex, closeLightbox, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#FAF8F3] relative overflow-hidden">
+    <section id="gallery" className="py-20 sm:py-28 relative overflow-hidden bg-[#FFFDF8]">
       {/* Brand Logo Watermark */}
       <BrandWatermark position="center" size="lg" opacity={0.08} />
 
       {/* Soft background accents */}
       <div 
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#F0E9DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-[#FFF4DF]/50 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
@@ -80,14 +80,14 @@ export default function Gallery() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#142B4A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
             <Camera className="w-3.5 h-3.5 text-[#C29A45]" />
             <span>CAMPUS MEMORIES & MOMENTS</span>
           </div>
-          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#17243A] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#142B4A] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-2">
             <span>Moments at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium">
+          <p className="mt-4 text-base sm:text-lg text-[#142B4A]/80 leading-relaxed font-medium">
             Genuinely captured moments of educational visits, festive celebrations, creative days, and childhood milestones.
           </p>
         </div>
@@ -125,18 +125,18 @@ export default function Gallery() {
                     />
 
                     {/* Gradient Overlay on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#17243A]/85 via-[#17243A]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#142B4A]/85 via-[#142B4A]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                     {/* Top Floating Category Tag */}
                     <div className="absolute top-3.5 left-3.5 z-10">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/95 text-[#17243A] shadow-2xs backdrop-blur-xs border border-amber-100">
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/95 text-[#142B4A] shadow-2xs backdrop-blur-xs border border-amber-100">
                         {image.category}
                       </span>
                     </div>
 
                     {/* Floating Zoom Action Button on Hover */}
                     <div className="absolute top-3.5 right-3.5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                      <span className="w-8 h-8 rounded-full bg-white/95 text-[#17243A] shadow-sm flex items-center justify-center backdrop-blur-xs">
+                      <span className="w-8 h-8 rounded-full bg-white/95 text-[#142B4A] shadow-sm flex items-center justify-center backdrop-blur-xs">
                         <ZoomIn className="w-4 h-4 text-[#C29A45]" />
                       </span>
                     </div>
@@ -154,7 +154,7 @@ export default function Gallery() {
 
                   {/* Clean Bottom Label Bar */}
                   <div className="p-3.5 bg-white flex items-center justify-between border-t border-amber-100/60">
-                    <h3 className="font-heading font-extrabold text-sm text-[#17243A] group-hover:text-[#C29A45] transition-colors truncate">
+                    <h3 className="font-heading font-extrabold text-sm text-[#142B4A] group-hover:text-[#C29A45] transition-colors truncate">
                       {image.title}
                     </h3>
                     <span className="text-[11px] font-bold text-[#C29A45] shrink-0 ml-2">
@@ -172,7 +172,7 @@ export default function Gallery() {
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[30px] text-sm font-extrabold text-[#17243A] bg-white hover:bg-[#F0E9DD] border-2 border-amber-200 shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[30px] text-sm font-extrabold text-[#142B4A] bg-white hover:bg-[#FFF4DF] border-2 border-amber-200 shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
             >
               <span>
                 {showAll
@@ -269,7 +269,7 @@ export default function Gallery() {
             <div className="w-full max-w-4xl mx-auto flex flex-col items-center z-20 pt-2">
               {/* Photo Title & Description */}
               <div className="text-center text-white px-4 mb-3 max-w-2xl">
-                <h4 className="font-heading font-black text-base sm:text-xl text-[#FAF8F3] leading-snug">
+                <h4 className="font-heading font-black text-base sm:text-xl text-[#FFFDF8] leading-snug">
                   {filteredImages[lightboxIndex].title}
                 </h4>
                 <p className="text-xs sm:text-sm text-stone-300 mt-1 line-clamp-2 leading-relaxed">

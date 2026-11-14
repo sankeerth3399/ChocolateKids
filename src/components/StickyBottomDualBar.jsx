@@ -28,7 +28,7 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
         <button
           type="button"
           onClick={handleEnrolClick}
-          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none min-w-0 whitespace-nowrap px-2 sm:px-4.5 py-2.5 sm:py-2 rounded-full text-xs font-bold text-white bg-[#922B4B] hover:bg-[#7A2140] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer"
+          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none min-w-0 whitespace-nowrap px-2 sm:px-4.5 py-2.5 sm:py-2 rounded-full text-xs font-bold text-white bg-[#C51F45] hover:bg-[#9E1836] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer"
         >
           <span>Enrol Your Child</span>
         </button>
@@ -37,7 +37,7 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
         <button
           type="button"
           onClick={() => setShowFranchise(true)}
-          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none min-w-0 whitespace-nowrap px-2 sm:px-4.5 py-2.5 sm:py-2 rounded-full text-xs font-bold text-white bg-[#31549A] hover:bg-[#274582] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer"
+          className="inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none min-w-0 whitespace-nowrap px-2 sm:px-4.5 py-2.5 sm:py-2 rounded-full text-xs font-bold text-white bg-[#174EA6] hover:bg-[#274582] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer"
         >
           <Briefcase className="w-3.5 h-3.5 text-blue-200 shrink-0" />
           <span>Become a Partner</span>

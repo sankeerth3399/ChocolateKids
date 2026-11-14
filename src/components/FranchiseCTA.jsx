@@ -7,7 +7,7 @@ export default function FranchiseCTA() {
   const franchiseMsg = "Hello Chocolate Kids Team, I am interested in the preschool franchise opportunity. Please share the franchise details.";
 
   return (
-    <section id="franchise-cta" className="py-20 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/30 relative overflow-hidden border-t border-amber-200/60">
+    <section id="franchise-cta" className="py-20 relative overflow-hidden border-t border-[#E8DCC9] bg-[#FFF4DF]">
       {/* Decorative ambient elements */}
       <div
         className="absolute top-10 right-10 w-72 h-72 rounded-full bg-amber-100/60 blur-3xl pointer-events-none"

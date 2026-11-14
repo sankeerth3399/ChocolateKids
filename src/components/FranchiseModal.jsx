@@ -12,7 +12,7 @@ const initialData = {
 };
 
 const inputCls = (err) =>
-  `w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#17243A] ${
+  `w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#142B4A] ${
     err ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
   }`;
 
@@ -98,7 +98,7 @@ Thank you.`;
         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-blue-100 overflow-hidden my-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-gradient-to-r from-[#17243A] via-[#1D4ED8] to-[#2563EB] text-white p-3.5 sm:p-4 relative">
+        <div className="bg-gradient-to-r from-[#142B4A] via-[#1D4ED8] to-[#2563EB] text-white p-3.5 sm:p-4 relative">
           <button
             onClick={onClose}
             aria-label="Close dialog"
@@ -126,20 +126,20 @@ Thank you.`;
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <h4 className="font-heading font-black text-lg text-[#111827]">Application Received!</h4>
-              <p className="text-xs text-[#17243A]/80 max-w-xs mx-auto leading-relaxed">
+              <p className="text-xs text-[#142B4A]/80 max-w-xs mx-auto leading-relaxed">
                 Thank you for your interest in becoming a <BrandBadge isInline className="text-[0.85em]" /> franchise partner. Our team will contact you shortly.
               </p>
               <div className="pt-2 flex items-center justify-center gap-2">
                 <a
                   href={`tel:${schoolInfo.phone}`}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-[#17243A] bg-amber-100 hover:bg-amber-200 transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-[#142B4A] bg-amber-100 hover:bg-amber-200 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-amber-700" />
                   <span>Call Us</span>
                 </a>
                 <button
                   onClick={onClose}
-                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#17243A] hover:bg-[#0B1220] shadow-sm transition-colors cursor-pointer"
+                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#142B4A] hover:bg-[#0B1220] shadow-sm transition-colors cursor-pointer"
                 >
                   Done
                 </button>
@@ -172,7 +172,7 @@ Thank you.`;
                     name="investmentRange"
                     value={formData.investmentRange}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#17243A]"
+                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#142B4A]"
                   >
                     <option value="3 - 3.5 Lakhs">₹3 Lakhs – ₹3.5 Lakhs</option>
                     <option value="8 - 10 Lakhs">₹8 Lakhs – ₹10 Lakhs</option>
@@ -189,14 +189,14 @@ Thank you.`;
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Any requirements, timeline or questions..."
-                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#17243A]"
+                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#142B4A]"
                 />
               </div>
 
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#17243A] hover:bg-[#0B1220] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#142B4A] hover:bg-[#0B1220] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Submit and Connect on WhatsApp</span>
@@ -204,9 +204,9 @@ Thank you.`;
               </div>
 
               <div className="pt-1 text-center">
-                <p className="text-[10px] text-[#17243A]/70 font-semibold">
+                <p className="text-[10px] text-[#142B4A]/70 font-semibold">
                   Prefer a call?{" "}
-                  <a href={`tel:${schoolInfo.phone}`} className="text-[#17243A] font-bold hover:underline">
+                  <a href={`tel:${schoolInfo.phone}`} className="text-[#142B4A] font-bold hover:underline">
                     {schoolInfo.phoneFormatted}
                   </a>
                 </p>

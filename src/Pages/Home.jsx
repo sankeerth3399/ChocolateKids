@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import About from "../components/About";
+import HomeBenefits from "../components/HomeBenefits";
+import HomeAbout from "../components/HomeAbout";
+import HomeGroups from "../components/HomeGroups";
+import LearningApproach from "../components/LearningApproach";
+
 import CorePhilosophy from "../components/CorePhilosophy";
 import WhyChooseUs from "../components/WhyChooseUs";
-import LearningPrograms from "../components/LearningPrograms";
 import Facilities from "../components/Facilities";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
@@ -17,25 +20,31 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen home-theme text-[#17243A] font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen home-theme text-[#142B4A] font-sans selection:bg-amber-200 selection:text-amber-900">
       {/* 1. Header / Navigation */}
       <Navbar />
 
       <main>
-        {/* 2. Simplified Clean Hero Section */}
+        {/* Hero */}
         <Hero />
 
-        {/* 3. Our Core Philosophy: Play • Learn • Grow */}
+        {/* Key benefits */}
+        <HomeBenefits />
+
+        {/* About Chocolate Kids */}
+        <HomeAbout />
+
+        {/* Our core philosophy: Play, Learn, Grow */}
         <CorePhilosophy />
 
-        {/* 4. About Chocolate Kids */}
-        <About showPhotos={false} />
+        {/* The five groups with their photos */}
+        <HomeGroups />
 
-        {/* 5. Educational Philosophy & Details */}
+        {/* Learning Beyond the Classroom */}
+        <LearningApproach />
+
+        {/* Why choose us */}
         <WhyChooseUs showPhoto={false} />
-
-        {/* 5. Learning Programs (Playgroup, Nursery, PP1/LKG, PP2/UKG, Day Care) */}
-        <LearningPrograms showShowcase={false} showSafetyLine={false} />
 
         {/* 6. Facilities (What We Offer) */}
         <Facilities />

@@ -14,7 +14,7 @@ export default function FranchiseProcess({ showCta = true, title = "Start Your C
   };
 
   return (
-    <section id="franchise-journey" className="py-20 bg-stone-50/70 relative overflow-hidden border-t border-amber-100/70">
+    <section id="franchise-journey" className="py-20 relative overflow-hidden border-t border-[#E8DCC9] bg-[#FFF4DF]">
       {/* Background soft ambient accents */}
       <div className="absolute top-10 left-1/4 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl pointer-events-none" />

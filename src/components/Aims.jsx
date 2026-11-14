@@ -11,7 +11,7 @@ export default function Aims() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#FAF8F3] via-amber-50/40 to-white relative">
+    <section className="py-20 relative bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

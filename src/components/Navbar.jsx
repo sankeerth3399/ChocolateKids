@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle, ChevronDown, BookOpen, Building2, Images, MapPin } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, ChevronDown, BookOpen, Building2, Images, Palette, CalendarCheck } from "lucide-react";
 import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -11,21 +11,28 @@ const aboutMenu = [
     title: "About Us",
     desc: "Philosophy & Vision",
     Icon: BookOpen,
-    tile: "bg-[#F4DDE2] text-[#922B4B]",
+    tile: "bg-[#C51F45] text-white",
   },
   {
     to: "/facilities",
     title: "Facilities",
     desc: "Smart Rooms & Play Area",
     Icon: Building2,
-    tile: "bg-[#DDE7F2] text-[#17243A]",
+    tile: "bg-[#174EA6] text-white",
+  },
+  {
+    to: "/activities",
+    title: "Activities",
+    desc: "Play, Art & Discovery",
+    Icon: Palette,
+    tile: "bg-[#F26A21] text-white",
   },
   {
     to: "/gallery",
     title: "Gallery",
     desc: "Events & Moments",
     Icon: Images,
-    tile: "bg-[#DAF0EE] text-[#0F766E]",
+    tile: "bg-[#087F83] text-white",
   },
 ];
 
@@ -93,7 +100,8 @@ export default function Navbar({ onOpenEnquiry }) {
   };
 
   const isHomeActive = location.pathname === "/";
-  const isAboutActive = location.pathname === "/about" || location.pathname === "/facilities" || location.pathname === "/gallery";
+  const isAboutActive = location.pathname === "/about" || location.pathname === "/facilities" || location.pathname === "/gallery" || location.pathname === "/activities";
+  const isAdmissionsActive = location.pathname === "/admissions";
   const isProgramsActive = location.pathname === "/academics";
   const isSchoolsActive = location.pathname.startsWith("/branches");
   const isFranchiseActive = location.pathname === "/franchise";
@@ -103,13 +111,13 @@ export default function Navbar({ onOpenEnquiry }) {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-[#FAF8F3] backdrop-blur-xl shadow-[0_8px_30px_-12px_rgba(17,24,39,0.25)] py-2"
-          : "bg-[#FAF8F3] backdrop-blur-xl shadow-[0_1px_0_rgba(214,181,109,0.35)] py-3 sm:py-3.5"
+          ? "bg-white shadow-[0_10px_30px_-14px_rgba(23,59,115,0.28)] py-2"
+          : "bg-white shadow-[0_1px_0_rgba(23,59,115,0.08)] py-3 sm:py-3.5"
           }`}
       >
         {/* Brand-colour accent strip */}
         <div
-          className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#D6B56D] to-transparent"
+          className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#FFBD16] via-[#F26A21] to-[#C51F45]"
           aria-hidden="true"
         />
 
@@ -124,7 +132,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }
               }}
-              className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#17243A] rounded-lg p-0.5 sm:p-1"
+              className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#142B4A] rounded-lg p-0.5 sm:p-1"
             >
               <img
                 src="/logo.png"
@@ -133,7 +141,7 @@ export default function Navbar({ onOpenEnquiry }) {
               />
               <div className="flex flex-col items-start justify-center leading-none">
                 <BrandBadge className="text-[clamp(1.1rem,2.8vw,2.15rem)] leading-none select-none tracking-normal" />
-                <span className="text-[8px] sm:text-[9.5px] lg:text-[10.5px] font-black tracking-[0.15em] uppercase text-[#17243A] leading-tight ml-0.5 mt-0.5">
+                <span className="text-[8px] sm:text-[9.5px] lg:text-[10.5px] font-black tracking-[0.15em] uppercase text-[#142B4A] leading-tight ml-0.5 mt-0.5">
                   Innovative Learning
                 </span>
               </div>
@@ -151,8 +159,8 @@ export default function Navbar({ onOpenEnquiry }) {
                   }
                 }}
                 className={`px-3 xl:px-4 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isHomeActive
-                    ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
-                    : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                   }`}
               >
                 Home
@@ -163,11 +171,11 @@ export default function Navbar({ onOpenEnquiry }) {
                 <button
                   type="button"
                   onClick={() => setAboutDropdownOpen((o) => !o)}
-                  className={`flex items-center gap-1 text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap py-1.5 px-3 rounded-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D6B56D] ${isAboutActive
-                      ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
+                  className={`flex items-center gap-1 text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap py-1.5 px-3 rounded-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFBD16] ${isAboutActive
+                      ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
                       : aboutDropdownOpen
-                        ? "text-[#922B4B]"
-                        : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                        ? "text-[#C51F45]"
+                        : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                     }`}
                   aria-expanded={aboutDropdownOpen}
                   aria-haspopup="menu"
@@ -199,14 +207,14 @@ export default function Navbar({ onOpenEnquiry }) {
                         tabIndex={aboutDropdownOpen ? 0 : -1}
                         onClick={closeMenu}
                         aria-current={active ? "page" : undefined}
-                        className={`relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-colors duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D6B56D] ${active ? "bg-[#FAF8F3]" : "hover:bg-[#FAF8F3]"}`}
+                        className={`relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-colors duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFBD16] ${active ? "bg-[#FFFDF8]" : "hover:bg-[#FFFDF8]"}`}
                       >
-                        {active && <span className="absolute left-0 top-2.5 bottom-2.5 w-0.5 rounded-full bg-[#D6B56D]" aria-hidden="true" />}
+                        {active && <span className="absolute left-0 top-2.5 bottom-2.5 w-0.5 rounded-full bg-[#FFBD16]" aria-hidden="true" />}
                         <div className={`w-11 h-11 rounded-xl ${tile} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5`}>
                           <Icon className="w-5 h-5" strokeWidth={1.8} />
                         </div>
                         <div className="min-w-0 leading-tight">
-                          <div className={`font-semibold text-[15px] transition-colors duration-200 ${active ? "text-[#922B4B]" : "text-[#17243A] group-hover:text-[#922B4B]"}`}>
+                          <div className={`font-semibold text-[15px] transition-colors duration-200 ${active ? "text-[#C51F45]" : "text-[#142B4A] group-hover:text-[#C51F45]"}`}>
                             {title}
                           </div>
                           <div className="mt-0.5 text-xs text-[#64748B]">{desc}</div>
@@ -222,8 +230,8 @@ export default function Navbar({ onOpenEnquiry }) {
                 to="/branches"
                 onClick={closeMenu}
                 className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isSchoolsActive
-                    ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
-                    : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                   }`}
               >
                 Our Schools
@@ -234,11 +242,23 @@ export default function Navbar({ onOpenEnquiry }) {
                 to="/academics"
                 onClick={closeMenu}
                 className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isProgramsActive
-                    ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
-                    : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                   }`}
               >
                 Programs
+              </Link>
+
+              {/* Admissions */}
+              <Link
+                to="/admissions"
+                onClick={closeMenu}
+                className={`hidden xl:inline-block px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isAdmissionsActive
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
+                  }`}
+              >
+                Admissions
               </Link>
 
               {/* Franchise */}
@@ -246,8 +266,8 @@ export default function Navbar({ onOpenEnquiry }) {
                 to="/franchise"
                 onClick={closeMenu}
                 className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isFranchiseActive
-                    ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
-                    : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                   }`}
               >
                 Franchise
@@ -258,31 +278,13 @@ export default function Navbar({ onOpenEnquiry }) {
                 to="/contact"
                 onClick={closeMenu}
                 className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isContactActive
-                    ? "text-[#922B4B] shadow-[inset_0_-2px_0_#D6B56D]"
-                    : "text-[#17243A] hover:text-[#922B4B] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
+                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
+                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
                   }`}
               >
                 Contact
               </Link>
             </nav>
-
-            {/* Desktop Action Element: Enquire Now Button (Orange with dark border & 3D shadow) */}
-            <div className="hidden sm:flex items-center gap-2">
-              <Link
-                to="/franchise"
-                onClick={closeMenu}
-                className="hidden 2xl:inline-flex items-center justify-center px-5 py-2.5 rounded-md text-sm font-semibold tracking-wide whitespace-nowrap text-[#17243A] bg-[#D6B56D] hover:bg-[#C29A45] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shrink-0"
-              >
-                Franchise Enquiry
-              </Link>
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent("open-admission-modal"))}
-                className="inline-flex items-center justify-center px-4 xl:px-6 py-2 xl:py-2.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide text-white bg-[#922B4B] hover:bg-[#7A2140] border border-[#D6B56D]/70 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer shrink-0"
-              >
-                <span>Enquire Now</span>
-              </button>
-            </div>
 
             {/* Mobile Hamburger Toggle */}
             <button
@@ -336,7 +338,7 @@ export default function Navbar({ onOpenEnquiry }) {
               />
               <div className="flex flex-col items-start justify-center leading-none">
                 <BrandBadge className="text-xl sm:text-2xl leading-none select-none" />
-                <span className="text-[8px] sm:text-[9px] font-black tracking-[0.14em] uppercase text-[#17243A] leading-tight ml-0.5 mt-0.5">
+                <span className="text-[8px] sm:text-[9px] font-black tracking-[0.14em] uppercase text-[#142B4A] leading-tight ml-0.5 mt-0.5">
                   Innovative Learning
                 </span>
               </div>
@@ -360,7 +362,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }
               }}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60"
                 }`}
             >
               Home
@@ -373,12 +375,12 @@ export default function Navbar({ onOpenEnquiry }) {
                 onClick={() => setMobileAboutOpen((o) => !o)}
                 aria-expanded={mobileAboutOpen}
                 aria-controls="about-accordion"
-                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#F0E9DD] text-[#922B4B]" : "text-stone-700 hover:bg-[#F0E9DD]/60"
+                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#FFF4DF] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFF4DF]/60"
                   }`}
               >
                 <span>About Us</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-300 ${mobileAboutOpen ? "rotate-180 text-[#17243A]" : "text-stone-500"
+                  className={`w-4 h-4 transition-transform duration-300 ${mobileAboutOpen ? "rotate-180 text-[#142B4A]" : "text-stone-500"
                     }`}
                 />
               </button>
@@ -388,7 +390,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 className={`grid transition-all duration-300 ease-out ${mobileAboutOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
               >
                 <div className="overflow-hidden">
-                  <div className="ml-4 pl-3 border-l-2 border-[#D6B56D]/60 flex flex-col gap-1 mt-1 mb-2">
+                  <div className="ml-4 pl-3 border-l-2 border-[#FFBD16]/60 flex flex-col gap-1 mt-1 mb-2">
                     {aboutMenu.map(({ to, title, desc, Icon, tile }) => {
                       const active = location.pathname === to;
                       return (
@@ -398,7 +400,7 @@ export default function Navbar({ onOpenEnquiry }) {
                           onClick={closeMenu}
                           tabIndex={mobileAboutOpen ? 0 : -1}
                           aria-current={active ? "page" : undefined}
-                          className={`px-3 py-2.5 min-h-[52px] rounded-xl flex items-center gap-3 transition-colors ${active ? "bg-[#FAF8F3] text-[#922B4B]" : "text-[#17243A] hover:bg-[#FAF8F3]"}`}
+                          className={`px-3 py-2.5 min-h-[52px] rounded-xl flex items-center gap-3 transition-colors ${active ? "bg-[#FFFDF8] text-[#C51F45]" : "text-[#142B4A] hover:bg-[#FFFDF8]"}`}
                         >
                           <div className={`w-10 h-10 rounded-lg ${tile} flex items-center justify-center shrink-0`}>
                             <Icon className="w-[18px] h-[18px]" strokeWidth={1.8} />
@@ -419,7 +421,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/branches"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60 hover:text-[#17243A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
                 }`}
             >
               Our Schools
@@ -429,17 +431,27 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/academics"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60 hover:text-[#17243A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
                 }`}
             >
               Programs
+            </Link>
+
+            {/* Admissions */}
+            <Link
+              to="/admissions"
+              onClick={closeMenu}
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isAdmissionsActive ? "bg-[#FFF4DF] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+                }`}
+            >
+              Admissions
             </Link>
 
             {/* Franchise */}
             <Link
               to="/franchise"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60 hover:text-[#17243A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
                 }`}
             >
               Franchise
@@ -449,7 +461,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60 hover:text-[#17243A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
                 }`}
             >
               Contact
@@ -464,9 +476,10 @@ export default function Navbar({ onOpenEnquiry }) {
                 closeMenu();
                 window.dispatchEvent(new CustomEvent("open-admission-modal"));
               }}
-              className="w-full inline-flex items-center justify-center px-4 py-3 min-h-[46px] rounded-md text-sm sm:text-base font-semibold tracking-wide text-white bg-[#922B4B] hover:bg-[#7A2140] border border-[#D6B56D]/70 shadow-md transition-all cursor-pointer text-center"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 min-h-[46px] rounded-full text-sm sm:text-base font-bold tracking-wide text-[#142B4A] bg-[#FFBD16] hover:bg-[#FFCB45] shadow-md transition-all cursor-pointer text-center"
             >
-              <span>Enquire Now</span>
+              <span>Schedule a Visit</span>
+              <CalendarCheck className="w-4 h-4" />
             </button>
 
             <a

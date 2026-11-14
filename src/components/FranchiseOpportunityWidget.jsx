@@ -46,7 +46,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
   return (
     <section 
       id="franchise-opportunity-widget" 
-      className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF8F3] via-[#F0E9DD] to-[#FAF8F3] relative overflow-hidden"
+      className="py-14 sm:py-20 relative overflow-hidden bg-[#FFFDF8]"
     >
       {/* Ambient Backlight Glow */}
       <div 
@@ -99,7 +99,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
               variants={itemVariants}
               className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-stone-900 mt-2"
             >
-              Join the <span className="text-[#922B4B]">Chocolate Kids</span> Family
+              Join the <span className="text-[#C51F45]">Chocolate Kids</span> Family
             </motion.h3>
 
             <motion.p 
@@ -218,7 +218,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             
             {/* Left: Message & Contact */}
             <div>
-              <span className="text-xs font-black tracking-widest text-[#922B4B] uppercase block mb-0.5">
+              <span className="text-xs font-black tracking-widest text-[#C51F45] uppercase block mb-0.5">
                 Join Chocolate Kids
               </span>
               <h4 className="font-heading font-black text-lg sm:text-xl text-stone-900">

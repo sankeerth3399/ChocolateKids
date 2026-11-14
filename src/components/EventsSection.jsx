@@ -48,7 +48,7 @@ export default function EventsSection() {
   ];
 
   return (
-    <section id="events" className="py-20 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
+    <section id="events" className="py-20 sm:py-24 relative overflow-hidden bg-[#FFFDF8]">
       {/* Brand Logo Watermark - Large Centered Watermark */}
       <BrandWatermark position="center" size="xl" opacity={0.11} />
 

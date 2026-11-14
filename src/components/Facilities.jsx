@@ -7,7 +7,7 @@ export default function Facilities({ className = "" }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section id="facilities" className={`pt-16 sm:pt-20 pb-4 sm:pb-6 bg-white relative overflow-hidden ${className}`}>
+    <section id="facilities" className={`pt-16 sm:pt-20 pb-4 sm:pb-6 relative overflow-hidden ${className} bg-[#FFFDF8]`}>
       {/* Whimsical curved dotted pastel paths in the background (similar to reference) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
         <svg
@@ -109,7 +109,7 @@ export default function Facilities({ className = "" }) {
 
           {/* Heading: What We Offer */}
           <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
-            <span className="text-[#922B4B]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
+            <span className="text-[#C51F45]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>
 

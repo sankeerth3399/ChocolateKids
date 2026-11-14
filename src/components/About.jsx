@@ -8,55 +8,55 @@ import { BrandBadge } from "../utils/brandHelper";
 export default function About({ showPhotos = true }) {
   const philosophyHighlights = [
     {
-      tint: "bg-[#F5F8FC]",
+      tint: "bg-white",
       title: "Friendly, Clean & Safe Haven",
       desc: "A clean, healthy, comfortable and safe environment where children are stimulated, challenged, and physically protected.",
       icon: Shield,
-      accent: "text-[#24456D]",
-      bg: "bg-[#DDE7F2]",
-      border: "border-[#B8C9DF]",
+      accent: "text-white",
+      bg: "bg-[#174EA6]",
+      border: "border-[#E8DCC9]",
     },
     {
-      tint: "bg-[#FFFCF4]",
+      tint: "bg-white",
       title: "Discovery Linked with Joy",
       desc: "Enjoyment, fun and achievement are linked with real discovery—from science to art and early sensory exploration.",
       icon: Star,
-      accent: "text-[#98702D]",
-      bg: "bg-[#F3E8CA]",
-      border: "border-[#E5CC8D]",
+      accent: "text-white",
+      bg: "bg-[#F26A21]",
+      border: "border-[#E8DCC9]",
     },
     {
-      tint: "bg-[#FFF8F5]",
+      tint: "bg-white",
       title: "Individual Attention & Warmth",
       desc: "Sensitive and responsive educators who nurture each child's unique personality and developmental pace.",
       icon: Heart,
-      accent: "text-[#8B2445]",
-      bg: "bg-[#F4DDE2]",
-      border: "border-[#E8B6BE]",
+      accent: "text-white",
+      bg: "bg-[#C51F45]",
+      border: "border-[#E8DCC9]",
     },
     {
-      tint: "bg-[#F5F8FC]",
+      tint: "bg-white",
       title: "Early Foundations for Life",
       desc: "Cultivating social confidence, polite empathy, verbal fluency, and boundless imagination for future school success.",
       icon: BookOpen,
-      accent: "text-[#24456D]",
-      bg: "bg-[#DDE7F2]",
-      border: "border-[#B8C9DF]",
+      accent: "text-white",
+      bg: "bg-[#087F83]",
+      border: "border-[#E8DCC9]",
     },
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-24 relative overflow-hidden bg-[#FFFDF8]">
       {/* Brand Logo Watermark - Centered with slight left offset */}
       <BrandWatermark position="center-offset-left" size="lg" opacity={0.10} />
 
       {/* Decorative Storybook Background Elements */}
       <div 
-        className="absolute top-10 -left-20 w-80 h-80 bg-[#F0E9DD]/50 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-10 -left-20 w-80 h-80 bg-[#FFF4DF]/50 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-10 -right-20 w-96 h-96 bg-[#F0E9DD]/40 rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute bottom-10 -right-20 w-96 h-96 bg-[#FFF4DF]/40 rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -64,13 +64,13 @@ export default function About({ showPhotos = true }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF4DF] text-[#142B4A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-amber-200/80 shadow-2xs">
             <span>WELCOME TO <BrandBadge isInline className="text-sm" /></span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#17243A] tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#142B4A] tracking-tight leading-tight">
             Growing Curious Minds
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-[#142B4A]/80 leading-relaxed font-medium max-w-2xl mx-auto">
             At <BrandBadge isInline className="text-base" />, childhood is celebrated as a magical chapter of exploration. We combine child-led play, structured curiosity, and warm individual attention.
           </p>
         </div>
@@ -137,11 +137,11 @@ export default function About({ showPhotos = true }) {
           <div className={`space-y-6 pt-8 lg:pt-0 ${showPhotos ? "lg:col-span-6" : ""}`}>
             
             {/* Storybook Narrative Box */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#FFFCF4] border border-[#E5CC8D] shadow-sm relative">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8DCC9] shadow-sm relative">
               <span className="text-5xl text-[#D6B56D] font-serif leading-none absolute top-3 right-4 select-none">
                 “
               </span>
-              <h3 className="font-heading font-bold text-xl text-[#17243A] mb-2">
+              <h3 className="font-heading font-bold text-xl text-[#142B4A] mb-2">
                 A Loving Sanctuary Where Childhood Shines
               </h3>
               <p className="text-[#536174] text-sm sm:text-base leading-relaxed">
@@ -167,7 +167,7 @@ export default function About({ showPhotos = true }) {
                       <div className={`w-9 h-9 rounded-xl ${pillar.bg} flex items-center justify-center`}>
                         <Icon className={`w-4 h-4 ${pillar.accent}`} />
                       </div>
-                      <h4 className="font-heading font-bold text-[#17243A] text-base">
+                      <h4 className="font-heading font-bold text-[#142B4A] text-base">
                         {pillar.title}
                       </h4>
                     </div>
