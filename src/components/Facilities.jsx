@@ -109,7 +109,7 @@ export default function Facilities({ className = "" }) {
 
           {/* Heading: What We Offer */}
           <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center justify-center gap-2.5">
-            <span className="text-[#801D3A]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
+            <span className="text-[#922B4B]">Facilities at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
         </div>
 

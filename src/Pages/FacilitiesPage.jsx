@@ -13,18 +13,18 @@ export default function FacilitiesPage() {
 
       <main>
         {/* Page Hero Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#17243A] to-[#5E152E] pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4">
-          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#D6B56D]/15 blur-3xl pointer-events-none" aria-hidden="true" />
-          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#801D3A]/35 blur-3xl pointer-events-none" aria-hidden="true" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#FFF9F0] via-[#FAF8F3] to-[#FAF8F3] border-b border-[#EAE3D9] pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4">
+          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#D6B56D]/25 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#922B4B]/10 blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-200/70 text-sky-950 text-xs font-bold uppercase tracking-wider mb-4">
               <ShieldCheck className="w-3.5 h-3.5 text-sky-700" />
               <span>Campus Infrastructure & Care</span>
             </div>
-            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-[#17243A] leading-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
               <span>Campus Facilities at</span> <BrandBadge className="text-[0.75em]" />
             </h1>
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-[#536174] max-w-2xl mx-auto leading-relaxed">
               Safe, vibrant, and thoughtfully designed preschool campuses where little ones explore, play, and learn with absolute safety and comfort.
             </p>
           </div>

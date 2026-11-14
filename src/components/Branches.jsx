@@ -45,7 +45,7 @@ export default function Branches() {
 
           {/* Heading */}
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center gap-2.5">
-            <span className="text-[#801D3A]">Visit Our Branches</span> • <BrandBadge className="text-[0.72em]" />
+            <span className="text-[#922B4B]">Visit Our Branches</span> • <BrandBadge className="text-[0.72em]" />
           </h2>
 
           <p className="mt-3 text-stone-600 text-sm sm:text-base leading-relaxed">
@@ -102,7 +102,7 @@ export default function Branches() {
                       <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#801D3A]">
+                      <div className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#922B4B]">
                         CHOCOLATE KIDS
                       </div>
                       <h4 className="font-heading font-black text-base sm:text-lg text-stone-900 leading-tight">
@@ -182,7 +182,7 @@ export default function Branches() {
             to="/branches"
             className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 min-h-[46px] rounded-full text-xs sm:text-sm font-extrabold text-stone-800 bg-white hover:bg-stone-50 border border-stone-200 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
           >
-            <MapPin className="w-4 h-4 text-[#801D3A]" />
+            <MapPin className="w-4 h-4 text-[#922B4B]" />
             <span>Explore All Campus Locations & Facilities</span>
             <ArrowRight className="w-4 h-4 text-stone-500" />
           </Link>

@@ -13,11 +13,11 @@ const whyIcons = { GraduationCap, Lightbulb, Users, TrendingUp, MapPin, Heart };
 
 /* Literal class names so Tailwind can see them. Colours follow the franchise poster. */
 const whyPalette = {
-  emerald: { solid: "bg-[#17243A]", soft: "from-[#F2F5FA]", ring: "ring-[#C3CEE0]", text: "text-[#17243A]", glow: "shadow-slate-300/50" },
-  rose: { solid: "bg-[#801D3A]", soft: "from-[#FBF1F3]", ring: "ring-[#ECBFC9]", text: "text-[#801D3A]", glow: "shadow-rose-200/60" },
+  emerald: { solid: "bg-[#31549A]", soft: "from-[#F2F5FA]", ring: "ring-[#C3CEE0]", text: "text-[#17243A]", glow: "shadow-slate-300/50" },
+  rose: { solid: "bg-[#922B4B]", soft: "from-[#FBF1F3]", ring: "ring-[#ECBFC9]", text: "text-[#922B4B]", glow: "shadow-rose-200/60" },
   sky: { solid: "bg-[#C29A45]", soft: "from-[#FBF8EF]", ring: "ring-[#EBDBAE]", text: "text-[#85632A]", glow: "shadow-amber-200/60" },
-  amber: { solid: "bg-[#17243A]", soft: "from-[#F2F5FA]", ring: "ring-[#C3CEE0]", text: "text-[#17243A]", glow: "shadow-slate-300/50" },
-  purple: { solid: "bg-[#801D3A]", soft: "from-[#FBF1F3]", ring: "ring-[#ECBFC9]", text: "text-[#801D3A]", glow: "shadow-rose-200/60" },
+  amber: { solid: "bg-[#31549A]", soft: "from-[#F2F5FA]", ring: "ring-[#C3CEE0]", text: "text-[#17243A]", glow: "shadow-slate-300/50" },
+  purple: { solid: "bg-[#922B4B]", soft: "from-[#FBF1F3]", ring: "ring-[#ECBFC9]", text: "text-[#922B4B]", glow: "shadow-rose-200/60" },
   teal: { solid: "bg-[#C29A45]", soft: "from-[#FBF8EF]", ring: "ring-[#EBDBAE]", text: "text-[#85632A]", glow: "shadow-amber-200/60" },
 };
 
@@ -83,7 +83,7 @@ export default function FranchiseShowcase() {
       >
         <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#D6B56D]/20 blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="absolute top-1/3 -right-24 w-80 h-80 rounded-full bg-[#17243A]/10 blur-3xl pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 left-1/4 w-72 h-72 rounded-full bg-[#801D3A]/10 blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 rounded-full bg-[#922B4B]/10 blur-3xl pointer-events-none" aria-hidden="true" />
         <BrandWatermark position="center" size="xl" opacity={0.06} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,7 +174,7 @@ export default function FranchiseShowcase() {
               className="relative flex flex-col rounded-3xl bg-gradient-to-br from-[#F2F5FA] via-white to-[#FAF8F3] ring-1 ring-[#C3CEE0] shadow-xl shadow-slate-200 p-5 sm:p-8 min-w-0"
             >
               <div className="-mt-9 sm:-mt-11 mb-6 self-start">
-                <span className="inline-block max-w-full rounded-2xl rounded-bl-sm bg-gradient-to-r from-[#17243A] to-[#2B4066] px-5 py-2.5 font-heading font-bold text-lg sm:text-2xl text-white shadow-lg -rotate-1">
+                <span className="inline-block max-w-full rounded-2xl rounded-bl-sm bg-gradient-to-r from-[#31549A] to-[#4668B0] px-5 py-2.5 font-heading font-bold text-lg sm:text-2xl text-white shadow-lg -rotate-1">
                   Franchise Kit Includes
                 </span>
               </div>
@@ -195,7 +195,7 @@ export default function FranchiseShowcase() {
               className="relative flex flex-col rounded-3xl bg-gradient-to-br from-[#FBF1F3] via-white to-[#FAF8F3] ring-1 ring-[#ECBFC9] shadow-xl shadow-rose-100 p-5 sm:p-8 min-w-0"
             >
               <div className="-mt-9 sm:-mt-11 mb-6 self-start">
-                <span className="inline-block max-w-full rounded-2xl rounded-bl-sm bg-gradient-to-r from-[#801D3A] to-[#A83A59] px-5 py-2.5 font-heading font-bold text-lg sm:text-2xl text-white shadow-lg -rotate-1">
+                <span className="inline-block max-w-full rounded-2xl rounded-bl-sm bg-gradient-to-r from-[#922B4B] to-[#A83A59] px-5 py-2.5 font-heading font-bold text-lg sm:text-2xl text-white shadow-lg -rotate-1">
                   Also Includes
                 </span>
               </div>

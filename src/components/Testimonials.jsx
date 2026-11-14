@@ -120,7 +120,7 @@ export default function Testimonials({ className = "" }) {
 
           {/* Heading: Happy Parents, Happy Kids */}
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-            <span className="text-[#801D3A]">Happy Parents, </span>
+            <span className="text-[#922B4B]">Happy Parents, </span>
             <span className="text-[#02A6E9]">Happy Kids</span>
           </h2>
 
@@ -218,7 +218,7 @@ export default function Testimonials({ className = "" }) {
                   aria-label={`Go to slide ${dotIdx + 1}`}
                   className={`relative transition-all duration-300 cursor-pointer after:content-[''] after:absolute after:-inset-x-1.5 after:-inset-y-3 ${
                     currentIndex === dotIdx
-                      ? "w-7 h-2 rounded-full bg-[#801D3A]"
+                      ? "w-7 h-2 rounded-full bg-[#922B4B]"
                       : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"
                   }`}
                 />

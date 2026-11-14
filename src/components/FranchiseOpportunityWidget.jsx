@@ -99,7 +99,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
               variants={itemVariants}
               className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-stone-900 mt-2"
             >
-              Join the <span className="text-[#801D3A]">Chocolate Kids</span> Family
+              Join the <span className="text-[#922B4B]">Chocolate Kids</span> Family
             </motion.h3>
 
             <motion.p 
@@ -218,7 +218,7 @@ export default function FranchiseOpportunityWidget({ onScrollToSection }) {
             
             {/* Left: Message & Contact */}
             <div>
-              <span className="text-xs font-black tracking-widest text-[#801D3A] uppercase block mb-0.5">
+              <span className="text-xs font-black tracking-widest text-[#922B4B] uppercase block mb-0.5">
                 Join Chocolate Kids
               </span>
               <h4 className="font-heading font-black text-lg sm:text-xl text-stone-900">

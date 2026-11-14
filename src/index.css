@@ -14,12 +14,18 @@
   /* ---- Core brand tokens ---- */
   --color-midnight: #111827;
   --color-navy: #17243a;
-  --color-burgundy: #801d3a;
-  --color-cherry: #5e152e;
+  --color-burgundy: #922B4B;
+  --color-cherry: #7A2140;
   --color-gold: #d6b56d;
   --color-ivory: #faf8f3;
   --color-beige: #f0e9dd;
   --color-slate-grey: #64748b;
+  --color-royal: #31549a;
+  --color-emerald-brand: #237653;
+  --color-teal-brand: #087e83;
+  --color-terracotta: #c45a35;
+  --color-ivory-soft: #fff9f0;
+  --color-sand: #f3eee5;
 
   /* ---- Radii: less pillowy, more refined ---- */
   --radius-lg: 0.5rem;
@@ -80,10 +86,10 @@
   --color-rose-300: #de95a6;
   --color-rose-400: #c9667f;
   --color-rose-500: #a83a59;
-  --color-rose-600: #801d3a;
+  --color-rose-600: #922B4B;
   --color-rose-700: #6b1830;
-  --color-rose-800: #5e152e;
-  --color-rose-900: #470f22;
+  --color-rose-800: #7A2140;
+  --color-rose-900: #5E1830;
   --color-rose-950: #2a0914;
   --color-red-50: #fff8f5;
   --color-red-100: #f4dde2;
@@ -91,23 +97,23 @@
   --color-red-300: #de95a6;
   --color-red-400: #c9667f;
   --color-red-500: #a83a59;
-  --color-red-600: #801d3a;
+  --color-red-600: #922B4B;
   --color-red-700: #6b1830;
-  --color-red-800: #5e152e;
-  --color-red-900: #470f22;
+  --color-red-800: #7A2140;
+  --color-red-900: #5E1830;
   --color-pink-50: #fff8f5;
   --color-pink-100: #f4dde2;
   --color-pink-200: #e8b6be;
   --color-pink-300: #de95a6;
   --color-pink-400: #c9667f;
   --color-pink-500: #a83a59;
-  --color-pink-600: #801d3a;
+  --color-pink-600: #922B4B;
   --color-pink-700: #6b1830;
   --color-fuchsia-50: #fff8f5;
   --color-fuchsia-100: #f4dde2;
   --color-fuchsia-200: #e8b6be;
   --color-fuchsia-500: #a83a59;
-  --color-fuchsia-600: #801d3a;
+  --color-fuchsia-600: #922B4B;
   --color-fuchsia-700: #6b1830;
 
   /* ---- Navy (blue / sky / cyan / indigo / violet / purple / teal) ---- */
@@ -564,7 +570,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #801D3A;
+  background: #922B4B;
 }
 
 @media (prefers-reduced-motion: reduce) {

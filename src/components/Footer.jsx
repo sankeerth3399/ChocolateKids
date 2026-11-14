@@ -6,14 +6,14 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#17243A] via-[#111827] to-[#0B1220] text-stone-200 pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden">
+    <footer className="bg-[#F3EEE5] text-[#536174] pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden">
       {/* Brand Logo Watermark - Visible but Elegant */}
-      <BrandWatermark position="bottom-right" size="lg" opacity={0.08} rotate={-6} />
+      <BrandWatermark position="bottom-right" size="lg" opacity={0.06} rotate={-6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Main Footer 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#D6B56D]/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#E3DACB]">
 
           {/* Col 1: Brand & Tagline (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -35,13 +35,13 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-start leading-none">
                 <BrandBadge className="text-2xl sm:text-3xl lg:text-3xl leading-none select-none" />
-                <span className="text-[10px] sm:text-xs font-bold text-[#D6B56D] uppercase tracking-widest block ml-1 mt-1">
+                <span className="text-[10px] sm:text-xs font-bold text-[#922B4B] uppercase tracking-widest block ml-1 mt-1">
                   Innovative Learning
                 </span>
               </div>
             </Link>
 
-            <p className="text-sm text-stone-400 leading-relaxed font-normal">
+            <p className="text-sm text-[#536174] leading-relaxed font-normal">
               A child-centered, friendly and safe haven where little minds grow, learn, and shine. Focused on foundational curiosity, gentle care, and active experiential learning.
             </p>
 
@@ -50,16 +50,16 @@ export default function Footer() {
                 href={schoolInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D6B56D] hover:bg-[#E0C98A] text-[#111827] text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#922B4B] hover:bg-[#7A2140] text-white text-xs font-bold transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-[#111827] text-[#D6B56D]" />
+                <MessageCircle className="w-4 h-4 fill-white text-[#922B4B]" />
                 <span>WhatsApp Helpline</span>
               </a>
               <a
                 href={`tel:${schoolInfo.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 ring-1 ring-[#D6B56D]/40 text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FAF8F3] ring-1 ring-[#E8E0D4] text-[#17243A] text-xs font-bold transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#D6B56D]" />
+                <Phone className="w-3.5 h-3.5 text-[#922B4B]" />
                 <span>{schoolInfo.phone}</span>
               </a>
             </div>
@@ -67,14 +67,14 @@ export default function Footer() {
 
           {/* Col 2: For Parents (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
+            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
               For Parents
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/academics"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Learning Programs (Play–UKG)
                 </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/activities"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Sensory & Play Activities
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/facilities"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Child-Safe Facilities
                 </Link>
@@ -98,16 +98,16 @@ export default function Footer() {
               <li>
                 <Link
                   to="/branches"
-                  className="text-stone-400 hover:text-white transition-colors flex items-center gap-1.5"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors flex items-center gap-1.5"
                 >
                   <span>Find a Branch Near You</span>
-                  <ArrowRight className="w-3 h-3 text-[#D6B56D]" />
+                  <ArrowRight className="w-3 h-3 text-[#922B4B]" />
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admissions"
-                  className="font-bold text-[#D6B56D] hover:text-[#E0C98A] transition-colors inline-block"
+                  className="font-bold text-[#922B4B] hover:text-[#7A2140] transition-colors inline-block"
                 >
                   Admissions Enquiry 2026-27 →
                 </Link>
@@ -117,14 +117,14 @@ export default function Footer() {
 
           {/* Col 3: For Franchise Partners (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
+            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
               For Franchise Partners
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/franchise"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Franchise Opportunity
                 </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#benefits"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Franchise Benefits
                 </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#requirements"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Franchise Process
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#franchise-faq"
-                  className="text-stone-400 hover:text-white transition-colors"
+                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
                 >
                   Franchise FAQ
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#enquiry-form"
-                  className="font-bold text-[#D6B56D] hover:text-[#E0C98A] transition-colors"
+                  className="font-bold text-[#922B4B] hover:text-[#7A2140] transition-colors"
                 >
                   Franchise Enquiry →
                 </Link>
@@ -166,51 +166,51 @@ export default function Footer() {
 
           {/* Col 4: Campus Locations & Contact (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#D6B56D] pb-3 border-b border-[#D6B56D]/25">
+            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
               Campus Locations
             </h3>
 
             <div className="space-y-3 text-xs">
-              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
-                <span className="font-bold text-white block mb-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
+                <span className="font-bold text-[#17243A] block mb-0.5">
                   Dammaiguda Campus
                 </span>
-                <p className="text-stone-400 leading-snug break-words-safe">
+                <p className="text-[#536174] leading-snug break-words-safe">
                   H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyd - 083.
                 </p>
                 <Link
                   to="/branches/dammaiguda"
-                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
-                <span className="font-bold text-white block mb-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
+                <span className="font-bold text-[#17243A] block mb-0.5">
                   Kapra / Yellareddyguda Campus
                 </span>
-                <p className="text-stone-400 leading-snug break-words-safe">
+                <p className="text-[#536174] leading-snug break-words-safe">
                   Shalivahana Colony, Near Anurag Line, KAPRA, Hyd - 062.
                 </p>
                 <Link
                   to="/branches/kapra-yellareddyguda"
-                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.04] border border-[#D6B56D]/20 hover:border-[#D6B56D]/50 transition-colors">
-                <span className="font-bold text-white block mb-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
+                <span className="font-bold text-[#17243A] block mb-0.5">
                   Yapral Branch
                 </span>
-                <p className="text-stone-400 leading-snug break-words-safe">
+                <p className="text-[#536174] leading-snug break-words-safe">
                   5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087
                 </p>
                 <Link
                   to="/branches/yapral"
-                  className="text-[11px] text-[#D6B56D] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
@@ -221,8 +221,8 @@ export default function Footer() {
         </div>
 
         {/* Quick links + contact strip */}
-        <div className="py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 border-b border-[#D6B56D]/20">
-          <nav aria-label="Footer quick links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-300">
+        <div className="py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 border-b border-[#E3DACB]">
+          <nav aria-label="Footer quick links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#536174]">
             {[
               ["Home", "/"],
               ["About", "/about"],
@@ -247,25 +247,25 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-300">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#536174]">
             <a href={`mailto:${schoolInfo.email}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors break-all">
-              <Mail className="w-4 h-4 text-[#D6B56D] shrink-0" />
+              <Mail className="w-4 h-4 text-[#922B4B] shrink-0" />
               <span>{schoolInfo.email}</span>
             </a>
-            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors">
-              <Phone className="w-4 h-4 text-[#D6B56D] shrink-0" />
+            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#922B4B] transition-colors">
+              <Phone className="w-4 h-4 text-[#922B4B] shrink-0" />
               <span>{schoolInfo.phoneFormatted}</span>
             </a>
           </div>
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
           <div>
             © {schoolInfo.copyrightYear} <BrandBadge isInline className="text-xs" />. All Rights Reserved.
           </div>
 
-          <div className="text-stone-400">
+          <div className="text-[#64748B]">
             Innovative Learning Preschool • Dammaiguda, Kapra & Yapral, Hyderabad
           </div>
         </div>

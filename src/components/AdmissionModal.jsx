@@ -113,7 +113,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
         onClick={(e) => e.stopPropagation()}
       >
         {/* Compact Modal Header */}
-        <div className="bg-gradient-to-r from-[#801D3A] via-[#B91C1C] to-[#801D3A] text-white p-3.5 sm:p-4 relative">
+        <div className="bg-gradient-to-r from-[#922B4B] via-[#B91C1C] to-[#922B4B] text-white p-3.5 sm:p-4 relative">
           <button
             onClick={onClose}
             aria-label="Close dialog"
@@ -157,7 +157,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </a>
                 <button
                   onClick={onClose}
-                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#801D3A] hover:bg-[#5E152E] shadow-sm transition-colors cursor-pointer"
+                  className="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#922B4B] hover:bg-[#7A2140] shadow-sm transition-colors cursor-pointer"
                 >
                   Done
                 </button>
@@ -177,7 +177,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.parentName}
                     onChange={handleChange}
                     placeholder="e.g. Priya Sharma"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#922B4B] ${
                       errors.parentName ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -198,7 +198,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="10-digit number"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#922B4B] ${
                       errors.phone ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -222,7 +222,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.childName}
                     onChange={handleChange}
                     placeholder="e.g. Aarav"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#922B4B] ${
                       errors.childName ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -243,7 +243,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     value={formData.childAge}
                     onChange={handleChange}
                     placeholder="e.g. 2.5 Years"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A] ${
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-[#922B4B] ${
                       errors.childAge ? "border-rose-500 bg-rose-50" : "border-stone-300 bg-stone-50/50"
                     }`}
                   />
@@ -265,7 +265,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
+                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#922B4B]"
                   >
                     <option value="Playgroup (1.5 – 2.5 Yrs)">Play Group (1.5 – 2.5 Yrs)</option>
                     <option value="Nursery (2.5 – 3.5 Yrs)">Nursery (2.5 – 3.5 Yrs)</option>
@@ -283,7 +283,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
-                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
+                    className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#922B4B]"
                   >
                     <option value="Dammaiguda Campus">Dammaiguda Campus</option>
                     <option value="Kapra / Yellareddyguda Campus">Kapra / Yellareddyguda Campus</option>
@@ -303,7 +303,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="e.g. Planning to visit this weekend..."
-                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#801D3A]"
+                  className="w-full px-3 py-1.5 rounded-lg border border-stone-300 bg-stone-50/50 text-xs focus:outline-none focus:ring-2 focus:ring-[#922B4B]"
                 />
               </div>
 
@@ -311,7 +311,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#801D3A] hover:bg-[#5E152E] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#922B4B] hover:bg-[#7A2140] shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Submit & Connect on WhatsApp</span>
@@ -322,7 +322,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               <div className="pt-1 text-center">
                 <p className="text-[10px] text-[#17243A]/70 font-semibold">
                   Prefer a call?{" "}
-                  <a href={`tel:${schoolInfo.phone}`} className="text-[#801D3A] font-bold hover:underline">
+                  <a href={`tel:${schoolInfo.phone}`} className="text-[#922B4B] font-bold hover:underline">
                     {schoolInfo.phoneFormatted}
                   </a>
                 </p>

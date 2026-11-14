@@ -83,16 +83,16 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
     {
       id: "playgroup",
       name: "Playgroup",
-      dotColor: "bg-[#801D3A]",
-      borderActive: "border-[#801D3A]",
+      dotColor: "bg-[#922B4B]",
+      borderActive: "border-[#922B4B]",
       bgActive: "bg-[#F6DEE3]",
       textActive: "text-[#D81B60]",
-      badgeBg: "bg-[#801D3A]",
+      badgeBg: "bg-[#922B4B]",
       headline: "Playgroup",
       description: "A gentle, joyful transition from home to preschool centered on sensory exploration, social warmth, and fun daily routines.",
       tags: ["Sensory Play", "Social Discovery", "Loving Care"],
       image: "/images/programs/playgroup.jpg",
-      fallbackBg: "bg-gradient-to-br from-[#801D3A] via-[#F43F7E] to-[#FB923C]",
+      fallbackBg: "bg-gradient-to-br from-[#922B4B] via-[#F43F7E] to-[#FB923C]",
     },
     {
       id: "nursery",
@@ -174,13 +174,13 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-rose-50 border border-rose-200 text-[#801D3A] text-xs font-bold mb-3 shadow-2xs">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-rose-50 border border-rose-200 text-[#922B4B] text-xs font-bold mb-3 shadow-2xs">
               <span>📕</span>
               <span>Our Programs</span>
             </div>
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
-              <span className="text-[#801D3A]">From Playgroup </span>
+              <span className="text-[#922B4B]">From Playgroup </span>
               <span className="text-[#2B4066]">to UKG</span>
             </h2>
 
@@ -530,7 +530,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full mt-2 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base text-white bg-[#801D3A] hover:bg-[#5E152E] border-2 border-[#17243A] shadow-[3px_4px_0px_#17243A] hover:shadow-[1px_2px_0px_#17243A] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
+                      className="w-full mt-2 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base text-white bg-[#922B4B] hover:bg-[#7A2140] border-2 border-[#17243A] shadow-[3px_4px_0px_#17243A] hover:shadow-[1px_2px_0px_#17243A] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>Submit Enquiry</span>
