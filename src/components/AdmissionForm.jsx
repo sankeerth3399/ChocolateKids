@@ -105,27 +105,26 @@ export default function AdmissionForm() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200/80 shadow-2xs">
-            <span>Admission Enquiry 2026-27</span>
-          </div>
-          <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-[#17243A] tracking-tight flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-[#17243A] flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>Begin Your Child's Journey at</span> <BrandBadge className="text-[0.72em]" />
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#17243A]/80 font-medium">
+          <p className="mt-4 text-base sm:text-lg text-[#536174] font-normal">
             Fill in the details below. We will pre-fill your admission enquiry directly on WhatsApp so our team can immediately guide you.
           </p>
         </div>
 
         {/* Form Container */}
-        <div className="max-w-3xl mx-auto bg-white rounded-3xl p-4 sm:p-10 shadow-xl border border-stone-200/90 relative">
+        <div className="max-w-3xl mx-auto bg-white rounded-2xl p-5 sm:p-10 shadow-[0_24px_50px_-22px_rgba(23,36,58,0.28)] border border-[#E8E0D4] relative overflow-hidden">
           
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#801D3A] via-[#D6B56D] to-[#17243A]" aria-hidden="true" />
+
           <form onSubmit={handleSubmit} noValidate className="space-y-5 sm:space-y-6">
             
             {/* Row 1: Parent Name & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                  Parent / Guardian Name <span className="text-rose-500">*</span>
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
+                  Parent / Guardian Name <span className="text-[#801D3A]">*</span>
                 </label>
                 <input
                   type="text"
@@ -133,10 +132,10 @@ export default function AdmissionForm() {
                   value={formData.parentName}
                   onChange={handleChange}
                   placeholder="e.g. Ramesh Kumar"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:ring-2 transition-all duration-200 ${
                     errors.parentName
                       ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                      : "border-stone-300 bg-stone-50/40 focus:ring-amber-500 focus:border-amber-500"
+                      : "border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] focus:bg-white focus:ring-[#801D3A]/15 focus:border-[#801D3A]"
                   }`}
                 />
                 {errors.parentName && (
@@ -148,8 +147,8 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                  Phone Number <span className="text-rose-500">*</span>
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
+                  Phone Number <span className="text-[#801D3A]">*</span>
                 </label>
                 <input
                   type="tel"
@@ -157,10 +156,10 @@ export default function AdmissionForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="e.g. 9515869889"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:ring-2 transition-all duration-200 ${
                     errors.phone
                       ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                      : "border-stone-300 bg-stone-50/40 focus:ring-amber-500 focus:border-amber-500"
+                      : "border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] focus:bg-white focus:ring-[#801D3A]/15 focus:border-[#801D3A]"
                   }`}
                 />
                 {errors.phone && (
@@ -175,7 +174,7 @@ export default function AdmissionForm() {
             {/* Row 2: Email & Child Name */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
                   Email Address <span className="text-stone-400 font-normal">(Optional)</span>
                 </label>
                 <input
@@ -184,10 +183,10 @@ export default function AdmissionForm() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="e.g. parent@example.com"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:ring-2 transition-all duration-200 ${
                     errors.email
                       ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                      : "border-stone-300 bg-stone-50/40 focus:ring-amber-500 focus:border-amber-500"
+                      : "border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] focus:bg-white focus:ring-[#801D3A]/15 focus:border-[#801D3A]"
                   }`}
                 />
                 {errors.email && (
@@ -199,8 +198,8 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                  Child's Name <span className="text-rose-500">*</span>
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
+                  Child's Name <span className="text-[#801D3A]">*</span>
                 </label>
                 <input
                   type="text"
@@ -208,10 +207,10 @@ export default function AdmissionForm() {
                   value={formData.childName}
                   onChange={handleChange}
                   placeholder="e.g. Aarav"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:ring-2 transition-all duration-200 ${
                     errors.childName
                       ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                      : "border-stone-300 bg-stone-50/40 focus:ring-amber-500 focus:border-amber-500"
+                      : "border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] focus:bg-white focus:ring-[#801D3A]/15 focus:border-[#801D3A]"
                   }`}
                 />
                 {errors.childName && (
@@ -226,8 +225,8 @@ export default function AdmissionForm() {
             {/* Row 3: Child Age & Preferred Branch */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                  Child's Age <span className="text-rose-500">*</span>
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
+                  Child's Age <span className="text-[#801D3A]">*</span>
                 </label>
                 <input
                   type="text"
@@ -235,10 +234,10 @@ export default function AdmissionForm() {
                   value={formData.childAge}
                   onChange={handleChange}
                   placeholder="e.g. 2.5 Years, 3 Years"
-                  className={`w-full px-4 py-3 rounded-xl border text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-4 py-3 rounded-xl border text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:ring-2 transition-all duration-200 ${
                     errors.childAge
                       ? "border-rose-400 bg-rose-50/40 focus:ring-rose-400"
-                      : "border-stone-300 bg-stone-50/40 focus:ring-amber-500 focus:border-amber-500"
+                      : "border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] focus:bg-white focus:ring-[#801D3A]/15 focus:border-[#801D3A]"
                   }`}
                 />
                 {errors.childAge && (
@@ -250,14 +249,14 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-                  Preferred Branch <span className="text-rose-500">*</span>
+                <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
+                  Preferred Branch <span className="text-[#801D3A]">*</span>
                 </label>
                 <select
                   name="preferredBranch"
                   value={formData.preferredBranch}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] text-sm text-[#17243A] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#801D3A]/15 focus:border-[#801D3A] transition-all duration-200 cursor-pointer"
                 >
                   <option value="Dammaiguda">Dammaiguda</option>
                   <option value="Yellareddyguda">Yellareddyguda</option>
@@ -268,14 +267,14 @@ export default function AdmissionForm() {
 
             {/* Row 4: Admission For */}
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
                 Admission For
               </label>
               <select
                 name="admissionFor"
                 value={formData.admissionFor}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                className="w-full px-4 py-3 rounded-xl border border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] text-sm text-[#17243A] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#801D3A]/15 focus:border-[#801D3A] transition-all duration-200 cursor-pointer"
               >
                 <option value="Playgroup (1.5 - 2.5 yrs)">Playgroup (1.5 - 2.5 years)</option>
                 <option value="Nursery (2.5 - 3.5 yrs)">Nursery (2.5 - 3.5 years)</option>
@@ -287,7 +286,7 @@ export default function AdmissionForm() {
 
             {/* Row 5: Message */}
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#17243A] uppercase tracking-wider mb-1.5">
                 Additional Questions or Message <span className="text-stone-400 font-normal">(Optional)</span>
               </label>
               <textarea
@@ -296,7 +295,7 @@ export default function AdmissionForm() {
                 onChange={handleChange}
                 rows={3}
                 placeholder="Share any questions about timings, campus visit, or specific child needs..."
-                className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                className="w-full px-4 py-3 rounded-xl border border-[#E0D6C5] bg-[#FAF8F3] hover:border-[#D6B56D] text-sm text-[#17243A] placeholder-stone-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#801D3A]/15 focus:border-[#801D3A] transition-all duration-200"
               />
             </div>
 
@@ -351,14 +350,14 @@ export default function AdmissionForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3.5 sm:py-4 px-3 sm:px-6 rounded-[30px] font-extrabold text-[11px] sm:text-sm md:text-base text-white bg-[#C29A45] hover:bg-[#A67F32] shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 text-center tracking-normal sm:tracking-wide"
+              className="w-full py-3.5 sm:py-4 px-3 sm:px-6 rounded-xl font-semibold text-[11px] sm:text-sm md:text-base text-white bg-[#801D3A] hover:bg-[#5E152E] shadow-md shadow-[#801D3A]/25 hover:shadow-lg hover:shadow-[#801D3A]/30 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 text-center tracking-normal sm:tracking-wide"
             >
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-[#C29A45] shrink-0" />
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-[#D6B56D] text-[#D6B56D] shrink-0" />
               <span>SEND ADMISSION ENQUIRY VIA WHATSAPP</span>
             </button>
 
             {/* Note on data privacy and direct school contact */}
-            <p className="text-[11px] text-stone-500 text-center leading-relaxed">
+            <p className="text-[11px] text-[#64748B] text-center leading-relaxed pt-1">
               We respect your privacy. Submitting this form opens WhatsApp directly to chat with <BrandBadge isInline className="text-[0.85em]" /> Preschool (Ph: {schoolInfo.phone}). No data is saved to any third-party server.
             </p>
 

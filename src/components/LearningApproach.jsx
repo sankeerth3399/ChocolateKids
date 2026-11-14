@@ -16,18 +16,18 @@ const iconMap = {
  * Order follows the six learning categories in data.js.
  */
 const accents = [
-  // Play-Based Learning: burgundy
-  { icon: "text-[#801D3A]", tile: "bg-[#F4DDE2]", hover: "hover:border-[#E8B6BE]", bar: "bg-[#801D3A]" },
-  // Experiential Learning: teal
-  { icon: "text-[#0F766E]", tile: "bg-[#DAF0EE]", hover: "hover:border-[#A9D8D3]", bar: "bg-[#0F766E]" },
-  // Creative Learning: warm gold
-  { icon: "text-[#98702D]", tile: "bg-[#F3E8CA]", hover: "hover:border-[#E5CC8D]", bar: "bg-[#D6B56D]" },
-  // Social Learning: royal blue
-  { icon: "text-[#284B9C]", tile: "bg-[#DDE6F7]", hover: "hover:border-[#B6C7EA]", bar: "bg-[#284B9C]" },
-  // Physical Development: emerald
-  { icon: "text-[#2D6A4F]", tile: "bg-[#DDEDE4]", hover: "hover:border-[#B2D3C1]", bar: "bg-[#2D6A4F]" },
-  // Communication Skills: terracotta
-  { icon: "text-[#B45A3C]", tile: "bg-[#F6E2D9]", hover: "hover:border-[#E7BBA9]", bar: "bg-[#B45A3C]" },
+  // Play-Based Learning
+  { icon: "text-[#922B4B]", tile: "bg-[#F7E3E9]", border: "border-[#922B4B]/15", hover: "hover:border-[#922B4B]/45", bar: "bg-[#922B4B]", glow: "hover:shadow-[#922B4B]/15" },
+  // Experiential Learning
+  { icon: "text-[#087E83]", tile: "bg-[#DDF1EF]", border: "border-[#087E83]/15", hover: "hover:border-[#087E83]/45", bar: "bg-[#087E83]", glow: "hover:shadow-[#087E83]/15" },
+  // Creative Learning
+  { icon: "text-[#AD7824]", tile: "bg-[#F6EBD1]", border: "border-[#AD7824]/20", hover: "hover:border-[#AD7824]/50", bar: "bg-[#AD7824]", glow: "hover:shadow-[#AD7824]/15" },
+  // Social Learning
+  { icon: "text-[#31549A]", tile: "bg-[#E3EAF8]", border: "border-[#31549A]/15", hover: "hover:border-[#31549A]/45", bar: "bg-[#31549A]", glow: "hover:shadow-[#31549A]/15" },
+  // Physical Development
+  { icon: "text-[#237653]", tile: "bg-[#DDEFE5]", border: "border-[#237653]/15", hover: "hover:border-[#237653]/45", bar: "bg-[#237653]", glow: "hover:shadow-[#237653]/15" },
+  // Communication Skills
+  { icon: "text-[#C45A35]", tile: "bg-[#F8E5DC]", border: "border-[#C45A35]/15", hover: "hover:border-[#C45A35]/45", bar: "bg-[#C45A35]", glow: "hover:shadow-[#C45A35]/15" },
 ];
 
 export default function LearningApproach() {
@@ -58,10 +58,10 @@ export default function LearningApproach() {
             return (
               <div
                 key={item.title}
-                className={`group relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E8E0D4] ${accent.hover} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7`}
+                className={`accent-card group relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border ${accent.border} ${accent.hover} shadow-sm hover:shadow-lg ${accent.glow} hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7`}
               >
                 <span
-                  className={`absolute inset-x-0 top-0 h-0.5 ${accent.bar} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute inset-x-0 top-0 h-[3px] ${accent.bar} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
                   aria-hidden="true"
                 />
                 <div

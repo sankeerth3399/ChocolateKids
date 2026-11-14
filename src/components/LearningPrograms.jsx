@@ -1,8 +1,72 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, Check, ArrowRight, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { BookOpen, Check, ArrowRight, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2, Blocks, Baby, GraduationCap, Sun } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 import { highlightBrand } from "../utils/brandHelper";
+
+/* Program rows: accent and tint per stage, age range, photo (with crop focus) and alt text */
+const stageRows = {
+  playgroup: {
+    age: "1.5 – 2.5 Years",
+    pos: "center 38%",
+    alt: "Toddlers playing together with colourful soft building blocks in a Playgroup classroom",
+    Icon: Blocks,
+    bg: "bg-gradient-to-r from-[#F7E3E9] via-[#FBEEF2] to-white",
+    tile: "bg-white text-[#922B4B]",
+    border: "border-[#922B4B]/20",
+    strong: "border-[#922B4B]",
+    name: "text-[#17243A]",
+    pill: "text-[#922B4B] border-[#922B4B]",
+  },
+  nursery: {
+    age: "2.5 – 3.5 Years",
+    pos: "center 30%",
+    alt: "Nursery children painting and doing creative activities at a classroom table",
+    Icon: Baby,
+    bg: "bg-gradient-to-r from-[#F6EBD1] via-[#FAF3E3] to-white",
+    tile: "bg-white text-[#AD7824]",
+    border: "border-[#AD7824]/25",
+    strong: "border-[#AD7824]",
+    name: "text-[#17243A]",
+    pill: "text-[#AD7824] border-[#AD7824]",
+  },
+  pp1: {
+    age: "3.5 – 4.5 Years",
+    pos: "center 45%",
+    alt: "A PP1 teacher reading a picture book together with a young child",
+    Icon: BookOpen,
+    bg: "bg-gradient-to-r from-[#E3EAF8] via-[#EEF2FB] to-white",
+    tile: "bg-white text-[#31549A]",
+    border: "border-[#31549A]/20",
+    strong: "border-[#31549A]",
+    name: "text-[#17243A]",
+    pill: "text-[#31549A] border-[#31549A]",
+  },
+  pp2: {
+    age: "4.5 – 5.5 Years",
+    pos: "center 35%",
+    alt: "A PP2 child stacking alphabet blocks during a classroom activity",
+    Icon: GraduationCap,
+    bg: "bg-gradient-to-r from-[#DDEFE5] via-[#EAF5EF] to-white",
+    tile: "bg-white text-[#237653]",
+    border: "border-[#237653]/20",
+    strong: "border-[#237653]",
+    name: "text-[#17243A]",
+    pill: "text-[#237653] border-[#237653]",
+  },
+  daycare: {
+    age: "1.5 – 5.5 Years",
+    pos: "center 40%",
+    alt: "A sleeping child resting comfortably while holding a teddy bear at Day Care",
+    Icon: Sun,
+    bg: "bg-gradient-to-r from-[#F0E7F8] via-[#F6F0FB] to-white",
+    tile: "bg-white text-[#7951A1]",
+    border: "border-[#7951A1]/20",
+    strong: "border-[#7951A1]",
+    name: "text-[#17243A]",
+    pill: "text-[#7951A1] border-[#7951A1]",
+  },
+};
 
 export default function LearningPrograms({ showShowcase = true, showSafetyLine = true }) {
   const [activeStageId, setActiveStageId] = useState("playgroup");
@@ -27,7 +91,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Playgroup",
       description: "A gentle, joyful transition from home to preschool centered on sensory exploration, social warmth, and fun daily routines.",
       tags: ["Sensory Play", "Social Discovery", "Loving Care"],
-      image: null,
+      image: "/images/programs/playgroup.jpg",
       fallbackBg: "bg-gradient-to-br from-[#801D3A] via-[#F43F7E] to-[#FB923C]",
     },
     {
@@ -41,7 +105,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Nursery",
       description: "Developing expressive speech, phonics curiosity, fine-motor coordination, and self-confidence through interactive story-telling.",
       tags: ["Phonics Fun", "Creative Arts", "Motor Skills"],
-      image: "/images/blue-colour-day-celebration.jpg",
+      image: "/images/programs/nursery.jpg",
     },
     {
       id: "pp1",
@@ -54,7 +118,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "PP1",
       description: "Foundational literacy and numbers combined with hands-on science curiosity, creative expression, and teamwork.",
       tags: ["Early Reading", "Math Concepts", "Curiosity Lab"],
-      image: "/photos/play_activity_corner.jpg",
+      image: "/images/programs/pp1.jpg",
     },
     {
       id: "pp2",
@@ -67,7 +131,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "PP2",
       description: "School readiness through confidence building, phonics, and early mathematics.",
       tags: ["Structured Learning", "Play-Based", "Certified Teachers"],
-      image: "/photos/kids_reading_corner.jpg",
+      image: "/images/programs/pp2.jpg",
     },
     {
       id: "daycare",
@@ -80,7 +144,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Day Care & After School",
       description: "A secure, loving after-school sanctuary with hygienic rest spaces, homework mentoring, and creative recreational play.",
       tags: ["Hygienic Rest", "Homework Support", "Evening Activities"],
-      image: "/images/cow-shelter-banner-group.jpg",
+      image: "/images/programs/daycare.jpg",
     },
   ];
 
@@ -157,31 +221,34 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
           ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left Column: Stage Selector Tabs (5 cols) */}
-            <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 justify-center">
+            <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4 justify-center" role="tablist" aria-label="Programs">
               {stages.map((stage) => {
                 const isActive = stage.id === activeStageId;
+                const r = stageRows[stage.id];
+                const RowIcon = r.Icon;
                 return (
                   <button
                     key={stage.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
                     onClick={() => setActiveStageId(stage.id)}
-                    className={`w-full text-left px-5 py-3.5 rounded-2xl transition-all duration-200 flex items-center justify-between cursor-pointer ${
+                    className={`accent-card group relative w-full h-[80px] sm:h-[88px] overflow-hidden rounded-2xl text-left flex items-center gap-3 sm:gap-4 pl-3.5 sm:pl-5 pr-3 border-[1.5px] ${r.bg} cursor-pointer transition-all duration-300 ${
                       isActive
-                        ? `border-2 ${stage.borderActive} ${stage.bgActive} shadow-sm scale-[1.02]`
-                        : "bg-white border border-stone-200/90 hover:border-stone-300 hover:bg-stone-50/70"
+                        ? `${r.strong} shadow-lg`
+                        : `${r.border} shadow-sm hover:shadow-md hover:-translate-y-0.5`
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <span className={`w-3 h-3 rounded-full ${stage.dotColor} shrink-0`} />
-                      <div className="flex flex-col">
-                        <span className={`font-heading font-black text-base sm:text-lg ${
-                          isActive ? stage.textActive : "text-stone-800"
-                        }`}>
-                          {stage.name}
-                        </span>
-                      </div>
-                    </div>
+                    <span className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${r.tile} shadow-sm flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5`}>
+                      <RowIcon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.7} />
+                    </span>
+                    <span className="relative z-10 flex flex-col min-w-0">
+                      <span className={`font-heading font-bold text-xl sm:text-2xl leading-tight ${r.name}`}>{stage.name}</span>
+                      <span className="mt-0.5 text-xs sm:text-sm font-medium text-[#536174]">{r.age}</span>
+                    </span>
+
                     {isActive && (
-                      <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/80 shadow-2xs">
+                      <span className={`absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-10 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white border ${r.pill} shadow-sm`}>
                         Active
                       </span>
                     )}
@@ -191,14 +258,15 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
             </div>
 
             {/* Right Column: Giant Rounded Stage Card (8 cols) */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-7">
               <div className="rounded-3xl sm:rounded-[2.5rem] overflow-hidden relative shadow-2xl min-h-[360px] sm:min-h-[500px] lg:min-h-[540px] flex flex-col justify-end p-4 sm:p-10 lg:p-12 border border-stone-200/80 group">
                 {/* Stage Photo with smooth transition (gradient fallback when no photo) */}
                 {currentStage.image ? (
                   <img
                     key={currentStage.id}
                     src={currentStage.image}
-                    alt={`${currentStage.name} at Chocolate Kids Preschool`}
+                    alt={stageRows[currentStage.id]?.alt || `${currentStage.name} at Chocolate Kids Preschool`}
+                    style={{ objectPosition: stageRows[currentStage.id]?.pos || "center" }}
                     className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700 animate-in fade-in duration-300"
                   />
                 ) : (

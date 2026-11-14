@@ -1,14 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle, ChevronDown, Building2, Image as ImageIcon, MapPin } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, ChevronDown, BookOpen, Building2, Images, MapPin } from "lucide-react";
 import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
+
+/* About Us submenu: one distinct icon and accent per item */
+const aboutMenu = [
+  {
+    to: "/about",
+    title: "About Us",
+    desc: "Philosophy & Vision",
+    Icon: BookOpen,
+    tile: "bg-[#F4DDE2] text-[#801D3A]",
+  },
+  {
+    to: "/facilities",
+    title: "Facilities",
+    desc: "Smart Rooms & Play Area",
+    Icon: Building2,
+    tile: "bg-[#DDE7F2] text-[#17243A]",
+  },
+  {
+    to: "/gallery",
+    title: "Gallery",
+    desc: "Events & Moments",
+    Icon: Images,
+    tile: "bg-[#DAF0EE] text-[#0F766E]",
+  },
+];
 
 export default function Navbar({ onOpenEnquiry }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const aboutRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -34,6 +60,32 @@ export default function Navbar({ onOpenEnquiry }) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [mobileMenuOpen]);
+
+  // About Us dropdown: close on outside click, Escape, and route change
+  useEffect(() => {
+    if (!aboutDropdownOpen) return;
+    const onPointerDown = (e) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target)) {
+        setAboutDropdownOpen(false);
+      }
+    };
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setAboutDropdownOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown, { passive: true });
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [aboutDropdownOpen]);
+
+  useEffect(() => {
+    setAboutDropdownOpen(false);
+    setMobileAboutOpen(false);
+  }, [location.pathname]);
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
@@ -106,75 +158,63 @@ export default function Navbar({ onOpenEnquiry }) {
                 Home
               </Link>
 
-              {/* About Us ▾ with Facilities and Gallery */}
-              <div
-                className="relative"
-                onMouseEnter={() => setAboutDropdownOpen(true)}
-                onMouseLeave={() => setAboutDropdownOpen(false)}
-              >
+              {/* About Us: click-driven dropdown (no hover dependency) */}
+              <div className="relative" ref={aboutRef}>
                 <button
                   type="button"
-                  onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
-                  className={`flex items-center gap-1 text-sm font-bold transition-colors py-1.5 px-3 rounded-full cursor-pointer hover:bg-transparent ${isAboutActive
+                  onClick={() => setAboutDropdownOpen((o) => !o)}
+                  className={`flex items-center gap-1 text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap py-1.5 px-3 rounded-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D6B56D] ${isAboutActive
                       ? "text-[#801D3A] shadow-[inset_0_-2px_0_#D6B56D]"
                       : aboutDropdownOpen
                         ? "text-[#801D3A]"
-                        : "text-[#17243A] hover:text-[#801D3A]"
+                        : "text-[#17243A] hover:text-[#801D3A] hover:shadow-[inset_0_-2px_0_rgba(214,181,109,0.7)]"
                     }`}
                   aria-expanded={aboutDropdownOpen}
+                  aria-haspopup="menu"
+                  aria-controls="about-dropdown"
                 >
                   <span>About Us</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutDropdownOpen ? "rotate-180 text-[#17243A]" : isAboutActive ? "text-[#17243A]" : "text-[#17243A]"
-                      }`}
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${aboutDropdownOpen ? "rotate-180" : ""}`}
                   />
                 </button>
 
-                {/* Dropdown Menu */}
-                {aboutDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1.5 w-60 bg-white rounded-2xl shadow-xl border border-stone-100 p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <Link
-                      to="/about"
-                      onClick={closeMenu}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-[#F0E9DD] hover:text-[#17243A] transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#17243A] flex items-center justify-center group-hover:bg-[#17243A] group-hover:text-white transition-colors">
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 group-hover:text-[#17243A]">About Us</div>
-                        <div className="text-[11px] text-stone-500 font-medium">Philosophy & Vision</div>
-                      </div>
-                    </Link>
-
-                    <Link
-                      to="/facilities"
-                      onClick={closeMenu}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-[#F0E9DD] hover:text-[#17243A] transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition-colors">
-                        <Building2 className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 group-hover:text-[#17243A]">Facilities</div>
-                        <div className="text-[11px] text-stone-500 font-medium">Smart Rooms & Play Area</div>
-                      </div>
-                    </Link>
-
-                    <Link
-                      to="/gallery"
-                      onClick={closeMenu}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-[#F0E9DD] hover:text-[#17243A] transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                        <ImageIcon className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 group-hover:text-[#17243A]">Gallery</div>
-                        <div className="text-[11px] text-stone-500 font-medium">Events & Moments</div>
-                      </div>
-                    </Link>
-                  </div>
-                )}
+                {/* Dropdown panel: always mounted so it fades without jumping */}
+                <div
+                  id="about-dropdown"
+                  role="menu"
+                  className={`absolute top-full left-0 mt-3 w-72 max-w-[calc(100vw-2rem)] bg-white rounded-2xl border border-[#E8E0D4] shadow-[0_22px_44px_-18px_rgba(23,36,58,0.32)] p-2 z-50 transition-all duration-200 ease-out ${aboutDropdownOpen
+                      ? "opacity-100 translate-y-0 visible"
+                      : "opacity-0 -translate-y-1.5 invisible pointer-events-none"
+                    }`}
+                >
+                  <span className="absolute -top-1.5 left-8 w-3 h-3 rotate-45 bg-white border-l border-t border-[#E8E0D4]" aria-hidden="true" />
+                  {aboutMenu.map(({ to, title, desc, Icon, tile }) => {
+                    const active = location.pathname === to;
+                    return (
+                      <Link
+                        key={to}
+                        to={to}
+                        role="menuitem"
+                        tabIndex={aboutDropdownOpen ? 0 : -1}
+                        onClick={closeMenu}
+                        aria-current={active ? "page" : undefined}
+                        className={`relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-colors duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D6B56D] ${active ? "bg-[#FAF8F3]" : "hover:bg-[#FAF8F3]"}`}
+                      >
+                        {active && <span className="absolute left-0 top-2.5 bottom-2.5 w-0.5 rounded-full bg-[#D6B56D]" aria-hidden="true" />}
+                        <div className={`w-11 h-11 rounded-xl ${tile} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5`}>
+                          <Icon className="w-5 h-5" strokeWidth={1.8} />
+                        </div>
+                        <div className="min-w-0 leading-tight">
+                          <div className={`font-semibold text-[15px] transition-colors duration-200 ${active ? "text-[#801D3A]" : "text-[#17243A] group-hover:text-[#801D3A]"}`}>
+                            {title}
+                          </div>
+                          <div className="mt-0.5 text-xs text-[#64748B]">{desc}</div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Our Schools */}
@@ -330,46 +370,49 @@ export default function Navbar({ onOpenEnquiry }) {
             <div>
               <button
                 type="button"
-                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#F0E9DD] text-[#17243A]" : "text-stone-700 hover:bg-[#F0E9DD]/60"
+                onClick={() => setMobileAboutOpen((o) => !o)}
+                aria-expanded={mobileAboutOpen}
+                aria-controls="about-accordion"
+                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#F0E9DD] text-[#801D3A]" : "text-stone-700 hover:bg-[#F0E9DD]/60"
                   }`}
               >
                 <span>About Us</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180 text-[#17243A]" : "text-stone-500"
+                  className={`w-4 h-4 transition-transform duration-300 ${mobileAboutOpen ? "rotate-180 text-[#17243A]" : "text-stone-500"
                     }`}
                 />
               </button>
 
-              {mobileAboutOpen && (
-                <div className="ml-4 pl-3 border-l-2 border-emerald-200 flex flex-col gap-1 mt-1 mb-2">
-                  <Link
-                    to="/about"
-                    onClick={closeMenu}
-                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#17243A] hover:bg-emerald-50 flex items-center gap-2"
-                  >
-                    <span>About Us</span>
-                  </Link>
-
-                  <Link
-                    to="/facilities"
-                    onClick={closeMenu}
-                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#17243A] hover:bg-emerald-50 flex items-center gap-2"
-                  >
-                    <Building2 className="w-3.5 h-3.5 text-teal-600" />
-                    <span>Facilities</span>
-                  </Link>
-
-                  <Link
-                    to="/gallery"
-                    onClick={closeMenu}
-                    className="px-3 py-2 min-h-[44px] rounded-lg text-sm font-semibold text-stone-700 hover:text-[#17243A] hover:bg-emerald-50 flex items-center gap-2"
-                  >
-                    <ImageIcon className="w-3.5 h-3.5 text-purple-600" />
-                    <span>Gallery</span>
-                  </Link>
+              <div
+                id="about-accordion"
+                className={`grid transition-all duration-300 ease-out ${mobileAboutOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="ml-4 pl-3 border-l-2 border-[#D6B56D]/60 flex flex-col gap-1 mt-1 mb-2">
+                    {aboutMenu.map(({ to, title, desc, Icon, tile }) => {
+                      const active = location.pathname === to;
+                      return (
+                        <Link
+                          key={to}
+                          to={to}
+                          onClick={closeMenu}
+                          tabIndex={mobileAboutOpen ? 0 : -1}
+                          aria-current={active ? "page" : undefined}
+                          className={`px-3 py-2.5 min-h-[52px] rounded-xl flex items-center gap-3 transition-colors ${active ? "bg-[#FAF8F3] text-[#801D3A]" : "text-[#17243A] hover:bg-[#FAF8F3]"}`}
+                        >
+                          <div className={`w-10 h-10 rounded-lg ${tile} flex items-center justify-center shrink-0`}>
+                            <Icon className="w-[18px] h-[18px]" strokeWidth={1.8} />
+                          </div>
+                          <div className="min-w-0 leading-tight">
+                            <div className="text-sm font-semibold">{title}</div>
+                            <div className="text-[11px] text-[#64748B] mt-0.5">{desc}</div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Our Schools */}

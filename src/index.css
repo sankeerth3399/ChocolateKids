@@ -777,12 +777,12 @@ article[class*="rounded-"][class*="border-2"] {
 [class*="rounded-[2.5rem]"], [class*="rounded-[2rem]"] { border-radius: 1.25rem; }
 
 /* Smooth, restrained hover on cards (transform is left to the components and Framer Motion) */
-div[class*="rounded-"][class*="border"],
-article[class*="rounded-"][class*="border"] {
+div[class*="rounded-"][class*="border"]:not(.accent-card),
+article[class*="rounded-"][class*="border"]:not(.accent-card) {
   transition: box-shadow 280ms ease, border-color 280ms ease, background-color 280ms ease;
 }
-div[class*="rounded-"][class*="hover:shadow"]:hover,
-article[class*="rounded-"][class*="hover:shadow"]:hover {
+div[class*="rounded-"][class*="hover:shadow"]:not(.accent-card):hover,
+article[class*="rounded-"][class*="hover:shadow"]:not(.accent-card):hover {
   border-color: var(--card-hover-border);
   box-shadow: var(--card-shadow-hover);
 }
