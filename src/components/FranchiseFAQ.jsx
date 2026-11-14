@@ -11,7 +11,7 @@ export default function FranchiseFAQ() {
   };
 
   return (
-    <section id="franchise-faq" className="py-20 bg-stone-50/60 border-t border-amber-100/70">
+    <section id="franchise-faq" className="py-20 border-t border-[#E8DCC9] bg-[#FFF4DF]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

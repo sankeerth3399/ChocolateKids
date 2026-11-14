@@ -10,7 +10,7 @@ export default function WhyParentsChoose() {
       subtitle: "Learning through hands-on discovery and sensory exploration",
       icon: Brain,
       emoji: "🧩",
-      bgTint: "bg-[#F0E9DD]",
+      bgTint: "bg-[#FFF4DF]",
       accentColor: "text-[#A67F32]",
       borderColor: "border-amber-200/90",
       badge: "HANDS-ON LEARNING",
@@ -23,8 +23,8 @@ export default function WhyParentsChoose() {
       subtitle: "Interactive digital boards, phonics audio & animated storytelling",
       icon: Palette,
       emoji: "💻",
-      bgTint: "bg-[#F0E9DD]",
-      accentColor: "text-[#17243A]",
+      bgTint: "bg-[#FFF4DF]",
+      accentColor: "text-[#142B4A]",
       borderColor: "border-emerald-200/90",
       badge: "SMART CLASSROOMS",
       link: "#facilities",
@@ -69,18 +69,18 @@ export default function WhyParentsChoose() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-white via-[#FBFDFB] to-[#FAF8F3] border-b-2 border-emerald-100/70 relative">
+    <section className="py-16 sm:py-24 border-b-2 border-[#E8DCC9] relative bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header: Pallavi Kidz Style Child-First Philosophy */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0E9DD] text-[#17243A] text-xs font-black uppercase tracking-wider mb-4 border border-[#17243A]/30 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF4DF] text-[#142B4A] text-xs font-black uppercase tracking-wider mb-4 border border-[#142B4A]/30 shadow-2xs">
             <span>CHILD-FIRST PHILOSOPHY • PALLAVI KIDZ-GRADE EXCELLENCE</span>
           </div>
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight flex flex-wrap items-center justify-center gap-2">
             <span>Why Parents Choose</span> <BrandBadge className="text-3xl sm:text-4xl lg:text-5xl" />
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 font-medium leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#142B4A]/80 font-medium leading-relaxed">
             Every child is a unique learner. Just as a note becomes a melody with the right rhythm, our caring mentors help children discover their fullest capabilities through joyful, activity-based discovery.
           </p>
         </div>
@@ -94,22 +94,22 @@ export default function WhyParentsChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className={`p-6 rounded-2xl bg-[#FAF8F3]/60 hover:bg-[#FAF8F3] border ${item.borderColor} shadow-2xs hover:shadow-sm transition-all duration-200 flex flex-col justify-between`}
+              className={`p-6 rounded-2xl bg-[#FFFDF8]/60 hover:bg-[#FFFDF8] border ${item.borderColor} shadow-2xs hover:shadow-sm transition-all duration-200 flex flex-col justify-between`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className={`w-12 h-12 rounded-xl ${item.bgTint} flex items-center justify-center text-xl shadow-2xs`}>
                     <span>{item.emoji}</span>
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#17243A]/50">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#142B4A]/50">
                     Pillar 0{idx + 1}
                   </span>
                 </div>
 
-                <h3 className="font-heading font-extrabold text-lg text-[#17243A] mb-2">
+                <h3 className="font-heading font-extrabold text-lg text-[#142B4A] mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#17243A]/75 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-[#142B4A]/75 leading-relaxed font-medium">
                   {item.subtitle}
                 </p>
               </div>
@@ -127,13 +127,13 @@ export default function WhyParentsChoose() {
         </div>
 
         {/* Quick Parent Navigation Strip: Answer immediate parent questions */}
-        <div className="mt-10 sm:mt-12 p-4 sm:p-5 rounded-2xl bg-[#FAF8F3] border border-amber-200/60 shadow-2xs">
+        <div className="mt-10 sm:mt-12 p-4 sm:p-5 rounded-2xl bg-[#FFFDF8] border border-amber-200/60 shadow-2xs">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
-              <span className="text-xs font-extrabold text-[#17243A] block">
+              <span className="text-xs font-extrabold text-[#142B4A] block">
                 Quick Answers for Parents:
               </span>
-              <span className="text-[11px] text-[#17243A]/70 font-medium">
+              <span className="text-[11px] text-[#142B4A]/70 font-medium">
                 Jump directly to the section you are looking for:
               </span>
             </div>
@@ -145,7 +145,7 @@ export default function WhyParentsChoose() {
                     <Link
                       key={nav.label}
                       to={nav.target}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-[#17243A] bg-white hover:bg-[#F0E9DD] border border-amber-200/80 shadow-2xs transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-[#142B4A] bg-white hover:bg-[#FFF4DF] border border-amber-200/80 shadow-2xs transition-colors"
                     >
                       <nav.icon className="w-3 h-3 text-[#C29A45]" />
                       <span>{nav.label}</span>
@@ -157,7 +157,7 @@ export default function WhyParentsChoose() {
                   <a
                     key={nav.label}
                     href={nav.target}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-[#17243A] bg-white hover:bg-[#F0E9DD] border border-amber-200/80 shadow-2xs transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-[#142B4A] bg-white hover:bg-[#FFF4DF] border border-amber-200/80 shadow-2xs transition-colors"
                   >
                     <nav.icon className="w-3 h-3 text-[#C29A45]" />
                     <span>{nav.label}</span>

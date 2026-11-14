@@ -27,7 +27,7 @@ export default function BranchDetails() {
 
   if (!branch) {
     return (
-      <div className="min-h-screen bg-[#FAF8F3] flex flex-col justify-between">
+      <div className="min-h-screen bg-[#FFFDF8] flex flex-col justify-between">
         <Navbar />
         <div className="max-w-md mx-auto my-auto text-center px-4 py-32">
           <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -56,7 +56,7 @@ export default function BranchDetails() {
   const branchPhotos = galleryImages.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FFFDF8] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
       <main className="pt-24 sm:pt-28 pb-20">
@@ -64,7 +64,7 @@ export default function BranchDetails() {
         {/* ==================================================
             1. BRANCH HERO BANNER
            ================================================== */}
-        <section className="bg-gradient-to-b from-amber-100/60 via-amber-50/40 to-[#FAF8F3] py-12 sm:py-16 border-b border-amber-200/50">
+        <section className="py-12 sm:py-16 border-b border-[#E8DCC9] bg-[#FFF4DF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               to="/branches"
@@ -159,7 +159,7 @@ export default function BranchDetails() {
         {/* ==================================================
             2. AVAILABLE PROGRAMS AT THIS CAMPUS
            ================================================== */}
-        <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-stone-100">
+        <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#E8DCC9] bg-[#FFFDF8]">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-bold uppercase tracking-wider mb-2">
               <BookOpen className="w-3.5 h-3.5 text-amber-800" />
@@ -195,7 +195,7 @@ export default function BranchDetails() {
         {/* ==================================================
             3. CAMPUS HIGHLIGHTS & CARE STANDARDS
            ================================================== */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFFDF8]">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 tracking-tight">
               Campus Highlights & Care Standards
@@ -230,7 +230,7 @@ export default function BranchDetails() {
         {/* ==================================================
             4. CAMPUS PHOTO MOMENTS
            ================================================== */}
-        <section className="py-14 bg-stone-50 border-t border-amber-100/70">
+        <section className="py-14 border-t border-[#E8DCC9] bg-[#FFF4DF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
               <div>
@@ -269,7 +269,7 @@ export default function BranchDetails() {
         {/* ==================================================
             5. LOCATION & DIRECTIONS MAP BOX
            ================================================== */}
-        <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFFDF8]">
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl bg-amber-50/80 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="w-full md:w-auto">
               <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
@@ -313,7 +313,7 @@ export default function BranchDetails() {
         {/* ==================================================
             6. ADMISSION ENQUIRY CTA
            ================================================== */}
-        <section className="py-12 max-w-3xl mx-auto text-center px-4">
+        <section className="py-12 max-w-3xl mx-auto text-center px-4 bg-[#FFFDF8]">
           <h3 className="font-heading font-bold text-2xl text-stone-900 mb-2">
             Ready to Enroll Your Child at {branch.name}?
           </h3>

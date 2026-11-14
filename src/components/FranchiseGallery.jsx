@@ -43,7 +43,7 @@ export default function FranchiseGallery() {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden border-t border-amber-100/70">
+    <section className="py-20 relative overflow-hidden border-t border-[#E8DCC9] bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

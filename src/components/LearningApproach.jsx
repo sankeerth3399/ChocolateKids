@@ -17,32 +17,42 @@ const iconMap = {
  */
 const accents = [
   // Play-Based Learning
-  { icon: "text-[#922B4B]", tile: "bg-[#F7E3E9]", border: "border-[#922B4B]/15", hover: "hover:border-[#922B4B]/45", bar: "bg-[#922B4B]", glow: "hover:shadow-[#922B4B]/15" },
+  { icon: "text-white", tile: "bg-[#C51F45]", border: "border-[#E8DCC9]", hover: "hover:border-[#C51F45]", bar: "bg-[#C51F45]", glow: "hover:shadow-[#C51F45]/25" },
   // Experiential Learning
-  { icon: "text-[#087E83]", tile: "bg-[#DDF1EF]", border: "border-[#087E83]/15", hover: "hover:border-[#087E83]/45", bar: "bg-[#087E83]", glow: "hover:shadow-[#087E83]/15" },
+  { icon: "text-white", tile: "bg-[#087F83]", border: "border-[#E8DCC9]", hover: "hover:border-[#087F83]", bar: "bg-[#087F83]", glow: "hover:shadow-[#087F83]/25" },
   // Creative Learning
-  { icon: "text-[#AD7824]", tile: "bg-[#F6EBD1]", border: "border-[#AD7824]/20", hover: "hover:border-[#AD7824]/50", bar: "bg-[#AD7824]", glow: "hover:shadow-[#AD7824]/15" },
+  { icon: "text-white", tile: "bg-[#F26A21]", border: "border-[#E8DCC9]", hover: "hover:border-[#F26A21]", bar: "bg-[#F26A21]", glow: "hover:shadow-[#F26A21]/25" },
   // Social Learning
-  { icon: "text-[#31549A]", tile: "bg-[#E3EAF8]", border: "border-[#31549A]/15", hover: "hover:border-[#31549A]/45", bar: "bg-[#31549A]", glow: "hover:shadow-[#31549A]/15" },
+  { icon: "text-white", tile: "bg-[#174EA6]", border: "border-[#E8DCC9]", hover: "hover:border-[#174EA6]", bar: "bg-[#174EA6]", glow: "hover:shadow-[#174EA6]/25" },
   // Physical Development
-  { icon: "text-[#237653]", tile: "bg-[#DDEFE5]", border: "border-[#237653]/15", hover: "hover:border-[#237653]/45", bar: "bg-[#237653]", glow: "hover:shadow-[#237653]/15" },
+  { icon: "text-white", tile: "bg-[#16834A]", border: "border-[#E8DCC9]", hover: "hover:border-[#16834A]", bar: "bg-[#16834A]", glow: "hover:shadow-[#16834A]/25" },
   // Communication Skills
-  { icon: "text-[#C45A35]", tile: "bg-[#F8E5DC]", border: "border-[#C45A35]/15", hover: "hover:border-[#C45A35]/45", bar: "bg-[#C45A35]", glow: "hover:shadow-[#C45A35]/15" },
+  { icon: "text-white", tile: "bg-[#7439B5]", border: "border-[#E8DCC9]", hover: "hover:border-[#7439B5]", bar: "bg-[#7439B5]", glow: "hover:shadow-[#7439B5]/25" },
+];
+
+/* One photo per category (same order as the six learning categories) */
+const photos = [
+  { src: "/images/learning/play.jpg", pos: "center 30%", alt: "A smiling child building a tall tower of colourful play blocks" },
+  { src: "/images/learning/experiential.jpg", pos: "center 28%", alt: "A child in safety goggles and a lab coat holding a flask during a science activity" },
+  { src: "/images/learning/creative.jpg", pos: "center 25%", alt: "A smiling girl painting a colourful picture" },
+  { src: "/images/learning/social.jpg", pos: "center 35%", alt: "Three laughing children joining hands together" },
+  { src: "/images/learning/physical.jpg", pos: "center 40%", alt: "A smiling child crawling through a colourful play tunnel" },
+  { src: "/images/learning/communication.jpg", pos: "center 30%", alt: "A child speaking confidently during a Show and Tell activity" },
 ];
 
 export default function LearningApproach() {
   return (
-    <section className="py-16 sm:py-24 bg-[#FAF8F3] relative overflow-hidden">
+    <section className="py-16 sm:py-24 relative overflow-hidden bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#98702D] mb-4">
+          <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#B26A00] mb-4">
             <span className="h-px w-8 bg-[#D6B56D]" />
             <Compass className="w-3.5 h-3.5" />
             <span>Holistic Methodology</span>
             <span className="h-px w-8 bg-[#D6B56D]" />
           </div>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-[#17243A] leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-[#142B4A] leading-tight">
             Learning Beyond the Classroom
           </h2>
           <p className="mt-5 text-base sm:text-lg text-[#536174] leading-relaxed">
@@ -58,23 +68,33 @@ export default function LearningApproach() {
             return (
               <div
                 key={item.title}
-                className={`accent-card group relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border ${accent.border} ${accent.hover} shadow-sm hover:shadow-lg ${accent.glow} hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7`}
+                className={`accent-card group relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border ${accent.border} ${accent.hover} shadow-sm hover:shadow-xl ${accent.glow} hover:-translate-y-1 transition-all duration-300`}
               >
-                <span
-                  className={`absolute inset-x-0 top-0 h-[3px] ${accent.bar} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
-                  aria-hidden="true"
-                />
-                <div
-                  className={`w-12 h-12 rounded-xl ${accent.tile} ${accent.icon} flex items-center justify-center shrink-0 mb-5 transition-transform duration-300 group-hover:-translate-y-0.5`}
-                >
-                  <Icon className="w-6 h-6" />
+                <div className="relative aspect-[3/2] overflow-hidden bg-[#E8F2FF]">
+                  <img
+                    src={photos[index % photos.length].src}
+                    alt={photos[index % photos.length].alt}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ objectPosition: photos[index % photos.length].pos }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className={`absolute inset-x-0 bottom-0 h-1.5 ${accent.bar}`} aria-hidden="true" />
                 </div>
-                <h3 className="font-heading font-bold text-[#17243A] text-lg leading-snug mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-[15px] text-[#536174] leading-relaxed">
-                  {highlightBrand(item.description)}
-                </p>
+
+                <div className="relative flex flex-col flex-1 px-6 sm:px-7 pb-6 sm:pb-7 pt-9">
+                  <div
+                    className={`absolute -top-7 left-6 sm:left-7 w-14 h-14 rounded-2xl ${accent.tile} ${accent.icon} ring-4 ring-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-0.5`}
+                  >
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="font-heading font-bold text-[#142B4A] text-xl leading-snug mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-[15px] text-[#536174] leading-relaxed">
+                    {highlightBrand(item.description)}
+                  </p>
+                </div>
               </div>
             );
           })}

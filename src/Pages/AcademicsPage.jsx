@@ -44,7 +44,7 @@ export default function AcademicsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="min-h-screen bg-[#FFFDF8] text-stone-800 font-sans selection:bg-emerald-200 selection:text-emerald-900">
       <Navbar />
 
       <main className="pt-16 sm:pt-20">
@@ -56,7 +56,7 @@ export default function AcademicsPage() {
         <LearningApproach />
 
         {/* Daily Learning Rhythm */}
-        <section className="py-16 bg-white border-t border-amber-100/60 relative overflow-hidden">
+        <section className="py-16 border-t border-[#E8DCC9] relative overflow-hidden bg-[#FFFDF8]">
           {/* Brand Logo Watermark - Centered Watermark */}
           <BrandWatermark position="center" size="lg" opacity={0.11} />
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -77,7 +77,7 @@ export default function AcademicsPage() {
               {dailyRhythm.map((slot, index) => (
                 <div
                   key={slot.time}
-                  className="p-5 sm:p-6 rounded-2xl bg-[#FAF8F3] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  className="p-5 sm:p-6 rounded-2xl bg-[#FFFDF8] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="sm:w-1/3">
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 inline-block">

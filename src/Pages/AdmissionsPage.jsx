@@ -55,19 +55,19 @@ export default function AdmissionsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FFFDF8] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navbar />
 
       <main>
         {/* Page Hero Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#FFF9F0] via-[#FAF8F3] to-[#FAF8F3] border-b border-[#EAE3D9] pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4">
-          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#D6B56D]/25 blur-3xl pointer-events-none" aria-hidden="true" />
-          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#922B4B]/10 blur-3xl pointer-events-none" aria-hidden="true" />
+        <section className="relative overflow-hidden pt-32 sm:pt-40 pb-16 sm:pb-24 text-center px-4 bg-[#FFF4DF]">
+          <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#FFBD16]/25 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#FFBD16]/20 blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="max-w-4xl mx-auto relative z-10">
-            <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em] text-[#922B4B] mb-5">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em] text-[#C51F45] mb-5">
               <span>Admissions Open for Academic Year 2026-27</span>
             </div>
-            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-[#17243A] leading-tight">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-[#142B4A] leading-tight">
               Give Your Child a Joyful Start
             </h1>
             <p className="mt-4 text-sm sm:text-base md:text-lg text-[#536174] max-w-2xl mx-auto leading-relaxed">
@@ -77,7 +77,7 @@ export default function AdmissionsPage() {
         </section>
 
         {/* 4 Step Admission Process */}
-        <section className="py-12 bg-white border-y border-amber-100/60 relative overflow-hidden">
+        <section className="py-12 border-y border-[#E8DCC9] relative overflow-hidden bg-[#FFFDF8]">
           {/* Brand Logo Watermark - Large Centered Watermark */}
           <BrandWatermark position="center" size="lg" opacity={0.11} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -94,7 +94,7 @@ export default function AdmissionsPage() {
               {steps.map((st) => (
                 <div
                   key={st.num}
-                  className="p-6 rounded-2xl bg-[#FAF8F3] border border-stone-200/80 shadow-xs flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-[#FFFDF8] border border-stone-200/80 shadow-xs flex flex-col justify-between"
                 >
                   <div>
                     <span className="font-heading font-extrabold text-2xl text-amber-600 mb-2 block">
@@ -119,7 +119,7 @@ export default function AdmissionsPage() {
         {/* Campus Locations Gateway */}
         <div className="py-12 bg-white text-center border-t border-amber-100/60">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="p-6 rounded-3xl bg-[#FAF8F3] border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="p-6 rounded-3xl bg-[#FFFDF8] border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div>
                 <span className="text-xs font-bold text-amber-800 uppercase tracking-wider block mb-1">
                   Campus Tours & Locations
@@ -140,7 +140,7 @@ export default function AdmissionsPage() {
         </div>
 
         {/* Parent FAQs */}
-        <section className="py-16 bg-white border-t border-amber-100/60">
+        <section className="py-16 border-t border-[#E8DCC9] bg-[#FFFDF8]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
@@ -156,7 +156,7 @@ export default function AdmissionsPage() {
               {faqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="p-5 rounded-2xl bg-[#FAF8F3] border border-stone-200/80 shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-stone-200/80 shadow-xs"
                 >
                   <h3 className="font-heading font-bold text-base sm:text-lg text-stone-900 mb-2">
                     {faq.q}

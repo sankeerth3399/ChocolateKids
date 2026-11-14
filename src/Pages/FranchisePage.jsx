@@ -35,7 +35,7 @@ export default function FranchisePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F3] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900 relative">
+    <div className="min-h-screen bg-[#FFFDF8] text-stone-800 font-sans selection:bg-amber-200 selection:text-amber-900 relative">
       <Navbar />
 
       <main>
@@ -58,7 +58,7 @@ export default function FranchisePage() {
             - Name, Phone, Email, City, Preferred Location, Investment Range, Experience, Message
             - Open WhatsApp prefilled on submit
            ================================================== */}
-        <section id="enquiry-form" className="py-20 sm:py-28 bg-gradient-to-b from-[#FAF8F3] via-amber-50/40 to-white relative overflow-hidden">
+        <section id="enquiry-form" className="py-20 sm:py-28 relative overflow-hidden bg-[#FFFDF8]">
           {/* Centered Transparent Brand Logo Watermark */}
           <BrandWatermark position="center" size="lg" opacity={0.12} />
 
@@ -85,7 +85,7 @@ export default function FranchisePage() {
         {/* ==================================================
             FAQ SECTION (TRANSPARENCY & CLARITY)
            ================================================== */}
-        <section id="franchise-faq" className="py-14 sm:py-16 bg-stone-50/80 border-t border-stone-200/80 relative overflow-hidden">
+        <section id="franchise-faq" className="py-14 sm:py-16 border-t border-[#E8DCC9] relative overflow-hidden bg-[#FFF4DF]">
           <BrandWatermark position="center" size="lg" opacity={0.10} />
 
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

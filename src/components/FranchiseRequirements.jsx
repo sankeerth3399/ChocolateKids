@@ -32,7 +32,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
     <div id="requirements" className="space-y-20 py-16">
       
       {/* SECTION 6: IS CHOCOLATE KIDS FRANCHISE RIGHT FOR YOU? */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFFDF8]">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs font-extrabold uppercase tracking-wider mb-3 border border-amber-200">
             <span>Partner Profile</span>
@@ -106,7 +106,7 @@ export default function FranchiseRequirements({ onOpenForm }) {
       </section>
 
       {/* SECTION 7: FRANCHISE INVESTMENT SECTION - YOUR OPPORTUNITY TO BUILD FOR THE FUTURE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFFDF8]">
         <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-gradient-to-br from-stone-900 via-amber-950 to-stone-950 text-white shadow-2xl relative overflow-hidden">
           
           <div className="max-w-3xl relative z-10 mb-10">

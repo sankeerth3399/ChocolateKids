@@ -41,7 +41,7 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-12 bg-white border-y border-amber-100/50">
+    <section className="py-12 border-y border-[#E8DCC9] bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {trustPillars.map((pillar) => {

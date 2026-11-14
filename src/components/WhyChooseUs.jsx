@@ -14,13 +14,13 @@ export default function WhyChooseUs({ showPhoto = true }) {
   };
 
   const accents = [
-    { card: "bg-[#FFF8F5] border-[#E8B6BE]", tile: "bg-[#F4DDE2] text-[#8B2445]", num: "bg-[#F4DDE2] text-[#8B2445]" },
-    { card: "bg-[#FFFCF4] border-[#E5CC8D]", tile: "bg-[#F3E8CA] text-[#98702D]", num: "bg-[#F3E8CA] text-[#98702D]" },
-    { card: "bg-[#F5F8FC] border-[#B8C9DF]", tile: "bg-[#DDE7F2] text-[#24456D]", num: "bg-[#DDE7F2] text-[#24456D]" },
+    { card: "bg-white border-[#E8DCC9]", tile: "bg-[#C51F45] text-white", num: "bg-[#C51F45] text-white" },
+    { card: "bg-white border-[#E8DCC9]", tile: "bg-[#F26A21] text-white", num: "bg-[#F26A21] text-white" },
+    { card: "bg-white border-[#E8DCC9]", tile: "bg-[#174EA6] text-white", num: "bg-[#174EA6] text-white" },
   ];
 
   return (
-    <section className="py-20 bg-[#FAF8F3] relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden bg-[#FFF4DF]">
       {/* Brand Logo Watermark - Large Centered Page Focal Point */}
       <BrandWatermark position="center" size="xl" opacity={0.13} />
 
@@ -96,7 +96,7 @@ export default function WhyChooseUs({ showPhoto = true }) {
                       {item.number}
                     </span>
                   </div>
-                  <h3 className="font-heading font-bold text-[#17243A] text-lg leading-snug mb-2">
+                  <h3 className="font-heading font-bold text-[#142B4A] text-lg leading-snug mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-[#536174] leading-relaxed font-normal">

@@ -6,7 +6,7 @@ export default function EducationalVisits() {
   const { heading, tagline, description, benefits, featuredVisit, secondaryVisit } = educationalVisitsData;
 
   return (
-    <section id="educational-visits" className="py-20 bg-white relative">
+    <section id="educational-visits" className="py-20 relative bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -24,7 +24,7 @@ export default function EducationalVisits() {
         </div>
 
         {/* Featured Educational Visit: Goshala Cow Shelter Visit */}
-        <div className="rounded-3xl bg-[#FAF8F3] border border-amber-200/80 shadow-md p-6 sm:p-8 lg:p-10 mb-12">
+        <div className="rounded-3xl bg-[#FFFDF8] border border-amber-200/80 shadow-md p-6 sm:p-8 lg:p-10 mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: 3 Real Photos Grid */}

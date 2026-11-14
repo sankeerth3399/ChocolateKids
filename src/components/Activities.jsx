@@ -82,13 +82,13 @@ export default function Activities() {
   ];
 
   return (
-    <section id="activities" className="py-20 sm:py-24 bg-[#F0E9DD]/65 relative overflow-hidden">
+    <section id="activities" className="py-20 sm:py-24 relative overflow-hidden bg-[#FFF4DF]">
       {/* Brand Logo Watermark - Centered with slight right offset */}
       <BrandWatermark position="center-offset-right" size="lg" opacity={0.09} />
 
       {/* Decorative Scrapbook Paper Texture Highlights */}
       <div 
-        className="absolute top-1/2 -left-24 w-96 h-96 bg-[#F0E9DD] rounded-full blur-3xl pointer-events-none -z-0"
+        className="absolute top-1/2 -left-24 w-96 h-96 bg-[#FFF4DF] rounded-full blur-3xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div 
@@ -100,14 +100,14 @@ export default function Activities() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#17243A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-[#C29A45]/40 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#142B4A] text-xs font-extrabold uppercase tracking-wider mb-3.5 border border-[#C29A45]/40 shadow-2xs">
             <Camera className="w-3.5 h-3.5 text-[#C29A45]" />
             <span>DAILY SCRAPBOOK OF WONDER</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#17243A] tracking-tight leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl text-[#142B4A] tracking-tight leading-tight">
             Discover. Create. Explore.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#17243A]/80 leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-[#142B4A]/80 leading-relaxed font-medium max-w-2xl mx-auto">
             Preschool isn't a desk job. At <BrandBadge isInline className="text-[0.88em]" />, every day is a colorful collage of art, rhythm, story circles, outdoor discovery, and festive smiles.
           </p>
         </div>
@@ -154,7 +154,7 @@ export default function Activities() {
                 initial={{ opacity: 0, scale: 0.95, rotate: -3 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ duration: 0.4 }}
-                className="w-full max-w-md bg-[#FAF8F3] p-4 pb-6 rounded-2xl shadow-xl border border-stone-300 transform -rotate-1 hover:rotate-0 transition-transform duration-300"
+                className="w-full max-w-md bg-[#FFFDF8] p-4 pb-6 rounded-2xl shadow-xl border border-stone-300 transform -rotate-1 hover:rotate-0 transition-transform duration-300"
               >
                 {/* Washi Tape on Polaroid Top */}
                 <div className={`mx-auto -mt-6 mb-3 w-28 h-6 ${scrapbookPages[selectedActivity].tapeColor} rounded-xs shadow-2xs`} />

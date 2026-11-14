@@ -14,7 +14,7 @@ export default function FranchiseFeatureSection() {
   };
 
   return (
-    <section id="franchise-opportunity" className="py-20 bg-gradient-to-b from-[#FAF8F3] via-amber-50/60 to-white relative overflow-hidden border-t border-amber-200/50">
+    <section id="franchise-opportunity" className="py-20 relative overflow-hidden border-t border-[#E8DCC9] bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

@@ -6,7 +6,7 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F3EEE5] text-[#536174] pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden">
+    <footer className="text-[#24364B] pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden bg-[#FFF4DF]">
       {/* Brand Logo Watermark - Visible but Elegant */}
       <BrandWatermark position="bottom-right" size="lg" opacity={0.06} rotate={-6} />
 
@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-start leading-none">
                 <BrandBadge className="text-2xl sm:text-3xl lg:text-3xl leading-none select-none" />
-                <span className="text-[10px] sm:text-xs font-bold text-[#922B4B] uppercase tracking-widest block ml-1 mt-1">
+                <span className="text-[10px] sm:text-xs font-bold text-[#C51F45] uppercase tracking-widest block ml-1 mt-1">
                   Innovative Learning
                 </span>
               </div>
@@ -50,16 +50,16 @@ export default function Footer() {
                 href={schoolInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#922B4B] hover:bg-[#7A2140] text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C51F45] hover:bg-[#9E1836] text-white text-xs font-bold transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-white text-[#922B4B]" />
+                <MessageCircle className="w-4 h-4 fill-white text-[#C51F45]" />
                 <span>WhatsApp Helpline</span>
               </a>
               <a
                 href={`tel:${schoolInfo.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FAF8F3] ring-1 ring-[#E8E0D4] text-[#17243A] text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FFFDF8] ring-1 ring-[#E8E0D4] text-[#142B4A] text-xs font-bold transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#922B4B]" />
+                <Phone className="w-3.5 h-3.5 text-[#C51F45]" />
                 <span>{schoolInfo.phone}</span>
               </a>
             </div>
@@ -67,14 +67,14 @@ export default function Footer() {
 
           {/* Col 2: For Parents (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
+            <h3 className="font-heading font-semibold text-lg text-[#142B4A] pb-3 border-b border-[#D6B56D]/50">
               For Parents
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/academics"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Learning Programs (Play–UKG)
                 </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/activities"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Sensory & Play Activities
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/facilities"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Child-Safe Facilities
                 </Link>
@@ -98,16 +98,16 @@ export default function Footer() {
               <li>
                 <Link
                   to="/branches"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors flex items-center gap-1.5"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors flex items-center gap-1.5"
                 >
                   <span>Find a Branch Near You</span>
-                  <ArrowRight className="w-3 h-3 text-[#922B4B]" />
+                  <ArrowRight className="w-3 h-3 text-[#C51F45]" />
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admissions"
-                  className="font-bold text-[#922B4B] hover:text-[#7A2140] transition-colors inline-block"
+                  className="font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors inline-block"
                 >
                   Admissions Enquiry 2026-27 →
                 </Link>
@@ -117,14 +117,14 @@ export default function Footer() {
 
           {/* Col 3: For Franchise Partners (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
+            <h3 className="font-heading font-semibold text-lg text-[#142B4A] pb-3 border-b border-[#D6B56D]/50">
               For Franchise Partners
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/franchise"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Opportunity
                 </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#benefits"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Benefits
                 </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#requirements"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Process
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#franchise-faq"
-                  className="text-[#536174] hover:text-[#922B4B] transition-colors"
+                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise FAQ
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#enquiry-form"
-                  className="font-bold text-[#922B4B] hover:text-[#7A2140] transition-colors"
+                  className="font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors"
                 >
                   Franchise Enquiry →
                 </Link>
@@ -166,13 +166,13 @@ export default function Footer() {
 
           {/* Col 4: Campus Locations & Contact (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-[#17243A] pb-3 border-b border-[#D6B56D]/50">
+            <h3 className="font-heading font-semibold text-lg text-[#142B4A] pb-3 border-b border-[#D6B56D]/50">
               Campus Locations
             </h3>
 
             <div className="space-y-3 text-xs">
               <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#17243A] block mb-0.5">
+                <span className="font-bold text-[#142B4A] block mb-0.5">
                   Dammaiguda Campus
                 </span>
                 <p className="text-[#536174] leading-snug break-words-safe">
@@ -180,14 +180,14 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/dammaiguda"
-                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
               <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#17243A] block mb-0.5">
+                <span className="font-bold text-[#142B4A] block mb-0.5">
                   Kapra / Yellareddyguda Campus
                 </span>
                 <p className="text-[#536174] leading-snug break-words-safe">
@@ -195,14 +195,14 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/kapra-yellareddyguda"
-                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
               </div>
 
               <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#17243A] block mb-0.5">
+                <span className="font-bold text-[#142B4A] block mb-0.5">
                   Yapral Branch
                 </span>
                 <p className="text-[#536174] leading-snug break-words-safe">
@@ -210,7 +210,7 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/yapral"
-                  className="text-[11px] font-semibold text-[#922B4B] hover:underline mt-1 inline-block"
+                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
                 >
                   View Campus Details →
                 </Link>
@@ -249,11 +249,11 @@ export default function Footer() {
           </nav>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#536174]">
             <a href={`mailto:${schoolInfo.email}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors break-all">
-              <Mail className="w-4 h-4 text-[#922B4B] shrink-0" />
+              <Mail className="w-4 h-4 text-[#C51F45] shrink-0" />
               <span>{schoolInfo.email}</span>
             </a>
-            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#922B4B] transition-colors">
-              <Phone className="w-4 h-4 text-[#922B4B] shrink-0" />
+            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#C51F45] transition-colors">
+              <Phone className="w-4 h-4 text-[#C51F45] shrink-0" />
               <span>{schoolInfo.phoneFormatted}</span>
             </a>
           </div>

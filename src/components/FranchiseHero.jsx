@@ -35,20 +35,20 @@ export default function FranchiseHero({ onScrollToSection }) {
   return (
     <section
       id="franchise-hero"
-      className="relative isolate overflow-hidden flex items-center justify-center pt-32 sm:pt-40 pb-24 sm:pb-32 bg-gradient-to-br from-[#FFF9F0] via-[#FAF8F3] to-[#F3EEE5]"
+      className="relative isolate overflow-hidden flex items-center justify-center pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#FFF4DF]"
     >
-      <div className="absolute -top-32 -left-24 w-[32rem] h-[32rem] rounded-full bg-[#D6B56D]/25 blur-3xl -z-10 pointer-events-none" aria-hidden="true" />
-      <div className="absolute -bottom-40 right-0 w-[36rem] h-[36rem] rounded-full bg-[#922B4B]/10 blur-3xl -z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-32 -left-24 w-[32rem] h-[32rem] rounded-full bg-[#FFBD16]/25 blur-3xl -z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -bottom-40 right-0 w-[36rem] h-[36rem] rounded-full bg-[#FFBD16]/20 blur-3xl -z-10 pointer-events-none" aria-hidden="true" />
       <div
-        className="absolute inset-0 opacity-[0.045] -z-10 pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] -z-10 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(23,36,58,1) 1px, transparent 1px), linear-gradient(90deg, rgba(23,36,58,1) 1px, transparent 1px)",
+            "linear-gradient(rgba(20,43,74,1) 1px, transparent 1px), linear-gradient(90deg, rgba(20,43,74,1) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
         }}
         aria-hidden="true"
       />
-      <BrandWatermark position="center" size="xl" opacity={0.06} />
+      <BrandWatermark position="center" size="xl" opacity={0.08} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div
@@ -59,7 +59,7 @@ export default function FranchiseHero({ onScrollToSection }) {
         >
           <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="h-px w-8 bg-[#D6B56D]" />
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.28em] text-[#922B4B]">
+            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.28em] text-[#C51F45]">
               Partner With Us
             </span>
             <span className="h-px w-8 bg-[#D6B56D]" />
@@ -67,14 +67,14 @@ export default function FranchiseHero({ onScrollToSection }) {
 
           <motion.h1
             variants={itemVariants}
-            className="font-heading font-bold text-[clamp(2.4rem,6vw,4.6rem)] text-[#17243A] leading-[1.08]"
+            className="font-heading font-bold text-[clamp(2.4rem,6vw,4.6rem)] text-[#142B4A] leading-[1.08]"
           >
-            Franchise <span className="italic font-medium text-[#922B4B]">Opportunity</span>
+            Franchise <span className="italic font-medium text-[#C51F45]">Opportunity</span>
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="mt-4 font-heading font-medium text-xl sm:text-3xl text-[#17243A] flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap"
+            className="mt-4 font-heading font-medium text-xl sm:text-3xl text-[#142B4A] flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap"
           >
             <span>Join the</span> <BrandBadge className="text-[0.78em]" /> <span>Family</span>
           </motion.h2>
@@ -90,7 +90,7 @@ export default function FranchiseHero({ onScrollToSection }) {
             {chips.map((c) => (
               <span
                 key={c}
-                className="px-3.5 py-1.5 rounded-full border border-[#D6B56D] bg-white text-[11px] sm:text-xs font-medium tracking-wide text-[#536174]"
+                className="px-3.5 py-1.5 rounded-full border border-[#E8DCC9] bg-white text-[11px] sm:text-xs font-medium tracking-wide text-[#536174]"
               >
                 {c}
               </span>
@@ -104,7 +104,7 @@ export default function FranchiseHero({ onScrollToSection }) {
             <button
               type="button"
               onClick={() => handleScroll("enquiry-form")}
-              className="px-8 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-white bg-[#922B4B] hover:bg-[#7A2140] shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+              className="px-8 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#142B4A] bg-[#FFBD16] hover:bg-[#FFCB45] shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
             >
               <span>Enquire About Franchise</span>
               <ArrowDown className="w-4 h-4" />
@@ -114,17 +114,17 @@ export default function FranchiseHero({ onScrollToSection }) {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#17243A] border border-[#D6B56D] hover:bg-[#D6B56D]/15 transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+              className="px-7 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#174EA6] bg-white border-2 border-[#174EA6] hover:bg-[#174EA6] hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
             >
-              <MessageCircle className="w-4 h-4 text-[#922B4B]" />
+              <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Us</span>
             </a>
 
             <a
               href={`tel:${schoolInfo.phone}`}
-              className="px-7 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#17243A] hover:text-[#922B4B] transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-7 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#142B4A] hover:text-[#C51F45] transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4 text-[#922B4B]" />
+              <Phone className="w-4 h-4 text-[#C51F45]" />
               <span>{schoolInfo.phone}</span>
             </a>
           </motion.div>
@@ -132,7 +132,7 @@ export default function FranchiseHero({ onScrollToSection }) {
       </div>
 
       <svg
-        className="absolute bottom-0 left-0 w-full h-10 sm:h-14 text-[#FAF8F3]"
+        className="absolute bottom-0 left-0 w-full h-10 sm:h-14 text-[#FFFDF8]"
         viewBox="0 0 1440 80"
         preserveAspectRatio="none"
         aria-hidden="true"
