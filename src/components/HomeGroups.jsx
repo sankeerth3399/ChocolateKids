@@ -73,7 +73,7 @@ export default function HomeGroups() {
           subtitle="Five thoughtfully designed groups to meet your child at every stage of their early journey."
         />
 
-        <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
+        <div className="card-rail flex flex-wrap justify-center gap-5 sm:gap-6">
           {groups.map((g, i) => (
             <m.article
               key={g.name}

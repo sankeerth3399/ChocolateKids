@@ -669,6 +669,7 @@ article[class*="rounded-"][class*="hover:shadow"]:not(.accent-card):hover {
   .card-rail {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: flex-start;
     align-items: stretch;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
