@@ -675,14 +675,31 @@ article[class*="rounded-"][class*="hover:shadow"]:not(.accent-card):hover {
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    /* slim visible scrollbar doubles as the "more cards" indicator and gives mouse users a handle */
+    scrollbar-width: thin;
+    scrollbar-color: #d9b46a #f3e7d0;
+    cursor: grab;
     /* bleed to the screen edges so cards peek in from the side; padding keeps shadows from clipping */
     margin-inline: -1rem;
     padding: 0.5rem 1rem 1rem;
     scroll-padding-inline: 1rem;
   }
   .card-rail::-webkit-scrollbar {
-    display: none;
+    height: 6px;
+  }
+  .card-rail::-webkit-scrollbar-track {
+    background: #f3e7d0;
+    border-radius: 999px;
+    margin-inline: 1rem;
+  }
+  .card-rail::-webkit-scrollbar-thumb {
+    background: #d9b46a;
+    border-radius: 999px;
+  }
+  .card-rail.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
+    user-select: none;
   }
   .card-rail > * {
     flex: 0 0 82%;

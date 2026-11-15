@@ -9,6 +9,7 @@ import AdmissionModalLoader from "./AdmissionModalLoader";
 import ScrollToTop from "../ScrollToTop";
 import PageFallback from "../common/PageFallback";
 import { prefetchRoute } from "../../routes";
+import useRailDrag from "../../hooks/useRailDrag";
 
 // Animation features are fetched after first paint instead of shipping in the main bundle.
 const loadMotionFeatures = () => import("../../motionFeatures.js").then((mod) => mod.default);
@@ -25,6 +26,7 @@ const prefetchFromEvent = (event) => {
  */
 export default function MainLayout() {
   const { pathname } = useLocation();
+  useRailDrag();
 
   return (
     <LazyMotion features={loadMotionFeatures} strict>
