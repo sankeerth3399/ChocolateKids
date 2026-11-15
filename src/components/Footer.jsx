@@ -6,14 +6,14 @@ import { BrandBadge } from "../utils/brandHelper";
 
 export default function Footer() {
   return (
-    <footer className="text-[#24364B] pt-20 pb-24 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden bg-[#FFF4DF]">
+    <footer className="text-[#24364B] pt-12 sm:pt-20 pb-28 sm:pb-14 border-t border-[#D6B56D]/60 relative overflow-hidden bg-[#FFF4DF]">
       {/* Brand Logo Watermark - Visible but Elegant */}
       <BrandWatermark position="bottom-right" size="lg" opacity={0.06} rotate={-6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Main Footer 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#E3DACB]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-[#E3DACB]">
 
           {/* Col 1: Brand & Tagline (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -50,14 +50,14 @@ export default function Footer() {
                 href={schoolInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C51F45] hover:bg-[#9E1836] text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full bg-[#C51F45] hover:bg-[#9E1836] text-white text-xs font-bold transition-colors"
               >
                 <MessageCircle className="w-4 h-4 fill-white text-[#C51F45]" />
                 <span>WhatsApp Helpline</span>
               </a>
               <a
                 href={`tel:${schoolInfo.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FFFDF8] ring-1 ring-[#E8E0D4] text-[#142B4A] text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full bg-white hover:bg-[#FFFDF8] ring-1 ring-[#E8E0D4] text-[#142B4A] text-xs font-bold transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-[#C51F45]" />
                 <span>{schoolInfo.phone}</span>
@@ -70,11 +70,11 @@ export default function Footer() {
             <h3 className="font-heading font-semibold text-lg text-[#142B4A] pb-3 border-b border-[#D6B56D]/50">
               For Parents
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-0 lg:space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/academics"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Learning Programs (Play–UKG)
                 </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/activities"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Sensory & Play Activities
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/facilities"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Child-Safe Facilities
                 </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/branches"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors flex items-center gap-1.5"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   <span>Find a Branch Near You</span>
                   <ArrowRight className="w-3 h-3 text-[#C51F45]" />
@@ -107,9 +107,9 @@ export default function Footer() {
               <li>
                 <Link
                   to="/admissions"
-                  className="font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors inline-block"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors"
                 >
-                  Admissions Enquiry 2026-27 →
+                  Admissions Enquiry →
                 </Link>
               </li>
             </ul>
@@ -120,11 +120,11 @@ export default function Footer() {
             <h3 className="font-heading font-semibold text-lg text-[#142B4A] pb-3 border-b border-[#D6B56D]/50">
               For Franchise Partners
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-0 lg:space-y-2.5 text-sm">
               <li>
                 <Link
                   to="/franchise"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Opportunity
                 </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#benefits"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Benefits
                 </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#requirements"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise Process
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#franchise-faq"
-                  className="text-[#536174] hover:text-[#C51F45] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 text-[#536174] hover:text-[#C51F45] transition-colors"
                 >
                   Franchise FAQ
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/franchise#enquiry-form"
-                  className="font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors"
+                  className="inline-flex items-center min-h-[44px] lg:min-h-0 font-bold text-[#C51F45] hover:text-[#9E1836] transition-colors"
                 >
                   Franchise Enquiry →
                 </Link>
@@ -180,7 +180,7 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/dammaiguda"
-                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
+                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
                 >
                   View Campus Details →
                 </Link>
@@ -195,7 +195,7 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/kapra-yellareddyguda"
-                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
+                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
                 >
                   View Campus Details →
                 </Link>
@@ -210,7 +210,7 @@ export default function Footer() {
                 </p>
                 <Link
                   to="/branches/yapral"
-                  className="text-[11px] font-semibold text-[#C51F45] hover:underline mt-1 inline-block"
+                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
                 >
                   View Campus Details →
                 </Link>
@@ -222,7 +222,7 @@ export default function Footer() {
 
         {/* Quick links + contact strip */}
         <div className="py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 border-b border-[#E3DACB]">
-          <nav aria-label="Footer quick links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#536174]">
+          <nav aria-label="Footer quick links" className="flex flex-wrap gap-x-6 gap-y-0 lg:gap-y-2 text-sm text-[#536174]">
             {[
               ["Home", "/"],
               ["About", "/about"],
@@ -241,18 +241,18 @@ export default function Footer() {
                 onClick={() => {
                   if (window.location.pathname === to) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }}
-                className="hover:text-[#D6B56D] transition-colors"
+                className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] lg:min-h-0 hover:text-[#C51F45] transition-colors"
               >
                 {label}
               </Link>
             ))}
           </nav>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#536174]">
-            <a href={`mailto:${schoolInfo.email}`} className="inline-flex items-center gap-2 hover:text-[#D6B56D] transition-colors break-all">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-0 text-sm text-[#536174]">
+            <a href={`mailto:${schoolInfo.email}`} className="inline-flex items-center gap-2 min-h-[44px] hover:text-[#C51F45] transition-colors break-all">
               <Mail className="w-4 h-4 text-[#C51F45] shrink-0" />
               <span>{schoolInfo.email}</span>
             </a>
-            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 hover:text-[#C51F45] transition-colors">
+            <a href={`tel:${schoolInfo.phone}`} className="inline-flex items-center gap-2 min-h-[44px] hover:text-[#C51F45] transition-colors">
               <Phone className="w-4 h-4 text-[#C51F45] shrink-0" />
               <span>{schoolInfo.phoneFormatted}</span>
             </a>

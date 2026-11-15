@@ -152,7 +152,7 @@ export default function EventsSection() {
                         </span>
                         <Link
                           to="/events"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-700 hover:text-amber-700 transition-colors"
+                          className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-bold text-stone-700 hover:text-amber-700 transition-colors"
                         >
                           <span>Explore Story</span>
                           <ArrowRight className="w-3.5 h-3.5" />

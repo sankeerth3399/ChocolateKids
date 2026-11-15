@@ -36,6 +36,15 @@ const aboutMenu = [
   },
 ];
 
+/* Desktop navigation pill states (one source of truth, no per-link hover rules) */
+const navBase =
+  "inline-flex items-center gap-1 px-4 py-2.5 rounded-xl border text-xs xl:text-sm tracking-wide whitespace-nowrap cursor-pointer transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F2C45B]";
+const navIdle =
+  "font-semibold text-[#142B4A] border-transparent hover:bg-[#FFE2A3] hover:text-[#922B4B] hover:border-[#F2C45B] hover:shadow-sm";
+const navActive =
+  "font-bold text-[#C51F45] bg-[#FCE8B2] border-[#F2C45B]/60 shadow-[inset_0_-3px_0_#FFBD16]";
+const navOpen = "font-semibold text-[#922B4B] bg-[#FFE2A3] border-[#F2C45B] shadow-sm";
+
 export default function Navbar({ onOpenEnquiry }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,18 +119,51 @@ export default function Navbar({ onOpenEnquiry }) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white shadow-[0_10px_30px_-14px_rgba(23,59,115,0.28)] py-2"
-          : "bg-white shadow-[0_1px_0_rgba(23,59,115,0.08)] py-3 sm:py-3.5"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#FFFDF8] via-[#FFF8E8] to-[#FFE6A3] ${scrolled
+          ? "shadow-[0_10px_30px_-14px_rgba(20,43,74,0.30)] py-2"
+          : "shadow-[0_1px_0_rgba(20,43,74,0.06)] py-3 sm:py-3.5"
           }`}
       >
-        {/* Brand-colour accent strip */}
+        {/* Playful decorations: clipped in their own layer so dropdowns can still overflow the header */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          {/* rainbow, bottom-left edge */}
+          <svg className="hidden sm:block absolute -left-5 -bottom-1 w-24 h-auto opacity-90" viewBox="0 0 120 60" fill="none">
+            <path d="M0 60C0 27 27 0 60 0s60 27 60 60" stroke="#F04463" strokeWidth="7" opacity=".55" />
+            <path d="M10 60C10 32 32 10 60 10s50 22 50 50" stroke="#FFBD16" strokeWidth="7" opacity=".7" />
+            <path d="M20 60c0-22 18-40 40-40s40 18 40 40" stroke="#16834A" strokeWidth="7" opacity=".55" />
+            <path d="M30 60c0-16 14-30 30-30s30 14 30 30" stroke="#174EA6" strokeWidth="7" opacity=".5" />
+          </svg>
+          {/* clouds */}
+          <svg className="hidden md:block absolute left-[34%] top-1 w-16 opacity-80" viewBox="0 0 64 28" fill="#fff">
+            <path d="M10 26a9 9 0 010-18 12 12 0 0122-3 10 10 0 0122 6 8 8 0 010 15z" />
+          </svg>
+          <svg className="hidden lg:block absolute left-[52%] bottom-1 w-12 opacity-70" viewBox="0 0 64 28" fill="#fff">
+            <path d="M10 26a9 9 0 010-18 12 12 0 0122-3 10 10 0 0122 6 8 8 0 010 15z" />
+          </svg>
+          {/* paper plane with dashed trail */}
+          <svg className="hidden lg:block absolute left-[30%] top-1.5 w-28 opacity-90" viewBox="0 0 120 50" fill="none">
+            <path d="M2 44c18 6 30-4 26-12-3-7-13-4-10 3 3 6 22 4 40-12" stroke="#F5B000" strokeWidth="1.6" strokeDasharray="4 4" strokeLinecap="round" />
+            <path d="M62 22l44-14-14 34-12-10-12 8 2-14z" fill="#FFBD16" />
+            <path d="M62 22l44-14-30 24z" fill="#F5A800" />
+          </svg>
+          {/* small sun, right edge */}
+          <svg className="hidden sm:block absolute right-2 top-1.5 w-10 sm:w-12" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="8" fill="#FFBD16" />
+            <path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4" stroke="#FFBD16" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+          {/* soft yellow shape, bottom-right */}
+          <svg className="hidden sm:block absolute right-0 bottom-0 w-24 sm:w-32 h-auto" viewBox="0 0 130 40" fill="#FFBD16" opacity=".55">
+            <path d="M0 40c20-2 22-16 44-20s34 8 52-6 22-12 34-14v40z" />
+          </svg>
+        </div>
+
+        {/* Bottom accent: yellow to orange to burgundy */}
         <div
           className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#FFBD16] via-[#F26A21] to-[#C51F45]"
           aria-hidden="true"
         />
 
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* Logo */}
             <Link
@@ -132,7 +174,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }
               }}
-              className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-[#142B4A] rounded-lg p-0.5 sm:p-1"
+              className="flex items-center gap-2 sm:gap-2.5 shrink-0 min-h-[44px] group focus:outline-none focus:ring-2 focus:ring-[#142B4A] rounded-lg p-0.5 sm:p-1"
             >
               <img
                 src="/logo.png"
@@ -148,7 +190,7 @@ export default function Navbar({ onOpenEnquiry }) {
             </Link>
 
             {/* Desktop Navigation - Home | About Us ▾ | Our Schools | Programs | Franchise | Contact */}
-            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3.5">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
               {/* Home */}
               <Link
                 to="/"
@@ -158,10 +200,7 @@ export default function Navbar({ onOpenEnquiry }) {
                     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                   }
                 }}
-                className={`px-3 xl:px-4 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isHomeActive
-                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                  }`}
+                className={`${navBase} ${isHomeActive ? navActive : navIdle}`}
               >
                 Home
               </Link>
@@ -171,12 +210,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 <button
                   type="button"
                   onClick={() => setAboutDropdownOpen((o) => !o)}
-                  className={`flex items-center gap-1 text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap py-1.5 px-3 rounded-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFBD16] ${isAboutActive
-                      ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                      : aboutDropdownOpen
-                        ? "text-[#C51F45]"
-                        : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                    }`}
+                  className={`${navBase} ${isAboutActive ? navActive : aboutDropdownOpen ? navOpen : navIdle}`}
                   aria-expanded={aboutDropdownOpen}
                   aria-haspopup="menu"
                   aria-controls="about-dropdown"
@@ -207,14 +241,14 @@ export default function Navbar({ onOpenEnquiry }) {
                         tabIndex={aboutDropdownOpen ? 0 : -1}
                         onClick={closeMenu}
                         aria-current={active ? "page" : undefined}
-                        className={`relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-colors duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFBD16] ${active ? "bg-[#FFFDF8]" : "hover:bg-[#FFFDF8]"}`}
+                        className={`relative flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-colors duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFBD16] ${active ? "bg-[#FCE8B2]" : "hover:bg-[#FFF1CC]"}`}
                       >
                         {active && <span className="absolute left-0 top-2.5 bottom-2.5 w-0.5 rounded-full bg-[#FFBD16]" aria-hidden="true" />}
                         <div className={`w-11 h-11 rounded-xl ${tile} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5`}>
                           <Icon className="w-5 h-5" strokeWidth={1.8} />
                         </div>
                         <div className="min-w-0 leading-tight">
-                          <div className={`font-semibold text-[15px] transition-colors duration-200 ${active ? "text-[#C51F45]" : "text-[#142B4A] group-hover:text-[#C51F45]"}`}>
+                          <div className={`font-semibold text-[15px] transition-colors duration-200 ${active ? "text-[#C51F45]" : "text-[#142B4A] group-hover:text-[#922B4B]"}`}>
                             {title}
                           </div>
                           <div className="mt-0.5 text-xs text-[#64748B]">{desc}</div>
@@ -229,10 +263,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/branches"
                 onClick={closeMenu}
-                className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isSchoolsActive
-                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                  }`}
+                className={`${navBase} ${isSchoolsActive ? navActive : navIdle}`}
               >
                 Our Schools
               </Link>
@@ -241,10 +272,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/academics"
                 onClick={closeMenu}
-                className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isProgramsActive
-                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                  }`}
+                className={`${navBase} ${isProgramsActive ? navActive : navIdle}`}
               >
                 Programs
               </Link>
@@ -265,10 +293,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/franchise"
                 onClick={closeMenu}
-                className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isFranchiseActive
-                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                  }`}
+                className={`${navBase} ${isFranchiseActive ? navActive : navIdle}`}
               >
                 Franchise
               </Link>
@@ -277,10 +302,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Link
                 to="/contact"
                 onClick={closeMenu}
-                className={`px-2.5 xl:px-3.5 py-1.5 rounded-md text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${isContactActive
-                    ? "text-[#C51F45] shadow-[inset_0_-2px_0_#FFBD16]"
-                    : "text-[#142B4A] hover:text-[#C51F45] hover:shadow-[inset_0_-2px_0_rgba(255,200,61,0.9)]"
-                  }`}
+                className={`${navBase} ${isContactActive ? navActive : navIdle}`}
               >
                 Contact
               </Link>
@@ -313,7 +335,7 @@ export default function Navbar({ onOpenEnquiry }) {
       )}
 
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[85vw] sm:max-w-xs bg-white shadow-2xl transition-transform duration-300 ease-out transform lg:hidden flex flex-col justify-between overflow-y-auto ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[85vw] sm:max-w-xs bg-white transition-[transform,visibility,box-shadow] duration-300 ease-out transform lg:hidden flex flex-col justify-between overflow-y-auto ${mobileMenuOpen ? "translate-x-0 visible shadow-2xl" : "translate-x-full invisible shadow-none"
           }`}
         role="dialog"
         aria-modal="true"
@@ -329,7 +351,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }
               }}
-              className="flex items-center gap-2 group focus:outline-none"
+              className="flex items-center gap-2 min-h-[44px] group focus:outline-none"
             >
               <img
                 src="/logo.png"
@@ -362,7 +384,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
                 }
               }}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-all ${isHomeActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Home
@@ -375,7 +397,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 onClick={() => setMobileAboutOpen((o) => !o)}
                 aria-expanded={mobileAboutOpen}
                 aria-controls="about-accordion"
-                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#FFF4DF] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFF4DF]/60"
+                className={`w-full px-4 py-2.5 min-h-[44px] rounded-xl text-base font-bold flex items-center justify-between transition-colors ${isAboutActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                   }`}
               >
                 <span>About Us</span>
@@ -400,7 +422,7 @@ export default function Navbar({ onOpenEnquiry }) {
                           onClick={closeMenu}
                           tabIndex={mobileAboutOpen ? 0 : -1}
                           aria-current={active ? "page" : undefined}
-                          className={`px-3 py-2.5 min-h-[52px] rounded-xl flex items-center gap-3 transition-colors ${active ? "bg-[#FFFDF8] text-[#C51F45]" : "text-[#142B4A] hover:bg-[#FFFDF8]"}`}
+                          className={`px-3 py-2.5 min-h-[52px] rounded-xl flex items-center gap-3 transition-colors ${active ? "bg-[#FCE8B2] text-[#C51F45]" : "text-[#142B4A] hover:bg-[#FFE2A3] active:bg-[#FFE2A3]"}`}
                         >
                           <div className={`w-10 h-10 rounded-lg ${tile} flex items-center justify-center shrink-0`}>
                             <Icon className="w-[18px] h-[18px]" strokeWidth={1.8} />
@@ -421,7 +443,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/branches"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isSchoolsActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Our Schools
@@ -431,7 +453,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/academics"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isProgramsActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Programs
@@ -441,7 +463,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/admissions"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isAdmissionsActive ? "bg-[#FFF4DF] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isAdmissionsActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Admissions
@@ -451,7 +473,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/franchise"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isFranchiseActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Franchise
@@ -461,7 +483,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#FFF4DF] text-[#142B4A]" : "text-stone-700 hover:bg-[#FFF4DF]/60 hover:text-[#142B4A]"
+              className={`px-4 py-2.5 min-h-[44px] flex items-center rounded-xl text-base font-bold transition-colors ${isContactActive ? "bg-[#FCE8B2] text-[#C51F45]" : "text-stone-700 hover:bg-[#FFE2A3] hover:text-[#922B4B] active:bg-[#FFE2A3]"
                 }`}
             >
               Contact

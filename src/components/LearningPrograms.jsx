@@ -366,12 +366,6 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
             
             {/* Left Column: Heading, Subtitle & Assurance Details (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-extrabold">
-                <span className="w-2 h-2 rounded-full bg-[#142B4A] animate-pulse" />
-                <span>Admissions Open</span>
-              </div>
-
               {/* Title */}
               <h2 className="font-heading font-black text-3xl sm:text-5xl text-[#142B4A] tracking-tight leading-tight">
                 Ready to Enroll Your Child?

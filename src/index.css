@@ -805,7 +805,7 @@ a {
   footer a.inline-block {
     display: inline-flex;
     align-items: center;
-    min-height: 40px;
+    min-height: 44px;
   }
 }
 

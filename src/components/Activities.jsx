@@ -123,7 +123,7 @@ export default function Activities() {
               <button
                 key={page.id}
                 onClick={() => setSelectedActivity(idx)}
-                className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer shadow-2xs ${
+                className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 min-h-[44px] rounded-full text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer shadow-2xs ${
                   isSelected
                     ? "bg-amber-600 text-white shadow-md shadow-amber-600/25 scale-103"
                     : "bg-white/90 text-stone-700 hover:bg-white hover:text-stone-900 border border-stone-200/80"

@@ -18,14 +18,6 @@ export default function AdmissionsCTA({ showQuickInquiry, showConnect = false })
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-            <span className="h-px w-8 bg-[#FFBD16]" />
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] sm:tracking-[0.26em] text-[#C51F45] text-center">
-              Admissions Open 2026-27 · Play Group to UKG
-            </span>
-            <span className="h-px w-8 bg-[#FFBD16]" />
-          </div>
-
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-[#142B4A] leading-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
             <span>Let Their Adventure Begin at</span> <BrandName variant="badge" className="text-[0.72em]" />
           </h2>

@@ -68,7 +68,7 @@ export default function BranchDetails() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               to="/branches"
-              className="inline-flex items-center gap-2 text-xs font-bold text-amber-800 hover:text-amber-950 mb-6 bg-white/90 px-3.5 py-1.5 rounded-full border border-amber-200 shadow-2xs transition-colors"
+              className="inline-flex items-center gap-2 min-h-[44px] text-xs font-bold text-amber-800 hover:text-amber-950 mb-6 bg-white/90 px-4 py-1.5 rounded-full border border-amber-200 shadow-2xs transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Branches Directory</span>
@@ -244,7 +244,7 @@ export default function BranchDetails() {
 
               <Link
                 to="/gallery"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950"
+                className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-bold text-amber-800 hover:text-amber-950"
               >
                 <span>View Full School Gallery</span>
                 <ArrowRight className="w-3.5 h-3.5" />

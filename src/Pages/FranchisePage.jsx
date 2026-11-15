@@ -162,14 +162,14 @@ export default function FranchisePage() {
                             href={waUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 transition-colors"
+                            className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full text-xs font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 transition-colors"
                           >
                             <MessageCircle className="w-4 h-4 text-emerald-700" />
                             <span>Chat on WhatsApp</span>
                           </a>
                           <a
                             href="tel:9515869889"
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-stone-800 bg-white hover:bg-stone-100 border border-stone-200 transition-colors"
+                            className="inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full text-xs font-bold text-stone-800 bg-white hover:bg-stone-100 border border-stone-200 transition-colors"
                           >
                             <Phone className="w-4 h-4 text-stone-600" />
                             <span>Call 9515869889</span>

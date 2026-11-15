@@ -71,7 +71,7 @@ export default function BranchesPage() {
               Ready to Visit a <span className="text-[#C51F45]">Chocolate Kids</span> Campus?
             </h3>
             <p className="text-base sm:text-lg text-[#536174] max-w-xl mx-auto mb-9 leading-relaxed">
-              Schedule a personalized tour of our classrooms, meet our caring educators, and learn more about our 2026-27 admission process.
+              Schedule a personalized tour of our classrooms, meet our caring educators, and learn more about our admission process.
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">

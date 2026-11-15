@@ -205,9 +205,9 @@ export default function Testimonials({ className = "" }) {
             <button
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="sm:hidden p-2 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
+              className="sm:hidden w-11 h-11 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-2">
@@ -228,9 +228,9 @@ export default function Testimonials({ className = "" }) {
             <button
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="sm:hidden p-2 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
+              className="sm:hidden w-11 h-11 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-700 active:scale-95"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 

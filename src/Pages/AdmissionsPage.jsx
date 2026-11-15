@@ -64,9 +64,6 @@ export default function AdmissionsPage() {
           <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-[#FFBD16]/25 blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="absolute -bottom-28 right-0 w-96 h-96 rounded-full bg-[#FFBD16]/20 blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="max-w-4xl mx-auto relative z-10">
-            <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em] text-[#C51F45] mb-5">
-              <span>Admissions Open for Academic Year 2026-27</span>
-            </div>
             <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl text-[#142B4A] leading-tight">
               Give Your Child a Joyful Start
             </h1>
@@ -125,7 +122,7 @@ export default function AdmissionsPage() {
                   Campus Tours & Locations
                 </span>
                 <p className="text-sm sm:text-base font-heading font-bold text-stone-900">
-                  Admissions Open at Dammaiguda, Kapra & Yapral
+                  Visit Us at Dammaiguda, Kapra & Yapral
                 </p>
               </div>
               <Link

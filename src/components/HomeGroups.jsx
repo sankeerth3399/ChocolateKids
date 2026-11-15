@@ -103,7 +103,7 @@ export default function HomeGroups() {
                 <p className="mt-2 text-sm sm:text-[15px] leading-relaxed text-[#536174]">{g.desc}</p>
                 <Link
                   to="/academics"
-                  className={`mt-5 self-start inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold shadow-sm hover:gap-3 hover:shadow-md transition-all ${g.btn}`}
+                  className={`mt-5 self-start inline-flex items-center gap-2 px-5 py-2 min-h-[44px] rounded-full text-sm font-bold shadow-sm hover:gap-3 hover:shadow-md transition-all ${g.btn}`}
                 >
                   <span>View details</span>
                   <ArrowRight className="w-4 h-4" />

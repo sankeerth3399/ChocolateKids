@@ -83,7 +83,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
     e.preventDefault();
     if (!validate()) return;
 
-    const messageText = `*Preschool Admission Enquiry (2026-27)*\n\n` +
+    const messageText = `*Preschool Admission Enquiry*\n\n` +
       `👤 *Parent Name:* ${formData.parentName.trim()}\n` +
       `📞 *Phone:* ${formData.phone.trim()}\n` +
       `👶 *Child Name:* ${formData.childName.trim()}\n` +
@@ -121,10 +121,6 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
           >
             <X className="w-4 h-4" />
           </button>
-
-          <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-[10px] font-black uppercase tracking-wider mb-1">
-            <span>Admissions Open 2026–27</span>
-          </div>
 
           <h3 id="modal-title" className="font-heading font-black text-lg sm:text-xl text-white flex flex-wrap items-center gap-1.5">
             <span>Enrol Your Child at</span> <BrandBadge className="text-xs px-2 py-0.5" />

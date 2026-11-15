@@ -45,7 +45,7 @@ export default function Branches() {
 
           {/* Heading */}
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight flex flex-wrap items-center gap-2.5">
-            <span className="text-[#C51F45]">Visit Our Branches</span> • <BrandBadge className="text-[0.72em]" />
+            <span className="text-[#C51F45]">Visit Our Branches</span> <span className="hidden sm:inline" aria-hidden="true">•</span> <BrandBadge className="text-[0.72em]" />
           </h2>
 
           <p className="mt-3 text-stone-600 text-sm sm:text-base leading-relaxed">
