@@ -1,6 +1,6 @@
 import { Puzzle, Compass, Palette, Users, Activity, MessageSquare } from "lucide-react";
 import { learningApproach } from "../data";
-import { highlightBrand } from "../utils/brandHelper";
+import { highlightBrand } from "../utils/highlightBrand";
 
 const iconMap = {
   Puzzle,
@@ -32,12 +32,12 @@ const accents = [
 
 /* One photo per category (same order as the six learning categories) */
 const photos = [
-  { src: "/images/learning/play.jpg", pos: "center 30%", alt: "A smiling child building a tall tower of colourful play blocks" },
-  { src: "/images/learning/experiential.jpg", pos: "center 28%", alt: "A child in safety goggles and a lab coat holding a flask during a science activity" },
-  { src: "/images/learning/creative.jpg", pos: "center 25%", alt: "A smiling girl painting a colourful picture" },
-  { src: "/images/learning/social.jpg", pos: "center 35%", alt: "Three laughing children joining hands together" },
-  { src: "/images/learning/physical.jpg", pos: "center 40%", alt: "A smiling child crawling through a colourful play tunnel" },
-  { src: "/images/learning/communication.jpg", pos: "center 30%", alt: "A child speaking confidently during a Show and Tell activity" },
+  { src: "/images/learning/play.webp", pos: "center 30%", alt: "A smiling child building a tall tower of colourful play blocks" },
+  { src: "/images/learning/experiential.webp", pos: "center 28%", alt: "A child in safety goggles and a lab coat holding a flask during a science activity" },
+  { src: "/images/learning/creative.webp", pos: "center 25%", alt: "A smiling girl painting a colourful picture" },
+  { src: "/images/learning/social.webp", pos: "center 35%", alt: "Three laughing children joining hands together" },
+  { src: "/images/learning/physical.webp", pos: "center 40%", alt: "A smiling child crawling through a colourful play tunnel" },
+  { src: "/images/learning/communication.webp", pos: "center 30%", alt: "A child speaking confidently during a Show and Tell activity" },
 ];
 
 export default function LearningApproach() {

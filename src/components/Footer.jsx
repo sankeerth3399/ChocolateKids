@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, MessageCircle, Heart, ArrowRight, ExternalLink } from "lucide-react";
-import { schoolInfo, branches } from "../data";
+import { Phone, Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
+
+const CAMPUSES = [
+  { name: "Dammaiguda Campus", address: "H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyd - 083.", to: "/branches/dammaiguda", img: "/images/campuses/dammaiguda.webp" },
+  { name: "Kapra / Yellareddyguda Campus", address: "Shalivahana Colony, Near Anurag Line, KAPRA, Hyd - 062.", to: "/branches/kapra-yellareddyguda", img: "/images/campuses/yellareddyguda.webp" },
+  { name: "Yapral Branch", address: "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087", to: "/branches/yapral", img: "/images/campuses/yapral.webp" },
+];
 
 export default function Footer() {
   return (
@@ -28,7 +34,9 @@ export default function Footer() {
             >
               <div className="p-1.5 rounded-xl bg-white shadow-md group-hover:scale-105 transition-transform">
                 <img
-                  src="/logo.png"
+                  src="/logo-sm.webp"
+                  width="149"
+                  height="96"
                   alt="Chocolate Kids Preschool Logo"
                   className="h-11 w-auto"
                 />
@@ -171,50 +179,32 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-3 text-xs">
-              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#142B4A] block mb-0.5">
-                  Dammaiguda Campus
-                </span>
-                <p className="text-[#536174] leading-snug break-words-safe">
-                  H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyd - 083.
-                </p>
-                <Link
-                  to="/branches/dammaiguda"
-                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
+              {CAMPUSES.map((c) => (
+                <div
+                  key={c.to}
+                  className="group relative overflow-hidden isolate p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors"
                 >
-                  View Campus Details →
-                </Link>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#142B4A] block mb-0.5">
-                  Kapra / Yellareddyguda Campus
-                </span>
-                <p className="text-[#536174] leading-snug break-words-safe">
-                  Shalivahana Colony, Near Anurag Line, KAPRA, Hyd - 062.
-                </p>
-                <Link
-                  to="/branches/kapra-yellareddyguda"
-                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
-                >
-                  View Campus Details →
-                </Link>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white border border-[#E8E0D4] hover:border-[#D6B56D] shadow-sm transition-colors">
-                <span className="font-bold text-[#142B4A] block mb-0.5">
-                  Yapral Branch
-                </span>
-                <p className="text-[#536174] leading-snug break-words-safe">
-                  5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087
-                </p>
-                <Link
-                  to="/branches/yapral"
-                  className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
-                >
-                  View Campus Details →
-                </Link>
-              </div>
+                  <img
+                    src={c.img}
+                    alt=""
+                    aria-hidden="true"
+                    width="800"
+                    height="440"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 -z-20 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-white/95 via-white/80 to-white/25" />
+                  <span className="font-bold text-[#142B4A] block mb-0.5">{c.name}</span>
+                  <p className="text-[#3f4f63] leading-snug break-words-safe max-w-[85%]">{c.address}</p>
+                  <Link
+                    to={c.to}
+                    className="inline-flex items-center min-h-[44px] text-xs font-semibold text-[#C51F45] hover:underline"
+                  >
+                    View Campus Details →
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
 

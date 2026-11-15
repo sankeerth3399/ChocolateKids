@@ -1,9 +1,15 @@
-import { useState, useCallback } from "react";
+import { lazy, Suspense, useState, useCallback } from "react";
 import { Briefcase } from "lucide-react";
-import FranchiseModal from "./FranchiseModal";
+import useIdle from "./common/useIdle";
+
+const loadFranchiseModal = () => import("./FranchiseModal");
+const FranchiseModal = lazy(loadFranchiseModal);
 
 export default function StickyBottomDualBar({ onOpenAdmission }) {
   const [showFranchise, setShowFranchise] = useState(false);
+  const [franchiseRequested, setFranchiseRequested] = useState(false);
+
+  useIdle(loadFranchiseModal);
 
   const closeFranchise = useCallback(() => setShowFranchise(false), []);
 
@@ -23,7 +29,7 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
       role="region"
       aria-label="Quick action admissions and franchise"
     >
-      <div className="pointer-events-auto w-full max-w-sm sm:w-auto sm:max-w-none bg-white/95 backdrop-blur-md p-1 sm:p-1.5 rounded-full border border-stone-200/90 shadow-lg shadow-stone-900/15 flex items-center gap-1 sm:gap-2">
+      <div className="pointer-events-auto w-full max-w-sm sm:w-auto sm:max-w-none bg-white p-1 sm:p-1.5 rounded-full border border-stone-200/90 shadow-lg shadow-stone-900/15 flex items-center gap-1 sm:gap-2">
         {/* Red Button: Enrol Your Child (Opens Admission Popup) */}
         <button
           type="button"
@@ -36,7 +42,10 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
         {/* Blue Button: Become a Partner (Opens Franchise Application Popup) */}
         <button
           type="button"
-          onClick={() => setShowFranchise(true)}
+          onClick={() => {
+            setFranchiseRequested(true);
+            setShowFranchise(true);
+          }}
           className="inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none min-w-0 whitespace-nowrap px-2 sm:px-4.5 py-2.5 sm:py-2 min-h-[44px] rounded-full text-xs font-bold text-white bg-[#174EA6] hover:bg-[#274582] shadow-xs hover:shadow-sm transition-all duration-200 transform hover:scale-102 active:scale-98 cursor-pointer"
         >
           <Briefcase className="w-3.5 h-3.5 text-blue-200 shrink-0" />
@@ -45,7 +54,11 @@ export default function StickyBottomDualBar({ onOpenAdmission }) {
       </div>
 
     </div>
-    <FranchiseModal isOpen={showFranchise} onClose={closeFranchise} />
+    {franchiseRequested && (
+      <Suspense fallback={null}>
+        <FranchiseModal isOpen={showFranchise} onClose={closeFranchise} />
+      </Suspense>
+    )}
     </>
   );
 }

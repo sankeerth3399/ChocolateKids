@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
 import { BrandName } from "./BrandName";
 import ConnectCTA from "./ConnectCTA";
+import Button from "./common/Button";
 
 export default function AdmissionsCTA({ showQuickInquiry, showConnect = false }) {
   const location = useLocation();
@@ -31,16 +32,16 @@ export default function AdmissionsCTA({ showQuickInquiry, showConnect = false })
               shouldShowQuickInquiry ? "flex-col sm:flex-row gap-4" : ""
             }`}
           >
-            <Link
-              to="/admissions"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 min-h-[46px] rounded-full text-sm sm:text-base font-bold text-[#142B4A] bg-[#FFBD16] hover:bg-[#FFCB45] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-            >
+            <Button as={Link} to="/admissions" className="w-full sm:w-auto">
               <span>Explore Admissions</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </Button>
 
             {shouldShowQuickInquiry && (
-              <a
+              <Button
+                as="a"
+                variant="secondary"
+                className="w-full sm:w-auto"
                 href="#admissions"
                 onClick={(e) => {
                   e.preventDefault();
@@ -51,10 +52,9 @@ export default function AdmissionsCTA({ showQuickInquiry, showConnect = false })
                     window.dispatchEvent(new CustomEvent("open-admission-modal"));
                   }
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 min-h-[46px] rounded-full text-sm sm:text-base font-bold text-[#174EA6] bg-white border-2 border-[#174EA6] hover:bg-[#174EA6] hover:text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
               >
                 <span>Quick Inquiry Form</span>
-              </a>
+              </Button>
             )}
           </div>
 

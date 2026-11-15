@@ -1,4 +1,3 @@
-import React from "react";
 
 /**
  * BrandName renders the visible "ChocolateKids" brand name

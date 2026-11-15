@@ -1,4 +1,4 @@
-import { Calendar, Heart, Flag, Star, ArrowRight } from "lucide-react";
+import { Heart, Flag, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
@@ -11,7 +11,7 @@ export default function EventsSection() {
       occasion: "National Pride & History",
       icon: Flag,
       badge: "Patriotic Milestone",
-      image: "/images/independence-day-celebration-hd.png",
+      image: "/images/independence-day-celebration-hd.webp",
       description: "Young learners dressed as freedom fighters including Bhagat Singh and Jhansi Ki Rani, presenting patriotic speeches and tricolor flags.",
       dateLabel: "August 15 Celebration",
     },
@@ -21,7 +21,7 @@ export default function EventsSection() {
       occasion: "Cultural Heritage & Joy",
       icon: Star,
       badge: "Traditional Festivity",
-      image: "/images/krishna-janmashtami-grand-group.jpg",
+      image: "/images/krishna-janmashtami-grand-group.webp",
       description: "Toddlers adorned in colorful peacock-feather turbans, golden flutes, and traditional dhoti outfits celebrating the festival with joyous stage group photos.",
       dateLabel: "Janmashtami Gala",
     },
@@ -31,7 +31,7 @@ export default function EventsSection() {
       occasion: "Empathy & Peer Love",
       icon: Heart,
       badge: "Heartfelt Bonds",
-      image: "/images/friendship-day-celebration.jpg",
+      image: "/images/friendship-day-celebration.webp",
       description: "Tying friendship bands, sharing handmade greeting cards, and celebrating the warmth of early childhood companionship.",
       dateLabel: "Friendship Week",
     },
@@ -41,7 +41,7 @@ export default function EventsSection() {
       occasion: "Experiential Community Learning",
       icon: Star,
       badge: "Community Field Excursion",
-      image: "/images/cow-shelter-group-hd.png",
+      image: "/images/cow-shelter-group-hd.webp",
       description: "A memorable outdoor excursion where children interacted respectfully with gentle cows and calves under the guidance of devoted educators.",
       dateLabel: "Nature Excursion",
     },

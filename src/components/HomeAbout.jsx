@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { schoolPhilosophy } from "../data";
+import Button from "./common/Button";
+import { variant, cardSrcSet } from "../utils/images";
 
 export default function HomeAbout() {
   return (
@@ -9,7 +11,7 @@ export default function HomeAbout() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Organic image */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -22,7 +24,12 @@ export default function HomeAbout() {
             </svg>
             <div className="relative overflow-hidden shadow-xl shadow-[#142B4A]/15 rounded-[58%_42%_52%_48%/48%_56%_44%_52%] aspect-[5/4] bg-[#F9DDE3]">
               <img
-                src="/images/Chocolate_Kids_Enhanced_06.jpg"
+                src={variant("/images/friendship-day-celebration.webp", 960)}
+                srcSet={cardSrcSet("/images/friendship-day-celebration.webp")}
+                sizes="(min-width: 1024px) 560px, 90vw"
+                width="960"
+                height="768"
+                decoding="async"
                 alt="Chocolate Kids children celebrating together in front of the Chocolate Kids wall"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 loading="lazy"
@@ -30,10 +37,10 @@ export default function HomeAbout() {
             </div>
             <span className="absolute right-0 sm:-right-3 bottom-6 w-4 h-4 rounded-full bg-[#16834A]" aria-hidden="true" />
             <span className="absolute right-2 sm:-right-6 bottom-14 w-2.5 h-2.5 rounded-full bg-[#F26A21]" aria-hidden="true" />
-          </motion.div>
+          </m.div>
 
           {/* Copy */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -46,14 +53,11 @@ export default function HomeAbout() {
             </h2>
             <p className="mt-5 text-base sm:text-lg text-[#536174] leading-relaxed">{schoolPhilosophy.primaryStatement}</p>
             <p className="mt-4 text-sm sm:text-base text-[#64748B] leading-relaxed">{schoolPhilosophy.secondaryStatement}</p>
-            <Link
-              to="/about"
-              className="mt-8 inline-flex items-center gap-2 px-7 py-3 rounded-full border-2 border-[#142B4A] text-[#142B4A] text-sm sm:text-base font-bold hover:bg-[#142B4A] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
-            >
+            <Button as={Link} to="/about" variant="outline" size="md" className="mt-8">
               <span>Learn More About Us</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
+            </Button>
+          </m.div>
         </div>
       </div>
     </section>

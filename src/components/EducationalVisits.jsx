@@ -1,6 +1,7 @@
-import { Compass, CheckCircle2, Heart, MapPin } from "lucide-react";
+import { Compass, CheckCircle2, MapPin } from "lucide-react";
 import { educationalVisitsData } from "../data";
-import { highlightBrand, BrandBadge } from "../utils/brandHelper";
+import { BrandBadge } from "../utils/brandHelper";
+import { highlightBrand } from "../utils/highlightBrand";
 
 export default function EducationalVisits() {
   const { heading, tagline, description, benefits, featuredVisit, secondaryVisit } = educationalVisitsData;

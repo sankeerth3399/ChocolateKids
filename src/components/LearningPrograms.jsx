@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, Check, ArrowRight, Smile, Star, Heart, Compass, Phone, MapPin, Send, CheckCircle2, Blocks, Baby, GraduationCap, Sun } from "lucide-react";
+import { BookOpen, Check, ArrowRight, Phone, Send, CheckCircle2, Blocks, Baby, GraduationCap, Sun } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
-import { highlightBrand } from "../utils/brandHelper";
+import { highlightBrand } from "../utils/highlightBrand";
+import { openWhatsApp } from "../utils/whatsapp";
 
 /* Program rows: accent and tint per stage, age range, photo (with crop focus) and alt text */
 const stageRows = {
@@ -73,7 +74,7 @@ const stageRows = {
   },
 };
 
-export default function LearningPrograms({ showShowcase = true, showSafetyLine = true }) {
+export default function LearningPrograms() {
   const [activeStageId, setActiveStageId] = useState("playgroup");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -96,7 +97,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Playgroup",
       description: "A gentle, joyful transition from home to preschool centered on sensory exploration, social warmth, and fun daily routines.",
       tags: ["Sensory Play", "Social Discovery", "Loving Care"],
-      image: "/images/programs/playgroup.jpg",
+      image: "/images/programs/playgroup.webp",
       fallbackBg: "bg-gradient-to-br from-[#C51F45] via-[#F43F7E] to-[#FB923C]",
     },
     {
@@ -110,7 +111,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Nursery",
       description: "Developing expressive speech, phonics curiosity, fine-motor coordination, and self-confidence through interactive story-telling.",
       tags: ["Phonics Fun", "Creative Arts", "Motor Skills"],
-      image: "/images/programs/nursery.jpg",
+      image: "/images/programs/nursery.webp",
     },
     {
       id: "pp1",
@@ -123,7 +124,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "PP1",
       description: "Foundational literacy and numbers combined with hands-on science curiosity, creative expression, and teamwork.",
       tags: ["Early Reading", "Math Concepts", "Curiosity Lab"],
-      image: "/images/programs/pp1.jpg",
+      image: "/images/programs/pp1.webp",
     },
     {
       id: "pp2",
@@ -136,7 +137,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "PP2",
       description: "School readiness through confidence building, phonics, and early mathematics.",
       tags: ["Structured Learning", "Play-Based", "Certified Teachers"],
-      image: "/images/programs/pp2.jpg",
+      image: "/images/programs/pp2.webp",
     },
     {
       id: "daycare",
@@ -149,7 +150,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
       headline: "Day Care & After School",
       description: "A secure, loving after-school sanctuary with hygienic rest spaces, homework mentoring, and creative recreational play.",
       tags: ["Hygienic Rest", "Homework Support", "Evening Activities"],
-      image: "/images/programs/daycare.jpg",
+      image: "/images/programs/daycare.webp",
     },
   ];
 
@@ -162,8 +163,8 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
     if (!formData.parentName || !formData.phone) return;
 
     // Send formatted WhatsApp message
-    const msg = `*New Admission Enquiry (Programs Page)*%0A%0A*Parent Name:* ${encodeURIComponent(formData.parentName)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(formData.email || "N/A")}%0A*Campus:* ${encodeURIComponent(formData.locality)}%0A*Selected Program:* ${encodeURIComponent(formData.grade)}`;
-    window.open(`https://wa.me/919515869889?text=${msg}`, "_blank");
+    const msg = `*New Admission Enquiry (Programs Page)*\n\n*Parent Name:* ${formData.parentName}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email || "N/A"}\n*Campus:* ${formData.locality}\n*Selected Program:* ${formData.grade}`;
+    openWhatsApp(msg);
     setFormSubmitted(true);
   };
 
@@ -184,46 +185,16 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
               <span>Our Programs</span>
             </div>
 
-            <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
+            <h1 className="font-heading font-black text-3xl sm:text-5xl lg:text-5xl tracking-tight">
               <span className="text-[#C51F45]">From Playgroup </span>
               <span className="text-[#2B4066]">to UKG</span>
-            </h2>
+            </h1>
 
             <p className="mt-3 text-stone-600 text-sm sm:text-base font-semibold">
               Tap any program to explore it.
             </p>
           </div>
 
-          {!showShowcase ? (
-            /* Compact program cards (no photo showcase): evenly centred rows */
-            <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
-              {stages.map((stage, i) => (
-                <div
-                  key={stage.id}
-                  className={`group relative overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] rounded-3xl bg-gradient-to-br ${stage.bgActive} to-white border-2 ${stage.borderActive} shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 p-6 sm:p-7`}
-                >
-                  <span className={`absolute inset-x-0 top-0 h-1.5 ${stage.dotColor}`} aria-hidden="true" />
-                  <span className={`absolute -right-3 -top-4 font-heading font-black text-7xl sm:text-8xl ${stage.textActive} opacity-10 select-none leading-none`} aria-hidden="true">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="relative flex items-center gap-3 mb-3">
-                    <span className={`w-10 h-10 rounded-2xl ${stage.dotColor} text-white font-heading font-black text-sm flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className={`font-heading font-black text-xl sm:text-2xl ${stage.textActive}`}>{stage.name}</h3>
-                  </div>
-                  <p className="relative text-sm sm:text-base text-stone-600 leading-relaxed mb-5">{highlightBrand(stage.description)}</p>
-                  <div className="relative mt-auto flex flex-wrap gap-2">
-                    {stage.tags.map((tag) => (
-                      <span key={tag} className={`px-3 py-1 rounded-full text-xs font-bold bg-white shadow-xs border ${stage.borderActive} ${stage.textActive}`}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left Column: Stage Selector Tabs (5 cols) */}
             <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4 justify-center" role="tablist" aria-label="Programs">
@@ -303,7 +274,7 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
                     {currentStage.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-white/20 backdrop-blur-md border border-white/20 shadow-2xs"
+                        className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-white/30 border border-white/20 shadow-2xs"
                       >
                         {tag}
                       </span>
@@ -331,7 +302,6 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
               </div>
             </div>
           </div>
-          )}
         </div>
       </section>
 
@@ -396,7 +366,6 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
                   </span>
                 </div>
 
-                {showSafetyLine && (
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5" />
@@ -405,7 +374,6 @@ export default function LearningPrograms({ showShowcase = true, showSafetyLine =
                     100% CCTV Monitored & Child-First Safety Protocols
                   </span>
                 </div>
-                )}
               </div>
             </div>
 

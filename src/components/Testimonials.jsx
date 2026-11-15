@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MessageSquare, Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { highlightBrand } from "../utils/brandHelper";
+import { highlightBrand } from "../utils/highlightBrand";
 
 export default function Testimonials({ className = "" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -216,12 +216,15 @@ export default function Testimonials({ className = "" }) {
                   key={dotIdx}
                   onClick={() => setCurrentIndex(dotIdx)}
                   aria-label={`Go to slide ${dotIdx + 1}`}
-                  className={`relative transition-all duration-300 cursor-pointer after:content-[''] after:absolute after:-inset-x-1.5 after:-inset-y-3 ${
-                    currentIndex === dotIdx
-                      ? "w-7 h-2 rounded-full bg-[#C51F45]"
-                      : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
+                  aria-current={currentIndex === dotIdx ? "true" : undefined}
+                  className="group inline-flex items-center justify-center min-w-6 h-6 px-0.5 cursor-pointer"
+                >
+                  <span
+                    className={`block rounded-full transition-all duration-300 ${
+                      currentIndex === dotIdx ? "w-7 h-2 bg-[#C51F45]" : "w-2 h-2 bg-slate-300 group-hover:bg-slate-400"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 

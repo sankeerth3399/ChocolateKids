@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ShieldCheck, Palette, HeartHandshake, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { facilitiesData } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -123,8 +123,11 @@ export default function Facilities({ className = "" }) {
               <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#C9667F] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
-                    src="/photos/facility_smart_classroom.svg"
-                    alt="Smart Classrooms"
+                    src="/images/facilities/smart-classroom.webp"
+                    alt="A teacher pointing to the ABC lesson on a smart display while children in yellow uniforms watch"
+                    width="458"
+                    height="404"
+                    decoding="async"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -146,8 +149,11 @@ export default function Facilities({ className = "" }) {
             <div className="w-[230px] sm:w-[240px] aspect-square rounded-full p-2 sm:p-2.5 bg-white border-[3.5px] border-dashed border-[#3F5680] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
               <div className="w-full h-full rounded-full overflow-hidden bg-slate-100">
                 <img
-                  src="/photos/facility_library_reading.svg"
-                  alt="Library & Reading Corner"
+                  src="/images/facilities/library-reading.webp"
+                  alt="A girl reading a picture book on a bean bag in the library corner"
+                  width="350"
+                  height="350"
+                  decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -169,8 +175,11 @@ export default function Facilities({ className = "" }) {
               <div className="p-2 sm:p-2.5 bg-white rounded-2xl border-[3.5px] border-dashed border-[#62789C] shadow-sm group-hover:shadow-md transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100">
                   <img
-                    src="/photos/facility_sports_play_area.svg"
-                    alt="Sports & Play Area"
+                    src="/images/facilities/sports-play-area.webp"
+                    alt="Two children running with a football near the playground slide"
+                    width="445"
+                    height="369"
+                    decoding="async"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -190,7 +199,7 @@ export default function Facilities({ className = "" }) {
           <div className="flex flex-col items-center group">
             {/* Triangle frame with SVG clip and dashed stroke */}
             <div className="w-full max-w-[250px] sm:max-w-[260px] aspect-[4/3.8] group-hover:scale-105 transition-transform duration-300">
-              <svg viewBox="0 0 280 260" className="w-full h-full overflow-visible drop-shadow-sm group-hover:drop-shadow-md transition-all">
+              <svg viewBox="0 0 280 260" role="img" aria-label="Yellow Chocolate Kids school bus parked outside the campus" className="w-full h-full overflow-visible drop-shadow-sm group-hover:drop-shadow-md transition-all">
                 <defs>
                   <clipPath id="triangle-photo-clip">
                     <polygon points="140,24 22,244 258,244" />
@@ -200,7 +209,7 @@ export default function Facilities({ className = "" }) {
                 <polygon points="140,14 12,254 268,254" fill="#ffffff" />
                 {/* School bus / van image */}
                 <image
-                  href="/photos/facility_transport_bus.svg"
+                  href="/images/facilities/transport-bus.webp"
                   x="16"
                   y="16"
                   width="248"

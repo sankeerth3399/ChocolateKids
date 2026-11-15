@@ -15,7 +15,7 @@ export default function WhyChooseUs({ showPhoto = true }) {
 
   const accents = [
     { card: "bg-white border-[#E8DCC9]", tile: "bg-[#C51F45] text-white", num: "bg-[#C51F45] text-white" },
-    { card: "bg-white border-[#E8DCC9]", tile: "bg-[#F26A21] text-white", num: "bg-[#F26A21] text-white" },
+    { card: "bg-white border-[#E8DCC9]", tile: "bg-[#F26A21] text-white", num: "bg-[#C2410C] text-white" },
     { card: "bg-white border-[#E8DCC9]", tile: "bg-[#174EA6] text-white", num: "bg-[#174EA6] text-white" },
   ];
 
@@ -54,7 +54,7 @@ export default function WhyChooseUs({ showPhoto = true }) {
 
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-50 group">
                 <img
-                  src="/images/independence-day-celebration-hd.png"
+                  src="/images/independence-day-celebration-hd.webp"
                   alt="Chocolate Kids students presenting speech with national flag with confidence"
                   className="w-full h-96 sm:h-[440px] object-cover object-center transition-transform duration-500 group-hover:scale-103"
                   loading="lazy"

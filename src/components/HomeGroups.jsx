@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import SectionHeading from "./common/SectionHeading";
 
 /* The five existing Chocolate Kids groups, with their supplied photos and existing descriptions.
    Card surfaces are always white; each group only contributes an accent colour. */
@@ -8,7 +9,7 @@ const groups = [
   {
     name: "Playgroup",
     age: "1.5 – 2.5 Years",
-    img: "/images/programs/playgroup.jpg",
+    img: "/images/programs/playgroup.webp",
     pos: "center 38%",
     alt: "Toddlers playing together with colourful soft building blocks in a Playgroup classroom",
     desc: "A gentle, joyful transition from home to preschool centered on sensory exploration, social warmth, and fun daily routines.",
@@ -19,7 +20,7 @@ const groups = [
   {
     name: "Nursery",
     age: "2.5 – 3.5 Years",
-    img: "/images/programs/nursery.jpg",
+    img: "/images/programs/nursery.webp",
     pos: "center 30%",
     alt: "Nursery children painting and doing creative activities at a classroom table",
     desc: "Developing expressive speech, phonics curiosity, fine-motor coordination, and self-confidence through interactive story-telling.",
@@ -30,7 +31,7 @@ const groups = [
   {
     name: "PP1",
     age: "3.5 – 4.5 Years",
-    img: "/images/programs/pp1.jpg",
+    img: "/images/programs/pp1.webp",
     pos: "center 45%",
     alt: "A PP1 teacher reading a picture book together with a young child",
     desc: "Foundational literacy and numbers combined with hands-on science curiosity, creative expression, and teamwork.",
@@ -41,7 +42,7 @@ const groups = [
   {
     name: "PP2",
     age: "4.5 – 5.5 Years",
-    img: "/images/programs/pp2.jpg",
+    img: "/images/programs/pp2.webp",
     pos: "center 35%",
     alt: "A PP2 child stacking alphabet blocks during a classroom activity",
     desc: "School readiness through confidence building, phonics, and early mathematics.",
@@ -52,7 +53,7 @@ const groups = [
   {
     name: "Day Care",
     age: "1.5 – 5.5 Years",
-    img: "/images/programs/daycare.jpg",
+    img: "/images/programs/daycare.webp",
     pos: "center 40%",
     alt: "A sleeping child resting comfortably while holding a teddy bear at Day Care",
     desc: "A secure, loving after-school sanctuary with hygienic rest spaces, homework mentoring, and creative recreational play.",
@@ -66,19 +67,15 @@ export default function HomeGroups() {
   return (
     <section id="programs" className="py-14 sm:py-20 bg-[#FFF4DF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C51F45]">Our Schools &amp; Programs</span>
-          <h2 className="mt-3 font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-[#142B4A] leading-tight">
-            From Playgroup to UKG
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#536174] leading-relaxed">
-            Five thoughtfully designed groups to meet your child at every stage of their early journey.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Our Schools &amp; Programs"
+          title="From Playgroup to UKG"
+          subtitle="Five thoughtfully designed groups to meet your child at every stage of their early journey."
+        />
 
         <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
           {groups.map((g, i) => (
-            <motion.article
+            <m.article
               key={g.name}
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +106,7 @@ export default function HomeGroups() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </motion.article>
+            </m.article>
           ))}
         </div>
       </div>

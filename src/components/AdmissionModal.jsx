@@ -1,57 +1,41 @@
 import { useState, useEffect } from "react";
 import { X, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import { schoolInfo } from "../data";
+import { openWhatsApp } from "../utils/whatsapp";
+import { cleanPhone, isValidPhone } from "../utils/validation";
 import { BrandBadge } from "../utils/brandHelper";
+import useScrollLock from "../hooks/useScrollLock";
 
-export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClose }) {
-  const [internalOpen, setInternalOpen] = useState(false);
-  const isOpen = propIsOpen !== undefined ? propIsOpen : internalOpen;
+const initialData = {
+  parentName: "",
+  phone: "",
+  childName: "",
+  childAge: "",
+  program: "Playgroup (1.5 – 2.5 Yrs)",
+  branch: "Dammaiguda Campus",
+  message: "",
+};
 
-  const onClose = () => {
-    setInternalOpen(false);
-    if (propOnClose) propOnClose();
-  };
+/** Enrol-your-child pop-up. Typed answers survive closing and reopening; errors reset each time. */
+export default function AdmissionModal({ isOpen, onClose }) {
+  const [formData, setFormData] = useState(initialData);
+  if (!isOpen) return null;
+  return <AdmissionModalContent formData={formData} setFormData={setFormData} onClose={onClose} />;
+}
 
-  useEffect(() => {
-    const handleOpenEvent = () => setInternalOpen(true);
-    window.addEventListener("open-admission-modal", handleOpenEvent);
-    return () => window.removeEventListener("open-admission-modal", handleOpenEvent);
-  }, []);
-
-  const [formData, setFormData] = useState({
-    parentName: "",
-    phone: "",
-    childName: "",
-    childAge: "",
-    program: "Playgroup (1.5 – 2.5 Yrs)",
-    branch: "Dammaiguda Campus",
-    message: "",
-  });
-
+function AdmissionModalContent({ formData, setFormData, onClose }) {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  // Close on Escape key & Lock background scroll
+  useScrollLock(true);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
     };
-
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "unset";
-      setSubmitted(false);
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen]);
-
-  if (!isOpen) return null;
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,10 +49,9 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
     const newErrors = {};
     if (!formData.parentName.trim()) newErrors.parentName = "Please enter parent's name";
     
-    const cleanPhone = formData.phone.replace(/[\s-]/g, "");
-    if (!cleanPhone) {
+    if (!cleanPhone(formData.phone)) {
       newErrors.phone = "Please enter contact mobile number";
-    } else if (cleanPhone.length < 10) {
+    } else if (!isValidPhone(formData.phone)) {
       newErrors.phone = "Please enter a valid 10-digit number";
     }
 
@@ -93,10 +76,7 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
       (formData.message.trim() ? `💬 *Note:* ${formData.message.trim()}\n\n` : `\n`) +
       `Please share admission fee details and campus tour slots. Thank you!`;
 
-    const encoded = encodeURIComponent(messageText);
-    const waUrl = `https://wa.me/${schoolInfo.whatsappNumber}?text=${encoded}`;
-
-    window.open(waUrl, "_blank", "noopener,noreferrer");
+    openWhatsApp(messageText);
     setSubmitted(true);
   };
 
@@ -164,10 +144,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Parent & Child Names */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-parentName" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Parent's Name *
                   </label>
-                  <input
+                  <input id="admm-parentName"
                     type="text"
                     name="parentName"
                     value={formData.parentName}
@@ -185,10 +165,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-phone" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Mobile Number *
                   </label>
-                  <input
+                  <input id="admm-phone"
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -209,10 +189,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Child Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-childName" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Child's Name *
                   </label>
-                  <input
+                  <input id="admm-childName"
                     type="text"
                     name="childName"
                     value={formData.childName}
@@ -230,10 +210,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-childAge" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Child's Age *
                   </label>
-                  <input
+                  <input id="admm-childAge"
                     type="text"
                     name="childAge"
                     value={formData.childAge}
@@ -254,10 +234,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
               {/* Program & Campus Selection */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-program" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Program
                   </label>
-                  <select
+                  <select id="admm-program"
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
@@ -272,10 +252,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                  <label htmlFor="admm-branch" className="block text-[11px] font-bold text-[#111827] mb-1">
                     Preferred Campus
                   </label>
-                  <select
+                  <select id="admm-branch"
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
@@ -290,10 +270,10 @@ export default function AdmissionModal({ isOpen: propIsOpen, onClose: propOnClos
 
               {/* Optional message */}
               <div>
-                <label className="block text-[11px] font-bold text-[#111827] mb-1">
+                <label htmlFor="admm-message" className="block text-[11px] font-bold text-[#111827] mb-1">
                   Message / Visit Date (Optional)
                 </label>
-                <textarea
+                <textarea id="admm-message"
                   name="message"
                   rows="2"
                   value={formData.message}

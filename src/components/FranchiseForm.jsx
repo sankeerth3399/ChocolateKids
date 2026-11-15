@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { MessageCircle, Phone, Copy, Check, AlertCircle, Briefcase, Send, CheckCircle2 } from "lucide-react";
-import { schoolInfo } from "../data";
+import { MessageCircle, Copy, Check, AlertCircle, Briefcase, Send, CheckCircle2 } from "lucide-react";
+import { schoolInfo, franchiseInvestmentRanges } from "../data";
+import { whatsappUrl, openWhatsApp } from "../utils/whatsapp";
+import { cleanPhone, isValidPhone, isValidEmail } from "../utils/validation";
+import { buildFranchiseMessage } from "../utils/enquiryMessages";
 import { BrandBadge } from "../utils/brandHelper";
 
 export default function FranchiseForm() {
@@ -31,16 +34,15 @@ export default function FranchiseForm() {
       newErrors.name = "Full Name is required.";
     }
 
-    const cleanPhone = formData.phone.replace(/[\s-]/g, "");
-    if (!cleanPhone) {
+    if (!cleanPhone(formData.phone)) {
       newErrors.phone = "Mobile Number is required.";
-    } else if (!/^[6-9]\d{9}$/.test(cleanPhone) && cleanPhone.length < 10) {
+    } else if (!isValidPhone(formData.phone)) {
       newErrors.phone = "Please enter a valid 10-digit mobile number.";
     }
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+    } else if (!isValidEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address.";
     }
 
@@ -48,21 +50,7 @@ export default function FranchiseForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const constructMessage = () => {
-    return `Hello Chocolate Kids,
-
-I am interested in the Chocolate Kids franchise opportunity.
-
-Name: ${formData.name.trim()}
-Phone: ${formData.phone.trim()}
-Email: ${formData.email.trim()}
-Investment Range: ${formData.investmentRange}
-Message: ${formData.message.trim() || "None"}
-
-Please contact me regarding the franchise opportunity.
-
-Thank you.`;
-  };
+  const constructMessage = () => buildFranchiseMessage(formData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,10 +60,7 @@ Thank you.`;
     }
 
     setSubmitted(true);
-    const msg = constructMessage();
-    const encoded = encodeURIComponent(msg);
-    const waUrl = `https://wa.me/${schoolInfo.whatsappNumber}?text=${encoded}`;
-    window.open(waUrl, "_blank", "noopener,noreferrer");
+    openWhatsApp(constructMessage());
   };
 
   const handleCopy = () => {
@@ -120,7 +105,7 @@ Thank you.`;
 
           <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
             <a
-              href={`https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(constructMessage())}`}
+              href={whatsappUrl(constructMessage())}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 shadow-md"
@@ -151,10 +136,10 @@ Thank you.`;
           {/* Row 1: Full Name & Mobile Number */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label htmlFor="frf-name" className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
                 Full Name <span className="text-rose-500">*</span>
               </label>
-              <input
+              <input id="frf-name"
                 type="text"
                 name="name"
                 value={formData.name}
@@ -175,10 +160,10 @@ Thank you.`;
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label htmlFor="frf-phone" className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
                 Mobile Number <span className="text-rose-500">*</span>
               </label>
-              <input
+              <input id="frf-phone"
                 type="tel"
                 name="phone"
                 value={formData.phone}
@@ -202,10 +187,10 @@ Thank you.`;
           {/* Row 2: Email & Investment Range */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label htmlFor="frf-email" className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
                 Email <span className="text-rose-500">*</span>
               </label>
-              <input
+              <input id="frf-email"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -226,28 +211,28 @@ Thank you.`;
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              <label htmlFor="frf-investmentRange" className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
                 Investment Range
               </label>
-              <select
+              <select id="frf-investmentRange"
                 name="investmentRange"
                 value={formData.investmentRange}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-stone-50/40 text-sm text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
-                <option value="3 - 3.5 Lakhs">₹3 Lakhs – ₹3.5 Lakhs</option>
-                <option value="8 - 10 Lakhs">₹8 Lakhs – ₹10 Lakhs</option>
-                <option value="Flexible / Need guidance">Flexible / Need guidance</option>
+                {franchiseInvestmentRanges.map((range) => (
+                  <option key={range.value} value={range.value}>{range.label}</option>
+                ))}
               </select>
             </div>
           </div>
 
           {/* Row 3: Message */}
           <div>
-            <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
-              Message <span className="text-stone-400 font-normal">(Optional)</span>
+            <label htmlFor="frf-message" className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-1.5">
+              Message <span className="text-stone-500 font-normal">(Optional)</span>
             </label>
-            <textarea
+            <textarea id="frf-message"
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -269,7 +254,7 @@ Thank you.`;
 
             {/* Secondary CTA: Talk to Our Franchise Team */}
             <a
-              href={`https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(franchiseWaMsg)}`}
+              href={whatsappUrl(franchiseWaMsg)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl font-bold text-xs sm:text-sm text-emerald-950 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 transition-colors flex items-center justify-center gap-2"

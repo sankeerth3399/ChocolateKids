@@ -1,13 +1,10 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import LearningPrograms from "../components/LearningPrograms";
 import LearningApproach from "../components/LearningApproach";
 import AdmissionsCTA from "../components/AdmissionsCTA";
 import AdmissionForm from "../components/AdmissionForm";
 import BrandWatermark from "../components/BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
-import { BookOpen, CheckCircle2, Clock, Award } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export default function AcademicsPage() {
   const dailyRhythm = [
@@ -44,67 +41,60 @@ export default function AcademicsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFDF8] text-stone-800 font-sans selection:bg-emerald-200 selection:text-emerald-900">
-      <Navbar />
-
-      <main className="pt-16 sm:pt-20">
-        {/* Full Programs Section matching reference design (including Grade 1 & 2) */}
-        <LearningPrograms />
+    <main className="pt-16 sm:pt-20">
+      {/* Full Programs Section matching reference design (including Grade 1 & 2) */}
+      <LearningPrograms />
 
 
-        {/* Learning Beyond the Classroom Philosophy */}
-        <LearningApproach />
+      {/* Learning Beyond the Classroom Philosophy */}
+      <LearningApproach />
 
-        {/* Daily Learning Rhythm */}
-        <section className="py-16 border-t border-[#E8DCC9] relative overflow-hidden bg-[#FFFDF8]">
-          {/* Brand Logo Watermark - Centered Watermark */}
-          <BrandWatermark position="center" size="lg" opacity={0.11} />
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-                <Clock className="w-3.5 h-3.5 text-amber-700" />
-                <span>Daily Experience</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-stone-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
-                <span>A Day in the Life at</span> <BrandBadge className="text-[0.75em]" />
-              </h2>
-              <p className="mt-3 text-stone-600 text-sm sm:text-base">
-                Balanced routines crafted to keep young minds engaged, joyful, well-rested, and excited to return each morning.
-              </p>
+      {/* Daily Learning Rhythm */}
+      <section className="py-16 border-t border-[#E8DCC9] relative overflow-hidden bg-[#FFFDF8]">
+        {/* Brand Logo Watermark - Centered Watermark */}
+        <BrandWatermark position="center" size="lg" opacity={0.11} />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
+              <Clock className="w-3.5 h-3.5 text-amber-700" />
+              <span>Daily Experience</span>
             </div>
-
-            <div className="space-y-4">
-              {dailyRhythm.map((slot, index) => (
-                <div
-                  key={slot.time}
-                  className="p-5 sm:p-6 rounded-2xl bg-[#FFFDF8] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-                >
-                  <div className="sm:w-1/3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 inline-block">
-                      {slot.time}
-                    </span>
-                  </div>
-                  <div className="sm:w-2/3">
-                    <h4 className="font-heading font-bold text-base sm:text-lg text-stone-900 mb-1">
-                      {slot.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                      {slot.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-stone-900 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+              <span>A Day in the Life at</span> <BrandBadge className="text-[0.75em]" />
+            </h2>
+            <p className="mt-3 text-stone-600 text-sm sm:text-base">
+              Balanced routines crafted to keep young minds engaged, joyful, well-rested, and excited to return each morning.
+            </p>
           </div>
-        </section>
 
-        {/* Admissions CTA & Enquiry Form */}
-        <AdmissionsCTA />
-        <AdmissionForm />
-      </main>
+          <div className="space-y-4">
+            {dailyRhythm.map((slot) => (
+              <div
+                key={slot.time}
+                className="p-5 sm:p-6 rounded-2xl bg-[#FFFDF8] border border-stone-200/90 hover:border-amber-300 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              >
+                <div className="sm:w-1/3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 inline-block">
+                    {slot.time}
+                  </span>
+                </div>
+                <div className="sm:w-2/3">
+                  <h4 className="font-heading font-bold text-base sm:text-lg text-stone-900 mb-1">
+                    {slot.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {slot.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <Footer />
-      <WhatsAppButton />
-    </div>
+      {/* Admissions CTA & Enquiry Form */}
+      <AdmissionsCTA />
+      <AdmissionForm />
+    </main>
   );
 }

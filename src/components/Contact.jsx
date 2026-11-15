@@ -1,5 +1,4 @@
-import React from "react";
-import { Phone, Mail, MessageCircle, MapPin, Navigation, ArrowRight } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolInfo } from "../data";
 import BrandWatermark from "./BrandWatermark";

@@ -122,7 +122,7 @@ export const branches = [
     email: "Chocolatekidspreschool@gmail.com",
     workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
     availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "Day Care & Activity Club"],
-    image: "/images/chocolate-kids-dammaiguda-branch.jpg",
+    image: "/images/chocolate-kids-dammaiguda-branch.webp",
     mapQuery: "H.No. 11-1/66, Sai Priya Colony, Dammaiguda, Hyderabad 500083",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=H.No.+11-1%2F66%2C+Sai+Priya+Colony%2C+Dammaiguda%2C+Hyderabad+-+500+083.",
     description:
@@ -155,7 +155,7 @@ export const branches = [
     email: "Chocolatekidspreschool@gmail.com",
     workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
     availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "After School Activities"],
-    image: "/images/chocolate-kids-kapra-branch.jpg",
+    image: "/images/chocolate-kids-kapra-branch.webp",
     mapQuery:
       "P. No. 46, 47, Shalivahana Colony, Near Anurag Line, Yellareddyguda, KAPRA, HYD 062",
     directionsUrl:
@@ -190,7 +190,7 @@ export const branches = [
     email: "Chocolatekidspreschool@gmail.com",
     workingHours: "Monday – Friday: 8:30 AM – 1:30 PM | Saturday: 9:00 AM – 12:00 PM",
     availablePrograms: ["Play Group", "Nursery", "LKG", "UKG", "Day Care & Activity Club"],
-    image: "/images/chocolate-kids-yapral-branch.jpg",
+    image: "/images/chocolate-kids-yapral-branch.webp",
     mapQuery:
       "5-8-48/5, Raghava Kalyan Estates, Beside Pochamma Temple, Shaili Garden, Yapral, Hyderabad - 500087",
     directionsUrl:
@@ -318,7 +318,7 @@ export const activitiesData = [
     id: "act-goshala",
     title: "Educational Visit to Shree Aaiji Goshala",
     category: "Educational Visits",
-    image: "/images/cow-shelter-calf-learning.jpg",
+    image: "/images/cow-shelter-calf-learning.webp",
     description:
       "Children visit the cow shelter to observe dairy life, touch and feed gentle calves, and develop lifelong love and respect for animals.",
     badge: "Nature & Animals",
@@ -327,7 +327,7 @@ export const activitiesData = [
     id: "act-independence",
     title: "Independence Day & Patriotic Celebrations",
     category: "School Celebrations",
-    image: "/images/independence-day-flag-hoisting.jpg",
+    image: "/images/independence-day-flag-hoisting.webp",
     description:
       "Inspiring patriotic pride through national tricolor flag hoisting, anthem recital, little Bhagat Singh & Rani Lakshmibai speeches.",
     badge: "National Pride",
@@ -336,7 +336,7 @@ export const activitiesData = [
     id: "act-krishna",
     title: "Krishna Janmashtami & Dahi Handi",
     category: "Cultural Events",
-    image: "/images/krishna-janmashtami-dahi-handi.jpg",
+    image: "/images/krishna-janmashtami-dahi-handi.webp",
     description:
       "Vibrant festival celebration with children dressed as Radha and Krishna, bansuri flutes, festive rangoli, and lively Dahi Handi pot-breaking.",
     badge: "Cultural Heritage",
@@ -345,7 +345,7 @@ export const activitiesData = [
     id: "act-friendship",
     title: "Friendship Day Celebrations",
     category: "Special Days",
-    image: "/images/friendship-day-celebration.jpg",
+    image: "/images/friendship-day-celebration.webp",
     description:
       "Fostering kindness, sharing, and peer bonding as little learners tie colorful friendship bands and learn about caring for others.",
     badge: "Empathy & Bonding",
@@ -354,7 +354,7 @@ export const activitiesData = [
     id: "act-blue-day",
     title: "Blue Colour Day & Monsoon Fun",
     category: "Children's Activities",
-    image: "/images/blue-colour-day-dance.jpg",
+    image: "/images/blue-colour-day-dance.webp",
     description:
       "Sensory color discovery with blue dress-up, raindrop paper crafts, umbrella dance, and joyful rhythmic pom-pom movement.",
     badge: "Sensory Learning",
@@ -363,7 +363,7 @@ export const activitiesData = [
     id: "act-clay-ganesha",
     title: "Eco-Friendly Clay Ganesha Craft",
     category: "Children's Activities",
-    image: "/images/clay-ganesha-craft-activity.jpg",
+    image: "/images/clay-ganesha-craft-activity.webp",
     description:
       "Developing fine motor control, finger dexterity, and cultural reverence through hands-on natural clay sculpting on peepal leaves.",
     badge: "Creative Arts",
@@ -372,7 +372,7 @@ export const activitiesData = [
     id: "act-police-station",
     title: "Jawahar Nagar Police Station Excursion",
     category: "Educational Visits",
-    image: "/photos/police_station_visit.jpg",
+    image: "/photos/police_station_visit.webp",
     description:
       "Community helper field trip to Jawahar Nagar Police Station where young minds meet police officers and learn about public safety.",
     badge: "Community Helpers",
@@ -381,7 +381,7 @@ export const activitiesData = [
     id: "act-annual-day",
     title: "Annual Day Stage Extravaganza",
     category: "School Celebrations",
-    image: "/photos/annual_dance.jpg",
+    image: "/photos/annual_dance.webp",
     description:
       "Music, dance performances, and public recital opportunities under grand stage lights that instill poise and self-confidence.",
     badge: "Stage Confidence",
@@ -390,7 +390,7 @@ export const activitiesData = [
     id: "act-graduation",
     title: "Pre-Primary Graduation Milestones",
     category: "School Celebrations",
-    image: "/photos/convocation_gown_ceremony.jpg",
+    image: "/photos/convocation_gown_ceremony.webp",
     description:
       "Celebrating children's foundational milestones with convocation caps, gowns, certificates, and proud family applause.",
     badge: "Proud Milestones",
@@ -400,7 +400,7 @@ export const activitiesData = [
 export const galleryImages = [
   {
     id: "gal-1",
-    src: "/images/cow-shelter-group-hd.png",
+    src: "/images/cow-shelter-group-hd.webp",
     alt: "Chocolate Kids students and teachers with school banner during educational visit to Shree Aaiji Goshala",
     title: "Educational Visit to Shree Aaiji Goshala",
     category: "Educational Visits",
@@ -408,7 +408,7 @@ export const galleryImages = [
   },
   {
     id: "gal-2",
-    src: "/images/independence-day-celebration-hd.png",
+    src: "/images/independence-day-celebration-hd.webp",
     alt: "Chocolate Kids students celebrating Independence Day with tricolor flag, speech, and patriotic costume",
     title: "Independence Day Patriotic Recital",
     category: "School Celebrations",
@@ -416,7 +416,7 @@ export const galleryImages = [
   },
   {
     id: "gal-3",
-    src: "/images/blue-colour-day-celebration.jpg",
+    src: "/images/blue-colour-day-celebration.webp",
     alt: "Teacher in blue saree with children in blue clothes holding blue plush toys in front of Chocolate Kids wall logo",
     title: "Blue Colour Day Discovery",
     category: "Children's Activities",
@@ -424,7 +424,7 @@ export const galleryImages = [
   },
   {
     id: "gal-4",
-    src: "/images/friendship-day-celebration.jpg",
+    src: "/images/friendship-day-celebration.webp",
     alt: "Chocolate Kids students holding hands in pairs with friendship bands table",
     title: "Friendship Day Celebrations",
     category: "Special Days",
@@ -432,7 +432,7 @@ export const galleryImages = [
   },
   {
     id: "gal-5",
-    src: "/images/krishna-janmashtami-grand-group.jpg",
+    src: "/images/krishna-janmashtami-grand-group.webp",
     alt: "Full classroom of Chocolate Kids students in traditional Krishna and Radha attire",
     title: "Krishnashtami Grand Class Celebration",
     category: "Cultural Events",
@@ -440,7 +440,7 @@ export const galleryImages = [
   },
   {
     id: "gal-6",
-    src: "/images/cow-shelter-calf-learning.jpg",
+    src: "/images/cow-shelter-calf-learning.webp",
     alt: "Teacher introducing a young calf to Chocolate Kids students at the cow shelter",
     title: "Learning About Calves & Dairy Life",
     category: "Educational Visits",
@@ -448,7 +448,7 @@ export const galleryImages = [
   },
   {
     id: "gal-7",
-    src: "/images/independence-day-flag-hoisting.jpg",
+    src: "/images/independence-day-flag-hoisting.webp",
     alt: "School teacher hoisting the Indian tricolor flag with floral decorations on Independence Day",
     title: "National Flag Hoisting Ceremony",
     category: "School Celebrations",
@@ -456,7 +456,7 @@ export const galleryImages = [
   },
   {
     id: "gal-8",
-    src: "/images/krishna-janmashtami-dahi-handi.jpg",
+    src: "/images/krishna-janmashtami-dahi-handi.webp",
     alt: "Students dressed as Lord Krishna reaching up with sticks to break the Dahi Handi pot",
     title: "Dahi Handi Pot-Breaking Celebration",
     category: "Cultural Events",
@@ -464,7 +464,7 @@ export const galleryImages = [
   },
   {
     id: "gal-9",
-    src: "/images/clay-ganesha-craft-activity.jpg",
+    src: "/images/clay-ganesha-craft-activity.webp",
     alt: "Children making handcrafted clay Ganesha idols on natural leaves",
     title: "Eco-Friendly Clay Ganesha Craft",
     category: "Children's Activities",
@@ -472,7 +472,7 @@ export const galleryImages = [
   },
   {
     id: "gal-10",
-    src: "/images/cow-shelter-children-walking.jpg",
+    src: "/images/cow-shelter-children-walking.webp",
     alt: "Chocolate Kids children walking together with teachers at Shree Aaiji Goshala",
     title: "Guided Walk Inside Shree Aaiji Goshala",
     category: "Educational Visits",
@@ -480,7 +480,7 @@ export const galleryImages = [
   },
   {
     id: "gal-11",
-    src: "/images/friendship-day-group-two.jpg",
+    src: "/images/friendship-day-group-two.webp",
     alt: "Preschool girls and boys dressed up holding hands together in friendship",
     title: "Joyful Bonding on Friendship Day",
     category: "Special Days",
@@ -488,7 +488,7 @@ export const galleryImages = [
   },
   {
     id: "gal-12",
-    src: "/images/blue-colour-day-dance.jpg",
+    src: "/images/blue-colour-day-dance.webp",
     alt: "Children dancing with blue pom-poms under an umbrella for Blue Day celebration",
     title: "Blue Day Monsoon Umbrella Dance",
     category: "Children's Activities",
@@ -496,7 +496,7 @@ export const galleryImages = [
   },
   {
     id: "gal-13",
-    src: "/images/krishna-janmashtami-flutes.jpg",
+    src: "/images/krishna-janmashtami-flutes.webp",
     alt: "Children dressed as Krishna and Radha playing bansuri flutes at Chocolate Kids",
     title: "Little Krishnas & Radhas with Flutes",
     category: "Cultural Events",
@@ -504,7 +504,7 @@ export const galleryImages = [
   },
   {
     id: "gal-14",
-    src: "/images/cow-shelter-temple-courtyard.jpg",
+    src: "/images/cow-shelter-temple-courtyard.webp",
     alt: "Chocolate Kids students in uniform standing in the sunny courtyard of the goshala",
     title: "Goshala Temple Courtyard Gathering",
     category: "Educational Visits",
@@ -512,7 +512,7 @@ export const galleryImages = [
   },
   {
     id: "gal-15",
-    src: "/images/school-van-safety-care.jpg",
+    src: "/images/school-van-safety-care.webp",
     alt: "Teacher carefully assisting a young student in uniform boarding the school van",
     title: "Safe Transport & Teacher Care",
     category: "School Memories",
@@ -520,7 +520,7 @@ export const galleryImages = [
   },
   {
     id: "gal-16",
-    src: "/images/krishna-janmashtami-rangoli.jpg",
+    src: "/images/krishna-janmashtami-rangoli.webp",
     alt: "Children in traditional attire standing by a beautiful white floral floor rangoli",
     title: "Krishnashtami Festive Rangoli",
     category: "Cultural Events",
@@ -528,7 +528,7 @@ export const galleryImages = [
   },
   {
     id: "gal-17",
-    src: "/images/friendship-day-best-friends.jpg",
+    src: "/images/friendship-day-best-friends.webp",
     alt: "Two young boys holding hands at the friendship band tray at Chocolate Kids",
     title: "Best Friends at Friendship Band Table",
     category: "Special Days",
@@ -536,7 +536,7 @@ export const galleryImages = [
   },
   {
     id: "gal-18",
-    src: "/images/morning-prayer-assembly.jpg",
+    src: "/images/morning-prayer-assembly.webp",
     alt: "Students with hands folded in namaste prayer pose during morning assembly",
     title: "Morning Prayer & Namaste Assembly",
     category: "School Memories",
@@ -544,7 +544,7 @@ export const galleryImages = [
   },
   {
     id: "gal-19",
-    src: "/images/independence-day-jhansi-rani.jpg",
+    src: "/images/independence-day-jhansi-rani.webp",
     alt: "Preschool student dressed in traditional warrior costume holding the Indian flag on Independence Day",
     title: "Rani Lakshmibai Patriotic Costume",
     category: "Cultural Events",
@@ -552,7 +552,7 @@ export const galleryImages = [
   },
   {
     id: "gal-20",
-    src: "/images/cow-shelter-banner-group.jpg",
+    src: "/images/cow-shelter-banner-group.webp",
     alt: "Students and teachers holding the colorful Chocolate Kids celebration banner at the goshala",
     title: "Goshala Visit Group with School Banner",
     category: "Educational Visits",
@@ -560,7 +560,7 @@ export const galleryImages = [
   },
   {
     id: "gal-21",
-    src: "/images/blue-colour-day-umbrella.jpg",
+    src: "/images/blue-colour-day-umbrella.webp",
     alt: "Teacher holding umbrella with blue raindrop crafts surrounded by cheerful students",
     title: "Raindrop Craft & Umbrella Celebration",
     category: "Children's Activities",
@@ -568,7 +568,7 @@ export const galleryImages = [
   },
   {
     id: "gal-22",
-    src: "/images/krishna-janmashtami-costumes.jpg",
+    src: "/images/krishna-janmashtami-costumes.webp",
     alt: "Little Krishnas and Radhas posing in front of the Krishnashtami backdrop",
     title: "Little Radha & Krishna Altar Celebration",
     category: "Cultural Events",
@@ -576,7 +576,7 @@ export const galleryImages = [
   },
   {
     id: "gal-23",
-    src: "/images/cow-shelter-sacred-cow.jpg",
+    src: "/images/cow-shelter-sacred-cow.webp",
     alt: "Students and teacher posing beneath the cow sculpture at the goshala",
     title: "Sacred Cow Sculpture Group Photo",
     category: "Educational Visits",
@@ -584,7 +584,7 @@ export const galleryImages = [
   },
   {
     id: "gal-24",
-    src: "/images/ganesh-chaturthi-puja.jpg",
+    src: "/images/ganesh-chaturthi-puja.webp",
     alt: "Decorated Ganesh Chaturthi floral mandap and puja altar at Chocolate Kids",
     title: "Ganesh Chaturthi School Celebration",
     category: "Cultural Events",
@@ -592,7 +592,7 @@ export const galleryImages = [
   },
   {
     id: "gal-25",
-    src: "/images/blue-colour-day-pompoms.jpg",
+    src: "/images/blue-colour-day-pompoms.webp",
     alt: "Chocolate Kids students cheerfully waving bright blue pom-poms",
     title: "Joyful Blue Pom-Pom Cheering",
     category: "Children's Activities",
@@ -600,7 +600,7 @@ export const galleryImages = [
   },
   {
     id: "gal-26",
-    src: "/images/cow-shelter-welcome-gate.jpg",
+    src: "/images/cow-shelter-welcome-gate.webp",
     alt: "Chocolate Kids students holding celebration banner at the entrance of Shree Aaiji Goshala",
     title: "Welcome Gate of Shree Aaiji Goshala",
     category: "Educational Visits",
@@ -608,7 +608,7 @@ export const galleryImages = [
   },
   {
     id: "gal-27",
-    src: "/images/krishna-janmashtami-traditional.jpg",
+    src: "/images/krishna-janmashtami-traditional.webp",
     alt: "Chocolate Kids children in vibrant traditional Indian festival costumes",
     title: "Traditional Festive Attire Celebration",
     category: "Cultural Events",
@@ -616,7 +616,7 @@ export const galleryImages = [
   },
   {
     id: "gal-28",
-    src: "/images/krishna-janmashtami-little-krishnas.jpg",
+    src: "/images/krishna-janmashtami-little-krishnas.webp",
     alt: "Nursery students dressed in golden yellow dhotis and red lehengas for Janmashtami",
     title: "Youngest Radhas & Krishnas",
     category: "Cultural Events",
@@ -624,7 +624,7 @@ export const galleryImages = [
   },
   {
     id: "gal-29",
-    src: "/photos/police_station_visit.jpg",
+    src: "/photos/police_station_visit.webp",
     alt: "Chocolate Kids students on an educational field trip to Jawahar Nagar Police Station",
     title: "Jawahar Nagar Police Station Field Trip",
     category: "Educational Visits",
@@ -632,7 +632,7 @@ export const galleryImages = [
   },
   {
     id: "gal-30",
-    src: "/photos/supermarket_visit.jpg",
+    src: "/photos/supermarket_visit.webp",
     alt: "Preschool students exploring the supermarket aisles to learn about fruits and vegetables",
     title: "Supermarket & Grocery Discovery Trip",
     category: "Educational Visits",
@@ -640,7 +640,7 @@ export const galleryImages = [
   },
   {
     id: "gal-31",
-    src: "/photos/annual_dance.jpg",
+    src: "/photos/annual_dance.webp",
     alt: "Preschool children performing in costumes on the brightly lit Annual Day stage",
     title: "Annual Day Grand Stage Performance",
     category: "School Celebrations",
@@ -648,7 +648,7 @@ export const galleryImages = [
   },
   {
     id: "gal-32",
-    src: "/photos/convocation_gown_ceremony.jpg",
+    src: "/photos/convocation_gown_ceremony.webp",
     alt: "Kindergarten children wearing black graduation gowns and caps",
     title: "Pre-Primary Graduation Day Ceremony",
     category: "School Celebrations",
@@ -656,7 +656,7 @@ export const galleryImages = [
   },
   {
     id: "gal-33",
-    src: "/photos/orange_color_day.jpg",
+    src: "/photos/orange_color_day.webp",
     alt: "Children celebrating Orange Colour Day with orange outfits and orange balloons",
     title: "Orange Colour Day Sensory Learning",
     category: "Children's Activities",
@@ -664,7 +664,7 @@ export const galleryImages = [
   },
   {
     id: "gal-34",
-    src: "/photos/green_day.jpg",
+    src: "/photos/green_day.webp",
     alt: "Students holding green balloons and learning about plants on Green Day",
     title: "Green Day Environmental Awareness",
     category: "Children's Activities",
@@ -672,7 +672,7 @@ export const galleryImages = [
   },
   {
     id: "gal-35",
-    src: "/photos/little_chefs_activity.jpg",
+    src: "/photos/little_chefs_activity.webp",
     alt: "Preschool students wearing chef hats discovering healthy vegetables and cooking",
     title: "Little Chefs Culinary Exploration",
     category: "Children's Activities",
@@ -680,7 +680,7 @@ export const galleryImages = [
   },
   {
     id: "gal-36",
-    src: "/photos/sankranti_kite_festival.jpg",
+    src: "/photos/sankranti_kite_festival.webp",
     alt: "Children dressed in festive clothes celebrating Sankranti with colorful kites and rangoli",
     title: "Makar Sankranti Kite & Rangoli Day",
     category: "Cultural Events",
@@ -688,7 +688,7 @@ export const galleryImages = [
   },
   {
     id: "gal-37",
-    src: "/photos/christmas_celebration.jpg",
+    src: "/photos/christmas_celebration.webp",
     alt: "Children wearing Santa hats celebrating Christmas with Santa Claus at school",
     title: "Christmas Joy & Santa Celebration",
     category: "School Celebrations",
@@ -696,7 +696,7 @@ export const galleryImages = [
   },
   {
     id: "gal-38",
-    src: "/images/school-brochure-green.jpg",
+    src: "/images/school-brochure-green.webp",
     alt: "Official Chocolate Kids photo collage showing police station visit, graduation, Christmas, and sports day",
     title: "Campus Highlights & Official School Collage",
     category: "School Memories",
@@ -704,7 +704,7 @@ export const galleryImages = [
   },
   {
     id: "gal-39",
-    src: "/photos/teacher_award.jpg",
+    src: "/photos/teacher_award.webp",
     alt: "School founder and teacher receiving memento and recognition award",
     title: "Educator Excellence & Felicitation",
     category: "School Memories",
@@ -774,7 +774,7 @@ export const academicPrograms = [
       "Gentle sharing & everyday habits",
     ],
     ctaText: "Enquire for Play Group",
-    image: "/images/cow-shelter-calf-learning.jpg",
+    image: "/images/cow-shelter-calf-learning.webp",
     color: "amber",
     badgeBg: "bg-amber-100 text-amber-900 border-amber-200",
   },
@@ -794,7 +794,7 @@ export const academicPrograms = [
       "Interactive rhythm, dancing & games",
     ],
     ctaText: "Enquire for Nursery",
-    image: "/images/blue-colour-day-celebration.jpg",
+    image: "/images/blue-colour-day-celebration.webp",
     color: "emerald",
     badgeBg: "bg-emerald-100 text-emerald-900 border-emerald-200",
   },
@@ -814,7 +814,7 @@ export const academicPrograms = [
       "Costume role play & stage speaking",
     ],
     ctaText: "Enquire for LKG",
-    image: "/images/friendship-day-celebration.jpg",
+    image: "/images/friendship-day-celebration.webp",
     color: "sky",
     badgeBg: "bg-sky-100 text-sky-900 border-sky-200",
   },
@@ -834,7 +834,7 @@ export const academicPrograms = [
       "Milestone graduation & annual stage drama",
     ],
     ctaText: "Enquire for UKG",
-    image: "/images/independence-day-celebration-hd.png",
+    image: "/images/independence-day-celebration-hd.webp",
     color: "rose",
     badgeBg: "bg-rose-100 text-rose-900 border-rose-200",
   },
@@ -921,16 +921,16 @@ export const educationalVisitsData = {
   featuredVisit: {
     title: "Educational Visit to Shree Aaiji Goshala",
     location: "Shree Aaiji Goshala & Cow Sanctuary",
-    image: "/images/cow-shelter-group-hd.png",
-    secondaryImage: "/images/cow-shelter-calf-learning.jpg",
-    thirdImage: "/images/cow-shelter-grass-feeding.jpg",
+    image: "/images/cow-shelter-group-hd.webp",
+    secondaryImage: "/images/cow-shelter-calf-learning.webp",
+    thirdImage: "/images/cow-shelter-grass-feeding.webp",
     description:
       "Our students visited Shree Aaiji Goshala where they gently fed cows, stroked calves, observed dairy care, and learned the sacred importance of kindness to all living beings.",
   },
   secondaryVisit: {
     title: "Community Helper Excursion: Jawahar Nagar Police Station",
     location: "Jawahar Nagar, Hyderabad",
-    image: "/photos/police_station_visit.jpg",
+    image: "/photos/police_station_visit.webp",
     description:
       "A guided educational visit where children met local police officers, learned how community helpers protect citizens, and developed respect for civil safety.",
   },
@@ -941,8 +941,8 @@ export const eventsData = [
     id: "evt-krishna",
     title: "Krishna Janmashtami & Dahi Handi",
     category: "Cultural Events",
-    image: "/images/krishna-janmashtami-grand-group.jpg",
-    secondaryImage: "/images/krishna-janmashtami-dahi-handi.jpg",
+    image: "/images/krishna-janmashtami-grand-group.webp",
+    secondaryImage: "/images/krishna-janmashtami-dahi-handi.webp",
     description:
       "Vibrant traditional celebration featuring children adorned as little Kanha and Radha, flutes, floral rangolis, and a thrilling Dahi Handi pot-breaking ceremony.",
     badge: "Traditional Heritage",
@@ -951,8 +951,8 @@ export const eventsData = [
     id: "evt-independence",
     title: "Independence Day Patriotic Recital",
     category: "School Celebrations",
-    image: "/images/independence-day-celebration-hd.png",
-    secondaryImage: "/images/independence-day-flag-hoisting.jpg",
+    image: "/images/independence-day-celebration-hd.webp",
+    secondaryImage: "/images/independence-day-flag-hoisting.webp",
     description:
       "Flag hoisting, national anthem, and student speeches in patriotic costumes honoring freedom fighters, building early public poise and national pride.",
     badge: "National Pride",
@@ -961,7 +961,7 @@ export const eventsData = [
     id: "evt-friendship",
     title: "Friendship Day Celebrations",
     category: "Special Days",
-    image: "/images/friendship-day-celebration.jpg",
+    image: "/images/friendship-day-celebration.webp",
     secondaryImage: "/images/friendship-day-sharing-care.jpg",
     description:
       "Celebrating the sweetness of childhood bonds with colorful friendship wristbands, cooperative partner games, and sharing activities.",
@@ -971,8 +971,8 @@ export const eventsData = [
     id: "evt-blue-day",
     title: "Blue Colour Day & Monsoon Fun",
     category: "Special Days",
-    image: "/images/blue-colour-day-celebration.jpg",
-    secondaryImage: "/images/blue-colour-day-dance.jpg",
+    image: "/images/blue-colour-day-celebration.webp",
+    secondaryImage: "/images/blue-colour-day-dance.webp",
     description:
       "Sensory color celebration with blue outfits, raindrop crafts, umbrella rhymes, and rhythmic pom-pom movement celebrating nature's monsoon charm.",
     badge: "Sensory Theme Day",
@@ -981,7 +981,7 @@ export const eventsData = [
     id: "evt-annual-day",
     title: "Annual Day Stage Extravaganza",
     category: "School Celebrations",
-    image: "/photos/annual_dance.jpg",
+    image: "/photos/annual_dance.webp",
     secondaryImage: "/photos/annual_stage_group.jpg",
     description:
       "Grand stage performances where every child takes center stage in vibrant costumes, performing choreography to music before proud families.",
@@ -991,7 +991,7 @@ export const eventsData = [
     id: "evt-graduation",
     title: "Pre-Primary Graduation Ceremony",
     category: "School Celebrations",
-    image: "/photos/convocation_gown_ceremony.jpg",
+    image: "/photos/convocation_gown_ceremony.webp",
     secondaryImage: "/photos/convocation_gown_award.jpg",
     description:
       "A proud milestone honoring our graduating kindergarten students with academic convocation gowns, mortarboard caps, and graduation scrolls.",
@@ -1005,7 +1005,7 @@ export const facilitiesData = [
     title: "Smart, Child-Safe Classrooms",
     desc: "Brightly lit, cheerful, and well-ventilated spaces with rounded-corner ergonomic furniture, display boards, and interactive visual aids.",
     icon: "Layout",
-    image: "/images/blue-colour-day-celebration.jpg",
+    image: "/images/blue-colour-day-celebration.webp",
     badge: "Modern Learning",
   },
   {
@@ -1013,7 +1013,7 @@ export const facilitiesData = [
     title: "Safe Indoor & Outdoor Play Zones",
     desc: "Impact-absorbing soft flooring, sensory climbing blocks, tactile slides, and safe ride-on toys that build motor vitality.",
     icon: "Smile",
-    image: "/photos/annual_dance.jpg",
+    image: "/photos/annual_dance.webp",
     badge: "Motor Play",
   },
   {
@@ -1021,7 +1021,7 @@ export const facilitiesData = [
     title: "Creative Arts & Clay Studio",
     desc: "A dedicated hands-on creative corner equipped with natural modeling clay, child-safe paints, papercraft supplies, and easel boards.",
     icon: "Palette",
-    image: "/images/clay-ganesha-craft-activity.jpg",
+    image: "/images/clay-ganesha-craft-activity.webp",
     badge: "Creative Hub",
   },
   {
@@ -1029,7 +1029,7 @@ export const facilitiesData = [
     title: "Storytelling & Mini Stage Area",
     desc: "Cozy reading circle with colorful picture storybooks, puppet theater props, and a mini stage for student recitals and drama.",
     icon: "BookOpen",
-    image: "/images/independence-day-celebration-hd.png",
+    image: "/images/independence-day-celebration-hd.webp",
     badge: "Language & Drama",
   },
   {
@@ -1037,7 +1037,7 @@ export const facilitiesData = [
     title: "Comprehensive Safety & Hygiene",
     desc: "Sanitized restrooms, clean RO drinking water, child-proof fixtures, continuous teacher supervision, and basic first-aid preparedness.",
     icon: "ShieldCheck",
-    image: "/images/cow-shelter-banner-group.jpg",
+    image: "/images/cow-shelter-banner-group.webp",
     badge: "Safety First",
   },
   {
@@ -1045,7 +1045,7 @@ export const facilitiesData = [
     title: "Safe Van Transport & Attentive Care",
     desc: "Dedicated school vans with caring female attendants and experienced drivers ensuring comfortable, punctual, and safe doorstep pick and drop.",
     icon: "Car",
-    image: "/images/school-van-safety-care.jpg",
+    image: "/images/school-van-safety-care.webp",
     badge: "Doorstep Transit",
   },
 ];
@@ -1508,4 +1508,10 @@ export const franchiseFAQs = [
     q: "How can I apply?",
     a: "You can apply directly through the Franchise Enquiry Form on our /franchise page, call us at +91 95158 69889, or message our franchise team on WhatsApp.",
   },
+];
+
+export const franchiseInvestmentRanges = [
+  { value: "3 - 3.5 Lakhs", label: "₹3 Lakhs – ₹3.5 Lakhs" },
+  { value: "8 - 10 Lakhs", label: "₹8 Lakhs – ₹10 Lakhs" },
+  { value: "Flexible / Need guidance", label: "Flexible / Need guidance" },
 ];

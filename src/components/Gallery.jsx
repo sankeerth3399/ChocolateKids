@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Maximize2, Camera, Layers, Download, Eye, ZoomIn } from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight, Camera, Eye, ZoomIn } from "lucide-react";
 import { galleryImages } from "../data";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
+import useScrollLock from "../hooks/useScrollLock";
+import { variant, cardSrcSet } from "../utils/images";
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  useScrollLock(lightboxIndex !== null);
   const [showAll, setShowAll] = useState(false);
   const thumbnailStripRef = useRef(null);
 
@@ -18,12 +21,10 @@ export default function Gallery() {
 
   const openLightbox = (indexInFiltered) => {
     setLightboxIndex(indexInFiltered);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = useCallback(() => {
     setLightboxIndex(null);
-    document.body.style.overflow = "auto";
   }, []);
 
   const showNext = useCallback(() => {
@@ -95,7 +96,7 @@ export default function Gallery() {
         {/* ==================================================
             MODERN PHOTO-FIRST CARD GRID (Visual & Engaging)
            ================================================== */}
-        <motion.div 
+        <m.div 
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6"
         >
@@ -105,7 +106,7 @@ export default function Gallery() {
               const clickIdx = filteredIdx >= 0 ? filteredIdx : idx;
 
               return (
-                <motion.div
+                <m.div
                   layout
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -118,10 +119,16 @@ export default function Gallery() {
                   {/* Photo Frame Container */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
                     <img
-                      src={image.src}
+                      src={variant(image.src, 960)}
+                      srcSet={cardSrcSet(image.src)}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       alt={image.alt}
+                      width="960"
+                      height="720"
+                      decoding="async"
+                      fetchPriority={idx === 0 ? "high" : undefined}
                       className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
-                      loading="lazy"
+                      loading={idx < 3 ? "eager" : "lazy"}
                     />
 
                     {/* Gradient Overlay on Hover */}
@@ -161,11 +168,11 @@ export default function Gallery() {
                       View →
                     </span>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
 
         {/* Load More Button */}
         {filteredImages.length > initialLimit && (
@@ -190,7 +197,7 @@ export default function Gallery() {
          ================================================== */}
       <AnimatePresence>
         {lightboxIndex !== null && filteredImages[lightboxIndex] && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -239,7 +246,7 @@ export default function Gallery() {
               </button>
 
               {/* The Active Image */}
-              <motion.div
+              <m.div
                 key={lightboxIndex}
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -252,7 +259,7 @@ export default function Gallery() {
                   alt={filteredImages[lightboxIndex].alt}
                   className="max-h-[60vh] sm:max-h-[66vh] w-auto max-w-full object-contain rounded-xl"
                 />
-              </motion.div>
+              </m.div>
 
               {/* Next Button */}
               <button
@@ -295,8 +302,9 @@ export default function Gallery() {
                     title={thumb.title}
                   >
                     <img
-                      src={thumb.src}
+                      src={variant(thumb.src, 360)}
                       alt={thumb.title}
+                      decoding="async"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -305,7 +313,7 @@ export default function Gallery() {
               </div>
             </div>
 
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 

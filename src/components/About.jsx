@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { Heart, Shield, Award, Users, BookOpen, Compass, CheckCircle2, Star } from "lucide-react";
+import { m } from "framer-motion";
+import { Heart, Shield, BookOpen, Compass, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { schoolPhilosophy } from "../data";
 import BrandWatermark from "./BrandWatermark";
@@ -91,7 +91,7 @@ export default function About({ showPhotos = true }) {
               {/* Main Large Photograph */}
               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white group">
                 <img
-                  src="/images/cow-shelter-group-hd.png"
+                  src="/images/cow-shelter-group-hd.webp"
                   alt="Chocolate Kids students with banner at Shree Aaiji Goshala educational visit"
                   className="w-full h-80 sm:h-96 object-cover object-bottom group-hover:scale-103 transition-transform duration-500"
                   loading="lazy"
@@ -108,14 +108,14 @@ export default function About({ showPhotos = true }) {
               </div>
 
               {/* Overlapping Secondary Polaroid-Style Photograph (Tilted) */}
-              <motion.div 
+              <m.div 
                 whileHover={{ rotate: 0, scale: 1.03 }}
                 transition={{ duration: 0.3 }}
                 className="absolute -bottom-4 sm:-bottom-8 right-1 sm:-right-4 lg:-right-8 w-28 sm:w-56 max-w-[40%] sm:max-w-[65%] p-1.5 sm:p-3 bg-white rounded-2xl shadow-2xl border-2 border-stone-200/80 transform rotate-2 z-20 group cursor-pointer"
               >
                 <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden bg-amber-50">
                   <img
-                    src="/images/blue-colour-day-celebration.jpg"
+                    src="/images/blue-colour-day-celebration.webp"
                     alt="Blue Colour Day celebration at Chocolate Kids"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
@@ -128,7 +128,7 @@ export default function About({ showPhotos = true }) {
                   <span className="text-[11px] font-bold text-stone-800 block">Blue Colour Day</span>
                   <span className="text-[10px] text-stone-500">Sensory exploration</span>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
           )}

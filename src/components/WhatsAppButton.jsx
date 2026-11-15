@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
-import { schoolInfo } from "../data";
+import { whatsappUrl } from "../utils/whatsapp";
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
     : "Hello Chocolate Kids Team, I would like to enquire about preschool admissions for my child.";
 
   const label = isFranchise ? "Talk to Franchise Team" : "Chat on WhatsApp";
-  const waUrl = `https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(defaultMsg)}`;
+  const waUrl = whatsappUrl(defaultMsg);
 
   return (
     <aside

@@ -33,13 +33,15 @@ export default function BrandWatermark({
       aria-hidden="true"
     >
       <img
-        src="/logo.png"
+        src="/logo.webp"
+        width="640"
+        height="413"
         alt=""
         style={{ 
           opacity: opacity,
           transform: rotate ? `rotate(${rotate}deg)` : undefined 
         }}
-        className={`absolute ${selectedPos} ${selectedSize} max-w-none h-auto object-contain pointer-events-none transition-opacity duration-300`}
+        className={`absolute ${selectedPos} ${selectedSize} max-w-none h-auto object-contain pointer-events-none`}
         loading="lazy"
         decoding="async"
       />

@@ -1,8 +1,8 @@
-import React from "react";
 import { Phone, MapPin, ArrowRight, Navigation, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { branches, schoolInfo } from "../data";
+import { branches } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
+import { whatsappUrl } from "../utils/whatsapp";
 
 export default function Branches() {
   return (
@@ -77,7 +77,7 @@ export default function Branches() {
                   <span className="px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-500 text-white shadow-xs">
                     {branch.branchNo}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white/90 text-slate-800 backdrop-blur-xs shadow-2xs">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white/90 text-slate-800 shadow-2xs">
                     {branch.badge}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function Branches() {
 
                     {/* WhatsApp button */}
                     <a
-                      href="https://wa.me/919515869889"
+                      href={whatsappUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors cursor-pointer"

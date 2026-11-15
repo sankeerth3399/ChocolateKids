@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { X, Briefcase, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
-import { schoolInfo } from "../data";
+import { schoolInfo, franchiseInvestmentRanges } from "../data";
+import { openWhatsApp } from "../utils/whatsapp";
+import { cleanPhone, isValidPhone, isValidEmail } from "../utils/validation";
+import { buildFranchiseMessage } from "../utils/enquiryMessages";
 import { BrandBadge } from "../utils/brandHelper";
+import useScrollLock from "../hooks/useScrollLock";
 
 const initialData = {
   name: "",
@@ -21,28 +25,24 @@ function FieldError({ message }) {
   return <span className="text-[10px] text-rose-600 font-bold mt-0.5 block">{message}</span>;
 }
 
+/** Franchise enquiry pop-up. Typed answers survive closing and reopening; errors reset each time. */
 export default function FranchiseModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState(initialData);
+  if (!isOpen) return null;
+  return <FranchiseModalContent formData={formData} setFormData={setFormData} onClose={onClose} />;
+}
+
+function FranchiseModalContent({ formData, setFormData, onClose }) {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+  useScrollLock(true);
+
   useEffect(() => {
-    if (!isOpen) {
-      setSubmitted(false);
-      setErrors({});
-      return;
-    }
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,11 +53,10 @@ export default function FranchiseModal({ isOpen, onClose }) {
   const validate = () => {
     const e = {};
     if (!formData.name.trim()) e.name = "Please enter your name";
-    const cleanPhone = formData.phone.replace(/[\s-]/g, "");
-    if (!cleanPhone) e.phone = "Please enter mobile number";
-    else if (cleanPhone.length < 10) e.phone = "Enter a valid 10-digit number";
+    if (!cleanPhone(formData.phone)) e.phone = "Please enter mobile number";
+    else if (!isValidPhone(formData.phone)) e.phone = "Enter a valid 10-digit number";
     if (!formData.email.trim()) e.email = "Please enter your email";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) e.email = "Enter a valid email";
+    else if (!isValidEmail(formData.email)) e.email = "Enter a valid email";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -65,24 +64,7 @@ export default function FranchiseModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-    const msg = `Hello Chocolate Kids,
-
-I am interested in the Chocolate Kids franchise opportunity.
-
-Name: ${formData.name.trim()}
-Phone: ${formData.phone.trim()}
-Email: ${formData.email.trim()}
-Investment Range: ${formData.investmentRange}
-Message: ${formData.message.trim() || "None"}
-
-Please contact me regarding the franchise opportunity.
-
-Thank you.`;
-    window.open(
-      `https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(msg)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    openWhatsApp(buildFranchiseMessage(formData));
     setSubmitted(true);
   };
 
@@ -149,41 +131,41 @@ Thank you.`;
             <form onSubmit={handleSubmit} noValidate className="space-y-3 text-left">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">Full Name *</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="e.g. S. Venkat Reddy" className={inputCls(errors.name)} />
+                  <label htmlFor="frm-name" className="block text-[11px] font-bold text-[#111827] mb-1">Full Name *</label>
+                  <input id="frm-name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="e.g. S. Venkat Reddy" className={inputCls(errors.name)} />
                   <FieldError message={errors.name} />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">Mobile Number *</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="10-digit number" className={inputCls(errors.phone)} />
+                  <label htmlFor="frm-phone" className="block text-[11px] font-bold text-[#111827] mb-1">Mobile Number *</label>
+                  <input id="frm-phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="10-digit number" className={inputCls(errors.phone)} />
                   <FieldError message={errors.phone} />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">Email *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="e.g. partner@example.com" className={inputCls(errors.email)} />
+                  <label htmlFor="frm-email" className="block text-[11px] font-bold text-[#111827] mb-1">Email *</label>
+                  <input id="frm-email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="e.g. partner@example.com" className={inputCls(errors.email)} />
                   <FieldError message={errors.email} />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#111827] mb-1">Investment Range</label>
-                  <select
+                  <label htmlFor="frm-investmentRange" className="block text-[11px] font-bold text-[#111827] mb-1">Investment Range</label>
+                  <select id="frm-investmentRange"
                     name="investmentRange"
                     value={formData.investmentRange}
                     onChange={handleChange}
                     className="w-full px-2.5 py-1.5 sm:py-2 rounded-lg border border-stone-300 bg-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#142B4A]"
                   >
-                    <option value="3 - 3.5 Lakhs">₹3 Lakhs – ₹3.5 Lakhs</option>
-                    <option value="8 - 10 Lakhs">₹8 Lakhs – ₹10 Lakhs</option>
-                    <option value="Flexible / Need guidance">Flexible / Need guidance</option>
+                    {franchiseInvestmentRanges.map((range) => (
+                      <option key={range.value} value={range.value}>{range.label}</option>
+                    ))}
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-[#111827] mb-1">Message (Optional)</label>
-                <textarea
+                <label htmlFor="frm-message" className="block text-[11px] font-bold text-[#111827] mb-1">Message (Optional)</label>
+                <textarea id="frm-message"
                   name="message"
                   rows="2"
                   value={formData.message}

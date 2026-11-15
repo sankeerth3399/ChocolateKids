@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Heart, ShieldCheck, Palette, Sprout } from "lucide-react";
 
 /* Wording is taken from the existing Chocolate Kids content (About, Why Choose Us). */
@@ -33,9 +33,10 @@ export default function HomeBenefits() {
   return (
     <section className="py-14 sm:py-20 bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="sr-only">Why families choose Chocolate Kids</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-8">
           {benefits.map(({ title, desc, Icon, circle }, i) => (
-            <motion.div
+            <m.div
               key={title}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +49,7 @@ export default function HomeBenefits() {
               </span>
               <h3 className="mt-5 font-heading font-semibold text-lg sm:text-xl text-[#142B4A]">{title}</h3>
               <p className="mt-2 text-sm sm:text-[15px] text-[#536174] leading-relaxed max-w-[15rem]">{desc}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

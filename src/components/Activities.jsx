@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Palette, Music, BookOpen, Sun, Heart, Smile, ArrowRight, Camera, Star } from "lucide-react";
+import { m } from "framer-motion";
+import { Palette, Music, BookOpen, Sun, ArrowRight, Camera, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
@@ -18,7 +18,7 @@ export default function Activities() {
       tapeColor: "bg-amber-200/90",
       accent: "text-amber-700",
       polaroidRotate: "-rotate-2",
-      image: "/images/clay-ganesha-craft-activity.jpg",
+      image: "/images/clay-ganesha-craft-activity.webp",
       caption: "Molding eco-friendly clay Ganeshas with joyful hands",
       notes: "Children pinch, roll, and shape natural clay, refining fine-motor skills, hand-eye coordination, and creative pride.",
       sticker: "Little Artists!",
@@ -32,7 +32,7 @@ export default function Activities() {
       tapeColor: "bg-purple-200/90",
       accent: "text-purple-700",
       polaroidRotate: "rotate-2",
-      image: "/images/blue-colour-day-dance.jpg",
+      image: "/images/blue-colour-day-dance.webp",
       caption: "Twirling, dancing and moving to cheerful nursery beats",
       notes: "Expressive physical movement, tempo matching, and group coordination that energize gross motor muscles and uplift every child's spirit.",
       sticker: "Pure Energy!",
@@ -46,7 +46,7 @@ export default function Activities() {
       tapeColor: "bg-sky-200/90",
       accent: "text-sky-700",
       polaroidRotate: "-rotate-1",
-      image: "/images/independence-day-celebration-hd.png",
+      image: "/images/independence-day-celebration-hd.webp",
       caption: "Reciting patriotic poetry dressed as historical heroes",
       notes: "Puppet tales, dress-up enactments, and daily microphone circles where young voices bloom without hesitation or fear.",
       sticker: "Brave Speakers!",
@@ -60,7 +60,7 @@ export default function Activities() {
       tapeColor: "bg-emerald-200/90",
       accent: "text-emerald-700",
       polaroidRotate: "rotate-3",
-      image: "/images/cow-shelter-children-walking.jpg",
+      image: "/images/cow-shelter-children-walking.webp",
       caption: "Exploring green farms and walking together under sunny skies",
       notes: "Fresh-air field excursions where children touch real leaves, watch calves play, and learn compassionate environmental curiosity.",
       sticker: "Little Explorers!",
@@ -74,7 +74,7 @@ export default function Activities() {
       tapeColor: "bg-rose-200/90",
       accent: "text-rose-700",
       polaroidRotate: "-rotate-2",
-      image: "/images/blue-colour-day-celebration.jpg",
+      image: "/images/blue-colour-day-celebration.webp",
       caption: "Blue Colour Day immersive sensory discovery with toys & smiles",
       notes: "Visual immersion where entire classrooms turn blue, green, or orange, reinforcing color theory through sensory play.",
       sticker: "Happy Days!",
@@ -149,7 +149,7 @@ export default function Activities() {
             
             {/* Left: Polaroid-Style Photograph with Photo Tilt */}
             <div className="lg:col-span-6 relative flex justify-center">
-              <motion.div
+              <m.div
                 key={scrapbookPages[selectedActivity].id}
                 initial={{ opacity: 0, scale: 0.95, rotate: -3 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -178,7 +178,7 @@ export default function Activities() {
                     “{scrapbookPages[selectedActivity].caption}”
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Right: Scrapbook Diary Notes & Little Explorer Sticker */}

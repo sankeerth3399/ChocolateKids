@@ -1,13 +1,8 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { GraduationCap, Lightbulb, Users, TrendingUp, MapPin, Heart, CheckCircle2, BookOpen, Package, Layers, Shirt, Award, Gift, Star } from "lucide-react";
-import {
-  whyFranchiseWithUs,
-  franchiseKitIncludes,
-  franchiseAlsoIncludes,
-  franchiseMaterialsList,
-} from "../data";
+import { whyFranchiseWithUs, franchiseKitIncludes, franchiseAlsoIncludes, franchiseMaterialsList } from "../data";
 import BrandWatermark from "./BrandWatermark";
+import SectionHeading from "./common/SectionHeading";
 
 const whyIcons = { GraduationCap, Lightbulb, Users, TrendingUp, MapPin, Heart };
 
@@ -30,10 +25,10 @@ const materialTints = [
 ];
 const materialBars = ["bg-[#C51F45]", "bg-[#174EA6]", "bg-[#F26A21]", "bg-[#16834A]"];
 const materialPhotos = [
-  { src: "/images/franchise/manual.jpg", pos: "left 40%", alt: "Three Chocolate Kids teachers in maroon uniforms reading the Teacher Training Manual together" },
-  { src: "/images/franchise/guide.jpg", pos: "left 40%", alt: "The colourful Curriculum Guide beside stacked books, crayons, alphabet blocks and an open activity book" },
-  { src: "/images/franchise/merch.jpg", pos: "left 40%", alt: "Branded Chocolate Kids school uniforms, backpack, water bottle, cap, lunch box and teddy bear" },
-  { src: "/images/franchise/toys.jpg", pos: "left 40%", alt: "Plush soft toys with wooden puzzles, stacking rings, number board and an abacus" },
+  { src: "/images/franchise/manual.webp", pos: "left 40%", alt: "Three Chocolate Kids teachers in maroon uniforms reading the Teacher Training Manual together" },
+  { src: "/images/franchise/guide.webp", pos: "left 40%", alt: "The colourful Curriculum Guide beside stacked books, crayons, alphabet blocks and an open activity book" },
+  { src: "/images/franchise/merch.webp", pos: "left 40%", alt: "Branded Chocolate Kids school uniforms, backpack, water bottle, cap, lunch box and teddy bear" },
+  { src: "/images/franchise/toys.webp", pos: "left 40%", alt: "Plush soft toys with wooden puzzles, stacking rings, number board and an abacus" },
 ];
 
 const fadeUp = {
@@ -45,23 +40,6 @@ const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.07 } },
 };
-
-function SectionHeading({ eyebrow, icon: Icon, title, subtitle }) {
-  return (
-    <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-amber-950 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-3 shadow-sm ring-1 ring-amber-200">
-        <Icon className="w-3.5 h-3.5 text-amber-600" />
-        <span>{eyebrow}</span>
-      </div>
-      <h2 className="font-heading font-bold text-2xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="mt-3 text-sm sm:text-lg text-stone-600 leading-relaxed">{subtitle}</p>
-      )}
-    </div>
-  );
-}
 
 function CheckList({ items, tone }) {
   return (
@@ -80,12 +58,12 @@ function CheckList({ items, tone }) {
 
 /* One photo per "Why Franchise with Us" card, in the same order as the data */
 const whyPhotos = [
-  { src: "/images/franchise/trusted.jpg", pos: "center 40%", alt: "A bright, colourful Chocolate Kids preschool building with a landscaped garden" },
-  { src: "/images/franchise/curriculum.jpg", pos: "center 40%", alt: "A stack of colourful books labelled Early Learning, Life Skills, Creativity, Values and Ethics, and Holistic Development beside a globe and alphabet blocks" },
-  { src: "/images/franchise/support.jpg", pos: "center 40%", alt: "A laptop, headphones and a checklist reading Training, Setup Guidance, Operations Support and Marketing Support" },
-  { src: "/images/franchise/demand.jpg", pos: "center 50%", alt: "Colourful rising building blocks with a red upward arrow showing growth" },
-  { src: "/images/franchise/investment.jpg", pos: "center 50%", alt: "A young plant growing from stacked coins beside a wooden house marked with the rupee symbol" },
-  { src: "/images/franchise/impact.jpg", pos: "center 55%", alt: "Three smiling children in Chocolate Kids uniforms planting a young sapling together" },
+  { src: "/images/franchise/trusted.webp", pos: "center 40%", alt: "A bright, colourful Chocolate Kids preschool building with a landscaped garden" },
+  { src: "/images/franchise/curriculum.webp", pos: "center 40%", alt: "A stack of colourful books labelled Early Learning, Life Skills, Creativity, Values and Ethics, and Holistic Development beside a globe and alphabet blocks" },
+  { src: "/images/franchise/support.webp", pos: "center 40%", alt: "A laptop, headphones and a checklist reading Training, Setup Guidance, Operations Support and Marketing Support" },
+  { src: "/images/franchise/demand.webp", pos: "center 50%", alt: "Colourful rising building blocks with a red upward arrow showing growth" },
+  { src: "/images/franchise/investment.webp", pos: "center 50%", alt: "A young plant growing from stacked coins beside a wooden house marked with the rupee symbol" },
+  { src: "/images/franchise/impact.webp", pos: "center 55%", alt: "Three smiling children in Chocolate Kids uniforms planting a young sapling together" },
 ];
 
 export default function FranchiseShowcase() {
@@ -105,7 +83,7 @@ export default function FranchiseShowcase() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Philosophy banner */}
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
@@ -122,16 +100,17 @@ export default function FranchiseShowcase() {
             <p className="mt-3 inline-block font-heading font-extrabold text-base sm:text-2xl text-blue-800 border-b-4 border-red-500 pb-1">
               Building brighter futures, one child at a time!
             </p>
-          </motion.div>
+          </m.div>
 
           <SectionHeading
+            variant="pill"
             eyebrow="Why Franchise With Us?"
             icon={Award}
             title="Six Reasons Partners Choose Chocolate Kids"
             subtitle="A trusted brand, a proven curriculum and complete support, built for long-term growth."
           />
 
-          <motion.div
+          <m.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -143,7 +122,7 @@ export default function FranchiseShowcase() {
               const p = whyPalette[card.color] || whyPalette.amber;
               const photo = whyPhotos[idx % whyPhotos.length];
               return (
-                <motion.div
+                <m.div
                   key={card.title}
                   variants={fadeUp}
                   whileHover={{ y: -5 }}
@@ -173,10 +152,10 @@ export default function FranchiseShowcase() {
                     <h3 className="font-heading font-bold text-xl text-[#142B4A] leading-snug">{card.title}</h3>
                     <p className="mt-2 text-sm sm:text-[15px] text-[#536174] leading-relaxed">{card.desc}</p>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -187,6 +166,7 @@ export default function FranchiseShowcase() {
         <BrandWatermark position="center" size="lg" opacity={0.08} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            variant="pill"
             eyebrow="Complete Support"
             icon={Gift}
             title="Everything You Need to Start, Succeed and Grow!"
@@ -195,7 +175,7 @@ export default function FranchiseShowcase() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-14 lg:gap-8 items-stretch pt-6">
             {/* Franchise Kit Includes */}
-            <motion.div
+            <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -213,10 +193,10 @@ export default function FranchiseShowcase() {
                   Everything you need to start, succeed and grow!
                 </p>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Also Includes */}
-            <motion.div
+            <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -234,7 +214,7 @@ export default function FranchiseShowcase() {
                   Complete Support for Your Success!
                 </span>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -246,25 +226,26 @@ export default function FranchiseShowcase() {
         <div className="absolute top-10 right-0 w-72 h-72 rounded-full bg-amber-200/30 blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            variant="pill"
             eyebrow="Starter Materials"
             icon={Package}
             title="Branded Materials Delivered to Your Campus"
             subtitle="Manuals, guides, apparel and learning kits, all in Chocolate Kids branding."
           />
 
-          <motion.div
+          <m.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
-            {franchiseMaterialsList.map((m, i) => {
+            {franchiseMaterialsList.map((item, i) => {
               const Icon = materialIcons[i % materialIcons.length];
               const photo = materialPhotos[i % materialPhotos.length];
               return (
-                <motion.div
-                  key={m.name}
+                <m.div
+                  key={item.name}
                   variants={fadeUp}
                   whileHover={{ y: -5 }}
                   className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E8DCC9] shadow-sm hover:shadow-xl transition-shadow duration-300 min-w-0"
@@ -286,15 +267,15 @@ export default function FranchiseShowcase() {
                       <Icon className="w-7 h-7" />
                     </div>
                     <span className="self-start text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#FFF4DF] text-[#142B4A] border border-[#E8DCC9] mb-3">
-                      {m.badge}
+                      {item.badge}
                     </span>
-                    <h3 className="font-heading font-bold text-lg text-[#142B4A] leading-snug mb-2">{m.name}</h3>
-                    <p className="text-sm text-[#536174] leading-relaxed">{m.desc}</p>
+                    <h3 className="font-heading font-bold text-lg text-[#142B4A] leading-snug mb-2">{item.name}</h3>
+                    <p className="text-sm text-[#536174] leading-relaxed">{item.desc}</p>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </>

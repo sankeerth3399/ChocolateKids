@@ -1,15 +1,16 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { MessageCircle, Phone, ArrowDown } from "lucide-react";
 import { schoolInfo } from "../data";
+import { whatsappUrl } from "../utils/whatsapp";
 import { BrandBadge } from "../utils/brandHelper";
 import BrandWatermark from "./BrandWatermark";
+import Button from "./common/Button";
 
 const ease = [0.22, 1, 0.36, 1];
 
 export default function FranchiseHero({ onScrollToSection }) {
   const franchiseMsg = "Hello Chocolate Kids, I am interested in the Chocolate Kids franchise opportunity. Please share the details.";
-  const waUrl = `https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(franchiseMsg)}`;
+  const waUrl = whatsappUrl(franchiseMsg);
 
   const handleScroll = (id) => {
     if (onScrollToSection) {
@@ -51,42 +52,42 @@ export default function FranchiseHero({ onScrollToSection }) {
       <BrandWatermark position="center" size="xl" opacity={0.08} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="max-w-3xl mx-auto flex flex-col items-center"
         >
-          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <m.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="h-px w-8 bg-[#D6B56D]" />
             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.28em] text-[#C51F45]">
               Partner With Us
             </span>
             <span className="h-px w-8 bg-[#D6B56D]" />
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={itemVariants}
             className="font-heading font-bold text-[clamp(2.4rem,6vw,4.6rem)] text-[#142B4A] leading-[1.08]"
           >
             Franchise <span className="italic font-medium text-[#C51F45]">Opportunity</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.h2
+          <m.h2
             variants={itemVariants}
             className="mt-4 font-heading font-medium text-xl sm:text-3xl text-[#142B4A] flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap"
           >
             <span>Join the</span> <BrandBadge className="text-[0.78em]" /> <span>Family</span>
-          </motion.h2>
+          </m.h2>
 
-          <motion.p
+          <m.p
             variants={itemVariants}
             className="mt-5 text-base sm:text-lg text-[#536174] leading-relaxed max-w-2xl mx-auto"
           >
             Be a part of a trusted brand in early childhood education and help build brighter futures, one child at a time.
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={itemVariants} className="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <m.div variants={itemVariants} className="mt-6 flex flex-wrap items-center justify-center gap-2">
             {chips.map((c) => (
               <span
                 key={c}
@@ -95,30 +96,21 @@ export default function FranchiseHero({ onScrollToSection }) {
                 {c}
               </span>
             ))}
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             variants={itemVariants}
             className="mt-9 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto"
           >
-            <button
-              type="button"
-              onClick={() => handleScroll("enquiry-form")}
-              className="px-8 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#142B4A] bg-[#FFBD16] hover:bg-[#FFCB45] shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
-            >
+            <Button onClick={() => handleScroll("enquiry-form")}>
               <span>Enquire About Franchise</span>
               <ArrowDown className="w-4 h-4" />
-            </button>
+            </Button>
 
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-3.5 min-h-[46px] rounded-md text-sm font-semibold tracking-wide text-[#174EA6] bg-white border-2 border-[#174EA6] hover:bg-[#174EA6] hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
-            >
+            <Button as="a" variant="secondary" href={waUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Us</span>
-            </a>
+            </Button>
 
             <a
               href={`tel:${schoolInfo.phone}`}
@@ -127,8 +119,8 @@ export default function FranchiseHero({ onScrollToSection }) {
               <Phone className="w-4 h-4 text-[#C51F45]" />
               <span>{schoolInfo.phone}</span>
             </a>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       <svg

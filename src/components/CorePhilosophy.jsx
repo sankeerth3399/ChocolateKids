@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Smile, BookCheck, Compass, CheckCircle2 } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
@@ -21,7 +20,7 @@ export default function CorePhilosophy() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         {/* Header Badge */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -29,10 +28,10 @@ export default function CorePhilosophy() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-950 text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-4 border border-amber-200 shadow-2xs"
         >
           <span>Our Core Philosophy</span>
-        </motion.div>
+        </m.div>
 
         {/* Main Philosophy Heading */}
-        <motion.h2 
+        <m.h2 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,10 +39,10 @@ export default function CorePhilosophy() {
           className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight"
         >
           Play • Learn • Grow
-        </motion.h2>
+        </m.h2>
 
         {/* Tagline */}
-        <motion.p 
+        <m.p 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,9 +50,9 @@ export default function CorePhilosophy() {
           className="mt-3 text-lg sm:text-xl lg:text-2xl text-amber-800 font-bold max-w-2xl mx-auto font-heading"
         >
           Building brighter futures, one child at a time!
-        </motion.p>
+        </m.p>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,13 +60,13 @@ export default function CorePhilosophy() {
           className="mt-2 text-sm sm:text-base text-stone-600 max-w-xl mx-auto"
         >
           Our holistic early childhood pedagogy nurtures curiosity, joy, and lifelong confidence through experiential discovery.
-        </motion.p>
+        </m.p>
 
         {/* 3 Visually Distinct Interactive Elements */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 text-left">
           
           {/* Element 1: PLAY */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,10 +93,10 @@ export default function CorePhilosophy() {
                 <span>Sensorial & Cognitive Joy</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Element 2: LEARN */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -124,10 +123,10 @@ export default function CorePhilosophy() {
                 <span>Holistic & Proven Curriculum</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Element 3: GROW */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -154,7 +153,7 @@ export default function CorePhilosophy() {
                 <span>Emotional & Social Readiness</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
 

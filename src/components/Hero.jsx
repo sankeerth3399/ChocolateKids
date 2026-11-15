@@ -53,7 +53,7 @@ function Crop({ crop, children, className = "" }) {
   return (
     <div className={`relative w-full overflow-hidden ${className}`} style={{ aspectRatio: `${crop.w} / ${crop.h}` }}>
       <img
-        src="/images/home-hero-banner.jpg"
+        src="/images/home-hero-banner.webp"
         alt=""
         aria-hidden="true"
         width={SRC_W}
@@ -94,7 +94,7 @@ export default function Hero() {
       {/* Tablet and desktop: the complete banner at its natural proportions */}
       <div className="relative hidden md:block w-full">
         <img
-          src="/images/home-hero-banner.jpg"
+          src="/images/home-hero-banner.webp"
           alt={ALT}
           width={SRC_W}
           height={SRC_H}

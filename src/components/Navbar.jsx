@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle, ChevronDown, BookOpen, Building2, Images, Palette, CalendarCheck } from "lucide-react";
 import { schoolInfo } from "../data";
 import { BrandBadge } from "../utils/brandHelper";
+import useScrollLock from "../hooks/useScrollLock";
 
 /* About Us submenu: one distinct icon and accent per item */
 const aboutMenu = [
@@ -45,48 +46,60 @@ const navActive =
   "font-bold text-[#C51F45] bg-[#FCE8B2] border-[#F2C45B]/60 shadow-[inset_0_-3px_0_#FFBD16]";
 const navOpen = "font-semibold text-[#922B4B] bg-[#FFE2A3] border-[#F2C45B] shadow-sm";
 
-export default function Navbar({ onOpenEnquiry }) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const aboutRef = useRef(null);
   const location = useLocation();
+
+  // Dropdowns remember the page they were opened on, so they close by themselves after navigation
+  const [aboutOpenAt, setAboutOpenAt] = useState(null);
+  const [mobileAboutAt, setMobileAboutAt] = useState(null);
+  const aboutDropdownOpen = aboutOpenAt === location.pathname;
+  const mobileAboutOpen = mobileAboutAt === location.pathname;
+  const toggleAt = (setter) => (next) =>
+    setter((current) => {
+      const open = typeof next === "function" ? next(current === location.pathname) : next;
+      return open ? location.pathname : null;
+    });
+  const setAboutDropdownOpen = toggleAt(setAboutOpenAt);
+  const setMobileAboutOpen = toggleAt(setMobileAboutAt);
+
+  const closeMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+    setAboutOpenAt(null);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useScrollLock(mobileMenuOpen);
+
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    if (!mobileMenuOpen) return undefined;
     const handleKeyDown = (e) => {
       if (e.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [mobileMenuOpen]);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen, closeMenu]);
 
   // About Us dropdown: close on outside click, Escape, and route change
   useEffect(() => {
     if (!aboutDropdownOpen) return;
     const onPointerDown = (e) => {
       if (aboutRef.current && !aboutRef.current.contains(e.target)) {
-        setAboutDropdownOpen(false);
+        setAboutOpenAt(null);
       }
     };
     const onKeyDown = (e) => {
-      if (e.key === "Escape") setAboutDropdownOpen(false);
+      if (e.key === "Escape") setAboutOpenAt(null);
     };
     document.addEventListener("mousedown", onPointerDown);
     document.addEventListener("touchstart", onPointerDown, { passive: true });
@@ -97,16 +110,6 @@ export default function Navbar({ onOpenEnquiry }) {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [aboutDropdownOpen]);
-
-  useEffect(() => {
-    setAboutDropdownOpen(false);
-    setMobileAboutOpen(false);
-  }, [location.pathname]);
-
-  const closeMenu = () => {
-    setMobileMenuOpen(false);
-    setAboutDropdownOpen(false);
-  };
 
   const isHomeActive = location.pathname === "/";
   const isAboutActive = location.pathname === "/about" || location.pathname === "/facilities" || location.pathname === "/gallery" || location.pathname === "/activities";
@@ -119,7 +122,7 @@ export default function Navbar({ onOpenEnquiry }) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#FFFDF8] via-[#FFF8E8] to-[#FFE6A3] ${scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-gradient-to-r from-[#FFFDF8] via-[#FFF8E8] to-[#FFE6A3] ${scrolled
           ? "shadow-[0_10px_30px_-14px_rgba(20,43,74,0.30)] py-2"
           : "shadow-[0_1px_0_rgba(20,43,74,0.06)] py-3 sm:py-3.5"
           }`}
@@ -177,7 +180,9 @@ export default function Navbar({ onOpenEnquiry }) {
               className="flex items-center gap-2 sm:gap-2.5 shrink-0 min-h-[44px] group focus:outline-none focus:ring-2 focus:ring-[#142B4A] rounded-lg p-0.5 sm:p-1"
             >
               <img
-                src="/logo.png"
+                src="/logo-sm.webp"
+                width="149"
+                height="96"
                 alt="Chocolate Kids Preschool Logo"
                 className="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
@@ -354,7 +359,9 @@ export default function Navbar({ onOpenEnquiry }) {
               className="flex items-center gap-2 min-h-[44px] group focus:outline-none"
             >
               <img
-                src="/logo.png"
+                src="/logo-sm.webp"
+                width="149"
+                height="96"
                 alt="Chocolate Kids Logo"
                 className="h-8 sm:h-9 w-auto"
               />

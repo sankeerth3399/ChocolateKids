@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MessageCircle, Phone, Copy, Check, AlertCircle, Send } from "lucide-react";
-import { schoolInfo, branches } from "../data";
+import { schoolInfo } from "../data";
+import { whatsappUrl, openWhatsApp } from "../utils/whatsapp";
+import { cleanPhone, isValidPhone, isValidEmail } from "../utils/validation";
 import BrandWatermark from "./BrandWatermark";
 import { BrandBadge } from "../utils/brandHelper";
 
@@ -37,10 +39,9 @@ export default function AdmissionForm() {
       newErrors.parentName = "Please enter parent or guardian name.";
     }
 
-    const cleanPhone = formData.phone.replace(/[\s-]/g, "");
-    if (!cleanPhone) {
+    if (!cleanPhone(formData.phone)) {
       newErrors.phone = "Please enter a contact phone number.";
-    } else if (!/^[6-9]\d{9}$/.test(cleanPhone) && cleanPhone.length < 10) {
+    } else if (!isValidPhone(formData.phone)) {
       newErrors.phone = "Please enter a valid 10-digit mobile number.";
     }
 
@@ -56,7 +57,7 @@ export default function AdmissionForm() {
       newErrors.preferredBranch = "Please choose a preferred branch.";
     }
 
-    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+    if (formData.email.trim() && !isValidEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address.";
     }
 
@@ -79,12 +80,9 @@ export default function AdmissionForm() {
     setGeneratedMessage(msg);
     setStatus("opening");
 
-    const encoded = encodeURIComponent(msg);
-    const waUrl = `https://wa.me/${schoolInfo.whatsappNumber}?text=${encoded}`;
-
-    // Show friendly opening status, then trigger window.open
+    // Show friendly opening status, then open WhatsApp
     setTimeout(() => {
-      window.open(waUrl, "_blank", "noopener,noreferrer");
+      openWhatsApp(msg);
       setStatus("opened");
     }, 600);
   };
@@ -123,10 +121,10 @@ export default function AdmissionForm() {
             {/* Row 1: Parent Name & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                <label htmlFor="adm-parentName" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                   Parent / Guardian Name <span className="text-[#C51F45]">*</span>
                 </label>
-                <input
+                <input id="adm-parentName"
                   type="text"
                   name="parentName"
                   value={formData.parentName}
@@ -147,10 +145,10 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                <label htmlFor="adm-phone" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                   Phone Number <span className="text-[#C51F45]">*</span>
                 </label>
-                <input
+                <input id="adm-phone"
                   type="tel"
                   name="phone"
                   value={formData.phone}
@@ -174,10 +172,10 @@ export default function AdmissionForm() {
             {/* Row 2: Email & Child Name */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
-                  Email Address <span className="text-stone-400 font-normal">(Optional)</span>
+                <label htmlFor="adm-email" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                  Email Address <span className="text-stone-500 font-normal">(Optional)</span>
                 </label>
-                <input
+                <input id="adm-email"
                   type="email"
                   name="email"
                   value={formData.email}
@@ -198,10 +196,10 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                <label htmlFor="adm-childName" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                   Child's Name <span className="text-[#C51F45]">*</span>
                 </label>
-                <input
+                <input id="adm-childName"
                   type="text"
                   name="childName"
                   value={formData.childName}
@@ -225,10 +223,10 @@ export default function AdmissionForm() {
             {/* Row 3: Child Age & Preferred Branch */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                <label htmlFor="adm-childAge" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                   Child's Age <span className="text-[#C51F45]">*</span>
                 </label>
-                <input
+                <input id="adm-childAge"
                   type="text"
                   name="childAge"
                   value={formData.childAge}
@@ -249,10 +247,10 @@ export default function AdmissionForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                <label htmlFor="adm-preferredBranch" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                   Preferred Branch <span className="text-[#C51F45]">*</span>
                 </label>
-                <select
+                <select id="adm-preferredBranch"
                   name="preferredBranch"
                   value={formData.preferredBranch}
                   onChange={handleChange}
@@ -267,10 +265,10 @@ export default function AdmissionForm() {
 
             {/* Row 4: Admission For */}
             <div>
-              <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+              <label htmlFor="adm-admissionFor" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
                 Admission For
               </label>
-              <select
+              <select id="adm-admissionFor"
                 name="admissionFor"
                 value={formData.admissionFor}
                 onChange={handleChange}
@@ -286,10 +284,10 @@ export default function AdmissionForm() {
 
             {/* Row 5: Message */}
             <div>
-              <label className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
-                Additional Questions or Message <span className="text-stone-400 font-normal">(Optional)</span>
+              <label htmlFor="adm-message" className="block text-xs font-semibold text-[#142B4A] uppercase tracking-wider mb-1.5">
+                Additional Questions or Message <span className="text-stone-500 font-normal">(Optional)</span>
               </label>
-              <textarea
+              <textarea id="adm-message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -318,9 +316,7 @@ export default function AdmissionForm() {
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <a
-                    href={`https://wa.me/${schoolInfo.whatsappNumber}?text=${encodeURIComponent(
-                      generatedMessage || constructMessage()
-                    )}`}
+                    href={whatsappUrl(generatedMessage || constructMessage())}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs"

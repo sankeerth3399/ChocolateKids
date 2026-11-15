@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import HomeBenefits from "../components/HomeBenefits";
 import HomeAbout from "../components/HomeAbout";
@@ -11,8 +10,6 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Facilities from "../components/Facilities";
 import Testimonials from "../components/Testimonials";
 import AdmissionsCTA from "../components/AdmissionsCTA";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Home() {
   useEffect(() => {
@@ -20,47 +17,36 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen home-theme text-[#142B4A] font-sans selection:bg-amber-200 selection:text-amber-900">
-      {/* 1. Header / Navigation */}
-      <Navbar />
+    <main>
+      {/* Hero */}
+      <Hero />
 
-      <main>
-        {/* Hero */}
-        <Hero />
+      {/* Key benefits */}
+      <HomeBenefits />
 
-        {/* Key benefits */}
-        <HomeBenefits />
+      {/* About Chocolate Kids */}
+      <div className="cv-auto"><HomeAbout /></div>
 
-        {/* About Chocolate Kids */}
-        <HomeAbout />
+      {/* Our core philosophy: Play, Learn, Grow */}
+      <div className="cv-auto"><CorePhilosophy /></div>
 
-        {/* Our core philosophy: Play, Learn, Grow */}
-        <CorePhilosophy />
+      {/* The five groups with their photos */}
+      <div className="cv-auto"><HomeGroups /></div>
 
-        {/* The five groups with their photos */}
-        <HomeGroups />
+      {/* Learning Beyond the Classroom */}
+      <div className="cv-auto"><LearningApproach /></div>
 
-        {/* Learning Beyond the Classroom */}
-        <LearningApproach />
+      {/* Why choose us */}
+      <div className="cv-auto"><WhyChooseUs showPhoto={false} /></div>
 
-        {/* Why choose us */}
-        <WhyChooseUs showPhoto={false} />
+      {/* 6. Facilities (What We Offer) */}
+      <div className="cv-auto"><Facilities /></div>
 
-        {/* 6. Facilities (What We Offer) */}
-        <Facilities />
+      {/* 7. Parent & Child Focused Testimonials */}
+      <div className="cv-auto"><Testimonials /></div>
 
-        {/* 7. Parent & Child Focused Testimonials */}
-        <Testimonials />
-
-        {/* 14. Admissions Call to Action ("Let Their Adventure Begin at") */}
-        <AdmissionsCTA showQuickInquiry={false} showConnect />
-      </main>
-
-      {/* 16. Comprehensive Footer */}
-      <Footer />
-
-      {/* Floating Action WhatsApp Button (Parent & Admissions Focused) */}
-      <WhatsAppButton />
-    </div>
+      {/* 14. Admissions Call to Action ("Let Their Adventure Begin at") */}
+      <div className="cv-auto"><AdmissionsCTA showQuickInquiry={false} showConnect /></div>
+    </main>
   );
 }
