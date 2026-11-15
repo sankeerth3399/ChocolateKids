@@ -26,7 +26,7 @@ export default function Contact() {
         </div>
 
         {/* 3 Quick Action Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="card-rail grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           
           {/* Card 1: Direct Phone */}
           <div className="p-5 sm:p-7 rounded-3xl bg-[#FFFDF8] border border-amber-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">

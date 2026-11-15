@@ -63,7 +63,7 @@ export default function CorePhilosophy() {
         </m.p>
 
         {/* 3 Visually Distinct Interactive Elements */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 text-left">
+        <div className="card-rail grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 text-left">
           
           {/* Element 1: PLAY */}
           <m.div

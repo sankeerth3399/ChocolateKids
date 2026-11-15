@@ -659,3 +659,37 @@ article[class*="rounded-"][class*="hover:shadow"]:not(.accent-card):hover {
   content-visibility: auto;
   contain-intrinsic-size: auto 900px;
 }
+
+/* =========================================================
+   CARD RAIL (mobile only)
+   Add "card-rail" to a grid of independent cards: below 640px it becomes one swipeable row with
+   snap points and a peek of the next card. From 640px up the element keeps its own grid classes.
+   ========================================================= */
+@media (max-width: 639px) {
+  .card-rail {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* bleed to the screen edges so cards peek in from the side; padding keeps shadows from clipping */
+    margin-inline: -1rem;
+    padding: 0.5rem 1rem 1rem;
+    scroll-padding-inline: 1rem;
+  }
+  .card-rail::-webkit-scrollbar {
+    display: none;
+  }
+  .card-rail > * {
+    flex: 0 0 82%;
+    max-width: 19rem;
+    min-width: 0;
+    scroll-snap-align: start;
+    /* reveal animations are driven by page scroll; cards off to the side must already be visible */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

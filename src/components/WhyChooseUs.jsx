@@ -79,7 +79,7 @@ export default function WhyChooseUs({ showPhoto = true }) {
           )}
 
           {/* Right Column: 6 Structured Cards (01 to 06) */}
-          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${showPhoto ? "lg:col-span-7" : "lg:grid-cols-3"}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${showPhoto ? "lg:col-span-7" : "card-rail lg:grid-cols-3"}`}>
             {whyChooseUs.map((item, idx) => {
               const accent = accents[idx % 3];
               const Icon = iconMap[item.icon] || ShieldCheck;

@@ -61,7 +61,7 @@ export default function LearningApproach() {
         </div>
 
         {/* Six equal cards: 3 x 2 on desktop, 2 columns on tablet, 1 on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 sm:gap-6">
+        <div className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 sm:gap-6">
           {learningApproach.map((item, index) => {
             const Icon = iconMap[item.icon] || Puzzle;
             const accent = accents[index % accents.length];

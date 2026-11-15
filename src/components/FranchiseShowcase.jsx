@@ -115,7 +115,7 @@ export default function FranchiseShowcase() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
+            className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
           >
             {whyFranchiseWithUs.map((card, idx) => {
               const Icon = whyIcons[card.icon] || Star;
@@ -238,7 +238,7 @@ export default function FranchiseShowcase() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
             {franchiseMaterialsList.map((item, i) => {
               const Icon = materialIcons[i % materialIcons.length];

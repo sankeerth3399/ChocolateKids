@@ -34,7 +34,7 @@ export default function HomeBenefits() {
     <section className="py-14 sm:py-20 bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="sr-only">Why families choose Chocolate Kids</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-8">
+        <div className="card-rail grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-8">
           {benefits.map(({ title, desc, Icon, circle }, i) => (
             <m.div
               key={title}

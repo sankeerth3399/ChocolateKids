@@ -33,7 +33,7 @@ export default function ActivitiesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-2xl bg-amber-50 border border-amber-100">
               <Palette className="w-8 h-8 text-amber-600 mb-3" />
               <h3 className="font-heading font-bold text-lg text-stone-900 mb-2">

@@ -54,7 +54,7 @@ export default function Branches() {
         </div>
 
         {/* 3 Branches Grid: Desktop 3 cards / Tablet 2 cards / Mobile 1 card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="card-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {branches.map((branch) => (
             <div
               key={branch.id}

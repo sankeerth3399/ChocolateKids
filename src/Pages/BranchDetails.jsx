@@ -162,7 +162,7 @@ export default function BranchDetails() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {programs.slice(0, 4).map((prog) => (
             <div
               key={prog.id}
@@ -197,7 +197,7 @@ export default function BranchDetails() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="card-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {branch.highlights.map((hl, idx) => (
             <div
               key={hl}
