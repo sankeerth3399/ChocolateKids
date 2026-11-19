@@ -1214,7 +1214,7 @@ export const franchiseMaterialsList = [
   },
   {
     name: "Branded Merchandise & Apparel",
-    desc: "Official Chocolate Kids polo shirts, branded school bags, stainless tumblers, notebooks, folders, and pens.",
+    desc: "Official Chocolate Kids school uniforms, branded polo shirts, bags, stainless tumblers, notebooks, and folders.",
     badge: "Official Merch",
   },
   {

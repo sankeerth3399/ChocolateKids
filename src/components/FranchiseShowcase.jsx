@@ -27,7 +27,7 @@ const materialBars = ["bg-[#C51F45]", "bg-[#174EA6]", "bg-[#F26A21]", "bg-[#1683
 const materialPhotos = [
   { src: "/images/franchise/manual.webp", pos: "left 40%", alt: "Three Chocolate Kids teachers in maroon uniforms reading the Teacher Training Manual together" },
   { src: "/images/franchise/guide.webp", pos: "left 40%", alt: "The colourful Curriculum Guide beside stacked books, crayons, alphabet blocks and an open activity book" },
-  { src: "/images/franchise/merch.webp", pos: "left 40%", alt: "Branded Chocolate Kids school uniforms, backpack, water bottle, cap, lunch box and teddy bear" },
+  { src: "/images/franchise/merch.webp", pos: "center 40%", alt: "Official Chocolate Kids school uniforms for boys and girls, branded school bags and learning kit" },
   { src: "/images/franchise/toys.webp", pos: "left 40%", alt: "Plush soft toys with wooden puzzles, stacking rings, number board and an abacus" },
 ];
 
